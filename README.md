@@ -1,17 +1,72 @@
-
-LeetCode
-========
-
-:star: 
-| #    | Title | Solution | Difficulty |
-|-| -- | --| ----- |
-|1946|[Largest Number After Mutating Substring](https://leetcode.com/problems/largest-number-after-mutating-substring/) | [C++](./algorithms/cpp/largestNumberAfterMutatingSubstring/LargestNumberAfterMutatingSubstring.cpp), [Java](./algorithms/java/src/LargestNumberAfterMutatingSubtring/largestNumberAfterMutatingSubstring.java)|Medium|
-|1945|[Sum of Digits of String After Convert](https://leetcode.com/problems/sum-of-digits-of-string-after-convert/) | [C++](./algorithms/cpp/leetcode/sumOfDigitsOfStringAfterConvert/SumOfDigitsOfStringAfterConvert.cpp)|Easy|
-|1935|[Maximum Number of Words You Can Type](https://leetcode.com/problems/maximum-number-of-words-you-can-type/) | [C++](./algorithms/cpp/maximumNumberOfWordsYouCanType/MaximumNumberOfWordsYouCanType.cpp)|Easy|
-
-
+# LeetCode 解答
 
 | Peoblem | Difficulty | Topic | C++ | Python |
-| ------- | ---------- | ----- | --- | ------ |
-|1. Two Sum| :star: :star: :star:      | Text     |
-
+| ------- |:----------:| ----- | --- | ------ |
+|[1. Two Sum](https://leetcode.com/problems/two-sum/)                                                                                            |:star:            |  |    |      |
+|[2. Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)                                                                            |:star::star:      |  |    |      |
+|[3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)              |:star::star:      |  |    |      |
+|[4. Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)                                                    |:star::star::star:|  |    |      |
+|[5. Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)                                                |:star::star:      |  |    |      |
+|[6. Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/)                                                                        |:star::star:      |  |    |      |
+|[8. String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/)                                                            |                   |  |    |      |
+|[9. Palindrome Number](https://leetcode.com/problems/palindrome-number/)                                                                        |           |  |    |      |
+|[10. Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/)                                                   |          |  |    |      |
+|[11. Container With Most Water](https://leetcode.com/problems/container-with-most-water/)                                                       |           |  |    |      |
+|[13. Roman to Integer](https://leetcode.com/problems/roman-to-integer/)                                                                         |           |  |    |      |
+|[14. Longest Common Prefix ](https://leetcode.com/problems/longest-common-prefix/)                                                              |           |  |    |      |
+|[15. 3Sum](https://leetcode.com/problems/3sum/)                                                                                                 |             |            |           |        |
+|[17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)                               |             |            |           |        |
+|[20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)                                                                       |             |            |           |        |
+|[21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)                                                             |             |            |           |        |
+|[28. Implement strStr()](https://leetcode.com/problems/implement-strstr/)                                                                       |             |            |           |        |
+|[56. Merge Intervals](https://leetcode.com/problems/merge-intervals/)                                                                           |             |            |           |        |
+|[59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/)                                                                         |             |            |           |        |
+|[65. Valid Number](https://leetcode.com/problems/valid-number/)                                                                                 |             |            |           |        |
+|[94. Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)                                               |             |            |           |        |
+|[99. Recover Binary Search Tree](https://leetcode.com/problems/recover-binary-search-tree/)                                                     |             |            |           |        |
+|[102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)                                      |             |            |           |        |
+|[144. Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)                                            |             |            |           |        |
+|[145. Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/)                                          |             |            |           |        |
+|[168. Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/)                                                        |             |            |           |        |
+|[173. Binary Search Tree Iterator](https://leetcode.com/problems/binary-search-tree-iterator/)                                                  |             |            |           |        |
+|[206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list)                                                                                        |             |            |           |        |
+|[216. Combination Sum III](https://leetcode.com/problems/combination-sum-iii)                                                                                             |             |            |           |        |
+|[225. Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues)                                                                                           |             |            |           |        |
+|[230. Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst)                                                                                               |             |            |           |        |
+|[284. Peeking Iterator](https://leetcode.com/problems/peeking-iterator)                                                                                            |             |            |           |        |
+|[289. Game of Life](https://leetcode.com/problems/game-of-life)                                                                                       |             |            |           |        |
+|[300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence)                                                                                                 |             |            |           |        |
+|[341. Flatten Nested List Iterator](https://leetcode.com/problems/flatten-nested-list-iterator)                                                                                                 |             |            |           |        |
+|[399. Evaluate Division](https://leetcode.com/problems/evaluate-division)                                                                                              |             |            |           |        |
+|[456. 132 Pattern](https://leetcode.com/problems/132-pattern)                                                                                              |             |            |           |        |
+|[461. Hamming Distance](https://leetcode.com/problems/hamming-distance)                                                                                          |             |            |           |        |
+|[535. Encode and Decode TinyURL](https://leetcode.com/problems/encode-and-decode-tinyurl)                                                                                            |             |            |           |        |
+|[538. Convert BST to Greater Tree](https://leetcode.com/problems/convert-bst-to-greater-tree)                                                                                         |             |            |           |        |
+|[581. Shortest Unsorted Continuous Subarray](https://leetcode.com/problems/shortest-unsorted-continuous-subarray)                                                                                           |             |            |           |        |
+|[669. Trim a Binary Search Tree](https://leetcode.com/problems/trim-a-binary-search-tree)                                                                                        |             |            |           |        |
+|[700. Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree)                                                                                            |             |            |           |        |
+|[705. Design HashSet](https://leetcode.com/problems/design-hashset)                                                                                            |             |            |           |        |
+|[706. Design HashMap](https://leetcode.com/problems/design-hashmap)                                                                                          |             |            |           |        |
+|[785. Is Graph Bipartite?](https://leetcode.com/problems/is-graph-bipartite)                                                                                           |             |            |           |        |
+|[844. Backspace String Compare](https://leetcode.com/problems/backspace-string-compare)                                                                                             |             |            |           |        |
+|[845. Longest Mountain in Array](https://leetcode.com/problems/longest-mountain-in-array)                                                                                         |             |            |           |        |
+|[897. Increasing Order Search Tree](https://leetcode.com/problems/increasing-order-search-tree)                                                                                            |             |            |           |        |
+|[905. Sort Array By Parity](https://leetcode.com/problems/sort-array-by-parity)                                                                                          |             |            |           |        |
+|[1002. Find Common Characters](https://leetcode.com/problems/find-common-characters)                                                                                              |             |            |           |        |
+|[1189. Maximum Number of Balloons](https://leetcode.com/problems/maximum-number-of-balloons)                                                                                               |             |            |           |        |
+|[1202. Smallest String With Swaps](https://leetcode.com/problems/smallest-string-with-swaps)                                                                                                |             |            |           |        |
+|[1209. Remove All Adjacent Duplicates in String II](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii)                                                                                             |             |            |           |        |
+|[1260. Shift 2D Grid](https://leetcode.com/problems/shift-2d-grid)                                                                                   |             |            |           |        |
+|[1396. Design Underground System](https://leetcode.com/problems/design-underground-system)                                                                                    |             |            |           |        |
+|[1400. Construct K Palindrome Strings](https://leetcode.com/problems/construct-k-palindrome-strings)                                                                                             |             |            |           |        |
+|[1584. Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points)                                                                                         |             |            |           |        |
+|[1631. Path With Minimum Effort](https://leetcode.com/problems/path-with-minimum-effort)                                                                                           |             |            |           |        |
+|[1679. Max Number of K-Sum Pairs](https://leetcode.com/problems/max-number-of-k-sum-pairs)                                                                                               |             |            |           |        |
+|[2248. Intersection of Multiple Arrays](https://leetcode.com/problems/intersection-of-multiple-arrays)                                                                                          |             |            |           |        |
+|[2249. Count Lattice Points Inside a Circle](https://leetcode.com/problems/count-lattice-points-inside-a-circle)                                                                                        |             |            |           |        |
+|[2255. Count Prefixes of a Given String](https://leetcode.com/problems/count-prefixes-of-a-given-string)                                                                                        |             |            |           |        |
+|[2256. Minimum Average Difference](https://leetcode.com/problems/minimum-average-difference)                                                                                       |             |            |           |        |
+|[2257. Count Unguarded Cells in the Grid](https://leetcode.com/problems/count-unguarded-cells-in-the-grid)                                                                                              |             |            |           |        |
+|[2259. Remove Digit From Number to Maximize Result](https://leetcode.com/problems/remove-digit-from-number-to-maximize-result/)                                                                                             |             |            |           |        |
+|[2260. Minimum Consecutive Cards to Pick Up](https://leetcode.com/problems/minimum-consecutive-cards-to-pick-up)                                                                                               |             |            |           |        |
+|[2261. K Divisible Elements Subarrays](https://leetcode.com/problems/k-divisible-elements-subarrays)
