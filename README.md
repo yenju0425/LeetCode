@@ -1,4 +1,4 @@
-# LeetCode 解答
+# LeetCode
 
 | Peoblem | Difficulty | Topic | C++ | Python |
 | ------- |:----------:| ----- | --- | ------ |
