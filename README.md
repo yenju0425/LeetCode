@@ -2,14 +2,26 @@
 
 ## Daily Challenge
 
-| Peoblem | Difficulty | Topic | C++ | Python |
-| ------- |:----------:| ----- | --- | ------ |
-|[216. Combination Sum III](https://leetcode.com/problems/combination-sum-iii/)   |:star::star:         |  |    |      |
+| Title | Difficulty | Topic | C++ | Python |
+| ----- |------------| ----- | --- | ------ |
+|[216. Combination Sum III](https://leetcode.com/problems/combination-sum-iii)   |:star::star:         |  |    |      |
 
+```markdown
+|              Stage | Direct Products | ATP Yields |
+| -----------------: | --------------: | ---------: |
+|         Glycolysis |          2 ATP              ||
+| ^^                 |          2 NADH |   3--5 ATP |
+| Pyruvaye oxidation |          2 NADH |      5 ATP |
+|  Citric acid cycle |          2 ATP              ||
+| ^^                 |          6 NADH |     15 ATP |
+| ^^                 |          2 FADH |      3 ATP |
+|                               30--32 ATP        |||
+```
 
 ## Problems
-| Peoblem | Difficulty | Topic | C++ | Python |
-| ------- |:----------:| ----- | --- | ------ |
+
+| Title | Difficulty | Topic | C++ | Python |
+| ----- |------------| ----- | --- | ------ |
 |[1. Two Sum](https://leetcode.com/problems/two-sum)                                                                                            |:star:            |            |           |        |
 |[2. Add Two Numbers](https://leetcode.com/problems/add-two-numbers)                                                                            |:star::star:      |            |           |        |
 |[3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters)              |:star::star:      |            |           |        |
