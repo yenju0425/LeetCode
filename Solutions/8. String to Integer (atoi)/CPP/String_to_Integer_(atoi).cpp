@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution{
 public:
-    int myAtoi(string s) {
+    int myAtoi(string s){
         /*
             state = 0: terminate
             state = 1: wait
@@ -18,7 +18,7 @@ public:
 
         while(state and reader < stringLength){
             char character = s[reader];
-            switch(state) {
+            switch(state){
                 case 1:
                     if(character == ' '){
                         //state = 1; state remain the same
@@ -69,8 +69,8 @@ public:
 };
 
 int main(){
-    string SS = "-91283472332";
-    Solution *S = new Solution;
+    string SS = "-21474836";
+    Solution *S = new Solution();
 
     cout << S->myAtoi(SS) << endl;
 

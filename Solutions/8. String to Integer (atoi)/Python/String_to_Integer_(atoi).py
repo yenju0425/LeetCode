@@ -44,7 +44,7 @@ class Solution:
             reader = reader + 1
 
 
-        #int in python will never overflow, thus we can calculate the final resault afterwards
+        #calculate the final resault
         number = signBit * number
 
         if number > 2147483647:
@@ -55,4 +55,4 @@ class Solution:
         return number
 
 S = Solution()
-print(S.myAtoi("-91"))
+print(S.myAtoi("-21474836"))
