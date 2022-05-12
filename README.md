@@ -1,4 +1,3 @@
-###### tags: `Github`
 # LeetCode
 
 ## Daily Challenge
