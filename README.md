@@ -5,7 +5,7 @@
 
 | Title | Difficulty | Topic | C++ | Python |
 | ----- |------------| :---: | :-: | :----: |
-|[47. Permutations II](https://leetcode.com/problems/permutations-ii)                                                                   |:star::star:      |`Permutations`                                             |[:page_facing_up:](https://github.com/yenju0425/LeetCode/blob/main/Solutions/47.%20Permutations%20II/CPP)                                                        |        |
+|[47. Permutations II](https://leetcode.com/problemset/all)                                                                             |:star::star:      |`Permutations`                                             |[:page_facing_up:](https://github.com/yenju0425/LeetCode/blob/main/Solutions/47.%20Permutations%20II/CPP)                                                        |        |
 
 ## Problems
 
@@ -70,7 +70,7 @@
 |[1400. Construct K Palindrome Strings](https://leetcode.com/problems/construct-k-palindrome-strings)                                   |:star::star:      |                                                           |           |        |
 |[1584. Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points)                                   |:star::star:      |                                                           |           |        |
 |[1631. Path With Minimum Effort](https://leetcode.com/problems/path-with-minimum-effort)                                               |:star::star:      |                                                           |           |        |
-|[1641. Count Sorted Vowel Strings](https://leetcode.com/problemset/all)                                                                |:star::star:      |`Pascal's Triangle`                                        |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/1641.%20Count%20Sorted%20Vowel%20Strings/CPP)                                       |      |
+|[1641. Count Sorted Vowel Strings](https://leetcode.com/problems/count-sorted-vowel-strings)                                           |:star::star:      |`Combinations`                                             |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/1641.%20Count%20Sorted%20Vowel%20Strings/CPP)                                       |      |
 |[1679. Max Number of K-Sum Pairs](https://leetcode.com/problems/max-number-of-k-sum-pairs)                                             |:star::star:      |                                                           |           |        |
 |[2248. Intersection of Multiple Arrays](https://leetcode.com/problems/intersection-of-multiple-arrays)                                 |:star:            |                                                           |           |        |
 |[2249. Count Lattice Points Inside a Circle](https://leetcode.com/problems/count-lattice-points-inside-a-circle)                       |:star::star:      |                                                           |           |        |
