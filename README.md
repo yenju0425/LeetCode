@@ -5,7 +5,7 @@
 
 | Title | Difficulty | Topic | C++ | Python |
 | ----- |------------| :---: | :-: | :----: |
-|[47. Permutations II](https://leetcode.com/problems/permutations-ii)                                                                   |:star::star:      |                                                           |           |        |
+|[47. Permutations II](https://leetcode.com/problems/permutations-ii)                                                                   |:star::star:      |                                                           |[:page_facing_up:](https://github.com/yenju0425/LeetCode/blob/main/Solutions/47.%20Permutations%20II/CPP/Permutations_II.cpp)                                                      |        |
 
 ## Problems
 
