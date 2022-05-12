@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 private:
     string s = "";
     string p = "";
@@ -12,7 +12,7 @@ private:
     vector<vector<int>> dp;
 
 public:
-    bool isMatch(string s, string p) {
+    bool isMatch(string s, string p){
         this->s = s;
         this->p = p;
         this->s_size = s.size();
@@ -20,7 +20,7 @@ public:
         this->dp = vector<vector<int>>(s_size + 1, vector<int>(p_size + 1, -1));
         return isMatch(0, 0);
     }
-    bool isMatch(int si, int pi) {
+    bool isMatch(int si, int pi){
         if(dp[si][pi] != -1){ //check the dp table first
             return bool(dp[si][pi]);
         }
@@ -30,7 +30,7 @@ public:
             match = (si == s_size);
         }
         else{
-            bool fistMatch = si != s_size and (s[si] == p[pi] or p[pi] == '.');// steal from leetcode community lol...
+            bool fistMatch = si != s_size and (s[si] == p[pi] or p[pi] == '.');
             if(pi + 1 != p_size and p[pi + 1] == '*'){ //next pi is '*'
                 match = isMatch(si, pi + 2) or (fistMatch and isMatch(si + 1, pi));
             }

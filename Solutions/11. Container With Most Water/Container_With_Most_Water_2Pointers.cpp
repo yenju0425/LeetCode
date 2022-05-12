@@ -1,5 +1,4 @@
 //Reference: https://leetcode.com/problems/container-with-most-water/discuss/6089/Anyone-who-has-a-O(N)-algorithm/7268
-
 #include <iostream>
 #include <vector>
 
@@ -7,7 +6,7 @@ using namespace std;
 
 class Solution{
 public:
-    int maxArea(vector<int>& height) {
+    int maxArea(vector<int>& height){
         int vectorSize = height.size();
         int currentMax = 0;
 
