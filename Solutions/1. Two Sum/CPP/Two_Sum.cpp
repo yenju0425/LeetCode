@@ -1,6 +1,6 @@
 #include <iostream>
-#include <vector>
 #include <algorithm>
+#include <vector>
 
 using namespace std;
 
@@ -22,7 +22,7 @@ public:
             else if(sum < target){
                 low = low + 1;
             }
-            else{ //solution found
+            else{ //solution found, get index
                 for(vector<int>::iterator iter = nums.begin(); iter != nums.end(); iter = iter + 1){
                     if(*iter == *low){
                         ans.push_back(iter - nums.begin());
@@ -43,11 +43,10 @@ int main(){
 
     Solution *S = new Solution();
 
-    vector<int> ans = S->twoSum(nums, 6);
+    vector<int> result = S->twoSum(nums, 6);
 
-    // iterator practice
-    for(vector<int>::iterator low = ans.begin(); low != ans.end(); low = low + 1){
-        cout << *low << " ";
+    for(vector<int>::iterator i = result.begin(); i != result.end(); i = i + 1){
+        cout << *i << " ";
     }
     cout << endl;
     return 0;

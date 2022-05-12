@@ -1,5 +1,3 @@
-//Reference: https://en.cppreference.com/w/c/language/struct
-
 #include <iostream>
 
 using namespace std;
@@ -66,7 +64,7 @@ int main(){
     ListNode *b1 = new ListNode(9);
     ListNode *b0 = new ListNode(9, b1);
 
-    //999 + 99 = 1008
+    // 299 + 99 = 398
     Solution *S = new Solution;
     ListNode *A = S->addTwoNumbers(b0, a0);
 
