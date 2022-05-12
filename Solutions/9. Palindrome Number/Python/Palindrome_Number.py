@@ -1,7 +1,5 @@
-#Reference: https://docs.python.org/3/tutorial/classes.html
-
 class Solution:
-    def isPalindrome(self, x: int) -> bool: #"->" is an annotation to indicate the data type of the return value
+    def isPalindrome(self, x: int) -> bool:
         s = str(x)
         stringLength = len(s)
 

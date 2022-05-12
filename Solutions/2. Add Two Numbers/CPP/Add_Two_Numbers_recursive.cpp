@@ -60,7 +60,7 @@ int main(){
     ListNode *b0 = new ListNode(9, b1);
 
     // 299 + 99 = 398
-    Solution *S = new Solution;
+    Solution *S = new Solution();
     ListNode *A = S->addTwoNumbers(b0, a0);
 
     while(A != nullptr){
