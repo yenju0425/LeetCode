@@ -2,9 +2,9 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
-    string longestPalindrome(string s) {
+    string longestPalindrome(string s){
         int strigSize = s.size();
 
         //initialize

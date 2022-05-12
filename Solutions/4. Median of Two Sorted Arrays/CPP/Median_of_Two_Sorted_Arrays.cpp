@@ -1,13 +1,11 @@
-//Reference: https://www.geeksforgeeks.org/median-of-two-sorted-arrays-of-different-sizes/
-
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
-    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2){
         int nums1_left = 0;
         int nums1_right = nums1.size();
         int nums2_left = 0;

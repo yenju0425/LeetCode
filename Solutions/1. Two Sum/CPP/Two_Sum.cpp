@@ -4,9 +4,9 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
+    vector<int> twoSum(vector<int>& nums, int target){
         vector<int> sortedNum = nums;
         sort(sortedNum.begin(), sortedNum.end());
         
@@ -39,7 +39,7 @@ public:
 };
 
 int main(){
-    vector<int> nums = {3,2,4};
+    vector<int> nums ={3,2,4};
 
     Solution *S = new Solution();
 

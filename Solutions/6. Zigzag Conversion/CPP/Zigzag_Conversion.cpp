@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
     string convert(string s, int numRows){
         if(numRows <= 1){
