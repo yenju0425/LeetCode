@@ -3,9 +3,9 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
-    int romanToInt(string s) {
+    int romanToInt(string s){
         map<char, int> romanNum;
         romanNum['M'] = 1000;
         romanNum['D'] = 500;

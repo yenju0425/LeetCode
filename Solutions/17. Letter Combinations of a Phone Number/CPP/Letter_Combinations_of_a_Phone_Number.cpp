@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 private:
     vector<vector<string>> charSet{
         {"a", "b", "c"},
