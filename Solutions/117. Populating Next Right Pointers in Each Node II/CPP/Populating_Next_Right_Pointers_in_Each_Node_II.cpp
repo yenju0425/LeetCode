@@ -53,16 +53,38 @@ public:
 };
 
 int main(){
-    Node *n1 = new Node(1);
-    Node *n2 = new Node(2);
-    Node *n3 = new Node(3, n1, n2);
+    Node *n3 = new Node(3);
     Node *n4 = new Node(4);
-    Node *n5 = new Node(5, nullptr, n4);
-    Node *rt = new Node(99, n3, n5);
+    Node *n1 = new Node(1, n3, n4);
+    Node *n5 = new Node(5);
+    Node *n2 = new Node(2, nullptr, n5);
+    Node *rt = new Node(0, n1, n2);
 
     Solution* S = new Solution();
-    
+
     rt = S->connect(rt);
 
+    //using BFS traversal to check every "next" pointer
+    queue<Node*> Q;
+    Q.push(rt);
+    while(!Q.empty()){
+        Node* node = Q.front();
+        Q.pop();
+        cout << node->val << " ";
+        if(node->next == nullptr){
+            cout << "#" << endl;
+        }
+        else{
+            cout << node->next->val << endl;
+        }
+        
+        //push new node to Q
+        if(node->left  != nullptr){
+            Q.push(node->left);
+        }
+        if(node->right != nullptr){
+            Q.push(node->right);
+        }
+    }
     return 0;
 }
