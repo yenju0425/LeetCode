@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include <queue>
 
 using namespace std;
@@ -25,7 +26,29 @@ public:
 class Solution{
 public:
     Node* connect(Node* root){
-        
+        vector<queue<Node*>> Q(2); //two queues are neeeded
+        int idx = 0;
+        if(root != nullptr){
+            Q[idx].push(root);
+        }
+        while(!Q[idx].empty()){
+            int _idx = (idx + 1) % 2; //_idx: another queue's index
+            Node* nextNode = nullptr;
+            while(!Q[idx].empty()){
+                Node* node = Q[idx].front();
+                Q[idx].pop();
+                node->next = nextNode;
+                nextNode = node;
+                if(node->right != nullptr){
+                    Q[_idx].push(node->right);
+                }
+                if(node->left  != nullptr){
+                    Q[_idx].push(node->left);
+                }
+            }
+            idx = _idx; //switch to another Q
+        }
+        return root;
     }
 };
 
@@ -38,6 +61,7 @@ int main(){
     Node *rt = new Node(99, n3, n5);
 
     Solution* S = new Solution();
+    
     rt = S->connect(rt);
 
     return 0;
