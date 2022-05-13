@@ -78,7 +78,7 @@ int main(){
             cout << node->next->val << endl;
         }
         
-        //push new node to Q
+        //push new nodes to Q
         if(node->left  != nullptr){
             Q.push(node->left);
         }

@@ -4,7 +4,7 @@
 
 | Title | Difficulty | Topic | C++ | Python |
 | ----- |------------| :---: | :-: | :----: |
-|[47. Permutations II](https://leetcode.com/problemset/all)                                                                             |:star::star:      |`Permutations`                                             |[:page_facing_up:](https://github.com/yenju0425/LeetCode/blob/main/Solutions/47.%20Permutations%20II/CPP)                                                        |        |
+|[117. Populating Next Right Pointers in Each Node II](https://leetcode.com/problemset/all)                                             |:star::star:      |`BST`                                                      |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/117.%20Populating%20Next%20Right%20Pointers%20in%20Each%20Node%20II/CPP)            |        |
 
 ## Problems
 
@@ -27,6 +27,7 @@
 |[20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses)                                                               |:star:            |                                                           |           |        |
 |[21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists)                                                     |:star:            |                                                           |           |        |
 |[28. Implement strStr()](https://leetcode.com/problems/implement-strstr)                                                               |:star:            |                                                           |           |        |
+|[47. Permutations II](https://leetcode.com/problems/permutations-ii)                                                                   |:star::star:      |`Permutations`                                             |[:page_facing_up:](https://github.com/yenju0425/LeetCode/blob/main/Solutions/47.%20Permutations%20II/CPP)                                                        |        |
 |[56. Merge Intervals](https://leetcode.com/problems/merge-intervals)                                                                   |:star::star:      |                                                           |           |        |
 |[59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii)                                                                 |:star::star:      |                                                           |           |        |
 |[65. Valid Number](https://leetcode.com/problems/valid-number)                                                                         |:star::star::star:|                                                           |           |        |
