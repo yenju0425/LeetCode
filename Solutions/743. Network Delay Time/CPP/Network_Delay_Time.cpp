@@ -8,24 +8,20 @@ using namespace std;
 
 class Vertex{
 private:
-    Vertex* parent;
-    int time2parent;
+    int time;
     bool visited;
     map<int, int> adjList;
 
 public:
     Vertex(){
-        parent = nullptr;
-        time2parent = numeric_limits<int>::max();
+        time = numeric_limits<int>::max();
         visited = false;
     }
 
-    //Utilities:
-    int time2source(){
-        return (this == parent) ? 0 : time2parent + parent->time2source();
-    }
-
     //Element access:
+    int timeToSource(){
+        return time;
+    }
     map<int, int> getAdjList(){
         return adjList;
     }
@@ -34,9 +30,8 @@ public:
     }
 
     //Modifiers:
-    void setParent(Vertex* p, int t){
-        parent = p;
-        time2parent = t;
+    void setTime(int t){
+        time = t;
     }
     void addEdge(int v, int t){
         adjList[v] = t;
@@ -71,24 +66,24 @@ public:
             vertices[v1]->addEdge(v2, t);
         }
 
-        //Prim's Algorithm
-        priority_queue<vector<int>, vector<vector<int>>, greater<vector<int>>> findMin; //findMin[0]: time needed; findMin[1]: next vertex; findMin[2]: from which vertex; 
-        findMin.push(vector<int>{0, k, k});
+        //Dijkstra's Algorithm
+        priority_queue<vector<int>, vector<vector<int>>, greater<vector<int>>> findMin; //findMin[0]: time needed; findMin[1]: next vertex;
+        findMin.push(vector<int>{0, k});
         while(!findMin.empty()){
             int T = findMin.top()[0];
             int V = findMin.top()[1];
-            int P = findMin.top()[2];
             findMin.pop();
 
             if(vertices[V]->isVisited()){
                 continue;
             }
-            
+
             vertices[V]->visit();
-            vertices[V]->setParent(vertices[P], T);
+            vertices[V]->setTime(T);
             numVisited = numVisited + 1;
+
             if(numVisited == n){ //target found
-                return vertices[V]->time2source();
+                return vertices[V]->timeToSource();
             }
 
             //update neighbors
@@ -97,7 +92,7 @@ public:
                 int neighborV = i->first;
                 int neighborT = i->second;
                 if(vertices[neighborV]->isVisited() == false){
-                    findMin.push(vector<int>{neighborT, neighborV, V});
+                    findMin.push(vector<int>{T + neighborT, neighborV});
                 }
             }
         }
