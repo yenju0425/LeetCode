@@ -3,23 +3,23 @@
 
 using namespace std;
 
-struct TreeNode {
+struct TreeNode{
     int val;
     TreeNode *left;
     TreeNode *right;
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    TreeNode() : val(0), left(nullptr), right(nullptr){}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr){}
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right){}
 };
 
-class Solution {
+class Solution{
 private:
     TreeNode *prevoiusNode = nullptr;
     TreeNode *errorNode1   = nullptr;
     TreeNode *errorNode2   = nullptr;
 
 public:
-    void recoverTree(TreeNode* root) {
+    void recoverTree(TreeNode* root){
         DFS_recover(root);
         if(errorNode1 != nullptr and errorNode2 != nullptr){
             int temp        = errorNode1->val;
