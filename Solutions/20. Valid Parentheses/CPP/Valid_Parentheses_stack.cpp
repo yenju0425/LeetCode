@@ -1,12 +1,11 @@
-//review catalan number
 #include <iostream>
 #include <stack>
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
-    bool isValid(string s) {
+    bool isValid(string s){
         stack<char> S;
         for(string::iterator c = s.begin(); c != s.end(); c = c + 1){
             if(*c == '(' or *c == '[' or *c == '{'){

@@ -1,12 +1,12 @@
 # LeetCode
 
-## Daily Challenge
+## :pencil: Daily Challenge
 
 | Title | Difficulty | Topic | C++ | Python |
 | ----- |------------| :---: | :-: | :----: |
 |[743. Network Delay TimeII](https://leetcode.com/problemset/all)                                                                       |:star::star:      |`Shortest Path`                                            |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/743.%20Network%20Delay%20Time/CPP)                                                  |        |
 
-## Problems
+## :brain: Problems
 
 | Title | Difficulty | Topic | C++ | Python |
 | ----- |------------| :---: | :-: | :----: |

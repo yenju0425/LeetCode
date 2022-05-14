@@ -2,21 +2,21 @@
 
 using namespace std;
 
-struct ListNode {
+struct ListNode{
     int val;
     ListNode *next;
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
+    ListNode() : val(0), next(nullptr){}
+    ListNode(int x) : val(x), next(nullptr){}
+    ListNode(int x, ListNode *next) : val(x), next(next){}
 };
 
-class Solution {
+class Solution{
 public:
-    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2){
         ListNode* headNode    = new ListNode(0, list1);
         ListNode* currentNode = headNode;
 
-        // insert list2 to list1
+        //insert list2 to list1
         while(list1 != nullptr or list2 != nullptr){
             if(list1 == nullptr or (list2 != nullptr and list2->val < list1->val)){ //list2 is smaller (insert list2)
                 currentNode->next = list2;
