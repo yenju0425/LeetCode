@@ -80,10 +80,13 @@ public:
             int P = findMin.top()[2];
             findMin.pop();
 
+            if(vertices[V]->isVisited()){
+                continue;
+            }
+            
             vertices[V]->visit();
             vertices[V]->setParent(vertices[P], T);
             numVisited = numVisited + 1;
-
             if(numVisited == n){ //target found
                 return vertices[V]->time2source();
             }
@@ -103,9 +106,9 @@ public:
 };
 
 int main(){
-    vector<vector<int>> G{{2,1,1},{2,3,1},{3,4,1}};
+    vector<vector<int>> G{{1,2,1},{2,3,7},{1,3,4},{2,1,2}};
 
     Solution* S = new Solution();
-    cout << S->networkDelayTime(G, 4, 2) << endl;
+    cout << S->networkDelayTime(G, 4, 1) << endl;
     return 0;
 }
