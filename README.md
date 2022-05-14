@@ -1,6 +1,6 @@
 # LeetCode
 
-## :pencil: Daily Challenge
+## :pencil2: Daily Challenge
 
 | Title | Difficulty | Topic | C++ | Python |
 | ----- |------------| :---: | :-: | :----: |
@@ -24,9 +24,9 @@
 |[14. Longest Common Prefix ](https://leetcode.com/problems/longest-common-prefix)                                                      |:star:            |                                                           |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/14.%20Longest%20Common%20Prefix/CPP)                                                |        |
 |[15. 3Sum](https://leetcode.com/problems/3sum)                                                                                         |:star::star:      |                                                           |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/15.%203Sum/CPP)                                                                     |        |
 |[17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number)                       |:star::star:      |`Combinations`                                             |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/17.%20Letter%20Combinations%20of%20a%20Phone%20Number/CPP)                          |        |
-|[20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses)                                                               |:star:            |                                                           |           |        |
-|[21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists)                                                     |:star:            |                                                           |           |        |
-|[28. Implement strStr()](https://leetcode.com/problems/implement-strstr)                                                               |:star:            |                                                           |           |        |
+|[20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses)                                                               |:star:            |                                                           |:page_facing_up:           |        |
+|[21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists)                                                     |:star:            |`Linked List`                                              |:page_facing_up:           |        |
+|[28. Implement strStr()](https://leetcode.com/problems/implement-strstr)                                                               |:star:            |                                                           |:page_facing_up:           |        |
 |[47. Permutations II](https://leetcode.com/problems/permutations-ii)                                                                   |:star::star:      |`Permutations`                                             |[:page_facing_up:](https://github.com/yenju0425/LeetCode/blob/main/Solutions/47.%20Permutations%20II/CPP)                                                        |        |
 |[56. Merge Intervals](https://leetcode.com/problems/merge-intervals)                                                                   |:star::star:      |                                                           |           |        |
 |[59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii)                                                                 |:star::star:      |                                                           |           |        |
