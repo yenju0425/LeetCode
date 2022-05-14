@@ -4,7 +4,7 @@
 
 | Title | Difficulty | Topic | C++ | Python |
 | ----- |------------| :---: | :-: | :----: |
-|[117. Populating Next Right Pointers in Each Node II](https://leetcode.com/problemset/all)                                             |:star::star:      |`BST`                                                      |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/117.%20Populating%20Next%20Right%20Pointers%20in%20Each%20Node%20II/CPP)            |        |
+|[743. Network Delay TimeII](https://leetcode.com/problemset/all)                                                                       |:star::star:      |`MST`                                                      |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/743.%20Network%20Delay%20Time/CPP)                                                  |        |
 
 ## Problems
 
@@ -34,6 +34,7 @@
 |[94. Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal)                                       |:star:            |                                                           |           |        |
 |[99. Recover Binary Search Tree](https://leetcode.com/problems/recover-binary-search-tree)                                             |:star::star:      |                                                           |           |        |
 |[102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal)                              |:star::star:      |                                                           |           |        |
+|[117. Populating Next Right Pointers in Each Node II](https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii)    |:star::star:      |`BST`                                                      |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/117.%20Populating%20Next%20Right%20Pointers%20in%20Each%20Node%20II/CPP)            |        |
 |[144. Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal)                                    |:star:            |                                                           |           |        |
 |[145. Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal)                                  |:star:            |                                                           |           |        |
 |[168. Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title)                                                |:star:            |                                                           |           |        |
