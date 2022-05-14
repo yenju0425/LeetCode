@@ -1,28 +1,27 @@
 #include <iostream>
-#include <limits>
 #include <vector>
 #include <queue>
-#include <map>
 
 using namespace std;
 
 class Vertex{
 private:
-    int time;
     bool visited;
-    map<int, int> adjList;
+    int time;
+    vector<int> adjList;
 
 public:
-    Vertex(){
-        time = numeric_limits<int>::max();
+    Vertex(int n){
         visited = false;
+        time = -1;                    //"-1": invalid
+        adjList = vector<int>(n, -1); //"-1": invalid
     }
 
     //Element access:
     int timeToSource(){
         return time;
     }
-    map<int, int> getAdjList(){
+    vector<int> getAdjList(){
         return adjList;
     }
     bool isVisited(){
@@ -44,10 +43,7 @@ public:
 class Solution{
 public:
     int networkDelayTime(vector<vector<int>>& times, int n, int k){ //n vertices, start from k
-        map<int, Vertex*> vertices;
-        for(int i = 1; i <= n; i++){
-            vertices[i] = nullptr;
-        }
+        vector<Vertex*> vertices(n + 1, nullptr); //vertices[0] is a dummy Vertex
         int numVisited = 0;
 
         //build graph
@@ -57,10 +53,10 @@ public:
             int t  = (*i)[2];
 
             if(vertices[v1] == nullptr){
-                vertices[v1] = new Vertex();
+                vertices[v1] = new Vertex(n + 1);
             }
             if(vertices[v2] == nullptr){
-                vertices[v2] = new Vertex();
+                vertices[v2] = new Vertex(n + 1);
             }
 
             vertices[v1]->addEdge(v2, t);
@@ -87,13 +83,14 @@ public:
             }
 
             //update neighbors
-            map<int, int> neighbors = vertices[V]->getAdjList();
-            for(map<int, int>::iterator i = neighbors.begin(); i != neighbors.end(); i++){
-                int neighborV = i->first;
-                int neighborT = i->second;
-                if(vertices[neighborV]->isVisited() == false){
-                    findMin.push(vector<int>{T + neighborT, neighborV});
+            vector<int> neighbors = vertices[V]->getAdjList();
+            for(int i = 1; i <= n; i++){
+                int neighborV = i;
+                int neighborT = neighbors[i];
+                if(neighborT == -1 or vertices[neighborV]->isVisited()){
+                    continue;
                 }
+                findMin.push(vector<int>{T + neighborT, neighborV});
             }
         }
         return -1;
