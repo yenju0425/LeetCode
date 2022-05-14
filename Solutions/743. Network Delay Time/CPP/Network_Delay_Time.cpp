@@ -64,6 +64,10 @@ public:
             if(vertices[v1] == nullptr){
                 vertices[v1] = new Vertex();
             }
+            if(vertices[v2] == nullptr){
+                vertices[v2] = new Vertex();
+            }
+
             vertices[v1]->addEdge(v2, t);
         }
 
@@ -89,10 +93,7 @@ public:
             for(map<int, int>::iterator i = neighbors.begin(); i != neighbors.end(); i++){
                 int neighborV = i->first;
                 int neighborT = i->second;
-                if(vertices[neighborV] == nullptr){
-                    numVisited = numVisited + 1;
-                }
-                else if(vertices[neighborV]->isVisited() == false){
+                if(vertices[neighborV]->isVisited() == false){
                     findMin.push(vector<int>{neighborT, neighborV, V});
                 }
             }
