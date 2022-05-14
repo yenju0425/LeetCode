@@ -2,7 +2,7 @@
 
 using namespace std;
 
-enum state{
+enum state{ //finite state machine
     init,
     S_,
     bD,
