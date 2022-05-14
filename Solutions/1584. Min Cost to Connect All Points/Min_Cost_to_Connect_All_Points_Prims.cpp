@@ -2,7 +2,6 @@
 //Reference: http://alrightchiu.github.io/SecondRound/minimum-spanning-treeintrojian-jie.html
 #include <iostream>
 #include <vector>
-#include <queue>
 #include <limits>
 
 using namespace std;
