@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
     vector<vector<int>> combinationSum3(int k, int n){
         return combinationSum3(k, n, 1);

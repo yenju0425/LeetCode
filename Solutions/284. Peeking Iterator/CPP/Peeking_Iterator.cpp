@@ -1,4 +1,3 @@
-//Reference: https://www.geeksforgeeks.org/multiple-inheritance-in-c/
 #include <iostream>
 #include <vector>
 
@@ -9,7 +8,7 @@ struct Data{
 	Data* nextData = nullptr;
 };
 
-class Iterator {
+class Iterator{
 private:
     Data* data; //pointer to the current data in the lisked-list
     
@@ -29,7 +28,7 @@ public:
 		data = iter.data;
 	}
 
-    // Returns the nextData element in the iteration.
+    //Returns the nextData element in the iteration.
 	int next(){
 		if(data != nullptr){
 			data = data->nextData;
@@ -40,7 +39,7 @@ public:
 		}
 	}
 
-    // Returns true if the iteration has more elements.
+    //Returns true if the iteration has more elements.
     bool hasNext() const{
 		return (data != nullptr and data->nextData != nullptr);
 	}
@@ -51,23 +50,23 @@ public:
 	PeekingIterator(const vector<int>& nums) : Iterator(nums){ //calling parent's constructor
 	}
 	
-    // Returns the next element in the iteration without advancing the iterator.
-	int peek() {
+    //Returns the next element in the iteration without advancing the iterator.
+	int peek(){
         PeekingIterator temp = (*this); //duplicate (don't want to move the current index to next)
         return temp.next();
 	}
 	
-	int next() {
+	int next(){
 	    return Iterator::next();
 	}
 	
-	bool hasNext() const {
+	bool hasNext() const{
 	    return Iterator::hasNext();
 	}
 };
 
 int main(){
-    vector<int> v = {};
+    vector<int> v ={};
 	PeekingIterator* P = new PeekingIterator(v);
 	cout << P->hasNext() << endl;
 	cout << P->peek()    << endl;
