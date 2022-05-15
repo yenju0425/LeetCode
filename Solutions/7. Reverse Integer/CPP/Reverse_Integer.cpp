@@ -1,5 +1,4 @@
 #include <iostream>
-#include <limits>
 
 using namespace std;
 
@@ -13,7 +12,7 @@ public:
         int temp = reversed_n * 10;
         reversed_n = temp + n % 10;
         n = n / 10;
-        
+
         if((reversed_n > 0 and temp < 0) or (reversed_n < 0 and temp > 0)){
             return true;
         }
