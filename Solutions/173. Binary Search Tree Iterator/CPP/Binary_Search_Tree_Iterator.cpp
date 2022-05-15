@@ -4,21 +4,21 @@
 
 using namespace std;
 
-struct TreeNode {
+struct TreeNode{
     int val;
     TreeNode *left;
     TreeNode *right;
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    TreeNode() : val(0), left(nullptr), right(nullptr){}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr){}
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right){}
 };
 
-class BSTIterator {
+class BSTIterator{
 private:
     queue<TreeNode*> Tree;
 
 public:
-    BSTIterator(TreeNode* root) {
+    BSTIterator(TreeNode* root){
         //Practice: using stack to store value (in-order, how about pre-order and post-order)
         TreeNode* currentNode = root;
         stack<TreeNode*> S;
@@ -36,7 +36,7 @@ public:
         }
     }
     
-    int next() {
+    int next(){
         if(Tree.empty()){
             return -1;
         }
@@ -47,7 +47,7 @@ public:
         }
     }
     
-    bool hasNext() {
+    bool hasNext(){
         return !Tree.empty();
     }
 };

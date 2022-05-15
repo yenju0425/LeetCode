@@ -7,12 +7,12 @@ struct TreeNode{
     int val;
     TreeNode* left;
     TreeNode* right;
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
+    TreeNode() : val(0), left(nullptr), right(nullptr){}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr){}
+    TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right){}
 };
 
-class Solution {
+class Solution{
 public:
     void concatenate(vector<int> &target, vector<int> source){
         for(int i = 0; i < source.size(); i++){
@@ -20,15 +20,15 @@ public:
         }
     }
 
-    vector<int> preorderTraversal(TreeNode* root){
-        vector<int> preorder;
+    vector<int> postorderTraversal(TreeNode* root){
+        vector<int> postorder;
         if(root == nullptr){
-            return preorder;
+            return postorder;
         }
-        concatenate(preorder, vector<int>{root->val});
-        concatenate(preorder, preorderTraversal(root->left));
-        concatenate(preorder, preorderTraversal(root->right));
-        return preorder;
+        concatenate(postorder, postorderTraversal(root->left));
+        concatenate(postorder, postorderTraversal(root->right));
+        concatenate(postorder, vector<int>{root->val});
+        return postorder;
     }
 };
 
@@ -43,8 +43,8 @@ int main(){
 
     TreeNode* root  = new TreeNode(2, node1, node4);
 
-    cout << "preorder  : ";
-    vector<int> ans = S->preorderTraversal(root);
+    cout << "postorder  : ";
+    vector<int> ans = S->postorderTraversal(root);
     for(int i = 0; i < ans.size(); i++){
         cout << ans[i] << " ";
     }
