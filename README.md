@@ -1,4 +1,4 @@
-# LeetCode
+# LeetCode Solutions
 
 ## :pencil2: Daily Challenge
 
