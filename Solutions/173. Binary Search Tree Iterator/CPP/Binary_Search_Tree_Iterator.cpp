@@ -19,7 +19,6 @@ private:
 
 public:
     BSTIterator(TreeNode* root){
-        //Practice: using stack to store value (in-order, how about pre-order and post-order)
         TreeNode* currentNode = root;
         stack<TreeNode*> S;
         while(currentNode != nullptr || !S.empty()){
