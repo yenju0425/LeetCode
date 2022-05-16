@@ -51,8 +51,8 @@ public:
                     }
                 }
             }
-            idx = _idx; //switch to another Q
             stepCounter = stepCounter + 1;
+            idx = _idx;
         }
         return -1;
     }
