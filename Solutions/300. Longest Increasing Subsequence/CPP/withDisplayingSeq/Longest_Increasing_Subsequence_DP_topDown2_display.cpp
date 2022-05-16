@@ -3,16 +3,16 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 private:
-    vector<vector<int>> dp_len;
-    vector<vector<vector<int>>> dp_seq;
+    vector<int> dp_len;
+    vector<vector<int>> dp_seq;
 
 public:
-    int lengthOfLIS(vector<int>& nums) {
+    int lengthOfLIS(vector<int>& nums){
         int lengthOfnums = nums.size();
-        dp_len = vector<vector<int>>(lengthOfnums + 1, vector<int>(lengthOfnums, -1)); //dp_len.shape() = (n + 1) * n, initialized with "-1"
-        dp_seq = vector<vector<vector<int>>>(lengthOfnums + 1, vector<vector<int>>(lengthOfnums, vector<int>())); //initialized every entry with empty vector
+        dp_len = vector<int>(lengthOfnums + 1, -1); //dp_len.shape() = n + 1, initialized with "-1"
+        dp_seq = vector<vector<int>>(lengthOfnums + 1, vector<int>()); //initialized every entry with empty vector
 
         vector<int> lis = LIS(nums, lengthOfnums, 0); //lengthOfnums: previous_i is null
         int sizeOflis = lis.size();
@@ -25,6 +25,7 @@ public:
 
         return sizeOflis; 
     }
+
     vector<int> LIS(vector<int>& nums, int previous_i, int i){
         int lengthOfnums = nums.size();
 
@@ -33,8 +34,8 @@ public:
             return s;
         }
 
-        if(dp_len[previous_i][i] != -1){ //the sequence stored in the 2D-vector is valid
-            return dp_seq[previous_i][i];
+        if(dp_len[previous_i] != -1){ //the sequence stored in the 2D-vector is valid
+            return dp_seq[previous_i];
         }
 
         //The remianing section deal with the situation we can't decide the LIS immediately
@@ -50,13 +51,13 @@ public:
 
         //update dp_len and dp_seq
         if(take_n > skip_n){
-            dp_len[previous_i][i] = take_n;
-            dp_seq[previous_i][i] = s_take_n;
+            dp_len[previous_i] = take_n;
+            dp_seq[previous_i] = s_take_n;
             s = s_take_n;
         }
         else{
-            dp_len[previous_i][i] = skip_n;
-            dp_seq[previous_i][i] = s_skip_n;
+            dp_len[previous_i] = skip_n;
+            dp_seq[previous_i] = s_skip_n;
             s = s_skip_n;
         }
         return s;
@@ -66,7 +67,7 @@ public:
 int main(){
     vector<int> seq;
 
-    for(int i = 0; i < 1400; i++){
+    for(int i = 0; i < 10; i++){
         seq.push_back(i);
     }
 

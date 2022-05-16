@@ -3,9 +3,9 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
-    int lengthOfLIS(vector<int>& nums) {
+    int lengthOfLIS(vector<int>& nums){
         vector<int> lis = LIS(nums, -1, 0); //-1: previous_i is null
         int n = lis.size();
 
@@ -17,6 +17,7 @@ public:
 
         return n; 
     }
+
     vector<int> LIS(vector<int>& nums, int previous_i, int i){
         vector<int> s;
         if(i >= nums.size()){
@@ -40,7 +41,7 @@ public:
 int main(){
     vector<int> seq;
 
-    for(int i = 0; i < 27; i++){
+    for(int i = 0; i < 5; i++){
         seq.push_back(i);
     }
 

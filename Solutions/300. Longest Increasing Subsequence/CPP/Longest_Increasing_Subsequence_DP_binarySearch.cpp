@@ -8,7 +8,7 @@ private:
     vector<int> lis_multiverse;
 
 public:
-    int lengthOfLIS(vector<int>& nums) {
+    int lengthOfLIS(vector<int>& nums){
         int lengthOfnums = nums.size();
         for(int i = 0; i < lengthOfnums; i = i + 1){
             //using binary search to find out the timespace that we can develope from
