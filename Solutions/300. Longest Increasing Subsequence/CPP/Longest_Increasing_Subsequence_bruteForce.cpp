@@ -9,12 +9,6 @@ public:
         vector<int> lis = LIS(nums, -1, 0); //-1: previous_i is null
         int n = lis.size();
 
-        //this part is to show the fianl LIS result
-        for(int i = n - 1; i >= 0; i = i - 1){
-            cout << lis[i] << " ";
-        }
-        cout << endl;
-
         return n; 
     }
 
@@ -41,7 +35,7 @@ public:
 int main(){
     vector<int> seq;
 
-    for(int i = 0; i < 5; i++){
+    for(int i = 0; i < 10; i++){
         seq.push_back(i);
     }
 
