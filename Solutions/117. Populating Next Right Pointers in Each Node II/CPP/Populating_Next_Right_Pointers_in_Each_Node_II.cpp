@@ -53,12 +53,12 @@ public:
 };
 
 int main(){
-    Node *n3 = new Node(3);
-    Node *n4 = new Node(4);
-    Node *n1 = new Node(1, n3, n4);
-    Node *n5 = new Node(5);
-    Node *n2 = new Node(2, nullptr, n5);
-    Node *rt = new Node(0, n1, n2);
+    Node* n3 = new Node(3);
+    Node* n4 = new Node(4);
+    Node* n1 = new Node(1, n3, n4);
+    Node* n5 = new Node(5);
+    Node* n2 = new Node(2, nullptr, n5);
+    Node* rt = new Node(0, n1, n2);
 
     Solution* S = new Solution();
 
