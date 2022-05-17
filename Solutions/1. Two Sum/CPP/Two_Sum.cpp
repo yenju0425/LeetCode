@@ -41,7 +41,7 @@ public:
 int main(){
     vector<int> nums ={3,2,4};
 
-    Solution *S = new Solution();
+    Solution* S = new Solution();
 
     vector<int> result = S->twoSum(nums, 6);
 
