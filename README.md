@@ -4,7 +4,7 @@
 
 | Title | Difficulty | Hashtags | C++ | Python |
 | ----- |------------| :------: | :-: | :----: |
-|[1379. Find a Corresponding Node of a BT in a Clone of That BT](https://leetcode.com/problemset/all)                                                       |:star::star:      |`Binary Tree` `DFS`         |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/1379.%20Find%20a%20Corresponding%20Node%20of%20a%20Binary%20Tree%20in%20a%20Clone%20of%20That%20Tree/CPP)        |                                                                                                                                                                                                 |
+|[1379. Find a Corresponding Node of a Binary Tree......](https://leetcode.com/problemset/all)                                                              |:star::star:      |`Binary Tree` `DFS`         |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/1379.%20Find%20a%20Corresponding%20Node%20of%20a%20Binary%20Tree%20in%20a%20Clone%20of%20That%20Tree/CPP)        |                                                                                                                                                                                                 |
 
 ## :brain: Problems
 
