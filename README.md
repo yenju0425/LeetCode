@@ -4,7 +4,7 @@
 
 | Title | Difficulty | Hashtags | C++ | Python |
 | ----- |------------| :------: | :-: | :----: |
-|[1192. Critical Connections in a Network](https://leetcode.com/problemset/all)                                                                             |:star::star:      |`SCC`                       |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/1192.%20Critical%20Connections%20in%20a%20Network/CPP)                                                           |                                                                                                                                                                                                 |
+|[1192. Critical Connections in a Network](https://leetcode.com/problemset/all)                                                                             |:star::star::star:|`SCC`                       |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/1192.%20Critical%20Connections%20in%20a%20Network/CPP)                                                           |                                                                                                                                                                                                 |
 
 ## :brain: Problems
 
