@@ -13,7 +13,7 @@ struct TreeNode{
 
 class Solution{
 private:
-    int currentSum = 0; //it's better to initialize by yourself
+    int currentSum = 0;
     
 public:
     TreeNode* convertBST(TreeNode* root){
