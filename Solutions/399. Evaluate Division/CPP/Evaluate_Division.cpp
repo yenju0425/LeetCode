@@ -80,9 +80,9 @@ public:
 };
 
 int main(){
-    vector<vector<string>> equations = {{"a", "b"}, {"d", "b"}, {"w", "x"}, {"z", "x"}, {"w", "d"}};
-    vector<double> values = {2, 4, 5, 7, 8};
-    vector<vector<string>> queries = {{"a", "z"}};
+    vector<vector<string>> equations{{"a", "b"}, {"d", "b"}, {"w", "x"}, {"z", "x"}, {"w", "d"}};
+    vector<double> values{2, 4, 5, 7, 8};
+    vector<vector<string>> queries{{"a", "z"}};
 
     Solution* S = new Solution();
     vector<double> ans = S->calcEquation(equations, values, queries);

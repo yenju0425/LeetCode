@@ -38,6 +38,7 @@ public:
         return duration/passengers;
     }
 };
+
 int main(){
     UndergroundSystem* U = new UndergroundSystem();
 

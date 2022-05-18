@@ -39,7 +39,7 @@ public:
 };
 
 int main(){
-    vector<int> nums ={3,2,4};
+    vector<int> nums{3, 2, 4};
 
     Solution* S = new Solution();
 

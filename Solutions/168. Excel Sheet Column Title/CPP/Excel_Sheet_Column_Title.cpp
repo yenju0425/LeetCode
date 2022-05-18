@@ -3,9 +3,9 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
-    string convertToTitle(int columnNumber) {
+    string convertToTitle(int columnNumber){
         string result = "";
         while(columnNumber > 0){
             result.push_back(char((columnNumber - 1) % 26 + 65));

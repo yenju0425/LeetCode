@@ -18,7 +18,7 @@ public:
 
 int main(){
     Solution* S = new Solution();
-    vector<int> v ={3, 1, 2, 4};
+    vector<int> v{3, 1, 2, 4};
     v = S->sortArrayByParity(v);
 
     for(auto i : v){

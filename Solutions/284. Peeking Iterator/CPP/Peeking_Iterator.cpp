@@ -66,7 +66,7 @@ public:
 };
 
 int main(){
-    vector<int> v ={};
+    vector<int> v{};
 	PeekingIterator* P = new PeekingIterator(v);
 	cout << P->hasNext() << endl;
 	cout << P->peek()    << endl;

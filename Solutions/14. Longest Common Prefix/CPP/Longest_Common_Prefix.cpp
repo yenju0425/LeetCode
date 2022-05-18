@@ -23,7 +23,7 @@ public:
 
 int main(){
     Solution* S = new Solution();
-    vector<string> vs ={
+    vector<string> vs{
         "a"
     };
     cout << S->longestCommonPrefix(vs) << endl;

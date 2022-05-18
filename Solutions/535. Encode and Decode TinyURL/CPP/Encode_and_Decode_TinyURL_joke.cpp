@@ -4,7 +4,6 @@ using namespace std;
 
 class Solution{
 public:
-
     string encode(string longUrl){
         return longUrl;
     }

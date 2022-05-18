@@ -3,9 +3,9 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
-    vector<vector<int>> generateMatrix(int n) {
+    vector<vector<int>> generateMatrix(int n){
         vector<vector<int>> matrix(n, vector<int>(n, 0));
         for(int i = 0; i < n; i = i + 1){
             for(int j = 0; j < n; j = j + 1){

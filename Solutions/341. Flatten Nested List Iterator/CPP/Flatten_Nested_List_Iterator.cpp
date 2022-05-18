@@ -84,7 +84,7 @@ public:
 int main(){
     NestedInteger I0(vector<NestedInteger>{});
 
-    vector<NestedInteger> V1 = {I0};
+    vector<NestedInteger> V1{I0};
 
     NestedIterator* N = new NestedIterator(V1);
     while(N->hasNext()){

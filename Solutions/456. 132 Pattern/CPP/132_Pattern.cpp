@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
     bool find132pattern(vector<int>& nums){
         int nums_size = nums.size();
@@ -37,7 +37,7 @@ public:
 };
 
 int main(){
-    vector<int> test = {-2, 1, -2};
+    vector<int> test{-2, 1, -2};
     Solution* S = new Solution();
     cout << S->find132pattern(test) << endl;
     return 0;

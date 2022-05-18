@@ -14,7 +14,7 @@ enum state{ //finite state machine
     N
 };
 
-class Solution {
+class Solution{
 public:
     bool isNumber(string s) {
         state S = init;

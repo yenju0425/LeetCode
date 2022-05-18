@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals){
         sort(intervals.begin(), intervals.end()); //still can sort
@@ -25,7 +25,7 @@ public:
 
 int main(){
     Solution* S = new Solution();
-    vector<vector<int>> v {
+    vector<vector<int>> v{
         {1, 4},
         {0, 2},
         {3, 5}
