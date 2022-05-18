@@ -8,7 +8,7 @@ using namespace std;
 class Solution{
 public:
     vector<vector<int>> permutation(vector<pair<int, int>> numList){
-        vector<vector<int>> P = {};
+        vector<vector<int>> P{};
         int numList_size = numList.size();
         for(int i = 0; i < numList_size; i++){
             //get the first number

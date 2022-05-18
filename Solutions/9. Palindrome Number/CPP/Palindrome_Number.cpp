@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution{
 public:
-    bool isPalindrome(int x) {
+    bool isPalindrome(int x){
         string s  = to_string(x);
         int stringLength = s.length();
 

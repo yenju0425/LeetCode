@@ -16,7 +16,7 @@ enum state{ //finite state machine
 
 class Solution{
 public:
-    bool isNumber(string s) {
+    bool isNumber(string s){
         state S = init;
         for(string::iterator i = s.begin(); i != s.end(); i = i + 1){
             switch (S){
