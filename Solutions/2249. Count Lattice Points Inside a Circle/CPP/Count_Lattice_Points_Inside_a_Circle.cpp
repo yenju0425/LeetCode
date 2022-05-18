@@ -38,7 +38,7 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution* S = new Solution();
 
     vector<vector<int>> ciecles{
         {2, 2, 2}

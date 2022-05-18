@@ -38,12 +38,12 @@ int main(){
         {7, 8, 9}
     };
 
-    Solution *S = new Solution();
-    S->shiftGrid(vect, 1);
+    Solution* S = new Solution();
+
+    vect = S->shiftGrid(vect, 1);
 
     int m = vect.size();
     int n = vect[0].size();
-
     for(int i = 0; i < m; i = i + 1){
         for(int j = 0; j < n; j = j + 1){
             cout << vect[i][j] << " ";

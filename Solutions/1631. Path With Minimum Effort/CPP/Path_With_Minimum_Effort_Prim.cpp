@@ -73,12 +73,15 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution* S = new Solution();
+
     vector<vector<int>> Map{
         {1,2,2},
         {3,8,2},
         {5,3,5}
     };
+
     cout << S->minimumEffortPath(Map) << endl;
+
     return 0;
 }

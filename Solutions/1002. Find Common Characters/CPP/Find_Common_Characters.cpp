@@ -39,11 +39,15 @@ public:
 };
 
 int main(){
-    vector<string> voc{"bella","label","roller"};
+    vector<string> voc{"bella", "label", "roller"};
+
     Solution* S = new Solution;
+
     vector<string> ans = S->commonChars(voc);
+
     for(auto i : ans){
         cout << i << " ";
     }
+
     return 0;
 }

@@ -30,9 +30,9 @@ public:
 
 int main(){
     vector<int> nums{1, 2, 3, 4};
-    int k = 5;
 
     Solution* S = new Solution();
-    cout << S->maxOperations(nums, k) << endl;;
+
+    cout << S->maxOperations(nums, 5) << endl;;
     return 0;
 }

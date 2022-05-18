@@ -52,7 +52,7 @@ int main(){
         {-4, 1}
     };
 
-    Solution *S = new Solution();
+    Solution* S = new Solution();
     cout << S->minCostConnectPoints(points);
     return 0;
 }

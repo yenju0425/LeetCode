@@ -29,6 +29,7 @@ int main(){
         "aabd",
         "c"
     };
+
     string s = "aabdk";
 
     Solution* S = new Solution();

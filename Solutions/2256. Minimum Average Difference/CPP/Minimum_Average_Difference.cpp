@@ -42,9 +42,7 @@ public:
 };
 
 int main(){
-    vector<int> nums{
-        5
-    };
+    vector<int> nums{5};
 
     Solution* S = new Solution();
 

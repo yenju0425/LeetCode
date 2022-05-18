@@ -11,6 +11,8 @@ public:
 
 int main(){
     Solution* S = new Solution();
+
     cout << S->countVowelStrings(33) << endl;
+
     return 0;
 }

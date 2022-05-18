@@ -39,7 +39,7 @@ public:
     }
 };
 int main(){
-    UndergroundSystem *U = new UndergroundSystem();
+    UndergroundSystem* U = new UndergroundSystem();
 
     U->checkIn(45, "Leyton", 3);
     U->checkIn(32, "Paradise", 8);

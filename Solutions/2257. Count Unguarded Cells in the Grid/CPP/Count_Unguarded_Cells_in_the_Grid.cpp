@@ -51,9 +51,9 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    vector<vector<int>> guards{{0,0},{1,1},{2,3}};
+    vector<vector<int>> guards{{0, 0}, {1, 1}, {2, 3}};
 
-    vector<vector<int>> walls{{0,1},{2,2},{1,4}};
+    vector<vector<int>> walls{{0, 1}, {2, 2}, {1, 4}};
 
     cout << S->countUnguarded(4, 6, guards, walls) << endl;
 

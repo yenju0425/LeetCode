@@ -63,7 +63,9 @@ public:
 
 int main(){
     Solution* S = new Solution();
+
     string s = "gfedcbaaaa";
+
     vector<vector<int>> swapPairs{
         {0,1},
         {3,1},
@@ -71,6 +73,8 @@ int main(){
         {5,3},
         {4,0}
     };
+
     cout << S->smallestStringWithSwaps(s, swapPairs) << endl;
+
     return 0;
 }

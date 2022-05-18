@@ -52,6 +52,7 @@ int main(){
     TreeNode* _root  = new TreeNode(2, _node1, _node4);
 
     Solution* S = new Solution();
+
     cout << S->getTargetCopy(root, _root, node4) << endl;
     cout << "Real Target: " << _node4 << endl;
 
