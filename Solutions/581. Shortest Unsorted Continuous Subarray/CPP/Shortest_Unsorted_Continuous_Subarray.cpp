@@ -4,9 +4,9 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
-    int findUnsortedSubarray(vector<int>& nums) {
+    int findUnsortedSubarray(vector<int>& nums){
         int sizeOfnums = nums.size();
 
         bool find_min = false;
@@ -54,7 +54,7 @@ public:
 
 int main(){
     Solution* S = new Solution();
-    vector<int> nums = {1, 2, 3, 2, 3, 3};
+    vector<int> nums ={1, 2, 3, 2, 3, 3};
     cout << S->findUnsortedSubarray(nums) << endl;
     return 0;
 }

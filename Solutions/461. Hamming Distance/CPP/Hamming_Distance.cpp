@@ -2,14 +2,14 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
-    int hammingDistance(int x, int y) {
+    int hammingDistance(int x, int y){
         int distance = 0;
-        while(x != 0 or y != 0){
-            distance = distance + abs(x % 2 - y % 2);
-            x = x / 2;
-            y = y / 2;
+        x = x ^ y;
+        while(x){
+            distance += x & 1;
+            x >>= 1;
         }
         return distance;
     }

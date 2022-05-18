@@ -2,14 +2,14 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
 
-    string encode(string longUrl) {
+    string encode(string longUrl){
         return longUrl;
     }
 
-    string decode(string shortUrl) {
+    string decode(string shortUrl){
         return shortUrl;
     }
 };

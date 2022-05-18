@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 private:
     string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
     string prefix     = "https://www.shortURL.com/";
@@ -17,7 +17,7 @@ public:
         srand(time(nullptr));
     }
 
-    string encode(string longUrl) {
+    string encode(string longUrl){
         string shortUrl = prefix;
         for(int i = 0; i < urlLength; i++){
             shortUrl += characters[rand() % 62];
@@ -26,7 +26,7 @@ public:
         return shortUrl;
     }
 
-    string decode(string shortUrl) {
+    string decode(string shortUrl){
         return DB[shortUrl];
     }
 };
