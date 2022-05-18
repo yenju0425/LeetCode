@@ -2,7 +2,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
     bool backspaceCompare(string s, string t){
         string new_s = "";

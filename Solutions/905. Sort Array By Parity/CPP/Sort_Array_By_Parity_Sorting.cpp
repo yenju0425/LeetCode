@@ -4,9 +4,9 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
-    vector<int> sortArrayByParity(vector<int>& nums) {
+    vector<int> sortArrayByParity(vector<int>& nums){
         sort(nums.begin(), nums.end(), [](int a, int b){
             if(a % 2 != b % 2){
                 return bool(b % 2);
@@ -21,7 +21,7 @@ public:
 
 int main(){
     Solution* S = new Solution();
-    vector<int> v = {3, 1, 2, 4};
+    vector<int> v ={3, 1, 2, 4};
     v = S->sortArrayByParity(v);
 
     for(auto i : v){

@@ -3,24 +3,26 @@
 
 using namespace std;
 
-class MyHashSet {
+class MyHashSet{
     vector<vector<int>> H;
 
 public:
-    MyHashSet() {
-        H = vector<vector<int>>(1000, vector<int>());
+    MyHashSet(){
+        H = vector<vector<int>>(1024);
     }
     
-    void add(int key) {
-        //modulo hash function
-        if(!contains(key)){
-            int index = key % 1000;
-            H[index].push_back(key);
+    void add(int key){
+        int index = key & 1023;
+        for(vector<int>::iterator i = H[index].begin(); i != H[index].end(); i = i + 1){
+            if(*i == key){
+                return;
+            }
         }
+        H[index].push_back(key);
     }
     
-    void remove(int key) {
-        int index = key % 1000;
+    void remove(int key){
+        int index = key & 1023;
         for(vector<int>::iterator i = H[index].begin(); i != H[index].end(); i = i + 1){
             if(*i == key){
                 H[index].erase(i);
@@ -29,8 +31,8 @@ public:
         }
     }
     
-    bool contains(int key) {
-        int index = key % 1000;
+    bool contains(int key){
+        int index = key & 1023;
         for(vector<int>::iterator i = H[index].begin(); i != H[index].end(); i = i + 1){
             if(*i == key){
                 return true;
@@ -45,7 +47,7 @@ int main(){
     H->add(0);
     H->add(0);
     H->add(34);
-    H->remove(34);
+    H->remove(0);
     cout << H->contains(34) << endl;
     return 0;
 }

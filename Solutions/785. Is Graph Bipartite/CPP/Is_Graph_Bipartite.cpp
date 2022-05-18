@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
     bool findNext(queue<int> &Q, vector<int> &visited){
         if(!Q.empty()){
@@ -20,7 +20,7 @@ public:
         return false; //all nodes are visited 
     }
 
-    bool isBipartite(vector<vector<int>>& graph) {
+    bool isBipartite(vector<vector<int>>& graph){
         vector<int> visited(graph.size(), 0); //'0' = not visited, '1' = group_1, '2' = group_2
         queue<int> Q;
         while(findNext(Q, visited)){
@@ -46,7 +46,7 @@ public:
 
 int main(){
     Solution *S = new Solution();
-    vector<vector<int>> G = {
+    vector<vector<int>> G{
         {1,3},
         {0,2},
         {1,3},
