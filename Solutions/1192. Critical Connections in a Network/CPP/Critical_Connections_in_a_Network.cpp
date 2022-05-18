@@ -52,11 +52,10 @@ public:
             if(servers[neighbor]->time == -1){
                 setCGs(neighbor, id, time + 1);
             }
-
             minTime = min(minTime, servers[neighbor]->time);
         }
 
-        if(time == minTime and parent != -1){
+        if(time == minTime and parent != -1){ //magic
             CCs.push_back(vector<int>{parent, id});
         }
 
@@ -64,7 +63,7 @@ public:
     }
 
     vector<vector<int>> findCriticalConnections(){
-        //setConnectonTimes, using DFS
+        //DFS
         setCGs(0, -1, 0);
         return CCs;
     }
@@ -78,7 +77,6 @@ public:
 
         //find CCs
         vector<vector<int>> CCs = S->findCriticalConnections();
-        
         return CCs;
     }
 };
