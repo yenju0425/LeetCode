@@ -29,7 +29,7 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution* S = new Solution();
     cout << S->romanToInt("MCMVII") << endl;
     return 0;
 }

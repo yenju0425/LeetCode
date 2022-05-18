@@ -35,7 +35,7 @@ public:
 };
 
 int main(){
-    // original
+    //original
     TreeNode* node0 = new TreeNode(0);
     TreeNode* node3 = new TreeNode(3);
     TreeNode* node5 = new TreeNode(5);
@@ -43,7 +43,7 @@ int main(){
     TreeNode* node4 = new TreeNode(4, node3, node5);
     TreeNode* root  = new TreeNode(2, node1, node4);
 
-    // cloned
+    //cloned
     TreeNode* _node0 = new TreeNode(0);
     TreeNode* _node3 = new TreeNode(3);
     TreeNode* _node5 = new TreeNode(5);

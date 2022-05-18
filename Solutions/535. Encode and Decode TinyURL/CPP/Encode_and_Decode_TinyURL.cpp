@@ -32,7 +32,7 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution* S = new Solution();
 
     string s = "https://www.apple.com/tw/";
     string e = S->encode(s);

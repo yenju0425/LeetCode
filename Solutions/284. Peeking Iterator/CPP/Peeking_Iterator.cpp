@@ -17,7 +17,7 @@ public:
 		Data* preNode = nullptr;
 		for(vector<int>::const_iterator i = nums.end() - 1; i - nums.begin() >= 0; i--){
 			Data* node = new Data();
-			node->val  =* i;
+			node->val  = *i;
 			node->nextData = preNode;
 			preNode = node;
 		}

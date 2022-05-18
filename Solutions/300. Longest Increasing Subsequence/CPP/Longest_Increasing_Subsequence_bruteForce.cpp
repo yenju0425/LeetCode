@@ -39,7 +39,7 @@ int main(){
         seq.push_back(i);
     }
 
-    Solution *S = new Solution();
+    Solution* S = new Solution();
 
     cout << S->lengthOfLIS(seq) << endl;
 

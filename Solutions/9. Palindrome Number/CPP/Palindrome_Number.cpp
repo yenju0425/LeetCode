@@ -19,7 +19,7 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution* S = new Solution();
     cout << S->isPalindrome(121) << endl;
     return 0;
 }

@@ -20,7 +20,7 @@ public:
         }
     }
     
-    // Get the root of a vertex (the root of the root must be itself)
+    //Get the root of a vertex (the root of the root must be itself)
     int find(int x){
         if (root[x] != x){
             root[x] = find(root[x]);
@@ -28,7 +28,7 @@ public:
         return x;
     }
 
-    // Perform the union of two components
+    //Perform the union of two components
     void unionSet(int x, int y){
         int rootX = find(x);
         int rootY = find(y);

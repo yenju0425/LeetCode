@@ -15,12 +15,12 @@ public:
             reverted_x = reverted_x * 10 + x % 10;
             x = x / 10;
         }
-        return x == reverted_x || x == reverted_x/10; // ex: "12321" will cause x = 12, reverted_x = 123
+        return x == reverted_x || x == reverted_x/10; //ex: "12321" will cause x = 12, reverted_x = 123
     }
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution* S = new Solution();
     cout << S->isPalindrome(12321) << endl;
     return 0;
 }

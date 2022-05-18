@@ -24,7 +24,7 @@ int main(){
     vect.push_back(20);
     vect.push_back(30);
 
-    Solution *S = new Solution();
+    Solution* S = new Solution();
 
     cout << S->maxArea(vect) << endl;
 

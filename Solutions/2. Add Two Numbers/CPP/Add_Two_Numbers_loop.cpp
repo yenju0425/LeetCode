@@ -4,10 +4,10 @@ using namespace std;
 
 struct ListNode{
     int val;
-    ListNode *next;
+    ListNode* next;
     ListNode() : val(0), next(nullptr){}
     ListNode(int x) : val(x), next(nullptr){}
-    ListNode(int x, ListNode *next) : val(x), next(next){}
+    ListNode(int x, ListNode* next) : val(x), next(next){}
 };
 
 class Solution{
@@ -16,14 +16,14 @@ public:
         int sum   = 0;
         int carry = 0;
         
-        ListNode *firstNode = nullptr;
-        ListNode *preNode   = nullptr;
+        ListNode* firstNode = nullptr;
+        ListNode* preNode   = nullptr;
         
         while(l1 != nullptr or l2 != nullptr or carry){
             int l1_val = 0;
             int l2_val = 0;
-            ListNode *l1_next = nullptr;
-            ListNode *l2_next = nullptr;
+            ListNode* l1_next = nullptr;
+            ListNode* l2_next = nullptr;
 
             if(l1 != nullptr){
                 l1_val  = l1->val;
@@ -40,7 +40,7 @@ public:
             carry = sum / 10;
             sum   = sum % 10;
         
-            ListNode *newNode = new ListNode(sum);
+            ListNode* newNode = new ListNode(sum);
             
             if(preNode != nullptr){
                 preNode->next = newNode;
@@ -57,16 +57,16 @@ public:
 };
 
 int main(){
-    ListNode *a2 = new ListNode(2);
-    ListNode *a1 = new ListNode(9, a2);
-    ListNode *a0 = new ListNode(9, a1);
+    ListNode* a2 = new ListNode(2);
+    ListNode* a1 = new ListNode(9, a2);
+    ListNode* a0 = new ListNode(9, a1);
 
-    ListNode *b1 = new ListNode(9);
-    ListNode *b0 = new ListNode(9, b1);
+    ListNode* b1 = new ListNode(9);
+    ListNode* b0 = new ListNode(9, b1);
 
-    // 299 + 99 = 398
-    Solution *S = new Solution();
-    ListNode *A = S->addTwoNumbers(b0, a0);
+    //299 + 99 = 398
+    Solution* S = new Solution();
+    ListNode* A = S->addTwoNumbers(b0, a0);
 
     while(A != nullptr){
         cout << A->val;

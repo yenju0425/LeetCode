@@ -17,7 +17,7 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution* S = new Solution();
 
     cout << S->convertToTitle(28) << endl;
     

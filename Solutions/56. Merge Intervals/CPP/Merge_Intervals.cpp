@@ -24,7 +24,7 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution* S = new Solution();
     vector<vector<int>> v {
         {1, 4},
         {0, 2},

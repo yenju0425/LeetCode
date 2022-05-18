@@ -33,7 +33,7 @@ public:
                         state = 2;
                         outputNumber = int(character) - '0'; //transfer the ascii code to integer, and store it into the outputNumber
                     }
-                    else{// get invalid character
+                    else{ //get invalid character
                         state = 0;
                     }
                     break;
@@ -53,7 +53,7 @@ public:
                             state = 0;
                         }
                     }
-                    else{// get invalid character
+                    else{ //get invalid character
                         state = 0;
                     }
                     break;
@@ -70,7 +70,7 @@ public:
 
 int main(){
     string SS = "-21474836";
-    Solution *S = new Solution();
+    Solution* S = new Solution();
 
     cout << S->myAtoi(SS) << endl;
 

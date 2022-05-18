@@ -37,7 +37,7 @@ public:
 int main(){
     int n = 4;
 
-    Solution *S = new Solution;
+    Solution* S = new Solution;
 
     vector<vector<int>> ans = S->generateMatrix(n);
     for(int i = 0; i < n; i = i + 1){

@@ -6,11 +6,11 @@ using namespace std;
 
 struct TreeNode{
     int val;
-    TreeNode *left;
-    TreeNode *right;
+    TreeNode* left;
+    TreeNode* right;
     TreeNode() : val(0), left(nullptr), right(nullptr){}
     TreeNode(int x) : val(x), left(nullptr), right(nullptr){}
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right){}
+    TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right){}
 };
 
 class BSTIterator{
@@ -63,15 +63,15 @@ int main(){
 
     BSTIterator* B = new BSTIterator(root);
 
-    cout << B->next() << endl;    // return 3
-    cout << B->next() << endl;    // return 7
-    cout << B->next() << endl;    // return 9
-    cout << B->next() << endl;    // return 15
-    cout << B->next() << endl;    // return 20
-    cout << B->next() << endl;    // return 3
-    cout << B->next() << endl;    // return 7
-    cout << B->next() << endl;    // return 9
-    cout << B->next() << endl;    // return 15
-    cout << B->next() << endl;    // return 20
+    cout << B->next() << endl;    //return 3
+    cout << B->next() << endl;    //return 7
+    cout << B->next() << endl;    //return 9
+    cout << B->next() << endl;    //return 15
+    cout << B->next() << endl;    //return 20
+    cout << B->next() << endl;    //return 3
+    cout << B->next() << endl;    //return 7
+    cout << B->next() << endl;    //return 9
+    cout << B->next() << endl;    //return 15
+    cout << B->next() << endl;    //return 20
     return 0;
 }

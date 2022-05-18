@@ -44,7 +44,7 @@ int main(){
         {0, 0, 0},
     };
 
-    Solution *S = new Solution();
+    Solution* S = new Solution();
     
     S->gameOfLife(vect);
 

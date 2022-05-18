@@ -28,7 +28,7 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution* S = new Solution();
     cout << S->strStr("hello", "ell") << endl;
 
     return 0;

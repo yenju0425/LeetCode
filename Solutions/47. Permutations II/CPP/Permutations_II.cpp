@@ -11,10 +11,10 @@ public:
         vector<vector<int>> P = {};
         int numList_size = numList.size();
         for(int i = 0; i < numList_size; i++){
-            // get the first number
+            //get the first number
             int prefix = numList[i].first;
 
-            // get the permutation of the remaining numbers
+            //get the permutation of the remaining numbers
             vector<pair<int, int>> new_numList = numList;
             new_numList[i].second = new_numList[i].second - 1;
             if(new_numList[i].second == 0){

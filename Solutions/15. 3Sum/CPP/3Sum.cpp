@@ -38,7 +38,7 @@ public:
 int main(){
     vector<int> nums{-1,0,1,2,-1,-4};
 
-    Solution *S = new Solution();
+    Solution* S = new Solution();
 
     vector<vector<int>> threeSum = S->threeSum(nums);
 

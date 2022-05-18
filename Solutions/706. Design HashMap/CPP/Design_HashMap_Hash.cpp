@@ -33,7 +33,7 @@ public:
 };
 
 int main(){
-    MyHashMap *H = new MyHashMap();
+    MyHashMap* H = new MyHashMap();
     H->put(0, 1);
     H->put(0, 3);
     H->put(34, 2);

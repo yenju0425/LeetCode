@@ -34,7 +34,7 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution* S = new Solution();
 
     cout << S->isMatch("c", "c*") << endl;
 
