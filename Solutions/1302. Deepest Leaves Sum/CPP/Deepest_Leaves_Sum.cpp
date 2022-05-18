@@ -47,7 +47,7 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution* S = new Solution();
 
     TreeNode* node1 = new TreeNode(1);
     TreeNode* node2 = new TreeNode(2);

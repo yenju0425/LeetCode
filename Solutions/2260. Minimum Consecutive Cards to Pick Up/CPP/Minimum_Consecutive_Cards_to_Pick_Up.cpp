@@ -4,9 +4,9 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
-    int minimumCardPickup(vector<int>& cards) {
+    int minimumCardPickup(vector<int>& cards){
         int numOfCards  = cards.size();
         int minDistance = -1;
 
@@ -26,7 +26,7 @@ public:
 };
 
 int main(){
-    vector<int> cards = {3, 4, 5, 7, 99, 98, 3, 6, 1, 2, 1, 3};
+    vector<int> cards{3, 4, 5, 7, 99, 98, 3, 6, 1, 2, 1, 3};
 
     Solution* S = new Solution();
 

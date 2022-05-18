@@ -2,9 +2,9 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
-    string removeDigit(string number, char digit) {
+    string removeDigit(string number, char digit){
         string::iterator rmDigit;
         for(string::iterator i = number.begin(); i != number.end(); i++){
             if(*i == digit){

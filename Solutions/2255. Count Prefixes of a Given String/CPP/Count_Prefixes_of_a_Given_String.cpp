@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
     int countPrefixes(vector<string>& words, string s){
         int counter = 0;
@@ -31,7 +31,7 @@ int main(){
     };
     string s = "aabdk";
 
-    Solution *S = new Solution();
+    Solution* S = new Solution();
 
     cout << S->countPrefixes(words, s) << endl;
 

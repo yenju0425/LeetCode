@@ -49,7 +49,7 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution* S = new Solution();
 
     vector<vector<int>> guards{{0,0},{1,1},{2,3}};
 

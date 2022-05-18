@@ -2,9 +2,9 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
-    int maxNumberOfBalloons(string text) {
+    int maxNumberOfBalloons(string text){
         int text_size = text.size();
         int charCount[26] = {0};
         for(int i = 0; i < text_size; i++){

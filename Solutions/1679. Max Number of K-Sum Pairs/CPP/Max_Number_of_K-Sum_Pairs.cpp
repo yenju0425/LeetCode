@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
     int maxOperations(vector<int>& nums, int k){
         sort(nums.begin(), nums.end());
@@ -29,7 +29,7 @@ public:
 };
 
 int main(){
-    vector<int> nums = {1,2,3,4};
+    vector<int> nums{1, 2, 3, 4};
     int k = 5;
 
     Solution* S = new Solution();

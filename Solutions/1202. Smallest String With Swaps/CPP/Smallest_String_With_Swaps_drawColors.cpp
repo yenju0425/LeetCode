@@ -62,7 +62,7 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution* S = new Solution();
     string s = "gfedcbaaaa";
     vector<vector<int>> swapPairs{
         {0,1},

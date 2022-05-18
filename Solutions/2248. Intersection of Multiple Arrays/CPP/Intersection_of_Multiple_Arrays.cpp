@@ -4,9 +4,9 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
-    vector<int> intersection(vector<vector<int>>& nums) {
+    vector<int> intersection(vector<vector<int>>& nums){
         vector<int> I;
         if(nums.empty()){
             return I;
@@ -35,7 +35,7 @@ public:
 int main(){
     Solution *S = new Solution();
 
-    vector<vector<int>> sets = {
+    vector<vector<int>> sets{
         {1, 2, 3},
         {1, 3, 99},
         {1, 2, 78, 3}

@@ -4,9 +4,9 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
-    int countLatticePoints(vector<vector<int>>& circles) {
+    int countLatticePoints(vector<vector<int>>& circles){
         int LP = 0;
         if(circles.empty()){
             return LP;
@@ -40,7 +40,7 @@ public:
 int main(){
     Solution *S = new Solution();
 
-    vector<vector<int>> ciecles = {
+    vector<vector<int>> ciecles{
         {2, 2, 2}
     };
 

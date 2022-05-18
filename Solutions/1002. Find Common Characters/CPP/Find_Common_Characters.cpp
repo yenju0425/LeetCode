@@ -4,13 +4,20 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
     vector<string> commonChars(vector<string>& words){
-        vector<string> CC(0, ""); //the vector to store the common chars
-        vector<int> charCounter(26, numeric_limits<int>::max());
-        for(vector<string>::iterator i = words.begin(); i != words.end(); i++){
-            vector<int> temp(26, 0);
+        vector<string> CC; //the vector to store the common chars
+        int charCounter[26] = {0};
+
+        //the first word
+        for(string::iterator c = words[0].begin(); c != words[0].end(); c++){
+            int charIndex = *c - 'a';
+            charCounter[charIndex] = charCounter[charIndex] + 1;
+        }
+
+        for(vector<string>::iterator i = words.begin() + 1; i != words.end(); i++){
+            int temp[26] = {0};
             for(string::iterator c = i->begin(); c != i->end(); c++){
                 int charIndex = *c - 'a';
                 temp[charIndex] = temp[charIndex] + 1;
@@ -19,6 +26,7 @@ public:
                 charCounter[j] = min(charCounter[j], temp[j]);
             }
         }
+
         for(int i = 0; i < 26; i++){
             for(int j = 0; j < charCounter[i]; j++){
                 string s;
@@ -31,7 +39,7 @@ public:
 };
 
 int main(){
-    vector<string> voc = {"bella","label","roller"};
+    vector<string> voc{"bella","label","roller"};
     Solution* S = new Solution;
     vector<string> ans = S->commonChars(voc);
     for(auto i : ans){

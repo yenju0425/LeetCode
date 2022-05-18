@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 private:
     int M;
     int N;
@@ -20,7 +20,7 @@ public:
         return false;
     }
 
-    int minimumEffortPath(vector<vector<int>>& heights) {
+    int minimumEffortPath(vector<vector<int>>& heights){
         int maxEffortTaken = -1;
 
         M = heights.size();
@@ -66,7 +66,7 @@ public:
 
 int main(){
     Solution *S = new Solution();
-    vector<vector<int>> Map = {
+    vector<vector<int>> Map{
         {1,2,3},
         {3,8,4},
         {5,3,5}

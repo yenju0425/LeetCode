@@ -45,7 +45,7 @@ public:
     }
 };
 
-class Solution {
+class Solution{
 public:
     string smallestStringWithSwaps(string s, vector<vector<int>>& pairs){
         int stringLength = s.size();
@@ -78,7 +78,7 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution* S = new Solution();
     string s = "gfedcba";
     vector<vector<int>> swapPairs{
         {0,1},

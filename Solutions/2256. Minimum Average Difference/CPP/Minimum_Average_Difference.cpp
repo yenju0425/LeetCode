@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
     int minimumAverageDifference(vector<int>& nums){
         //initialize
@@ -46,7 +46,7 @@ int main(){
         5
     };
 
-    Solution *S = new Solution();
+    Solution* S = new Solution();
 
     cout << S->minimumAverageDifference(nums) << endl;
 

@@ -2,7 +2,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
     bool canConstruct(string s, int k){
         int s_size = s.size();

@@ -1,14 +1,11 @@
-//Reference: https://www.geeksforgeeks.org/2d-vector-in-cpp-with-user-defined-size/
-//Reference: https://www.geeksforgeeks.org/initialize-a-vector-in-cpp-different-ways/
-
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
-    vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
+    vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k){
         int m = grid.size();
         int n = grid[0].size();
 

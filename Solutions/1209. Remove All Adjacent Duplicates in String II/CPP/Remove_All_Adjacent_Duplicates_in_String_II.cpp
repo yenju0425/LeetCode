@@ -1,33 +1,38 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
-    string removeDuplicates(string s, int k) {
+    string removeDuplicates(string s, int k){
         int s_size = s.size();
-        string newS = "";
+        vector<string> S;
         for(int i = 0; i < s_size; i++){
-            newS.push_back(s[i]);
-            bool isDuplicate = true;
-            int newS_size = newS.size();
-            for(int j = newS_size - 1; j > newS_size - k; j--){
-                if(j <= 0 or newS[j - 1] != newS[j]){
-                    isDuplicate = false;
-                    break;
+            char c = s[i];
+            if(S.empty() or S.back()[0] != c){
+                string newChar(1, c);
+                S.push_back(newChar);
+            }
+            else{
+                S.back().push_back(c);
+                if(S.back().size() == k){
+                    S.pop_back();
                 }
             }
-            if(isDuplicate){
-                newS.erase(newS.size() - k);
-            }
         }
-        return newS;
+        string s_removed = "";
+        for(vector<string>::iterator i = S.begin(); i != S.end(); i++){
+            s_removed = s_removed + *i;
+        }
+        return s_removed;
     }
 };
 
 int main(){
     Solution* S = new Solution();
 
-    cout << S->removeDuplicates("abcd", 2) << endl;
+    cout << S->removeDuplicates("deeedbbcccbda", 3) << endl;
+
     return 0;
 }

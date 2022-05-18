@@ -1,18 +1,16 @@
-//Review: Kruskal's & Prim's algorithm
-//Reference: http://alrightchiu.github.io/SecondRound/minimum-spanning-treeintrojian-jie.html
 #include <iostream>
 #include <vector>
 #include <limits>
 
 using namespace std;
 
-class Solution {
+class Solution{
 public:
     int manhattanDistance(vector<int> p1, vector<int> p2){
         return abs(p1[0] - p2[0]) + abs(p1[1] - p2[1]);
     }
 
-    int minCostConnectPoints(vector<vector<int>>& points) {
+    int minCostConnectPoints(vector<vector<int>>& points){
         int numOfPoints = points.size();
         vector<bool> visited(numOfPoints, false); //true if a node is visited
         vector<int> distance(numOfPoints); //the distance to MST

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class UndergroundSystem {
+class UndergroundSystem{
 private:
     map<int, tuple<string, int>> passengers;
     map<tuple<string, string>, vector<int>> DB;
@@ -19,7 +19,7 @@ public:
         string startStation = get<0>(passengers[id]);
         int duration = t - get<1>(passengers[id]);
 
-        tuple<string, string> start_end = {startStation, stationName};
+        tuple<string, string> start_end{startStation, stationName};
 
         auto iter = DB.find(start_end);
         if(iter != DB.end()){
