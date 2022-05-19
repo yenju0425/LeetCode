@@ -6,7 +6,7 @@ using namespace std;
 class Solution{
 public:
     int longestMountain(vector<int>& arr){
-        int state = 0; //0: "invalid", 1: "acc", -1: "dec"
+        int state = 0; //"0": invalid, "1": acc, "-1": dec
         int maxSize     = 0;
         int currentSize = 0;
 

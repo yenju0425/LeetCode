@@ -67,11 +67,11 @@ int main(){
     string s = "gfedcbaaaa";
 
     vector<vector<int>> swapPairs{
-        {0,1},
-        {3,1},
-        {0,2},
-        {5,3},
-        {4,0}
+        {0, 1},
+        {3, 1},
+        {0, 2},
+        {5, 3},
+        {4, 0}
     };
 
     cout << S->smallestStringWithSwaps(s, swapPairs) << endl;

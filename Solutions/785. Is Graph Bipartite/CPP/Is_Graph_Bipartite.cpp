@@ -21,7 +21,7 @@ public:
     }
 
     bool isBipartite(vector<vector<int>>& graph){
-        vector<int> visited(graph.size(), 0); //'0' = not visited, '1' = group_1, '2' = group_2
+        vector<int> visited(graph.size(), 0); //"0": not visited, "1": group_1, "2": group_2
         queue<int> Q;
         while(findNext(Q, visited)){
             //get next node
@@ -48,10 +48,10 @@ int main(){
     Solution* S = new Solution();
 
     vector<vector<int>> G{
-        {1,3},
-        {0,2},
-        {1,3},
-        {0,2}
+        {1, 3},
+        {0, 2},
+        {1, 3},
+        {0, 2}
     };
 
     cout << S->isBipartite(G) << endl;
