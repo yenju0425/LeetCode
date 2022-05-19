@@ -38,7 +38,10 @@ public:
 
 int main(){
     vector<int> test{-2, 1, -2};
+
     Solution* S = new Solution();
+
     cout << S->find132pattern(test) << endl;
+
     return 0;
 }

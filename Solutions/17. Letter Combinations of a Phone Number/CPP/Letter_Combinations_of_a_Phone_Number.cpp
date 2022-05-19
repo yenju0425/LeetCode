@@ -42,9 +42,12 @@ public:
 
 int main(){
     Solution* S = new Solution();
+
     vector<string> SS = S->letterCombinations("225");
+
     for(int i = 0; i < SS.size(); i++){
         cout << SS[i] << endl;
     }
+
     return 0;
 }

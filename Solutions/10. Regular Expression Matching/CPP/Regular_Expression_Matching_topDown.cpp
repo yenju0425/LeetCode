@@ -46,7 +46,7 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    cout << S->isMatch("ab", "a*c") << endl;
+    cout << S->isMatch("c", "c*") << endl;
 
     return 0;
 }

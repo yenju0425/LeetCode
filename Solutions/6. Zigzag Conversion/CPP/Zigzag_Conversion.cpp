@@ -26,6 +26,8 @@ public:
 
 int main(){
     Solution* S = new Solution();
+
     cout << S->convert("PAYPALISHIRING", 3);
+
     return 0;
 }

@@ -55,8 +55,11 @@ public:
 
 int main(){
     Solution* S = new Solution();
+
     vector<int> nums{1, 1, 2, 2, 3};
+
     vector<vector<int>> result = S->permuteUnique(nums);
+
     cout << "number of permutations: " << result.size() << endl;
     for(auto i : result){
         for(auto j : i){
@@ -64,5 +67,6 @@ int main(){
         }
         cout << endl;
     }
+
     return 0;
 }

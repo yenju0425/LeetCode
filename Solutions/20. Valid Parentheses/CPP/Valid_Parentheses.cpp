@@ -42,6 +42,8 @@ public:
 
 int main(){
     Solution* S = new Solution();
+
     cout << S->isValid("([)]") << endl;
+
     return 0;
 }

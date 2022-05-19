@@ -21,6 +21,8 @@ public:
 
 int main(){
     Solution* S = new Solution();
+
     cout << S->isPalindrome(12321) << endl;
+
     return 0;
 }

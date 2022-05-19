@@ -101,6 +101,8 @@ int main(){
     vector<vector<int>> G{{1,2,1},{2,3,7},{1,3,4},{2,1,2}};
 
     Solution* S = new Solution();
+
     cout << S->networkDelayTime(G, 4, 1) << endl;
+
     return 0;
 }

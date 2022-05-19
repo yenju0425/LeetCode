@@ -36,7 +36,7 @@ public:
 };
 
 int main(){
-    vector<int> nums{-1,0,1,2,-1,-4};
+    vector<int> nums{-1, 0, 1, 2, -1, -4};
 
     Solution* S = new Solution();
 
@@ -44,12 +44,12 @@ int main(){
 
     int n = threeSum.size();
     int m = 3;
-
     for(int i = 0; i < n; i = i + 1){
         for(int j = 0; j < m; j = j + 1){
             cout << threeSum[i][j] << " ";
         }
         cout << endl;
     }
+
     return 0;
 }

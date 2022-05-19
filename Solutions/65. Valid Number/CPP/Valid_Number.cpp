@@ -138,6 +138,8 @@ public:
 
 int main(){
     Solution* S = new Solution();
+
     cout << S->isNumber("-3.4e3") << endl;
+
     return 0;
 }

@@ -26,6 +26,8 @@ public:
 
 int main(){
     Solution* S = new Solution();
+
     cout << S->canConstruct("qlkzenwmmnpkopu", 15) << endl;
+
     return 0;
 }

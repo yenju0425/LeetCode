@@ -41,9 +41,11 @@ int main(){
     Solution* S = new Solution();
 
     TreeNode* node = S->increasingBST(root);
+
     while(node != nullptr){
         cout << node->val;
         node = node->right;
     }
+
     return 0;
 }

@@ -72,7 +72,7 @@ int main(){
         cout << A->val;
         A = A->next;
     }
-    
     cout << endl;
+
     return 0;
 }

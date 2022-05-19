@@ -29,16 +29,7 @@ public:
 };
 
 int main(){
-    vector<int> vect;
-    vect.push_back(1);
-    vect.push_back(8);
-    vect.push_back(6);
-    vect.push_back(2);
-    vect.push_back(5);
-    vect.push_back(4);
-    vect.push_back(8);
-    vect.push_back(3);
-    vect.push_back(7);
+    vector<int> vect{1, 8, 6, 2, 5, 4, 8, 3, 7};
 
     Solution* S = new Solution();
 

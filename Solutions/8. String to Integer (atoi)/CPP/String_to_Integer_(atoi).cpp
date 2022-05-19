@@ -70,6 +70,7 @@ public:
 
 int main(){
     string SS = "-21474836";
+
     Solution* S = new Solution();
 
     cout << S->myAtoi(SS) << endl;

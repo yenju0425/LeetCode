@@ -83,10 +83,14 @@ public:
 
 int main(){
     Solution* S = new Solution();
-    vector<vector<int>> C{{0,1},{0,2},{0,3},{2,4},{3,5},{5,4},{5,6}};
+
+    vector<vector<int>> C{{0,1}, {0,2}, {0,3}, {2,4}, {3,5}, {5,4}, {5,6}};
+
     vector<vector<int>> result = S->criticalConnections(7, C);
+
     for(auto i : result){
         cout << '(' << i[0] << ", " << i[1] << ')' << endl;
     }
+
     return 0;
 }

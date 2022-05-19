@@ -10,4 +10,5 @@ class Solution:
         return True
 
 S = Solution()
+
 print(S.isPalindrome(123))

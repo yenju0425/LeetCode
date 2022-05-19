@@ -40,5 +40,6 @@ int main(){
         reverse = reverse->next;
     }
     cout << endl;
+
     return 0;
 }

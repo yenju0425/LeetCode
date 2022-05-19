@@ -43,7 +43,7 @@ public:
 int main(){
     vector<int> seq;
 
-    for(int i = 0; i < 50000; i++){
+    for(int i = 0; i < 10; i++){
         seq.push_back(i);
     }
 

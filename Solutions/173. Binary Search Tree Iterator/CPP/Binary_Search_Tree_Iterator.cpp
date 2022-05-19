@@ -73,5 +73,6 @@ int main(){
     cout << B->next() << endl;    //return 9
     cout << B->next() << endl;    //return 15
     cout << B->next() << endl;    //return 20
+
     return 0;
 }

@@ -55,4 +55,5 @@ class Solution:
         return number
 
 S = Solution()
+
 print(S.myAtoi("-21474836"))

@@ -38,11 +38,13 @@ public:
 
 int main(){
     MyStack* S = new MyStack();
+
     S->push(1);
     S->push(2);
 
     cout << S->top() << endl;
     cout << S->pop() << endl;
     cout << S->top() << endl;
+
     return 0;
 }

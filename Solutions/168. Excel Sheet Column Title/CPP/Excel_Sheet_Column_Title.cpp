@@ -21,4 +21,5 @@ int main(){
 
     cout << S->convertToTitle(28) << endl;
     
+    return 0;
 }

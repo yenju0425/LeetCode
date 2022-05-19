@@ -19,10 +19,7 @@ public:
 };
 
 int main(){
-    vector<int> vect;
-    vect.push_back(10);
-    vect.push_back(20);
-    vect.push_back(30);
+    vector<int> vect{1, 8, 6, 2, 5, 4, 8, 3, 7};
 
     Solution* S = new Solution();
 

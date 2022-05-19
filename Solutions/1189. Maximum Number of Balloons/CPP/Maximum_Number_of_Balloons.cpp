@@ -20,5 +20,6 @@ int main(){
     Solution* S = new Solution();
 
     cout << S->maxNumberOfBalloons("loonbalxballpoon") << endl;
+
     return 0;
 }

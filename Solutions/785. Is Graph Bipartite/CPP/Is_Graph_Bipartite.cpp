@@ -46,6 +46,7 @@ public:
 
 int main(){
     Solution* S = new Solution();
+
     vector<vector<int>> G{
         {1,3},
         {0,2},
@@ -54,5 +55,6 @@ int main(){
     };
 
     cout << S->isBipartite(G) << endl;
+
     return 0;
 }

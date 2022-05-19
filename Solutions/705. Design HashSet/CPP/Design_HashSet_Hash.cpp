@@ -44,10 +44,13 @@ public:
 
 int main(){
     MyHashSet* H = new MyHashSet();
+
     H->add(0);
     H->add(0);
     H->add(34);
     H->remove(0);
+
     cout << H->contains(34) << endl;
+
     return 0;
 }

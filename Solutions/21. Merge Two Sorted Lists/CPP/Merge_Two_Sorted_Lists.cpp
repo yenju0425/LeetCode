@@ -50,4 +50,6 @@ int main(){
         cout << a->val << endl;
         a = a->next;  
     }
+
+    return 0;
 }

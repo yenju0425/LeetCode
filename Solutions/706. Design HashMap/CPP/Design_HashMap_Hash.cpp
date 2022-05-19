@@ -34,10 +34,13 @@ public:
 
 int main(){
     MyHashMap* H = new MyHashMap();
+
     H->put(0, 1);
     H->put(0, 3);
     H->put(34, 2);
     H->remove(0);
+
     cout << H->get(0) << endl;
+
     return 0;
 }

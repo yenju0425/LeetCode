@@ -36,6 +36,8 @@ public:
 
 int main(){
     Solution* S = new Solution();
+
     cout << S->reverse(-123) << endl;
+
     return 0;
 }

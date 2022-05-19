@@ -33,6 +33,7 @@ int main(){
 
     Solution* S = new Solution();
 
-    cout << S->maxOperations(nums, 5) << endl;;
+    cout << S->maxOperations(nums, 5) << endl;
+
     return 0;
 }

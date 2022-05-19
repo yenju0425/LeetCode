@@ -41,6 +41,8 @@ public:
 
 int main(){
     Solution* S = new Solution();
+
     cout << S->lengthOfLongestSubstring("abcabcbb") << endl;
+
     return 0;
 }

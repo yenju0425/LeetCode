@@ -85,7 +85,9 @@ int main(){
     vector<vector<string>> queries{{"a", "z"}};
 
     Solution* S = new Solution();
+
     vector<double> ans = S->calcEquation(equations, values, queries);
+
     for(vector<double>::iterator i = ans.begin(); i != ans.end(); i++){
         cout << *i << ' ';
     }

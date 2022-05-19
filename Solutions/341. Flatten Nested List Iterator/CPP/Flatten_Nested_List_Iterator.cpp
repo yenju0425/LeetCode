@@ -83,7 +83,6 @@ public:
 
 int main(){
     NestedInteger I0(vector<NestedInteger>{});
-
     vector<NestedInteger> V1{I0};
 
     NestedIterator* N = new NestedIterator(V1);
@@ -91,5 +90,6 @@ int main(){
         cout << N->next() << ' ';
     }
     cout << endl;
+
     return 0;
 }

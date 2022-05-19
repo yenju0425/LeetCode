@@ -34,6 +34,7 @@ public:
 
 int main(){
     Solution* S = new Solution();
+
     TreeNode* node0 = new TreeNode(0);
     TreeNode* node3 = new TreeNode(3);
     TreeNode* node5 = new TreeNode(5);
@@ -48,5 +49,6 @@ int main(){
     for(int i = 0; i < ans.size(); i++){
         cout << ans[i] << " ";
     }
+
     return 0;
 }
