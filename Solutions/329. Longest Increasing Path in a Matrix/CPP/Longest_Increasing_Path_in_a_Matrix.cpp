@@ -9,7 +9,6 @@ private:
     int n;
     vector<vector<int>> M;
     vector<vector<int>> dp_len;
-    vector<vector<bool>> visited;
 
 public:
     bool isValid(int r, int c){
@@ -21,40 +20,39 @@ public:
         n = matrix[0].size();
         M       = matrix;
         dp_len  = vector<vector<int>>(m, vector<int>(n, -1));
-        visited = vector<vector<bool>>(m, vector<bool>(n, false));
 
         int maxLength = 0;
         for(int i = 0; i < m; i++){
             for(int j = 0; j < n; j++){
-                maxLength = max(maxLength, LIP(vector<int>{i, j}));
+                maxLength = max(maxLength, LIP(i, j));
             }
         }
 
         return maxLength;
     }
 
-    int LIP(vector<int> pos){
-        int r = pos[0];
-        int c = pos[1];
-        int x = dp_len[r][c];
+    int LIP(int row, int col){
+        int x = dp_len[row][col];
         if(x != -1){
             return x;
         }
         
         //checking 4 directions
-        int r_offset[4] = {-1,  0,  1,  0};
-        int c_offset[4] = { 0,  1,  0, -1};
+        int row_offset[4] = {-1,  0,  1,  0};
+        int col_offset[4] = { 0,  1,  0, -1};
 
-        dp_len[r][c] = 1;
+        int maxLength = 1;
         for(int i = 0; i < 4; i++){
-            int row = r + r_offset[i];
-            int col = c + c_offset[i];
-            if(isValid(row, col) and M[r][c] < M[row][col]){
-                dp_len[r][c] = max(dp_len[r][c], LIP(vector<int>{row, col}) + 1);
+            int r = row + row_offset[i];
+            int c = col + col_offset[i];
+            if(isValid(r, c) and M[row][col] < M[r][c]){
+                maxLength = max(maxLength, LIP(r, c) + 1);
             }
         }
 
-        return dp_len[r][c];
+        dp_len[row][col] = maxLength;
+
+        return maxLength;
     }
 };
 
