@@ -6,7 +6,7 @@ using namespace std;
 class Solution{
 public:
     int lengthOfLIS(vector<int>& nums){
-        vector<int> lis = LIS(nums, -1, 0); //-1: previous_i is null
+        vector<int> lis = LIS(nums, -1, 0); //"-1": previous_i is null
         int n = lis.size();
 
         return n; 

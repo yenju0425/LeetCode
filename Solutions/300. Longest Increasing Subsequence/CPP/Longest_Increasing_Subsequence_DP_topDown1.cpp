@@ -12,7 +12,7 @@ public:
         int lengthOfnums = nums.size();
         dp_len = vector<vector<int>>(lengthOfnums + 1, vector<int>(lengthOfnums, -1)); //dp_len.shape() = (n + 1) * n, initialized with "-1"
 
-        int lengthOflis = LIS(nums, lengthOfnums, 0); //lengthOfnums: previous_i is null
+        int lengthOflis = LIS(nums, lengthOfnums, 0); //"lengthOfnums": previous_i is null
 
         return lengthOflis; 
     }
@@ -28,7 +28,7 @@ public:
             return dp_len[previous_i][i];
         }
 
-        //The remianing section deal with the situation we can't decide the LIS immediately
+        //The remianing section deal with the situation that we can't decide the LIS immediately
         int skip_n = LIS(nums, previous_i, i + 1);
         int take_n = 0; //default: assume n is untakeable
         if(previous_i == lengthOfnums or nums[i] > nums[previous_i]){//if n is takeable: take n

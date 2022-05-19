@@ -10,7 +10,7 @@ private:
 public:
     int lengthOfLIS(vector<int>& nums){
         int lengthOfnums = nums.size();
-        dp_len = vector<int>(lengthOfnums + 1, -1); //dp_len.shape() = n + 1, initialized with "-1"
+        dp_len = vector<int>(lengthOfnums + 1, -1); //dp_len.size() = n + 1, initialized with "-1"
 
         int lengthOflis = LIS(nums, lengthOfnums, 0); //lengthOfnums: previous_i is null
 
