@@ -19,7 +19,7 @@ public:
         N = obstacleGrid[0].size();
 
         numOfUniquePath = vector<vector<int>>(M, vector<int>(N, 0));
-        numOfUniquePath[0][0] = (obstacleGrid[0][0] + 1) % 2;
+        numOfUniquePath[0][0] = !obstacleGrid[0][0];
 
         for(int i = 0; i < M; i++){
             for(int j = 0; j < N; j++){
