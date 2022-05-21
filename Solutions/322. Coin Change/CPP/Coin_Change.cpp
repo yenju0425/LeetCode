@@ -15,16 +15,19 @@ public:
         lookupTable[0] = 0;
 
         for(int i = 1; i <= amount; i++){
-            int temp = -1;
             for(int j = 0; j < numOfCoins; j++){
                 int index = i - coins[j];
+
+                //if there is a way to exchange money, update lookupTable[i]
                 if(index >= 0 and lookupTable[index] != -1){
-                    if(temp == -1 or temp > lookupTable[index] + 1){
-                        temp = lookupTable[index] + 1;
+                    if(lookupTable[i] == -1){
+                        lookupTable[i] = lookupTable[index] + 1;
+                    }
+                    else{
+                        lookupTable[i] = min(lookupTable[i], lookupTable[index] + 1);
                     }
                 }
             }
-            lookupTable[i] = temp;
         }
         return lookupTable[amount];
     }
