@@ -4,17 +4,20 @@
 using namespace std;
 
 class Solution{
+private:
+    map<char, int> romanNum{
+        {'M', 1000},
+        {'D', 500},
+        {'C', 100},
+        {'L', 50},
+        {'X', 10},
+        {'V', 5},
+        {'I', 1}
+
+    };
+
 public:
     int romanToInt(string s){
-        map<char, int> romanNum;
-        romanNum['M'] = 1000;
-        romanNum['D'] = 500;
-        romanNum['C'] = 100;
-        romanNum['L'] = 50;
-        romanNum['X'] = 10;
-        romanNum['V'] = 5;
-        romanNum['I'] = 1;
-
         int sum = romanNum[s[0]];
         for(string::iterator iter = s.begin() + 1; iter != s.end(); iter = iter + 1){
             if(romanNum[*(iter - 1)] < romanNum[*iter]){
@@ -31,7 +34,7 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    cout << S->romanToInt("MCMVII") << endl;
+    cout << S->romanToInt("MCMLXXXVII") << endl;
 
     return 0;
 }
