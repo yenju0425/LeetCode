@@ -7,15 +7,17 @@ using namespace std;
 class Solution{
 public:
     vector<int> twoSum(vector<int>& nums, int target){
+        int nums_size = nums.size();
+
         vector<int> sortedNum = nums;
         sort(sortedNum.begin(), sortedNum.end());
         
-        vector<int> ans;
+        vector<int> result;
 
-        vector<int>::iterator low  = sortedNum.begin();
-        vector<int>::iterator high = sortedNum.end() - 1;
+        int low  = 0;
+        int high = nums_size - 1;
         while(low != high){
-            int sum = *low + *high;
+            int sum = sortedNum[low] + sortedNum[high];
             if(sum > target){
                 high = high - 1;
             }
@@ -23,27 +25,31 @@ public:
                 low = low + 1;
             }
             else{ //solution found, get index
-                for(vector<int>::iterator iter = nums.begin(); iter != nums.end(); iter = iter + 1){
-                    if(*iter == *low){
-                        ans.push_back(iter - nums.begin());
+                for(int i = 0; i < nums_size; i++){
+                    if(nums[i] == sortedNum[low]){
+                        result.push_back(i);
+                        break;
                     }
-                    else if(*iter == *high){
-                        ans.push_back(iter - nums.begin());
+                }
+                for(int i = nums_size - 1; i >= 0; i--){
+                    if(nums[i] == sortedNum[high]){
+                        result.push_back(i);
+                        break;
                     }
                 }
                 break;
             }
         }
-        return ans;
+        return result;
     }
 };
 
 int main(){
-    vector<int> nums{3, 2, 4};
-
     Solution* S = new Solution();
 
-    vector<int> result = S->twoSum(nums, 6);
+    vector<int> nums{15, 7, 11, 2};
+
+    vector<int> result = S->twoSum(nums, 9);
 
     for(vector<int>::iterator i = result.begin(); i != result.end(); i = i + 1){
         cout << *i << " ";

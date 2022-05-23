@@ -34,7 +34,7 @@ public:
                 divSubarrays.insert(subarray);
             }
 
-            //update starting divisible
+            //update
             if(j < numOfDivisible and i == divisible_i[j]){
                 j++;
             }
