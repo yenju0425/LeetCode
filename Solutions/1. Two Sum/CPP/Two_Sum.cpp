@@ -51,8 +51,8 @@ int main(){
 
     vector<int> result = S->twoSum(nums, 9);
 
-    for(vector<int>::iterator i = result.begin(); i != result.end(); i = i + 1){
-        cout << *i << " ";
+    for(int i = 0; i < result.size(); i++){
+        cout << result[i] << " ";
     }
     cout << endl;
 
