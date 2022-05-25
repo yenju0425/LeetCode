@@ -32,7 +32,7 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    vector<vector<int>> envelops{{30,50},{12,2},{3,4},{12,15}};
+    vector<vector<int>> envelops{{30, 50}, {12, 2}, {3, 4}, {12, 15}};
 
     cout << S->maxEnvelopes(envelops) << endl;
 
