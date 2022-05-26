@@ -9,51 +9,48 @@ public:
     int threeSumClosest(vector<int>& nums, int target){
         sort(nums.begin(), nums.end());
 
-        //iteratively pick 'a' and 'b', and look for 'c' using binary search
-        int bias = numeric_limits<int>::max();
-        int n = nums.size();
-        for(int i = 0; i < n - 2; i = i + 1){
-            int a = nums[i];
-
+        int best_Solution = nums[0] + nums[1] + nums[2]; //init with arbitrary solution
+    
+        int nums_size = nums.size();
+        for(int i = 0; i < nums_size - 2; i = i + 1){
             //skipping same numbers
-            if(i > 0 and a == nums[i - 1]){
+            if(i > 0 and nums[i] == nums[i - 1]){
                 continue;
             }
 
-            for(int j = i + 1; j < n - 1; j = j + 1){
-                int b = nums[j];
-
-                //skipping same numbers
-                if(j > i + 1 and b == nums[j - 1]){
-                    continue;
+            int left  = i + 1;
+            int right = nums_size - 1;
+            while(left < right){
+                int sum = nums[i] + nums[left] + nums[right];
+                if(sum > target){
+                    //update best_Solution
+                    if(sum - target < abs(best_Solution - target)){
+                        best_Solution = sum;
+                    }
+                    right = right - 1;
                 }
-
-                //looking for for c (binary search)
-                int c = target - (a + b);
-                vector<int>::iterator result = lower_bound(nums.begin() + j + 1, nums.end(), c);
-
-                int right_bias = (result == nums.end())           ? numeric_limits<int>::max() : *result - c;
-                int left_bias  = (result == nums.begin() + j + 1) ? numeric_limits<int>::max() : *(result - 1) - c;
-
-                if(min(abs(bias), min(abs(right_bias), abs(left_bias))) == abs(right_bias)){
-                    bias = right_bias;
+                else if(sum < target){
+                    if(target - sum < abs(best_Solution - target)){
+                        best_Solution = sum;
+                    }
+                    left  = left  + 1;
                 }
-                else if(min(abs(bias), min(abs(right_bias), abs(left_bias))) == abs(left_bias)){
-                    bias = left_bias;
+                else{ //solution found
+                    return target;
                 }
             }
         }
 
-        return target + bias;
+        return best_Solution;
     }
 };
 
 int main(){
     Solution* S = new Solution();
 
-    vector<int> nums{-1, 0, 1, 1, 55};
+    vector<int> nums{1, 1, 1, 1};
 
-    cout << S->threeSumClosest(nums, 3) << endl;
+    cout << S->threeSumClosest(nums, -100) << endl;
 
     return 0;
 }

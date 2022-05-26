@@ -10,6 +10,7 @@ public:
         sort(nums.begin(), nums.end());
 
         vector<vector<int>> three_Sum;
+
         int nums_size = nums.size();
         for(int i = 0; i < nums_size - 2; i = i + 1){
             //skipping same numbers
@@ -19,13 +20,12 @@ public:
 
             int left  = i + 1;
             int right = nums_size - 1;
-
-            int offset = -nums[i];
             while(left < right){
-                if(nums[left] + nums[right] > offset){
+                int sum = nums[left] + nums[right] + nums[i];
+                if(sum > 0){
                     right = right - 1;
                 }
-                else if(nums[left] + nums[right] < offset){
+                else if(sum < 0){
                     left  = left  + 1;
                 }
                 else{ //solution found
