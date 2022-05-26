@@ -9,33 +9,44 @@ public:
     vector<vector<int>> threeSum(vector<int>& nums){
         sort(nums.begin(), nums.end());
 
-        //iteratively pick 'a' and 'b', and look for 'c' using binary search
-        vector<vector<int>> threeSum;
-        int n = nums.size();
-        for(int i = 0; i < n - 2; i = i + 1){
-            int a = nums[i];
-
+        vector<vector<int>> three_Sum;
+        int nums_size = nums.size();
+        for(int i = 0; i < nums_size - 2; i = i + 1){
             //skipping same numbers
-            if(i > 0 and a == nums[i - 1]){
+            if(i > 0 and nums[i] == nums[i - 1]){
                 continue;
             }
 
-            for(int j = i + 1; j < n - 1; j = j + 1){
-                int b = nums[j];
+            int left  = i + 1;
+            int right = nums_size - 1;
 
-                //skipping same numbers
-                if(j > i + 1 and b == nums[j - 1]){
-                    continue;
+            int offset = -nums[i];
+            while(left < right){
+                if(nums[left] + nums[right] > offset){
+                    right = right - 1;
                 }
-                
-                //looking for for c (binary search)
-                int c = -(a + b);
-                if(binary_search(nums.begin() + j + 1, nums.end(), c)){
-                    threeSum.push_back(vector<int>{a, b, c});
+                else if(nums[left] + nums[right] < offset){
+                    left  = left  + 1;
+                }
+                else{ //solution found
+                    three_Sum.push_back(vector<int>{nums[i], nums[left], nums[right]});
+
+                    //skipping same numbers
+                    while(nums[right] == nums[right - 1] and left < right){
+                        right = right - 1;
+                    }
+                    right = right - 1;
+
+                    //skipping same numbers
+                    while(nums[left]  == nums[left  + 1] and left < right){
+                        left  = left  + 1;
+                    }
+                    left  = left  + 1;
                 }
             }
         }
-        return threeSum;
+
+        return three_Sum;
     }
 };
 
@@ -44,13 +55,13 @@ int main(){
     
     vector<int> nums{-1, 0, 1, 2, -1, -4};
 
-    vector<vector<int>> threeSum = S->threeSum(nums);
+    vector<vector<int>> three_Sum = S->threeSum(nums);
 
-    int n = threeSum.size();
+    int n = three_Sum.size();
     int m = 3;
     for(int i = 0; i < n; i = i + 1){
         for(int j = 0; j < m; j = j + 1){
-            cout << threeSum[i][j] << " ";
+            cout << three_Sum[i][j] << " ";
         }
         cout << endl;
     }

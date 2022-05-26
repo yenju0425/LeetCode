@@ -11,10 +11,7 @@ public:
     int lengthOfLIS(vector<int>& nums){
         int lengthOfnums = nums.size();
         for(int i = 0; i < lengthOfnums; i = i + 1){
-            //using binary search to find out the timespace that we can develope from
             int index = lower_bound(lis_multiverse.begin(), lis_multiverse.end(), nums[i]) - lis_multiverse.begin();
-
-            //multiverse start evolving......
             if(index >= lis_multiverse.size()){
                 lis_multiverse.push_back(nums[i]);
             }

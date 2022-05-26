@@ -43,6 +43,7 @@ public:
                 }
             }
         }
+
         return target + bias;
     }
 };
