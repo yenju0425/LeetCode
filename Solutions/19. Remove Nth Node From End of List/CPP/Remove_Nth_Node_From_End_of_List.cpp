@@ -10,9 +10,9 @@ struct ListNode{
     ListNode(int x, ListNode* next) : val(x), next(next){}
 };
 
-class Solution {
+class Solution{
 public:
-    ListNode* removeNthFromEnd(ListNode* head, int n) {
+    ListNode* removeNthFromEnd(ListNode* head, int n){
         int counter = 0;
 
         //count size of the lisked-list
