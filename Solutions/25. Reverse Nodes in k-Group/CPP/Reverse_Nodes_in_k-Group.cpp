@@ -15,16 +15,15 @@ struct ListNode{
 
 /*
 ex: k = 2
-
                NEXT_PTR
                |
           PTR  |    LAST_PTR
           |    |    |
 O--> O--> O--> O--> O--> O--> O--> O--> X
 |    [       ] [ Group ] [       ]
-|
-dummyHead
-
+|                  |
+dummyHead          |
+                   currently reversing Group
 */
 
 class Solution{
