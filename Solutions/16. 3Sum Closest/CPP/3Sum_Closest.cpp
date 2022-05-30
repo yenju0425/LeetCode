@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution{
 public:
-    int threeSumClosest(vector<int>& nums, int target){
+    int threeSumClosest(vector<int> &nums, int target){
         sort(nums.begin(), nums.end());
 
         int best_Solution = nums[0] + nums[1] + nums[2]; //init with arbitrary solution

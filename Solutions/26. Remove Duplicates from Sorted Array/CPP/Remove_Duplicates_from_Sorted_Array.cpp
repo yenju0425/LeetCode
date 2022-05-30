@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution{
 public:
-    int removeDuplicates(vector<int>& nums){
+    int removeDuplicates(vector<int> &nums){
         int nums_size = nums.size();
         int counter = 0;
         for(int i = 1; i < nums_size; i++){

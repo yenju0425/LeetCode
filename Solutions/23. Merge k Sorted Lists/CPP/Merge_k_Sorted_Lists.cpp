@@ -21,7 +21,7 @@ struct cmp{
 
 class Solution{
 public:
-    ListNode* mergeKLists(vector<ListNode*>& lists){
+    ListNode* mergeKLists(vector<ListNode*> &lists){
         int lists_size = lists.size();
 
         //init
