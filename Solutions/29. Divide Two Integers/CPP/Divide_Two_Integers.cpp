@@ -1,6 +1,5 @@
 #include <iostream>
 #include <climits>
-#include <bitset>
 
 using namespace std;
 
@@ -23,7 +22,7 @@ public:
                 buffer = buffer - u_divisor;
             }
             else{
-                result = result << 1 + 0;
+                result = result << 1;
             }
         }
 
