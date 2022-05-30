@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution{
 public:
-    int maxArea(vector<int>& height){
+    int maxArea(vector<int> &height){
         int vectorSize = height.size();
         int currentMax = 0;
 

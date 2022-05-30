@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution{
 public:
-    vector<int> twoSum(vector<int>& nums, int target){
+    vector<int> twoSum(vector<int> &nums, int target){
         int nums_size = nums.size();
 
         vector<int> sortedNum = nums;
