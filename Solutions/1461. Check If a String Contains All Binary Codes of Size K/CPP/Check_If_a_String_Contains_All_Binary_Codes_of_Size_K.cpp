@@ -7,6 +7,8 @@ public:
     bool hasAllCodes(string s, int k){
         int s_size = s.size();
         int numOfSubstrings = 1 << k;
+        
+        //return flase, if the string does not have enough length
         if(s_size < k + numOfSubstrings - 1){
             return false;
         }
@@ -26,7 +28,8 @@ public:
         }
 
         for(int i = 0; i < s_size - k + 1; i++){
-            num = num % (numOfSubstrings / 2);
+            //discard the left most bit
+            num = num & (numOfSubstrings / 2 - 1);
 
             //push_back current bit
             num = (*reader == '1') ? (num << 1) + 1 : (num << 1);
