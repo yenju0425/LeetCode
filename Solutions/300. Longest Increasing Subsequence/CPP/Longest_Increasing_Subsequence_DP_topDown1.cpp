@@ -8,7 +8,7 @@ private:
     vector<vector<int>> dp_len;
 
 public:
-    int lengthOfLIS(vector<int>& nums){
+    int lengthOfLIS(vector<int> &nums){
         int lengthOfnums = nums.size();
         dp_len = vector<vector<int>>(lengthOfnums + 1, vector<int>(lengthOfnums, -1)); //dp_len.shape() = (n + 1) * n, initialized with "-1"
 
@@ -17,7 +17,7 @@ public:
         return lengthOflis; 
     }
 
-    int LIS(vector<int>& nums, int previous_i, int i){
+    int LIS(vector<int> &nums, int previous_i, int i){
         int lengthOfnums = nums.size();
 
         if(i >= lengthOfnums){

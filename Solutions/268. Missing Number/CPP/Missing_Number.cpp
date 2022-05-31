@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution{
 public:
-    int missingNumber(vector<int>& nums){
+    int missingNumber(vector<int> &nums){
         int range = nums.size(); //from 0 ~ range
 
         vector<bool> checker(range + 1, false);

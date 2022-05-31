@@ -14,7 +14,7 @@ public:
         return ((m < M and m >= 0) and (n < N and n >= 0)) ? true : false;
     }
 
-    int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid){
+    int uniquePathsWithObstacles(vector<vector<int>> &obstacleGrid){
         M = obstacleGrid.size();
         N = obstacleGrid[0].size();
 

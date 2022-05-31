@@ -5,14 +5,14 @@ using namespace std;
 
 class Solution{
 public:
-    int lengthOfLIS(vector<int>& nums){
+    int lengthOfLIS(vector<int> &nums){
         vector<int> lis = LIS(nums, -1, 0); //"-1": previous_i is null
         int n = lis.size();
 
         return n; 
     }
 
-    vector<int> LIS(vector<int>& nums, int previous_i, int i){
+    vector<int> LIS(vector<int> &nums, int previous_i, int i){
         vector<int> s;
         if(i >= nums.size()){
             return s;

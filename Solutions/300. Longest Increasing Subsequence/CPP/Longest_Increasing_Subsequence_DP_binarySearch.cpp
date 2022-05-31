@@ -8,7 +8,7 @@ private:
     vector<int> lis_multiverse;
 
 public:
-    int lengthOfLIS(vector<int>& nums){
+    int lengthOfLIS(vector<int> &nums){
         int lengthOfnums = nums.size();
         for(int i = 0; i < lengthOfnums; i = i + 1){
             int index = lower_bound(lis_multiverse.begin(), lis_multiverse.end(), nums[i]) - lis_multiverse.begin();

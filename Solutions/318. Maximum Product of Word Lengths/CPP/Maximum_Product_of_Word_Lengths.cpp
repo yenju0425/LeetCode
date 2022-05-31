@@ -10,7 +10,7 @@ bool cmp(string &lhs, string &rhs){
 
 class Solution{
 public:
-    int maxProduct(vector<string>& words){
+    int maxProduct(vector<string> &words){
         sort(words.begin(), words.end(), cmp);
 
         int numOfWords = words.size();

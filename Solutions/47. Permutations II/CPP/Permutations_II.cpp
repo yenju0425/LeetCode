@@ -35,7 +35,7 @@ public:
         return P;
     }
 
-    vector<vector<int>> permuteUnique(vector<int>& nums){
+    vector<vector<int>> permuteUnique(vector<int> &nums){
         sort(nums.begin(), nums.end());
 
         //create number list

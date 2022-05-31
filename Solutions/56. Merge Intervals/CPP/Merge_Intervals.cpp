@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution{
 public:
-    vector<vector<int>> merge(vector<vector<int>>& intervals){
+    vector<vector<int>> merge(vector<vector<int>> &intervals){
         sort(intervals.begin(), intervals.end()); //still can sort
         vector<vector<int>> mergedIntervals;
         mergedIntervals.push_back(intervals[0]);

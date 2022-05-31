@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution{
 public:
-    void gameOfLife(vector<vector<int>>& board){
+    void gameOfLife(vector<vector<int>> &board){
         int m = board.size();
         int n = board[0].size();
         vector<vector<int>> temp(m + 1, vector<int> (n + 1, 0)); //"+ 1": dummy row and dummy column

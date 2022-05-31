@@ -8,7 +8,7 @@ private:
     vector<int> dp_len;
 
 public:
-    int lengthOfLIS(vector<int>& nums){
+    int lengthOfLIS(vector<int> &nums){
         int lengthOfnums = nums.size();
         dp_len = vector<int>(lengthOfnums + 1, 0);
 

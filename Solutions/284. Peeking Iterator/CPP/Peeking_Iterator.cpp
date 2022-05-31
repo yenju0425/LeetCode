@@ -13,7 +13,7 @@ private:
     Data* data; //pointer to the current data in the lisked-list
     
 public:
-    Iterator(const vector<int>& nums){
+    Iterator(const vector<int> &nums){
 		Data* preNode = nullptr;
 		for(vector<int>::const_iterator i = nums.end() - 1; i - nums.begin() >= 0; i--){
 			Data* node = new Data();
@@ -24,7 +24,7 @@ public:
 		data = preNode;
 	}
 	
-    Iterator(const Iterator& iter){ //Think: why do we need to create an Iterator using another Iterator? => Cause we need to PEEK!
+    Iterator(const Iterator &iter){ //Think: why do we need to create an Iterator using another Iterator? => Cause we need to PEEK!
 		data = iter.data;
 	}
 
@@ -47,7 +47,7 @@ public:
 
 class PeekingIterator: public Iterator{
 public:
-	PeekingIterator(const vector<int>& nums) : Iterator(nums){ //calling parent's constructor
+	PeekingIterator(const vector<int> &nums) : Iterator(nums){ //calling parent's constructor
 	}
 	
     //Returns the next element in the iteration without advancing the iterator.

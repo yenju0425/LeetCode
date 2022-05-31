@@ -9,7 +9,7 @@ private:
     vector<vector<int>> dp_seq;
 
 public:
-    int lengthOfLIS(vector<int>& nums){
+    int lengthOfLIS(vector<int> &nums){
         int lengthOfnums = nums.size();
         dp_len = vector<int>(lengthOfnums + 1, 0);
         dp_seq = vector<vector<int>>(lengthOfnums + 1, vector<int>());
