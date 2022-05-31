@@ -8,7 +8,7 @@ public:
         int s_size = s.size();
         int numOfSubstrings = 1 << k;
         
-        //return flase, if the string does not have enough length
+        //return false, if the string does not have enough length
         if(s_size < k + numOfSubstrings - 1){
             return false;
         }
