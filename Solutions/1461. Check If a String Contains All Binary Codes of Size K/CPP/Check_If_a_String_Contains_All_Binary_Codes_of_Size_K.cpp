@@ -27,6 +27,7 @@ public:
             reader = reader + 1;
         }
 
+        //sliding window algorithm
         for(int i = 0; i < s_size - k + 1; i++){
             //discard the left most bit
             num = num & (numOfSubstrings / 2 - 1);
