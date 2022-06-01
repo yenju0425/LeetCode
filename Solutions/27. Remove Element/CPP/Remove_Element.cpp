@@ -25,7 +25,7 @@ int main(){
 
     int result = S->removeElement(nums, 2);
     for(int i = 0; i < result; i++){
-        cout << nums[i] << " ";
+        cout << nums[i] << ' ';
     }
     cout << endl;
 

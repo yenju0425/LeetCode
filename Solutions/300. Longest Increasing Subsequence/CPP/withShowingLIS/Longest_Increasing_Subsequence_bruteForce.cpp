@@ -11,7 +11,7 @@ public:
 
         //this part is to show the fianl LIS result
         for(int i = n - 1; i >= 0; i = i - 1){
-            cout << lis[i] << " ";
+            cout << lis[i] << ' ';
         }
         cout << endl;
 

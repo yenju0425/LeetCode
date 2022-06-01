@@ -36,7 +36,7 @@ void DFS_inorder(TreeNode* root){
         return;
     }
     DFS_inorder(root -> left);
-    cout << root -> val << " ";
+    cout << root -> val << ' ';
     DFS_inorder(root -> right);
 }
 

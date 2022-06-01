@@ -63,7 +63,7 @@ int main(){
     cout << "number of permutations: " << result.size() << endl;
     for(auto i : result){
         for(auto j : i){
-            cout << j << " ";
+            cout << j << ' ';
         }
         cout << endl;
     }

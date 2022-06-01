@@ -43,7 +43,7 @@ public:
 
         //this part is to show the fianl LIS result
         for(int i = sizeOflis - 1; i >= 0; i = i - 1){
-            cout << dp_seq[lis][i] << " ";
+            cout << dp_seq[lis][i] << ' ';
         }
         cout << endl;
 

@@ -68,7 +68,7 @@ int main(){
     int m = 4;
     for(int i = 0; i < n; i = i + 1){
         for(int j = 0; j < m; j = j + 1){
-            cout << fourSum[i][j] << " ";
+            cout << fourSum[i][j] << ' ';
         }
         cout << endl;
     }

@@ -47,7 +47,7 @@ int main(){
     cout << "inorder  : ";
     vector<int> ans = S->inorderTraversal(root);
     for(int i = 0; i < ans.size(); i++){
-        cout << ans[i] << " ";
+        cout << ans[i] << ' ';
     }
 
     return 0;

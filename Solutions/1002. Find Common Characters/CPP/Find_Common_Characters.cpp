@@ -46,7 +46,7 @@ int main(){
     vector<string> ans = S->commonChars(voc);
 
     for(auto i : ans){
-        cout << i << " ";
+        cout << i << ' ';
     }
 
     return 0;

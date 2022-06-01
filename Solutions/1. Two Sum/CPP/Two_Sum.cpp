@@ -52,7 +52,7 @@ int main(){
     vector<int> result = S->twoSum(nums, 9);
 
     for(int i = 0; i < result.size(); i++){
-        cout << result[i] << " ";
+        cout << result[i] << ' ';
     }
     cout << endl;
 

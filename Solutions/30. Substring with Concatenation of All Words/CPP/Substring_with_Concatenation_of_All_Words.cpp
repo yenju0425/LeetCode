@@ -53,7 +53,7 @@ int main(){
     vector<int> result = S->findSubstring(s, words);
 
     for(auto i : result){
-        cout << i << " ";
+        cout << i << ' ';
     }
     cout << endl;
 

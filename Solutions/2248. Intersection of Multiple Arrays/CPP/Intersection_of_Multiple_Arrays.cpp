@@ -44,7 +44,7 @@ int main(){
     vector<int> I = S->intersection(sets);
 
     for(vector<int>::iterator i = I.begin(); i != I.end(); i++){
-        cout << *i << " ";
+        cout << *i << ' ';
     }
     cout << endl;
 

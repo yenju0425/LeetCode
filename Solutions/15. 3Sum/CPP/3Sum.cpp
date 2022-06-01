@@ -61,7 +61,7 @@ int main(){
     int m = 3;
     for(int i = 0; i < n; i = i + 1){
         for(int j = 0; j < m; j = j + 1){
-            cout << three_Sum[i][j] << " ";
+            cout << three_Sum[i][j] << ' ';
         }
         cout << endl;
     }

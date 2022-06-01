@@ -46,7 +46,7 @@ int main(){
     int n = vect[0].size();
     for(int i = 0; i < m; i = i + 1){
         for(int j = 0; j < n; j = j + 1){
-            cout << vect[i][j] << " ";
+            cout << vect[i][j] << ' ';
         }
         cout << endl;
     }

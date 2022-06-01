@@ -37,7 +37,7 @@ public:
 
         //this part is to show the fianl LIS result
         for(int i = 0; i < sizeOflis; i = i + 1){
-            cout << lis_history[sizeOflis - 1][i] << " ";
+            cout << lis_history[sizeOflis - 1][i] << ' ';
         }
         cout << endl;
 

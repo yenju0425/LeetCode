@@ -29,7 +29,7 @@ int main(){
     S->nextPermutation(nums);
 
     for(auto i : nums){
-        cout << i << " ";
+        cout << i << ' ';
     }
     cout << endl;
 

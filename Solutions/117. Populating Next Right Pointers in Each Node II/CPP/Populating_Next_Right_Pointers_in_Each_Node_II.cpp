@@ -70,7 +70,7 @@ int main(){
     while(!Q.empty()){
         Node* node = Q.front();
         Q.pop();
-        cout << node->val << " ";
+        cout << node->val << ' ';
         if(node->next == nullptr){
             cout << "#" << endl;
         }

@@ -47,7 +47,7 @@ int main(){
     cout << "postorder  : ";
     vector<int> ans = S->postorderTraversal(root);
     for(int i = 0; i < ans.size(); i++){
-        cout << ans[i] << " ";
+        cout << ans[i] << ' ';
     }
 
     return 0;

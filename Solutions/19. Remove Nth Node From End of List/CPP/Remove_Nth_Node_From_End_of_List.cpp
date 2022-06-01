@@ -46,7 +46,7 @@ int main(){
     ListNode* A = S->removeNthFromEnd(a0, 2);
 
     while(A != nullptr){
-        cout << A->val << " ";
+        cout << A->val << ' ';
         A = A->next;
     }
     cout << endl;
