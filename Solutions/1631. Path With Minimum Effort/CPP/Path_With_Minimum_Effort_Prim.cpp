@@ -19,7 +19,7 @@ public:
         return false;
     }
 
-    int minimumEffortPath(vector<vector<int>>& heights){
+    int minimumEffortPath(vector<vector<int>> &heights){
         int maxEffort = -1;
 
         M = heights.size();

@@ -17,7 +17,7 @@ public:
         return false;
     }
 
-    int countUnguarded(int m, int n, vector<vector<int>>& guards, vector<vector<int>>& walls){
+    int countUnguarded(int m, int n, vector<vector<int>> &guards, vector<vector<int>> &walls){
         M = m;
         N = n;
         map = vector<vector<char>>(m, vector<char>(n, ' '));

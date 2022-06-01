@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution{
 public:
-    int minimumCardPickup(vector<int>& cards){
+    int minimumCardPickup(vector<int> &cards){
         int numOfCards  = cards.size();
         int minDistance = -1;
 

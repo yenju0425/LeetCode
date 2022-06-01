@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution{
 public:
-    vector<int> intersection(vector<vector<int>>& nums){
+    vector<int> intersection(vector<vector<int>> &nums){
         vector<int> I;
         if(nums.empty()){
             return I;

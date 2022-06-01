@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution{
 public:
-    vector<int> sortArrayByParity(vector<int>& nums){
+    vector<int> sortArrayByParity(vector<int> &nums){
         vector<int> E;
         vector<int> O;
         for(vector<int>::iterator i = nums.begin(); i != nums.end(); i++){

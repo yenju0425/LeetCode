@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution{
 public:
-    vector<int> sortArrayByParity(vector<int>& nums){
+    vector<int> sortArrayByParity(vector<int> &nums){
         sort(nums.begin(), nums.end(), [](int a, int b){
             if(a % 2 != b % 2){
                 return bool(b % 2);

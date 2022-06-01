@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution{
 public:
-    vector<string> commonChars(vector<string>& words){
+    vector<string> commonChars(vector<string> &words){
         vector<string> CC; //the vector to store the common chars
         int charCounter[26] = {0};
 

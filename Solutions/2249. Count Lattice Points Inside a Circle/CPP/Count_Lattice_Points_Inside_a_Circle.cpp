@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution{
 public:
-    int countLatticePoints(vector<vector<int>>& circles){
+    int countLatticePoints(vector<vector<int>> &circles){
         int LP = 0;
         if(circles.empty()){
             return LP;

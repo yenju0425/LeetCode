@@ -47,7 +47,7 @@ public:
 
 class Solution{
 public:
-    string smallestStringWithSwaps(string s, vector<vector<int>>& pairs){
+    string smallestStringWithSwaps(string s, vector<vector<int>> &pairs){
         int stringLength = s.size();
         UnionFind* UF = new UnionFind(stringLength);
         for(int i = 0; i < pairs.size(); i++){

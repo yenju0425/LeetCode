@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution{
 public:
-    int countPrefixes(vector<string>& words, string s){
+    int countPrefixes(vector<string> &words, string s){
         int counter = 0;
         for(int i = 0; i < words.size(); i++){
             bool match = true;

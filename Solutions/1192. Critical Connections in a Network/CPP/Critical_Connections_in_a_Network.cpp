@@ -71,7 +71,7 @@ public:
 
 class Solution{
 public:
-    vector<vector<int>> criticalConnections(int n, vector<vector<int>>& connections){
+    vector<vector<int>> criticalConnections(int n, vector<vector<int>> &connections){
         //build servers
         Servers* S = new Servers(n, connections);
 

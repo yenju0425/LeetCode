@@ -14,7 +14,7 @@ public:
         return true;
     }
 
-    int shortestPathBinaryMatrix(vector<vector<int>>& grid){
+    int shortestPathBinaryMatrix(vector<vector<int>> &grid){
         if(grid[0][0] == 1){
             return -1;
         }

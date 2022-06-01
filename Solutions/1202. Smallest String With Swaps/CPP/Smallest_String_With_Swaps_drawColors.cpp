@@ -7,7 +7,7 @@ using namespace std;
 
 class Solution{
 public:
-    string smallestStringWithSwaps(string s, vector<vector<int>>& pairs){
+    string smallestStringWithSwaps(string s, vector<vector<int>> &pairs){
         int stringSize = s.size();
         vector<int> colorIndex(stringSize, -1);
 
