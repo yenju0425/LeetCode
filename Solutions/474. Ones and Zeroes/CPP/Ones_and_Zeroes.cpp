@@ -7,7 +7,7 @@ class Solution{
 private:
 
 public:
-    int findMaxForm(vector<string>& strs, int m, int n){
+    int findMaxForm(vector<string> &strs, int m, int n){
         int strs_Size = strs.size();
         vector<vector<int>> count01(strs_Size, vector<int>(2, 0));
 

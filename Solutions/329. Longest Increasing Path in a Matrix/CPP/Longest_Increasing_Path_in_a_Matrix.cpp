@@ -15,7 +15,7 @@ public:
         return ((r < m and r >= 0) and (c < n and c >= 0)) ? true : false;
     }
 
-    int longestIncreasingPath(vector<vector<int>>& matrix){
+    int longestIncreasingPath(vector<vector<int>> &matrix){
         m = matrix.size();
         n = matrix[0].size();
         M       = matrix;

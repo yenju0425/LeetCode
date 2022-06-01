@@ -8,7 +8,7 @@ private:
     vector<int> lookupTable;
 
 public:
-    int coinChange(vector<int>& coins, int amount){
+    int coinChange(vector<int> &coins, int amount){
         int numOfCoins = coins.size();
 
         lookupTable = vector<int>(amount + 1, -1);

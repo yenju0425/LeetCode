@@ -42,7 +42,7 @@ public:
 
 class Solution{
 public:
-    int networkDelayTime(vector<vector<int>>& times, int n, int k){ //n vertices, start from k
+    int networkDelayTime(vector<vector<int>> &times, int n, int k){ //n vertices, start from k
         vector<Vertex*> vertices(n + 1, nullptr); //vertices[0] is a dummy Vertex
         int numVisited = 0;
 

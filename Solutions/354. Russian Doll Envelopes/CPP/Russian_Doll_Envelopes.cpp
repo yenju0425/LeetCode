@@ -10,7 +10,7 @@ bool cmp(vector<int> &lfs, vector<int> &rhs){
 
 class Solution{
 public:
-    int maxEnvelopes(vector<vector<int>>& envelopes){
+    int maxEnvelopes(vector<vector<int>> &envelopes){
         sort(envelopes.begin(), envelopes.end(), cmp);
 
         //longest increasing subsequence

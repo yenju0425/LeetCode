@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution{
 public:
-    int findUnsortedSubarray(vector<int>& nums){
+    int findUnsortedSubarray(vector<int> &nums){
         int sizeOfnums = nums.size();
 
         bool find_min = false;

@@ -7,7 +7,7 @@ using namespace std;
 
 class Solution{
 public:
-    bool find132pattern(vector<int>& nums){
+    bool find132pattern(vector<int> &nums){
         int nums_size = nums.size();
         vector<int> intervals;
         for(int i = 0; i < nums_size; i++){
