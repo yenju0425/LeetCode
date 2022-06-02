@@ -30,20 +30,20 @@ public:
 
         //find next position, and it will cost you half of the current fuel
         int next_position = 0;
-        int fuel_used = (fuel == 1) ? fuel : fuel / 2;
-        fuel = fuel - fuel_used;
+        int fuel_used = (fuel == 1) ? fuel : fuel / 2; //O(logN)
         if(nums[position] < target){
             next_position = (position + fuel_used) % nums_size;
-            if(nums[next_position] < nums[position]){ //this means we go too far
-                next_position = position;
+            if(nums[next_position] < nums[position]){ //if we will go too far
+                next_position = position; //then stay at the current position
             }
         }
         else{
             next_position = (position + nums_size - fuel_used) % nums_size;
-            if(nums[next_position] > nums[position]){ //this means we go too far
+            if(nums[next_position] > nums[position]){
                 next_position = position;
             }
         }
+        fuel = fuel - fuel_used;
         return find(next_position);
     }
 };
