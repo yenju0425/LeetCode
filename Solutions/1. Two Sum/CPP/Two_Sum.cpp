@@ -47,12 +47,14 @@ public:
 int main(){
     Solution* S = new Solution();
 
+    //inputs
     vector<int> nums{15, 7, 11, 2};
+    int target = 9;
 
-    vector<int> result = S->twoSum(nums, 9);
+    vector<int> result = S->twoSum(nums, target);
 
-    for(int i = 0; i < result.size(); i++){
-        cout << result[i] << ' ';
+    for(auto i : result){
+        cout << i << ' ';
     }
     cout << endl;
 

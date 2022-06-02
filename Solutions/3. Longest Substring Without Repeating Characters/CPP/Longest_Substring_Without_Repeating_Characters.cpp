@@ -42,7 +42,10 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    cout << S->lengthOfLongestSubstring("abcabcbb") << endl;
+    //input
+    string s = "abcabcbb";
+
+    cout << S->lengthOfLongestSubstring(s) << endl;
 
     return 0;
 }

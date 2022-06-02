@@ -33,7 +33,10 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    cout << S->longestPalindrome("eabcb") << endl;
+    //input
+    string s = "eabcb";
+
+    cout << S->longestPalindrome(s) << endl;
 
     return 0;
 }

@@ -36,7 +36,11 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    cout << S->isMatch("c", "c*") << endl;
+    //inputs
+    string s = "c";
+    string p = "c*";
+
+    cout << S->isMatch(s, p) << endl;
 
     return 0;
 }

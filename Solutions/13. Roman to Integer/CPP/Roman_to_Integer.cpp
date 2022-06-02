@@ -13,7 +13,6 @@ private:
         {'X', 10},
         {'V', 5},
         {'I', 1}
-
     };
 
 public:
@@ -34,7 +33,10 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    cout << S->romanToInt("MCMLXXXVII") << endl;
+    //input
+    string s = "MCMLXXXVII";
+
+    cout << S->romanToInt(s) << endl;
 
     return 0;
 }

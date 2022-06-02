@@ -22,7 +22,10 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    cout << S->isPalindrome(12321) << endl;
+    //input
+    int x = 12321;
+
+    cout << S->isPalindrome(x) << endl;
 
     return 0;
 }

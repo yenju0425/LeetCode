@@ -53,15 +53,14 @@ public:
 int main(){
     Solution* S = new Solution();
     
+    //input
     vector<int> nums{-1, 0, 1, 2, -1, -4};
 
-    vector<vector<int>> three_Sum = S->threeSum(nums);
+    vector<vector<int>> result = S->threeSum(nums);
 
-    int n = three_Sum.size();
-    int m = 3;
-    for(int i = 0; i < n; i = i + 1){
-        for(int j = 0; j < m; j = j + 1){
-            cout << three_Sum[i][j] << ' ';
+    for(auto i : result){
+        for(auto j : i){
+            cout << j << ' ';
         }
         cout << endl;
     }

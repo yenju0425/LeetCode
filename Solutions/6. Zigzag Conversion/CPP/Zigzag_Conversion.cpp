@@ -27,7 +27,11 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    cout << S->convert("PAYPALISHIRING", 3);
+    //inputs
+    string s = "PAYPALISHIRING";
+    int numRows = 3;
+
+    cout << S->convert(s, numRows);
 
     return 0;
 }

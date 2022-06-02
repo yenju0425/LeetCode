@@ -48,9 +48,11 @@ public:
 int main(){
     Solution* S = new Solution();
 
+    //inputs
     vector<int> nums{1, 1, 1, 1};
+    int target = -100;
 
-    cout << S->threeSumClosest(nums, -100) << endl;
+    cout << S->threeSumClosest(nums, target) << endl;
 
     return 0;
 }

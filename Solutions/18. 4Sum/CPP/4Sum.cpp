@@ -61,14 +61,16 @@ public:
 int main(){
     Solution* S = new Solution();
     
+    //inputs
     vector<int> nums{1, 0, -1, 0, -2, 2};
-    vector<vector<int>> fourSum = S->fourSum(nums, 0);
+    int target = 0;
 
-    int n = fourSum.size();
-    int m = 4;
-    for(int i = 0; i < n; i = i + 1){
-        for(int j = 0; j < m; j = j + 1){
-            cout << fourSum[i][j] << ' ';
+    vector<vector<int>> result = S->fourSum(nums, target);
+
+
+    for(auto i : result){
+        for(auto j : i){
+            cout << j << ' ';
         }
         cout << endl;
     }
