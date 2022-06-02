@@ -29,8 +29,9 @@ public:
 
 int main(){
     Solution* S = new Solution();
-
-    int x = 0;
+    
+    //input
+    int x = 8;
 
     cout << S->mySqrt(x) << endl;
 
