@@ -1,11 +1,12 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
 class Solution{
 public:
     int climbStairs(int n){
-        int* numOfWays = new int[n + 1]{0};
+        vector<int> numOfWays(max(2, n + 1)); //n = 0 will cause seg fault
         numOfWays[0] = 1;
         numOfWays[1] = 1;
         for(int i = 2; i <= n; i++){
