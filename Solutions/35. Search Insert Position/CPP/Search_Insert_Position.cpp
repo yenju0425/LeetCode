@@ -6,17 +6,17 @@ using namespace std;
 
 class Solution{
 public:
-    vector<int>::iterator lb(vector<int>::iterator left, vector<int>::iterator right, int &target){
+    vector<int>::iterator LB(vector<int>::iterator left, vector<int>::iterator right, int &target){
         if(left == right){
             return left;
         }
 
         vector<int>::iterator half = left + (right - left) / 2;
         if(target > *half){
-            return lb(half + 1, right, target);
+            return LB(half + 1, right, target);
         }
         else if(target < *half){
-            return lb(left, half, target);
+            return LB(left, half, target);
         }
         else{
             return half;
@@ -24,7 +24,7 @@ public:
     }
 
     int searchInsert(vector<int> &nums, int target){
-        return lb(nums.begin(), nums.end(), target) - nums.begin();
+        return LB(nums.begin(), nums.end(), target) - nums.begin();
     }
 };
 
