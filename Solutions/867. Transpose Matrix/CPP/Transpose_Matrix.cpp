@@ -5,19 +5,20 @@ using namespace std;
 
 class Solution{
 public:
-    vector<vector<int>> transpose(vector<vector<int>> &matrix){
-        int M = matrix.size();
-        int N = matrix[0].size();
+	vector<vector<int>> transpose(vector<vector<int>> &matrix){
+		int M = matrix.size();
+		int N = matrix[0].size();
 
-        vector<vector<int>> result(N, vector<int>(M, 0));
-        for(int i = 0; i < N; i++){
-            for(int j = 0; j < M; j++){
-                result[i][j] = matrix[j][i];
-            }
-        }
+		//swap rows and columns
+		vector<vector<int>> result(N, vector<int>(M, 0));
+		for(int i = 0; i < N; i++){
+			for(int j = 0; j < M; j++){
+				result[i][j] = matrix[j][i];
+			}
+		}
 
-        return result;
-    }
+		return result;
+	}
 };
 
 int main(){
