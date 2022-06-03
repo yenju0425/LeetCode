@@ -15,14 +15,14 @@ public:
         m = matrix.size();
         n = matrix[0].size();
 
-        //re-use "matrix" to store summation from (0, 0) to (i, j)
+        //re-use "matrix" to store the summation from (0, 0) to (i, j)
         for(int i = 0; i < m; i++){
             for(int j = 0; j < n; j++){
                 int a = readMatrix(i - 1, j    );
                 int b = readMatrix(i    , j - 1);
                 int c = readMatrix(i - 1, j - 1);
 
-                M[i][j] = M[i][j] + a + b - c;
+                M[i][j] = M[i][j] + a + b - c; //by union & intersection theory
             }
         }
     }
@@ -36,7 +36,7 @@ public:
         int b = readMatrix(row2    , col1 - 1);
         int c = readMatrix(row1 - 1, col1 - 1);
 
-        return M[row2][col2] - a - b + c;
+        return M[row2][col2] - a - b + c; //by union & intersection theory
     }
 };
 
