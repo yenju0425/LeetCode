@@ -8,7 +8,7 @@ public:
     void gameOfLife(vector<vector<int>> &board){
         int m = board.size();
         int n = board[0].size();
-        vector<vector<int>> temp(m + 1, vector<int> (n + 1, 0)); //"+ 1": dummy row and dummy column
+        vector<vector<int>> temp(m + 1, vector<int> (n + 1, 0)); //n + 1: dummy row and dummy column
         for(int i = 0; i < m; i = i + 1){
             for(int j = 0; j < n; j = j + 1){
                 if(board[i][j] == 1){
@@ -37,22 +37,20 @@ public:
 };
 
 int main(){
-    vector<vector<int>> vect{
+    Solution* S = new Solution();
+    
+    vector<vector<int>> board{
         {0, 1, 0},
         {0, 0, 1},
         {1, 1, 1},
         {0, 0, 0},
     };
 
-    Solution* S = new Solution();
-    
-    S->gameOfLife(vect);
+    S->gameOfLife(board);
 
-    int m = vect.size();
-    int n = vect[0].size();
-    for(int i = 0; i < m; i = i + 1){
-        for(int j = 0; j < n; j = j + 1){
-            cout << vect[i][j] << ' ';
+    for(auto i : board){
+        for(auto j : i){
+            cout << j << ' ';
         }
         cout << endl;
     }

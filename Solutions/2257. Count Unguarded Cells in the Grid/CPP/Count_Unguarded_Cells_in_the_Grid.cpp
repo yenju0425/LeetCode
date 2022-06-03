@@ -5,13 +5,13 @@ using namespace std;
 
 class Solution{
 private:
+    vector<vector<char>> map;
     int M;
     int N;
-    vector<vector<char>> map;
 
 public:
-    bool isValid(int m, int n){
-        if(m < M and m >= 0 and n < N and n >= 0 and (map[m][n] == ' ' or map[m][n] == 'v')){
+    bool isValid(int i, int j){
+        if(i < M and i >= 0 and j < N and j >= 0 and (map[i][j] == ' ' or map[i][j] == 'v')){
             return true;
         }
         return false;
