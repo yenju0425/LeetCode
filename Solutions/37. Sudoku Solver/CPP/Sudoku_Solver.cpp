@@ -18,39 +18,100 @@ public:
         return (i % 3) * 3 + (j % 3);
     }
 
+    void updateFindNum(int row, int col, int num){
+        int blk = blockId(row, col);
+        int idx = indexInBlock(row, col);
+
+        fill(findNum_row[row][col].begin(), findNum_row[row][col].end(), 0); //the "col-th" position for other numbers in the "row-th" row is unavailable (each position can only be filled with one number)
+        fill(findNum_col[col][row].begin(), findNum_col[col][row].end(), 0);
+        fill(findNum_blk[blk][idx].begin(), findNum_blk[blk][idx].end(), 0);
+
+        for(int k = 0; k < 9; k++){
+            findNum_row[row][k][num] = false; //every position in the "row-th" row cannot be filled with "num" (each number can only be used once)
+            findNum_col[col][k][num] = false;
+            findNum_blk[blk][k][num] = false;
+        }
+    }
+
     void solveSudoku(vector<vector<char>> &board){
         //init findNum_row, findNum_col, findNum_blk
         findNum_row = vector<vector<vector<bool>>>(9, vector<vector<bool>>(9, vector<bool>(9, true)));
         findNum_col = vector<vector<vector<bool>>>(9, vector<vector<bool>>(9, vector<bool>(9, true)));
         findNum_blk = vector<vector<vector<bool>>>(9, vector<vector<bool>>(9, vector<bool>(9, true)));
+
+        //if counter == 81, problem solved!
+        int counter = 0;
         
-        //update findNum_row, findNum_col, findNum_blk,
+        //pre-load batch for the first update
+        vector<vector<int>> batch; //board[batch[i][0]][batch[i][1]] will be filled with batch[i][2] later
         for(int i = 0; i < 9; i++){
             for(int j = 0; j < 9; j++){
-                if(board[i][j] == '.'){
-                    continue;
-                }
-
-                int blk = blockId(i, j);
-                int idx = indexInBlock(i, j);
-
-                int num = board[i][j] - '1';
-
-                fill(findNum_row[i][j].begin(),     findNum_row[i][j].end(),     0); //the "j-th" position for other numbers in the "i-th" row is unavailable (each position can only be filled with one number)
-                fill(findNum_col[j][i].begin(),     findNum_col[j][i].end(),     0);
-                fill(findNum_blk[blk][idx].begin(), findNum_blk[blk][idx].end(), 0);
-
-                for(int k = 0; k < 9; k++){
-                    findNum_row[i][k][num]   = false; // every position in the "i-th" row cannot be filled with "num" (each number can only be used once)
-                    findNum_col[j][k][num]   = false;
-                    findNum_blk[blk][k][num] = false;
+                if(board[i][j] != '.'){
+                    counter = counter + 1;
+                    updateFindNum(i, j, board[i][j] - '1');
+                    batch.push_back(vector<int>{i, j, board[i][j] - '1'});
                 }
             }
         }
 
         while(true){
+            //update findNum_row, findNum_col, findNum_blk, and the board
+            if(counter == 81){
+                return;
+            }
+
+            //if the batch is empty, iteratively guess an answer for the next empty cell
+            if(batch.empty()){
+                for(int i = 0; i < 9; i++){
+                    for(int j = 0; j < 9; j++){
+                        for(int k = 0; k < 9; k++){
+                            int blk = blockId(i, j);
+                            int idx = indexInBlock(i, j);
+                            if(findNum_row[i][j][k] and findNum_col[j][i][k] and findNum_blk[blk][idx][k]){
+                                vector<vector<char>> board_clone = board;
+
+                                // guess k is the answer for board[i][j]
+                                board_clone[i][j] = k + '1';
+
+                                solveSudoku(board_clone);
+
+                                if(board_clone[0][0] != '!'){ //if the guess is correct
+                                    board = board_clone;
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                //"ERROR"
+                board = vector<vector<char>>(9, vector<char>(9, '!'));
+                return;
+            }
+
+            for(vector<vector<int>>::iterator iter = batch.begin(); iter != batch.end(); iter++){
+                int row = (*iter)[0];
+                int col = (*iter)[1];
+                int num = (*iter)[2];
+
+                if(board[row][col] == '.'){
+                    board[row][col] = num + '1';
+                    counter = counter + 1;
+                }
+            }
+
+            //print
+            for(auto i : board){
+                for(auto j : i){
+                    cout << j << ' ';
+                }
+                cout << endl;
+            }
+            cout << endl;
+
+            batch.clear();
+
             //get ready to fill in numbers
-            vector<vector<int>> batch; //board[batch[i][0]][batch[i][1]] will be filled with batch[i][2] later
             for(int i = 0; i < 9; i++){
                 for(int j = 0; j < 9; j++){
                     //check by position: if board[i][j] can only be filled with k, than add (i, j, k) to batch
@@ -73,6 +134,7 @@ public:
                         }
 
                         if(num >= 0){
+                            updateFindNum(i, j, num);
                             batch.push_back(vector<int>{i, j, num});
                         }
                     }
@@ -132,42 +194,19 @@ public:
                     }
 
                     if(pos_row >= 0){ //if pos_row is the only position to place j in "i-th" row
+                        updateFindNum(i, pos_row, j);
                         batch.push_back(vector<int>{i, pos_row, j});
                     }
 
                     if(pos_col >= 0){ //if pos_col is the only position to place j in "i-th" col
+                        updateFindNum(pos_col, i, j);
                         batch.push_back(vector<int>{pos_col, i, j});
                     }
 
                     if(pos_blk >= 0){ //if pos_blk is the only position to place j in "i-th" blk
+                        updateFindNum((i / 3) * 3 + pos_blk / 3, (i % 3) * 3 + pos_blk % 3, j);
                         batch.push_back(vector<int>{(i / 3) * 3 + pos_blk / 3, (i % 3) * 3 + pos_blk % 3, j});
                     }
-                }
-            }
-            
-            //fill in the board and update findNum_row, findNum_col, and findNum_blk
-            if(batch.empty()){
-                return;
-            }
-
-            for(vector<vector<int>>::iterator iter = batch.begin(); iter != batch.end(); iter++){
-                int row = (*iter)[0];
-                int col = (*iter)[1];
-                int val = (*iter)[2];
-
-                int blk = blockId(row, col);
-                int idx = indexInBlock(row, col);
-
-                board[row][col] = val + '1';
-
-                fill(findNum_row[row][col].begin(), findNum_row[row][col].end(), 0);
-                fill(findNum_col[col][row].begin(), findNum_col[col][row].end(), 0);
-                fill(findNum_blk[blk][idx].begin(), findNum_blk[blk][idx].end(), 0);
-
-                for(int k = 0; k < 9; k++){
-                    findNum_row[row][k][val] = false;
-                    findNum_col[col][k][val] = false;
-                    findNum_blk[blk][k][val] = false;
                 }
             }
         }
@@ -178,15 +217,15 @@ int main(){
     Solution* S = new Solution();
 
     vector<vector<char>> board{
-        {'5', '3', '.', '.', '7', '.', '.', '.', '.'}, 
-        {'6', '.', '.', '1', '9', '5', '.', '.', '.'}, 
-        {'.', '9', '8', '.', '.', '.', '.', '6', '.'}, 
-        {'8', '.', '.', '.', '6', '.', '.', '.', '3'}, 
-        {'4', '.', '.', '8', '.', '3', '.', '.', '1'}, 
-        {'7', '.', '.', '.', '2', '.', '.', '.', '6'}, 
-        {'.', '6', '.', '.', '.', '.', '2', '8', '.'}, 
-        {'.', '.', '.', '4', '1', '9', '.', '.', '5'}, 
-        {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
+        {'.', '.', '.', '.', '.', '7', '.', '.', '9'}, 
+        {'.', '4', '.', '.', '8', '1', '2', '.', '.'}, 
+        {'.', '.', '.', '9', '.', '.', '.', '1', '.'}, 
+        {'.', '.', '5', '3', '.', '.', '.', '7', '2'}, 
+        {'2', '9', '3', '.', '.', '.', '.', '5', '.'}, 
+        {'.', '.', '.', '.', '.', '5', '3', '.', '.'}, 
+        {'8', '.', '.', '.', '2', '3', '.', '.', '.'}, 
+        {'7', '.', '.', '.', '5', '.', '.', '4', '.'}, 
+        {'5', '3', '1', '.', '7', '.', '.', '.', '.'}
     };
 
     S->solveSudoku(board);
