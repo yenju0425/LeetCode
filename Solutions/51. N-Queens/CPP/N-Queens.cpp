@@ -10,9 +10,10 @@ private:
     vector<string> temp_placement;
 
 public:
-    //convert the placing representation to string
-    //e.g. n = 9, newQueen = 001000000,
-    //convert(newQueen) --> "..Q......"
+    //Convert the placing representation to string:
+    //
+    //    e.g. n = 9, newQueen = 001000000,
+    //    convert(newQueen) --> "..Q......"
     //
     string int2string(int &newQueen){
         string newQueen_str;
@@ -22,28 +23,29 @@ public:
         return newQueen_str;
     }
     
-    //the binary representation of "availableCells" indicates its corresponding available cells
-    //e.g. n = 9, availableCells = 10111101
-    //                              ^    ^
-    //                     Queen can be placed here
-    //
-    void place(int l, int r, int m, int counter){
+    void place(int l, int r, int v, int counter){
         //check if N Queens are placed successfully
         if(counter == N){
             placement.push_back(temp_placement);
             return;
         }
 
-        //try to place a Queen
-        for(int i = 0; i < N; i++){
+        //Try to place a Queen:
+        //
+        //    the binary representation of "l", "r", "v", and "availableCells" indicates the corresponding available cells
+        //    e.g. n = 9, availableCells = 10111101
+        //                                  ^    ^
+        //                         Queen can be placed here
+        //
+        for(int i = 0; i < N; i++){ //look for empty cells
             int newQueen = 1 << i;
-            int availableCells = l | r | m;
+            int availableCells = l | r | v; // left diagonal | right diagonal | vitercal line
             if((availableCells & newQueen) == 0){ //0: no collision; 1: collision
                 //place new Queen
                 temp_placement.push_back(int2string(newQueen));
 
-                //place next row
-                place(((l | newQueen) >> 1), ((r | newQueen) << 1), (m | newQueen), counter + 1);
+                //place (counter + 1) row
+                place(((l | newQueen) >> 1), ((r | newQueen) << 1), (v | newQueen), counter + 1);
 
                 //get ready for another trial
                 temp_placement.pop_back();
