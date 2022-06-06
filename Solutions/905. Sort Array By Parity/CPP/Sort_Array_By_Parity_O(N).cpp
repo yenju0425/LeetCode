@@ -6,26 +6,45 @@ using namespace std;
 class Solution{
 public:
     vector<int> sortArrayByParity(vector<int> &nums){
-        vector<int> E;
-        vector<int> O;
-        for(vector<int>::iterator i = nums.begin(); i != nums.end(); i++){
-            *i % 2 == 0 ? E.push_back(*i) : O.push_back(*i);
+        int l = 0;
+        int r = nums.size() - 1;
+
+        while(l < r){
+            //find the first odd num from left
+            while((nums[l] & 1) == 0 and l < r){
+                l = l + 1;
+            }
+
+            //find the first even num from right
+            while((nums[r] & 1) == 1 and l < r){
+                r = r - 1;
+            }
+
+            //swap them
+            int temp = nums[l];
+            nums[l] = nums[r];
+            nums[r] = temp;
+
+            l = l + 1;
+            r = r - 1;
         }
-        copy(O.begin(), O.end(), back_inserter(E));
-        return E;
+
+        return nums;
     }
 };
 
 int main(){
     Solution* S = new Solution();
 
-    vector<int> v{3, 1, 2, 4};
+    //input
+    vector<int> nums{3, 1, 2, 4};
 
-    v = S->sortArrayByParity(v);
+    vector<int> result = S->sortArrayByParity(nums);
 
-    for(auto i : v){
-        cout << i << endl;
+    for(auto i : result){
+        cout << i << ' ';
     }
+    cout << endl;
 
     return 0;
 }
