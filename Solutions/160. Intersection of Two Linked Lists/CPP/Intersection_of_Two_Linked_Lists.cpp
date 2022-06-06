@@ -13,14 +13,14 @@ struct ListNode{
 
 class Solution{
 public:
-    ListNode* getIntersectionNode(ListNode *headA, ListNode *headB){
-        ListNode *Intersection;
+    ListNode* getIntersectionNode(ListNode* headA, ListNode* headB){
+        ListNode* Intersection;
 
-        ListNode *ptr;
-        for(ListNode *ptr = headA; ptr != nullptr; ptr = ptr->next){
+        ListNode* ptr;
+        for(ListNode* ptr = headA; ptr != nullptr; ptr = ptr->next){
             ptr->val = (-1) * ptr->val;
         }
-        for(ListNode *ptr = headB; ptr != nullptr; ptr = ptr->next){
+        for(ListNode* ptr = headB; ptr != nullptr; ptr = ptr->next){
             if(ptr->val < 0){
                 Intersection = ptr;
                 break;
@@ -28,7 +28,7 @@ public:
         }
 
         //restore listA
-        for(ListNode *ptr = headA; ptr != nullptr; ptr = ptr->next){
+        for(ListNode* ptr = headA; ptr != nullptr; ptr = ptr->next){
             ptr->val = (-1) * ptr->val;
         }
 
