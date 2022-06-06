@@ -5,8 +5,9 @@ using namespace std;
 class Solution{
 public:
     int maxNumberOfBalloons(string text){
-        int text_size = text.size();
         int charCount[26] = {0};
+    
+        int text_size = text.size();
         for(int i = 0; i < text_size; i++){
             int index = text[i] - 'a';
             charCount[index] = charCount[index] + 1;
@@ -19,7 +20,10 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    cout << S->maxNumberOfBalloons("loonbalxballpoon") << endl;
+    //input
+    string text = "loonbalxballpoon";
+
+    cout << S->maxNumberOfBalloons(text) << endl;
 
     return 0;
 }

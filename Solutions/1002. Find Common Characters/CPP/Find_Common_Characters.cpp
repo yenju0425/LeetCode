@@ -34,18 +34,20 @@ public:
                 CC.push_back(s);
             }
         }
+
         return CC;
     }
 };
 
 int main(){
-    vector<string> voc{"bella", "label", "roller"};
-
     Solution* S = new Solution;
 
-    vector<string> ans = S->commonChars(voc);
+    //input
+    vector<string> words{"bella", "label", "roller"};
 
-    for(auto i : ans){
+    vector<string> result = S->commonChars(words);
+
+    for(auto i : result){
         cout << i << ' ';
     }
 

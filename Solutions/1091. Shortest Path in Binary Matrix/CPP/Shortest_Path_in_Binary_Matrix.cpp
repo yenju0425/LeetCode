@@ -7,7 +7,7 @@ using namespace std;
 
 class Solution{
 public:
-    int isPosValid(int r, int c, int n){
+    int isValid(int r, int c, int n){
         if((r >= n or r < 0) or (c >= n or c < 0)){
             return false;
         }
@@ -45,7 +45,7 @@ public:
                 for(int i = 0; i < 8; i++){
                     int R = row[i];
                     int C = col[i];
-                    if(isPosValid(R, C, sideLength) and !isVisited[R][C] and grid[R][C] == 0){
+                    if(isValid(R, C, sideLength) and !isVisited[R][C] and grid[R][C] == 0){
                         Q[_idx].push(pair<int, int>(R, C));
                         isVisited[R][C] = true;
                     }
@@ -54,19 +54,20 @@ public:
             stepCounter = stepCounter + 1;
             idx = _idx;
         }
+    
         return -1;
     }
 };
 
 int main(){
+    Solution* S = new Solution();
+
     vector<vector<int>> grid{
         {1, 0, 0},
         {1, 1, 0},
         {1, 1, 1}
     };
 
-    Solution* S = new Solution();
-    
     cout << S->shortestPathBinaryMatrix(grid) << endl;
 
     return 0;

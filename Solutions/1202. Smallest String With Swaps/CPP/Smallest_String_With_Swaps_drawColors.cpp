@@ -1,63 +1,67 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-#include <map>
+#include <unordered_map>
 
 using namespace std;
 
 class Solution{
 public:
     string smallestStringWithSwaps(string s, vector<vector<int>> &pairs){
-        int stringSize = s.size();
-        vector<int> colorIndex(stringSize, -1);
+        //init
+        int s_size = s.size();
+        vector<int> getGroupId(s_size, -1);
 
-        //grouping the swap pairs with colors
-        for(int i = 0; i < pairs.size(); i++){
-            int firstIndex  = pairs[i][0];
-            int secondIndex = pairs[i][1];
-            int firstColor  = colorIndex[firstIndex];
-            int secondColor = colorIndex[secondIndex];
-            if(firstColor == -1 and secondColor == -1){ //draw new color
-                colorIndex[firstIndex] = i; //draw color i
-                colorIndex[secondIndex] = i; //draw color i
+        //assign to groups
+        int pairs_size = pairs.size();
+        for(int i = 0; i < pairs_size; i++){
+            int index_a  = pairs[i][0];
+            int index_b  = pairs[i][1];
+            int &a_group = getGroupId[index_a];
+            int &b_group = getGroupId[index_b];
+            if(a_group == -1 and b_group == -1){ //assign to new group i
+                a_group = i;
+                b_group = i;
             }
-            else if(firstColor != -1 and secondColor == -1){ //draw secondIndex with firstIndex's color
-                colorIndex[secondIndex] = firstColor;
+            else if(a_group != -1 and b_group == -1){ //assign "index_b" to "a_group"
+                b_group = a_group;
             }
-            else if(secondColor != -1 and firstColor == -1){ //draw firstIndex with secondIndex's color
-                colorIndex[firstIndex] = secondColor;
+            else if(a_group == -1 and b_group != -1){ //assign "index_a" to "b_group"
+                a_group = b_group;
             }
-            else if(firstColor != -1 and secondColor != -1 and firstColor != secondColor){
-                for(vector<int>::iterator iter = colorIndex.begin(); iter != colorIndex.end(); iter++){
-                    if(*iter == secondColor){
-                        *iter = firstColor;
+            else if(a_group != b_group){
+                int groupId = a_group;
+                for(vector<int>::iterator iter = getGroupId.begin(); iter != getGroupId.end(); iter++){
+                    if(*iter == groupId){
+                        *iter = b_group;
                     }
                 }
             }
         }
 
-        map<int, vector<char>> charSets;
-        for(int i = 0; i < colorIndex.size(); i++){
-            if(colorIndex[i] != -1){
-                charSets[colorIndex[i]].push_back(s[i]);
+        //push the char to its corresponding vector
+        unordered_map<int, vector<char>> groups;
+
+        for(int i = 0; i < s_size; i++){
+            if(getGroupId[i] != -1){
+                groups[getGroupId[i]].push_back(s[i]);
             }
         }
-        for(map<int, vector<char>>::iterator iter = charSets.begin(); iter != charSets.end(); iter++){
+
+        for(unordered_map<int, vector<char>>::iterator iter = groups.begin(); iter != groups.end(); iter++){
             sort(iter->second.begin(), iter->second.end());
         }
 
-        string newString = "";
-        for(int i = 0; i < stringSize; i++){
-            int index = colorIndex[i];
-            if(index != -1){
-                newString.push_back(*charSets[index].begin());
-                charSets[index].erase(charSets[index].begin());
-            }
-            else{
-                newString.push_back(s[i]);
+        string result = s;
+        for(int i = 0; i < s_size; i++){
+            int groupId = getGroupId[i];
+            if(groupId != -1){
+                result[i] = groups[groupId].front();
+                groups[groupId].erase(groups[groupId].begin());
             }
         }
-        return newString;
+
+        return result;
     }
 };
 
