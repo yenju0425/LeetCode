@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <climits>
 
 using namespace std;
 
@@ -9,20 +8,27 @@ public:
     int maxProfit(vector<int> &prices){
         int profit = 0;
 
-        int buyPrice = prices[0];
+        int buyPrice  = prices[0];
+        int sellPrice = prices[0];
 
         int prices_size = prices.size();
         for(int i = 1; i < prices_size; i++){
             int price = prices[i];
-            
-            //buy at a lower price
-            if(price < buyPrice){
-                buyPrice = price;
+
+            //accumulate profit
+            if(price < sellPrice){
+                profit = profit + sellPrice - buyPrice;
+
+                //update buyPrice and sellPrice
+                buyPrice  = price;
+                sellPrice = price;
             }
             else{
-                profit = max(profit, price - buyPrice);
+                sellPrice = max(sellPrice, price);
             }
         }
+
+        profit = profit + sellPrice - buyPrice;
 
         return profit;
     }
