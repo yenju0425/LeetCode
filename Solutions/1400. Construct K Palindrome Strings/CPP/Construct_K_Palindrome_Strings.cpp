@@ -5,29 +5,34 @@ using namespace std;
 class Solution{
 public:
     bool canConstruct(string s, int k){
-        int s_size = s.size();
         int charCount[26] = {0};
+
+        int s_size = s.size();
         for(int i = 0; i < s_size; i++){
             int index = s[i] - 'a';
             charCount[index] = charCount[index] + 1;
         }
 
-        int pair    = 0;
-        int nonPair = 0;
+        int pair     = 0;
+        int non_pair = 0;
         for(int i = 0; i < 26; i++){
             int parity = charCount[i] % 2;
-            pair    = pair    + charCount[i] - parity;
-            nonPair = nonPair + parity;
+            pair     = pair     + charCount[i] - parity;
+            non_pair = non_pair + parity;
         }
 
-        return (nonPair <= k and pair + nonPair >= k) ? true : false;
+        return (non_pair <= k and pair + non_pair >= k) ? true : false;
     }
 };
 
 int main(){
     Solution* S = new Solution();
 
-    cout << S->canConstruct("qlkzenwmmnpkopu", 15) << endl;
+    //inputs
+    string s = "qlkzenwmmnpkopu";
+    int k = 15;
+
+    cout << S->canConstruct(s, k) << endl;
 
     return 0;
 }

@@ -6,8 +6,9 @@ using namespace std;
 class Solution{
 public:
     string removeDuplicates(string s, int k){
-        int s_size = s.size();
         vector<string> S;
+
+        int s_size = s.size();
         for(int i = 0; i < s_size; i++){
             char c = s[i];
             if(S.empty() or S.back()[0] != c){
@@ -21,10 +22,12 @@ public:
                 }
             }
         }
+
         string s_removed = "";
         for(vector<string>::iterator i = S.begin(); i != S.end(); i++){
             s_removed = s_removed + *i;
         }
+
         return s_removed;
     }
 };
@@ -32,7 +35,11 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    cout << S->removeDuplicates("deeedbbcccbda", 3) << endl;
+    //inputs
+    string s = "deeedbbcccbda";
+    int k = 3;
+
+    cout << S->removeDuplicates(s, k) << endl;
 
     return 0;
 }

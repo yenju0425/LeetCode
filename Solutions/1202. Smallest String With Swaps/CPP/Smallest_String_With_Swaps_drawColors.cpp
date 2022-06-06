@@ -64,9 +64,9 @@ public:
 int main(){
     Solution* S = new Solution();
 
+    //inputs
     string s = "gfedcbaaaa";
-
-    vector<vector<int>> swapPairs{
+    vector<vector<int>> pairs{
         {0, 1},
         {3, 1},
         {0, 2},
@@ -74,7 +74,7 @@ int main(){
         {4, 0}
     };
 
-    cout << S->smallestStringWithSwaps(s, swapPairs) << endl;
+    cout << S->smallestStringWithSwaps(s, pairs) << endl;
 
     return 0;
 }

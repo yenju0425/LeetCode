@@ -7,7 +7,7 @@ using namespace std;
 
 class UnionFind{
 private:
-    vector<int> root; //which group
+    vector<int> root;
     vector<int> rank;
 
 public:
@@ -25,6 +25,7 @@ public:
         if (root[x] != x){
             root[x] = find(root[x]);
         }
+
         return x;
     }
 
@@ -49,6 +50,7 @@ class Solution{
 public:
     string smallestStringWithSwaps(string s, vector<vector<int>> &pairs){
         int stringLength = s.size();
+
         UnionFind* UF = new UnionFind(stringLength);
         for(int i = 0; i < pairs.size(); i++){
             UF->unionSet(pairs[i][0], pairs[i][1]);
@@ -73,6 +75,7 @@ public:
                 newString[indices[j]] = index2char[j];
             }
         }
+
         return newString;
     }
 };
@@ -80,9 +83,9 @@ public:
 int main(){
     Solution* S = new Solution();
 
+    //inputs
     string s = "gfedcbaaaa";
-
-    vector<vector<int>> swapPairs{
+    vector<vector<int>> pairs{
         {0, 1},
         {3, 1},
         {0, 2},
@@ -90,7 +93,7 @@ int main(){
         {4, 0}
     };
 
-    cout << S->smallestStringWithSwaps(s, swapPairs) << endl;
+    cout << S->smallestStringWithSwaps(s, pairs) << endl;
 
     return 0;
 }

@@ -35,6 +35,8 @@ public:
 };
 
 int main(){
+    Solution* S = new Solution();
+
     //original
     TreeNode* node0 = new TreeNode(0);
     TreeNode* node3 = new TreeNode(3);
@@ -50,8 +52,6 @@ int main(){
     TreeNode* _node1 = new TreeNode(1, _node0, nullptr);
     TreeNode* _node4 = new TreeNode(4, _node3, _node5);
     TreeNode* _root  = new TreeNode(2, _node1, _node4);
-
-    Solution* S = new Solution();
 
     cout << S->getTargetCopy(root, _root, node4) << endl;
     cout << "Real Target: " << _node4 << endl;

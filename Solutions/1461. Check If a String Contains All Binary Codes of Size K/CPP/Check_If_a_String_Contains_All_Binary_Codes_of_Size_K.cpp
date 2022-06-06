@@ -44,6 +44,7 @@ public:
                 return false;
             }
         }
+    
         return true;
     }
 };
@@ -51,7 +52,11 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    cout << S->hasAllCodes("00110110", 2) << endl;
+    //inputs
+    string s = "00110110";
+    int k = 2;
+
+    cout << S->hasAllCodes(s, k) << endl;
 
     return 0;
 }

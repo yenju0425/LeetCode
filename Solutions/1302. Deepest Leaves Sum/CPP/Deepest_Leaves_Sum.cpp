@@ -42,6 +42,7 @@ public:
             }
             idx = _idx; //whitch to another Q
         }
+
         return levelSum;
     }
 };
@@ -49,26 +50,21 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    TreeNode* node1 = new TreeNode(1);
-    TreeNode* node2 = new TreeNode(2);
-    TreeNode* node3 = new TreeNode(3);
-    TreeNode* node4 = new TreeNode(4);
-    TreeNode* node5 = new TreeNode(5);
-    TreeNode* node6 = new TreeNode(6);
-    TreeNode* node7 = new TreeNode(7);
+    //level 3
     TreeNode* node8 = new TreeNode(8);
+    TreeNode* node7 = new TreeNode(7);
+    
+    //level 2
+    TreeNode* node6 = new TreeNode(6, nullptr, node8);
+    TreeNode* node5 = new TreeNode(5);
+    TreeNode* node4 = new TreeNode(4, node7,   nullptr);
 
-    node1->left  = node2;
-    node1->right = node3;
+    //level 1
+    TreeNode* node3 = new TreeNode(3, nullptr, node6);
+    TreeNode* node2 = new TreeNode(2, node4,   node5);
 
-    node2->left  = node4;
-    node2->right = node5;
-
-    node3->right = node6;
-
-    node4->left  = node7;
-
-    node6->right = node8;
+    //level 0
+    TreeNode* node1 = new TreeNode(1, node2, node3);
 
     cout << S->deepestLeavesSum(node1) << endl;
 

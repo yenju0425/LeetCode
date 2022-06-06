@@ -27,26 +27,27 @@ public:
             }
             k = k - 1;
         }
+
         return grid;
     }
 };
 
 int main(){
-    vector<vector<int>> vect{
+    Solution* S = new Solution();
+    
+    //inputs
+    int k = 1;
+    vector<vector<int>> grid{
         {1, 2, 3},
         {4, 5, 6},
         {7, 8, 9}
     };
 
-    Solution* S = new Solution();
+    vector<vector<int>> result = S->shiftGrid(grid, k);
 
-    vect = S->shiftGrid(vect, 1);
-
-    int m = vect.size();
-    int n = vect[0].size();
-    for(int i = 0; i < m; i = i + 1){
-        for(int j = 0; j < n; j = j + 1){
-            cout << vect[i][j] << ' ';
+    for(auto i : grid){
+        for(auto j : i){
+            cout << j << ' ';
         }
         cout << endl;
     }
