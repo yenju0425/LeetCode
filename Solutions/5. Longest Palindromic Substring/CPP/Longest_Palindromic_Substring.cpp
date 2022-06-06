@@ -26,6 +26,7 @@ public:
                 right = r - 1;
             }
         }
+
         return s.substr(left, maxLength);
     }
 };

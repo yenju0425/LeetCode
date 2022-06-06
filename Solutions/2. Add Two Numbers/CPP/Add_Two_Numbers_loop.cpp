@@ -57,14 +57,14 @@ public:
 };
 
 int main(){
+    Solution* S = new Solution();
+
     ListNode* a2 = new ListNode(2);
     ListNode* a1 = new ListNode(9, a2);
     ListNode* a0 = new ListNode(9, a1);
 
     ListNode* b1 = new ListNode(9);
     ListNode* b0 = new ListNode(9, b1);
-
-    Solution* S = new Solution();
 
     //299 + 99 = 398
     ListNode* A = S->addTwoNumbers(b0, a0);

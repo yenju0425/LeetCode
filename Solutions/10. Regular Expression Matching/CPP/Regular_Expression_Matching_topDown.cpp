@@ -18,8 +18,10 @@ public:
         this->s_size = s.size();
         this->p_size = p.size();
         this->dp = vector<vector<int>>(s_size + 1, vector<int>(p_size + 1, -1));
+    
         return isMatch(0, 0);
     }
+
     bool isMatch(int si, int pi){
         if(dp[si][pi] != -1){ //check the dp table first
             return bool(dp[si][pi]);
@@ -38,7 +40,9 @@ public:
                 match = fistMatch and isMatch(si + 1, pi + 1);
             }
         }
+    
         dp[si][pi] = match;
+    
         return match;
     }
 };

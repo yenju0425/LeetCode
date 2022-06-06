@@ -18,6 +18,7 @@ public:
 
         return isMatch(0, 0);
     }
+
     bool isMatch(int si, int pi){
         if(pi == p_size){
             return si == s_size;

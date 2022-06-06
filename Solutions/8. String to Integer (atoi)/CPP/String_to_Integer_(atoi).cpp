@@ -64,6 +64,7 @@ public:
             }
             reader = reader + 1; //move the reader to the next character
         }
+
         return int(outputNumber);
     }
 };
