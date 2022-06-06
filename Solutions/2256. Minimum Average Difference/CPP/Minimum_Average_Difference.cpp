@@ -6,14 +6,14 @@ using namespace std;
 class Solution{
 public:
     int minimumAverageDifference(vector<int> &nums){
-        //initialize
-        int numsSize = nums.size();
-
         long numsSum = 0;
         long avg = 0;
+
+        int numsSize = nums.size();
         for(int i = 0; i < numsSize; i++){
             numsSum += nums[i];
         }
+
         avg = numsSum / numsSize;
 
         //iterate through all nums
@@ -42,9 +42,10 @@ public:
 };
 
 int main(){
-    vector<int> nums{5};
-
     Solution* S = new Solution();
+
+    //input
+    vector<int> nums{5};
 
     cout << S->minimumAverageDifference(nums) << endl;
 

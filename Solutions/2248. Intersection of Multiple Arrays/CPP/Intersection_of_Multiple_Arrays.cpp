@@ -7,7 +7,8 @@ using namespace std;
 class Solution{
 public:
     vector<int> intersection(vector<vector<int>> &nums){
-        vector<int> I;
+        vector<int> I{};
+
         if(nums.empty()){
             return I;
         }
@@ -28,6 +29,7 @@ public:
                 I.push_back(*i);
             }
         }
+
         return I;
     }
 };

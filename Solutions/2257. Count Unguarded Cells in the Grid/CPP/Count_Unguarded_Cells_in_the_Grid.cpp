@@ -21,12 +21,15 @@ public:
         M = m;
         N = n;
         map = vector<vector<char>>(m, vector<char>(n, ' '));
+
         for(int i = 0; i < guards.size(); i++){
             map[guards[i][0]][guards[i][1]] = 'g';
         }
+
         for(int i = 0; i < walls.size(); i++){
             map[walls[i][0]][walls[i][1]] = 'w';
         }
+
         int couter = 0;
         int dirR[4] = {-1,  0,  1,  0};
         int dirC[4] = { 0, -1,  0,  1};
@@ -44,6 +47,7 @@ public:
                 }
             }
         }
+    
         return m * n - couter - guards.size() - walls.size();
     }
 };
@@ -51,11 +55,13 @@ public:
 int main(){
     Solution* S = new Solution();
 
+    //inputs
+    int m = 4;
+    int n = 6;
     vector<vector<int>> guards{{0, 0}, {1, 1}, {2, 3}};
-
     vector<vector<int>> walls{{0, 1}, {2, 2}, {1, 4}};
 
-    cout << S->countUnguarded(4, 6, guards, walls) << endl;
+    cout << S->countUnguarded(m, n, guards, walls) << endl;
 
     return 0;
 }

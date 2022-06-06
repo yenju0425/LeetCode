@@ -8,6 +8,7 @@ class Solution{
 public:
     int countLatticePoints(vector<vector<int>> &circles){
         int LP = 0;
+        
         if(circles.empty()){
             return LP;
         }
@@ -33,6 +34,7 @@ public:
                 }
             }
         }
+
         return LP;
     }
 };
@@ -40,13 +42,12 @@ public:
 int main(){
     Solution* S = new Solution();
 
+    //input
     vector<vector<int>> ciecles{
         {2, 2, 2}
     };
 
-    int n = S->countLatticePoints(ciecles);
-
-    cout << n << endl;
+    cout << S->countLatticePoints(ciecles) << endl;
 
     return 0;
 }

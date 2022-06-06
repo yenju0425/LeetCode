@@ -9,7 +9,7 @@ public:
     int countDistinct(vector<int> &nums, int k, int p){
         int numOfnums = nums.size();
 
-        vector<int> divisible_i; //indeces of the divisible elements
+        vector<int> divisible_i; //indeces of divisible elements
         int numOfDivisible = 0;
         for(int i = 0; i < nums.size(); i++){
             if(nums[i] % p == 0){
@@ -39,6 +39,7 @@ public:
                 j++;
             }
         }
+
         return divSubarrays.size();
     }
 };
@@ -46,9 +47,12 @@ public:
 int main(){
     Solution* S = new Solution();
 
+    //inputs
     vector<int> nums{5, 11, 17, 13, 16, 9, 4, 9, 20};
+    int k = 7;
+    int p = 1;
 
-    cout << S -> countDistinct(nums, 7, 1) << endl;
+    cout << S -> countDistinct(nums, k, p) << endl;
 
     return 0;
 }

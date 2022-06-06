@@ -7,10 +7,10 @@ using namespace std;
 class Solution{
 public:
     bool isPalindrome(string s){
-        //transform s to lower case
+        //convert s to lowercase
         transform(s.begin(), s.end(), s.begin(), ::tolower);
 
-        //push alphabets and numbers foward
+        //move alphabets and numbers foward
         string::iterator lastChar = remove_if(s.begin(), s.end(), [](char const &c){
             return !std::isalnum(c);
         });

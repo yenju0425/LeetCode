@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <limits>
 
 using namespace std;
 
@@ -13,9 +12,9 @@ public:
     int minCostConnectPoints(vector<vector<int>> &points){
         int numOfPoints = points.size();
         vector<bool> visited(numOfPoints, false); //true if a node is visited
-        vector<int> distance(numOfPoints); //the distance to MST
+        vector<int> distance(numOfPoints);        //the distance to MST
 
-        //choose point 0 as root
+        //choose point 0 as the root
         visited[0] = true;
         distance[0] = 0;
         for(int i = 1; i < numOfPoints; i++){
@@ -41,18 +40,20 @@ public:
                 }
             }
         }
+
         return cost;
     }
 };
 
 int main(){
+    Solution* S = new Solution();
+
+    //input
     vector<vector<int>> points{
         {3, 12},
         {-2, 5},
         {-4, 1}
     };
-
-    Solution* S = new Solution();
 
     cout << S->minCostConnectPoints(points);
 

@@ -21,6 +21,7 @@ public:
             }
             db[cards[i]] = i;
         }
+
         return minDistance;
     }
 };

@@ -13,8 +13,8 @@ private:
 public:
     Vertex(int n){
         visited = false;
-        time = -1;                    //"-1": invalid
-        adjList = vector<int>(n, -1); //"-1": invalid
+        time = -1;                    //-1: invalid
+        adjList = vector<int>(n, -1); //-1: invalid
     }
 
     //Element access:

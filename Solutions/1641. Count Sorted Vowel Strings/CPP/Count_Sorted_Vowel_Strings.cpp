@@ -12,7 +12,10 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    cout << S->countVowelStrings(33) << endl;
+    //input
+    int n = 33;
+
+    cout << S->countVowelStrings(n) << endl;
 
     return 0;
 }
