@@ -7,6 +7,7 @@ class Solution{
 public:
     string longestCommonPrefix(vector<string> &strs){
         string result = "";
+
         int counter = 0;
         while(counter < strs[0].size()){ //return if the first string is already empty
             for(int i = 1; i < strs.size(); i++){
@@ -17,6 +18,7 @@ public:
             result.push_back(strs[0][counter]);
             counter = counter + 1;
         }
+
         return result;
     }
 };

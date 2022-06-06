@@ -6,14 +6,16 @@ using namespace std;
 class Solution{
 public:
     int maxArea(vector<int> &height){
-        int vectorSize = height.size();
         int currentMax = 0;
-        for(int i = 0; i < vectorSize - 1; i++){
-            for(int j = i + 1; j < vectorSize; j++){
+
+        int height_size = height.size();
+        for(int i = 0; i < height_size - 1; i++){
+            for(int j = i + 1; j < height_size; j++){
                 int area = min(height[i], height[j]) * (j - i);
                 currentMax = max(currentMax, area);
             }
         }
+    
         return currentMax;
     }
 };

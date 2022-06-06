@@ -18,6 +18,7 @@ private:
 public:
     int romanToInt(string s){
         int sum = romanNum[s[0]];
+
         for(string::iterator iter = s.begin() + 1; iter != s.end(); iter = iter + 1){
             if(romanNum[*(iter - 1)] < romanNum[*iter]){
                 sum = sum - 2 * romanNum[*(iter - 1)] + romanNum[*iter];
@@ -26,6 +27,7 @@ public:
                 sum = sum + romanNum[*iter];
             }
         }
+
         return sum;
     }
 };

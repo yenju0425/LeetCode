@@ -18,25 +18,28 @@ private:
 
 public:
     vector<string> letterCombinations(string digits){
+        vector<string> combinations{};
         if(digits.size() == 0){
-            return vector<string>{};
+            return combinations;
         }
         
-        int c = digits.back() - '2';
+        int c = digits.front() - '2'; //characters start from '2' button
         if(digits.size() == 1){
             return charSet[c];
         }
-        digits.pop_back();
-        vector<string> preComb = letterCombinations(digits);
-        int c_charSetSize = charSet[c].size();
-        int preCombSize = preComb.size();
-        vector<string> Comb;
-        for(int i = 0; i < c_charSetSize; i++){
-            for(int j = 0; j < preCombSize; j++){
-                Comb.push_back(preComb[j] + charSet[c][i]);
+
+        digits.erase(digits.begin());
+        vector<string> _combinations = letterCombinations(digits);
+
+        int charSet_size = charSet[c].size();
+        int _combinations_size = _combinations.size();
+        for(int i = 0; i < charSet_size; i++){
+            for(int j = 0; j < _combinations_size; j++){
+                combinations.push_back(charSet[c][i] + _combinations[j]);
             }
         }
-        return Comb;
+
+        return combinations;
     }
 };
 
