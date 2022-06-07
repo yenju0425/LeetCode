@@ -98,11 +98,14 @@ public:
 };
 
 int main(){
-    vector<vector<int>> G{{1, 2, 1}, {2, 3, 7}, {1, 3, 4}, {2, 1, 2}};
-
     Solution* S = new Solution();
+    
+    //inputs
+    int n = 4;
+    int k = 2;
+    vector<vector<int>> times{{2, 1, 1}, {2, 3, 1}, {3, 4, 1}};
 
-    cout << S->networkDelayTime(G, 4, 1) << endl;
+    cout << S->networkDelayTime(times, n, k) << endl;
 
     return 0;
 }
