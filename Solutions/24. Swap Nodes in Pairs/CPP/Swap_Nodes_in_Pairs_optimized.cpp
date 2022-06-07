@@ -33,17 +33,17 @@ public:
 };
 
 int main(){
+    Solution* S = new Solution();
+    
     ListNode* a4 = new ListNode(4);
     ListNode* a3 = new ListNode(3, a4);
     ListNode* a2 = new ListNode(2, a3);
-    ListNode* a1 = new ListNode(1, a2);
+    ListNode* hd = new ListNode(1, a2);
 
-    Solution* S = new Solution();
-
-    ListNode* A = S->swapPairs(a1);
-    while(A != nullptr){
-        cout << A->val;
-        A = A->next;
+    ListNode* result = S->swapPairs(hd);
+    while(result != nullptr){
+        cout << result->val;
+        result = result->next;
     }
     cout << endl;
 

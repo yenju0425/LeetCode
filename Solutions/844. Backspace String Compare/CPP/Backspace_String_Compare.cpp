@@ -32,6 +32,7 @@ public:
 int main(){
     Solution* S = new Solution();
 
+    //inputs
     string s = "a##bc#d";
     string t = "dd##bx#d";
 

@@ -66,18 +66,20 @@ public:
 };
 
 int main(){
+    Solution* S = new Solution();
+
+    //inputs
+    int k = 3;
     ListNode* a5 = new ListNode(5);
     ListNode* a4 = new ListNode(4, a5);
     ListNode* a3 = new ListNode(3, a4);
     ListNode* a2 = new ListNode(2, a3);
-    ListNode* a1 = new ListNode(1, a2);
+    ListNode* hd = new ListNode(1, a2);
 
-    Solution* S = new Solution();
-
-    ListNode* A = S->reverseKGroup(a1, 3);
-    while(A != nullptr){
-        cout << A->val;
-        A = A->next;
+    ListNode* result = S->reverseKGroup(hd, k);
+    while(result != nullptr){
+        cout << result->val;
+        result = result->next;
     }
     cout << endl;
 

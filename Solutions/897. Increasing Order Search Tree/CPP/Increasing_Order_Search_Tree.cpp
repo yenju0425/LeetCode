@@ -34,11 +34,11 @@ public:
 };
 
 int main(){
+    Solution* S = new Solution();
+
     TreeNode* l    = new TreeNode(0);
     TreeNode* r    = new TreeNode(2);
     TreeNode* root = new TreeNode(1, l, r);
-
-    Solution* S = new Solution();
 
     TreeNode* node = S->increasingBST(root);
 

@@ -6,7 +6,7 @@ using namespace std;
 class Solution{
 public:
     int longestMountain(vector<int> &arr){
-        int state = 0; //"0": invalid, "1": acc, "-1": dec
+        int state = 0; //0: invalid, 1: acc, -1: dec
         int maxSize     = 0;
         int currentSize = 0;
 
@@ -61,6 +61,7 @@ public:
                     break;
             }
         }
+    
         return maxSize;
     }
 };
@@ -68,6 +69,7 @@ public:
 int main(){
     Solution* S = new Solution();
 
+    //input
     vector<int> M{0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0};
 
     cout << S->longestMountain(M) << endl;
