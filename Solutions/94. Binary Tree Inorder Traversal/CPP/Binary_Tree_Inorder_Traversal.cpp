@@ -45,9 +45,9 @@ int main(){
     TreeNode* root  = new TreeNode(2, node1, node4);
 
     cout << "inorder  : ";
-    vector<int> ans = S->inorderTraversal(root);
-    for(int i = 0; i < ans.size(); i++){
-        cout << ans[i] << ' ';
+    vector<int> result = S->inorderTraversal(root);
+    for(auto i : result){
+        cout << i << ' ';
     }
 
     return 0;

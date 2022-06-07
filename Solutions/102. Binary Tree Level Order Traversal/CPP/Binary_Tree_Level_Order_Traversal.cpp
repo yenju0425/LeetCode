@@ -56,10 +56,10 @@ int main(){
     TreeNode* root  = new TreeNode(2, node1, node4);
 
     cout << "levelorder  : " << endl;
-    vector<vector<int>> ans = S->levelOrder(root);
-    for(int i = 0; i < ans.size(); i++){
-        for(int j = 0; j < ans[i].size(); j++){
-            cout << ans[i][j] << ' ';
+    vector<vector<int>> result = S->levelOrder(root);
+    for(auto i : result){
+        for(auto j : i){
+            cout << j << ' ';
         }
         cout << endl;
     }

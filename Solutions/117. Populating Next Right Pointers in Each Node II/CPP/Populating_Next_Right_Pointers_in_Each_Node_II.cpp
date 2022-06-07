@@ -53,20 +53,20 @@ public:
 };
 
 int main(){
-    Node* n3 = new Node(3);
-    Node* n4 = new Node(4);
-    Node* n1 = new Node(1, n3, n4);
-    Node* n5 = new Node(5);
-    Node* n2 = new Node(2, nullptr, n5);
-    Node* rt = new Node(0, n1, n2);
-
     Solution* S = new Solution();
 
-    rt = S->connect(rt);
+    Node* node3 = new Node(3);
+    Node* node4 = new Node(4);
+    Node* node1 = new Node(1, node3, node4);
+    Node* node5 = new Node(5);
+    Node* node2 = new Node(2, nullptr, node5);
+    Node* root  = new Node(0, node1, node2);
+
+    root = S->connect(root);
 
     //using BFS traversal to check every "next" pointer
     queue<Node*> Q;
-    Q.push(rt);
+    Q.push(root);
     while(!Q.empty()){
         Node* node = Q.front();
         Q.pop();

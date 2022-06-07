@@ -60,14 +60,14 @@ void DFS_inorder(TreeNode* root){
 int main(){
     Solution* S = new  Solution();
 
-    TreeNode* n2 = new TreeNode(2);
-    TreeNode* n4 = new TreeNode(4, n2, nullptr);
-    TreeNode* n1 = new TreeNode(1, nullptr, nullptr);
-    TreeNode* n3 = new TreeNode(3, n1, n4);
+    TreeNode* node2 = new TreeNode(2);
+    TreeNode* node4 = new TreeNode(4, node2,   nullptr);
+    TreeNode* node1 = new TreeNode(1, nullptr, nullptr);
+    TreeNode* root  = new TreeNode(3, node1,   node4);
     
-    S->recoverTree(n3);
+    S->recoverTree(root);
 
-    DFS_inorder(n3);
+    DFS_inorder(root);
     cout << endl;
 
     return 0;

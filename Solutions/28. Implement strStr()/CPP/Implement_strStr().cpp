@@ -8,6 +8,7 @@ public:
         if(needle == ""){
             return 0;
         }
+    
         int index = -1;
         int h_size = haystack.size();
         int n_size = needle.size();
@@ -23,6 +24,7 @@ public:
                 return i;
             }
         }
+    
         return index;
     }
 };
@@ -30,7 +32,11 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    cout << S->strStr("hello", "ell") << endl;
+    //inputs
+    string haystack = "hello";
+    string needle   = "ell";
+
+    cout << S->strStr(haystack, needle) << endl;
 
     return 0;
 }
