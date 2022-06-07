@@ -34,9 +34,12 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    vector<string> P = S->generateParenthesis(3);
+    //input
+    int n = 3;
 
-    for(auto i : P){
+    vector<string> result = S->generateParenthesis(n);
+
+    for(auto i : result){
         cout << i << endl;
     }
 

@@ -29,12 +29,13 @@ public:
                 list1 = list1->next;
             }
         }
+
         return headNode->next;
     }
 };
 
 int main(){
-    Solution* S = new Solution;
+    Solution* S = new Solution();
 
     ListNode* n2 = new ListNode(4);
     ListNode* n1 = new ListNode(2, n2);
@@ -44,11 +45,11 @@ int main(){
     ListNode* m1 = new ListNode(3, m2);
     ListNode* m0 = new ListNode(1, m1);
 
-    ListNode* a = S->mergeTwoLists(n0, m0);
+    ListNode* result = S->mergeTwoLists(n0, m0);
 
-    while(a != nullptr){
-        cout << a->val << endl;
-        a = a->next;  
+    while(result != nullptr){
+        cout << result->val << endl;
+        result = result->next;  
     }
 
     return 0;

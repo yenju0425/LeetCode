@@ -51,6 +51,8 @@ public:
 };
 
 int main(){
+    Solution* S = new Solution();
+
     ListNode* a2 = new ListNode(7);
     ListNode* a1 = new ListNode(3, a2);
     ListNode* a0 = new ListNode(1, a1);
@@ -58,14 +60,13 @@ int main(){
     ListNode* b1 = new ListNode(7);
     ListNode* b0 = new ListNode(6, b1);
 
-    Solution* S = new Solution();
+    //input
+    vector<ListNode*> lists{a0, b0, nullptr};
 
-    vector<ListNode*> L{nullptr};
-
-    ListNode* A = S->mergeKLists(L);
-    while(A != nullptr){
-        cout << A->val;
-        A = A->next;
+    ListNode* result = S->mergeKLists(lists);
+    while(result != nullptr){
+        cout << result->val << ' ';
+        result = result->next;
     }
     cout << endl;
 

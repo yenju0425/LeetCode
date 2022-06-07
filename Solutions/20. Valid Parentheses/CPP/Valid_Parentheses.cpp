@@ -33,9 +33,11 @@ public:
                 return false;
             }
         }
+
         if(!S.empty()){
             return false;
         }
+
         return true;
     }
 };
@@ -43,7 +45,10 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    cout << S->isValid("([)]") << endl;
+    //input
+    string s = "([)]";
+
+    cout << S->isValid(s) << endl;
 
     return 0;
 }

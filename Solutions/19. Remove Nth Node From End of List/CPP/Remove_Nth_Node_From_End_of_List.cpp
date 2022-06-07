@@ -38,16 +38,18 @@ public:
 };
 
 int main(){
+    Solution* S = new Solution();
+    
+    //inputs
+    int n = 2;
     ListNode* a2 = new ListNode(2);
     ListNode* a1 = new ListNode(7, a2);
-    ListNode* a0 = new ListNode(9, a1);
+    ListNode* hd = new ListNode(9, a1);
 
-    Solution* S = new Solution();
-    ListNode* A = S->removeNthFromEnd(a0, 2);
-
-    while(A != nullptr){
-        cout << A->val << ' ';
-        A = A->next;
+    ListNode* result = S->removeNthFromEnd(hd, n);
+    while(result != nullptr){
+        cout << result->val << ' ';
+        result = result->next;
     }
     cout << endl;
 

@@ -67,7 +67,6 @@ int main(){
 
     vector<vector<int>> result = S->fourSum(nums, target);
 
-
     for(auto i : result){
         for(auto j : i){
             cout << j << ' ';
