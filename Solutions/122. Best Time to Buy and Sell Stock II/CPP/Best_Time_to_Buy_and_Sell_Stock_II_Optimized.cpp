@@ -12,7 +12,7 @@ public:
         //greedy algorithm
         int prices_size = prices.size();
         for (int i = 0; i < prices_size; i++){
-            //find the best buyTime and sellTime (from 0 ~ i)
+            //find the best buyTime and sellTime one after another (from 0 ~ i)
             profitAfter_b = max(profitAfter_b, profitAfter_s - prices[i]);
             profitAfter_s = max(profitAfter_s, profitAfter_b + prices[i]);
         }
