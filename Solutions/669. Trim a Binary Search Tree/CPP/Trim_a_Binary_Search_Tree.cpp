@@ -41,13 +41,16 @@ void DFS_inorder(TreeNode* root){
 }
 
 int main(){
+    Solution* S = new Solution();
+    
+    //inputs
+    int low  = 0;
+    int high = 1;
     TreeNode* l    = new TreeNode(0);
     TreeNode* r    = new TreeNode(2);
     TreeNode* root = new TreeNode(1, l, r);
 
-    Solution* S = new Solution();
-
-    TreeNode* node = S -> trimBST(root, 0, 1);
+    TreeNode* node = S -> trimBST(root, low, high);
 
     DFS_inorder(node);
     cout << endl;
