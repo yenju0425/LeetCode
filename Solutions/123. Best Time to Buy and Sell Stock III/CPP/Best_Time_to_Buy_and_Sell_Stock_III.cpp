@@ -6,38 +6,24 @@ using namespace std;
 class Solution{
 public:
     int maxProfit(vector<int> &prices){
-        int profit = 0;
-
+        int profitAfter_b1 = INT_MIN;
+        int profitAfter_b2 = INT_MIN;
+        int profitAfter_s1 = 0;
+        int profitAfter_s2 = 0;
+        
+        //greedy algorithm
         int prices_size = prices.size();
-        for(int i = 0; i < prices_size; i++){
-            //part A
-            int buyPrice_A = prices[0];
-            int profit_A   = 0;
-            for(int j = 1; j <= i; j++){
-                if(prices[j] < buyPrice_A){
-                    buyPrice_A = prices[j];
-                }
-                else{
-                    profit_A = max(profit_A, prices[j] - buyPrice_A);
-                }
-            }
+        for (int i = 0; i < prices_size; i++){
+            //look for the best buyTime and sellTime (from prices[0] ~ prices[i])
+            profitAfter_b1 = max(profitAfter_b1,                - prices[i]);
+            profitAfter_s1 = max(profitAfter_s1, profitAfter_b1 + prices[i]);
 
-            //part B
-            int buyPrice_B = prices[i];
-            int profit_B   = 0;
-            for(int j = i + 1; j < prices_size; j++){
-                if(prices[j] < buyPrice_B){
-                    buyPrice_B = prices[j];
-                }
-                else{
-                    profit_B = max(profit_B, prices[j] - buyPrice_B);
-                }
-            }
-
-            profit = max(profit, profit_A + profit_B);
+            //look for another buyTime and sellTime, after finalize the first transaction (from prices[k] ~ prices[i], suppose the first sellTime is at k)
+            profitAfter_b2 = max(profitAfter_b2, profitAfter_s1 - prices[i]);
+            profitAfter_s2 = max(profitAfter_s2, profitAfter_b2 + prices[i]);
         }
-
-        return profit;
+        
+        return profitAfter_s2;
     }
 };
 

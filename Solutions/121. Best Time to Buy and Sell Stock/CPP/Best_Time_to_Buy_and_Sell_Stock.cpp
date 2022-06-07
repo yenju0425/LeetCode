@@ -6,24 +6,18 @@ using namespace std;
 class Solution{
 public:
     int maxProfit(vector<int> &prices){
-        int profit = 0;
-
-        int buyPrice = prices[0];
-
+        int profitAfter_b = INT_MIN;
+        int profitAfter_s = 0;
+        
+        //greedy algorithm
         int prices_size = prices.size();
-        for(int i = 1; i < prices_size; i++){
-            int price = prices[i];
-            
-            //buy at a lower price
-            if(price < buyPrice){
-                buyPrice = price;
-            }
-            else{
-                profit = max(profit, price - buyPrice);
-            }
+        for (int i = 0; i < prices_size; i++){
+            //look for the best buyTime and sellTime (from prices[0] ~ prices[i])
+            profitAfter_b = max(profitAfter_b,               - prices[i]);
+            profitAfter_s = max(profitAfter_s, profitAfter_b + prices[i]);
         }
-
-        return profit;
+        
+        return profitAfter_s;
     }
 };
 
