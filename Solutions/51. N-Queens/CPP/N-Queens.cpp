@@ -64,9 +64,10 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    int nums = 4;
+    //input
+    int n = 4;
 
-    vector<vector<string>> result = S->solveNQueens(nums);
+    vector<vector<string>> result = S->solveNQueens(n);
 
     for(auto i : result){
         for(auto j : i){

@@ -23,6 +23,7 @@ public:
 int main(){
     Solution* S = new Solution();
 
+    //input
     vector<int> nums{-2};
 
     cout << S->maxSubArray(nums) << endl;

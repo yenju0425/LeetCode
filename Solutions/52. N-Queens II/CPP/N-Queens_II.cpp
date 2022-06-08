@@ -45,9 +45,10 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    int nums = 4;
+    //input
+    int n = 4;
 
-    cout << S->totalNQueens(nums) << endl;
+    cout << S->totalNQueens(n) << endl;
 
     return 0;
 }
