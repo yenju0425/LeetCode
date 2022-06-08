@@ -60,8 +60,8 @@ int main(){
     Solution* S = new Solution();
 
     //inputs
-    vector<int> nums{3, 4, 5, 6, 1, 2}; //view "nums" as a circular array
     int target = 2;
+    vector<int> nums{3, 4, 5, 6, 1, 2}; //view "nums" as a circular array
 
     cout << S->search(nums, target) << endl;
 
