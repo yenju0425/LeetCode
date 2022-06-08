@@ -47,6 +47,7 @@ public:
 int main(){
     Solution* S = new Solution();
 
+    //inputs
     string s = "barfoothefoobarman";
     vector<string> words{"foo", "bar"};
 

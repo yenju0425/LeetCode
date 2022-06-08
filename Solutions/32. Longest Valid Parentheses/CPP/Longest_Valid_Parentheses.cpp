@@ -49,7 +49,10 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    cout << S->longestValidParentheses("(()") << endl;
+    //input
+    string s = "(()";
+
+    cout << S->longestValidParentheses(s) << endl;
 
     return 0;
 }

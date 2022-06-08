@@ -39,7 +39,11 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    cout << S->divide(-7, 3) << endl;
+    //inputs
+    int dividend = -7;
+    int divisor  =  5;
+
+    cout << S->divide(dividend, divisor) << endl;
 
     return 0;
 }
