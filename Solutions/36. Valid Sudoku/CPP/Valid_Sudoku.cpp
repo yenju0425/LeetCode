@@ -70,6 +70,7 @@ public:
 int main(){
     Solution* S = new Solution();
 
+    //input
     vector<vector<char>> board{
         {'8', '3', '.', '.', '7', '.', '.', '.', '.'}, 
         {'6', '.', '.', '1', '9', '5', '.', '.', '.'}, 

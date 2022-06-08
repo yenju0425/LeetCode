@@ -14,9 +14,11 @@ public:
 int main(){
     Solution* S = new Solution();
 
+    //inputs
+    int target = 5;
     vector<int> nums{1, 3, 5, 6};
 
-    cout << S->searchInsert(nums, 5) << endl;
+    cout << S->searchInsert(nums, target) << endl;
 
     return 0;
 }

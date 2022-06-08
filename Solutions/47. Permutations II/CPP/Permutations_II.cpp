@@ -56,6 +56,7 @@ public:
 int main(){
     Solution* S = new Solution();
 
+    //input
     vector<int> nums{1, 1, 2, 2, 3};
 
     vector<vector<int>> result = S->permuteUnique(nums);

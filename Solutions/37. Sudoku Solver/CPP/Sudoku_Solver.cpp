@@ -181,6 +181,7 @@ public:
 int main(){
     Solution* S = new Solution();
 
+    //input
     vector<vector<char>> board{
         {'5', '3', '.', '.', '7', '.', '.', '.', '.'}, 
         {'6', '.', '.', '1', '9', '5', '.', '.', '.'}, 
