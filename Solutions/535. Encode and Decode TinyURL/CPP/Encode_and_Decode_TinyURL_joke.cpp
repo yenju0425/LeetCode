@@ -16,12 +16,13 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    string s = "https://www.apple.com/tw/";
-    string e = S->encode(s);
-    string d = S->decode(e);
+    string url = "https://www.apple.com/tw/";
 
-    cout << e << endl;
-    cout << d << endl;
+    string encode = S->encode(url);
+    string decode = S->decode(encode);
+
+    cout << encode << endl;
+    cout << decode << endl;
 
     return 0;
 }

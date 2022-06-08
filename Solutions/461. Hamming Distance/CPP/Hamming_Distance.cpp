@@ -18,7 +18,11 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    cout << S->hammingDistance(1, 4) << endl;
+    //inputs
+    int x = 1;
+    int y = 4;
+
+    cout << S->hammingDistance(x, y) << endl;
 
     return 0;
 }

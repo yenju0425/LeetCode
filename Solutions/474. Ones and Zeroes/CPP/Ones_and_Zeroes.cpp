@@ -55,9 +55,12 @@ public:
 int main(){
     Solution* S = new Solution();
 
+    //inputs
+    int m = 5;
+    int n = 3;
     vector<string> strs{"10","0001","111001","1","0"};
 
-    cout << S->findMaxForm(strs, 5, 3) << endl;
+    cout << S->findMaxForm(strs, m, n) << endl;
 
     return 0;
 }

@@ -8,8 +8,9 @@ using namespace std;
 class Solution{
 public:
     bool find132pattern(vector<int> &nums){
-        int nums_size = nums.size();
         vector<int> intervals;
+
+        int nums_size = nums.size();
         for(int i = 0; i < nums_size; i++){
             vector<int>::iterator pos = lower_bound(intervals.begin(), intervals.end(), nums[i], [](int lhs, int rhs){return lhs > rhs;});
             if((pos - intervals.begin()) % 2 == 1){
@@ -32,16 +33,18 @@ public:
                 }
             }
         }
+
         return false;
     }
 };
 
 int main(){
-    vector<int> test{-2, 1, -2};
-
     Solution* S = new Solution();
 
-    cout << S->find132pattern(test) << endl;
+    //input
+    vector<int> nums{-2, 1, -2};
+
+    cout << S->find132pattern(nums) << endl;
 
     return 0;
 }

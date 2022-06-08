@@ -23,6 +23,7 @@ public:
             root->val   = currentSum;
             root->left  = convertBST(root->left);
         }
+
         return root;
     }
 };
@@ -37,11 +38,11 @@ void DFS_inorder(TreeNode* root){
 }
 
 int main(){
-    TreeNode* l    = new TreeNode(0);
-    TreeNode* r    = new TreeNode(2);
-    TreeNode* root = new TreeNode(1, l, r);
-
     Solution* S = new Solution();
+
+    TreeNode* left  = new TreeNode(0);
+    TreeNode* right = new TreeNode(2);
+    TreeNode* root  = new TreeNode(1, left, right);
 
     TreeNode* node = S -> convertBST(root);
 
