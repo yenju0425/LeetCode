@@ -6,12 +6,15 @@ using namespace std;
 class Solution{
 private:
     int target;
+
+    int numOfCandidates;
     vector<int> candidates;
+
     vector<int> currentComb;
     vector<vector<int>> result;
 
 public:
-    void combGenerator(int startFrom, int currentSum){
+    void combGenerator(int currentNumIdx, int currentSum){
         if(currentSum > target){
             return;
         }
@@ -20,8 +23,7 @@ public:
             return;
         }
 
-        int numOfcandidates = candidates.size();
-        for(int i = startFrom; i < numOfcandidates; i++){
+        for(int i = currentNumIdx; i < numOfCandidates; i++){
             currentComb.push_back(candidates[i]);
             combGenerator(i, currentSum + candidates[i]);
             currentComb.pop_back();
@@ -29,9 +31,9 @@ public:
     }
 
     vector<vector<int>> combinationSum(vector<int> &candidates, int target){
-        this->target      = target;
-        this->candidates  = candidates;
-        this->currentComb = vector<int>{};
+        this->target = target;
+        this->candidates = candidates;
+        this->numOfCandidates = candidates.size();
 
         combGenerator(0, 0);
 
