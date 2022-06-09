@@ -67,10 +67,10 @@ int main(){
     ListNode* b0 = new ListNode(9, b1);
 
     //299 + 99 = 398
-    ListNode* A = S->addTwoNumbers(b0, a0);
-    while(A != nullptr){
-        cout << A->val;
-        A = A->next;
+    ListNode* result = S->addTwoNumbers(b0, a0);
+    while(result != nullptr){
+        cout << result->val;
+        result = result->next;
     }
     cout << endl;
 

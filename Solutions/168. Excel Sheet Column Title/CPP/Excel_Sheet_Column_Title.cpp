@@ -19,7 +19,10 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    cout << S->convertToTitle(28) << endl;
+    //input
+    int columnNumber = 28;
+
+    cout << S->convertToTitle(columnNumber) << endl;
     
     return 0;
 }

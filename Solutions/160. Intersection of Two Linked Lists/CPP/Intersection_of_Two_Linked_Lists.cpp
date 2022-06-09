@@ -39,6 +39,7 @@ public:
 int main(){
     Solution* S = new Solution();
 
+    //inputs
     ListNode* c2 = new ListNode(5);
     ListNode* c1 = new ListNode(4, c2);
     ListNode* c0 = new ListNode(8, c1);
