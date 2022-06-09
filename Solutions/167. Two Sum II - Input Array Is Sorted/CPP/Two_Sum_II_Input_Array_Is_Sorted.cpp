@@ -5,60 +5,26 @@
 using namespace std;
 
 class Solution{
-    int target;
-
-    int numOfCandidates;
-    vector<int> candidates;
-
-    int getNumIdx_size;
-    vector<int> getNumIdx;
-
-    vector<int> currentComb;
-    vector<vector<int>> result;
-
 public:
-    void combGenerator(int currentNumIdx, int currentSum, int currentNumId){
-        if(currentSum > target){
-            return;
-        }
-        if(currentSum == target){
-            result.push_back(currentComb);
-            return;
-        }
-        if(currentNumIdx >= numOfCandidates){
-            return;
-        }
+    vector<int> twoSum(vector<int> &numbers, int target){
+        int numbers_size = numbers.size();
 
-        for(int i = currentNumId; i < getNumIdx_size; i++){
-            int currentNum = candidates[getNumIdx[i]];
-            currentComb.push_back(currentNum);
+        int left  = 0;
+        int right = numbers_size - 1;
 
-            int nextIdx   = max(currentNumIdx + 1, getNumIdx[i] + 1);
-            int nextNumId = i + (nextIdx == numOfCandidates or currentNum != candidates[nextIdx]);
-            combGenerator(nextIdx, currentSum + currentNum, nextNumId);
-
-            currentComb.pop_back();
-        }
-    }
-
-    vector<vector<int>> combinationSum2(vector<int> &candidates, int target){
-        //sort candidates
-        sort(candidates.begin(), candidates.end());
-
-        //init
-        this->target = target;
-        this->candidates = candidates;
-        this->numOfCandidates = candidates.size();
-        for(int i = 0; i < numOfCandidates; i++){
-            if(i == 0 or candidates[i] != candidates[i - 1]){
-                this->getNumIdx.push_back(i);
+        while(left < right){
+            if(numbers[left] + numbers[right] < target){
+                left = left + 1;
+            }
+            else if(numbers[left] + numbers[right] > target){
+                right = right - 1;
+            }
+            else{
+                break;
             }
         }
-        this->getNumIdx_size = getNumIdx.size();
 
-        //generate combinations
-        combGenerator(0, 0, 0);
-
+        vector<int> result = {left + 1, right + 1}; //1-indexed array
         return result;
     }
 };
@@ -67,17 +33,15 @@ int main(){
     Solution* S = new Solution();
 
     //inputs
-    int target = 8;
-    vector<int> candidates{3,1,3,5,1,1};
+    int target = 9;
+    vector<int> numbers{2, 7, 11, 15};
 
-    vector<vector<int>> result = S->combinationSum2(candidates, target);
+    vector<int> result = S->twoSum(numbers, target);
 
     for(auto i : result){
-        for(auto j : i){
-            cout << j << ' ';
-        }
-        cout << endl;
+        cout << i << ' ';
     }
+    cout << endl;
 
     return 0;
 }

@@ -48,8 +48,8 @@ int main(){
     Solution* S = new Solution();
 
     //inputs
-    vector<int> nums{15, 7, 11, 2};
     int target = 9;
+    vector<int> nums{15, 7, 11, 2};
 
     vector<int> result = S->twoSum(nums, target);
 
