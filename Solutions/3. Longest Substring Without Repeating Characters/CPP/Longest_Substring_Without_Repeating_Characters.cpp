@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -9,33 +10,28 @@ public:
             return 0;
         }
 
-        int stringLength = s.length();
-        int maxLength = 1; //maxLength must >= '1'
+        int result = 1;
 
-        int *a = new int[stringLength]; 
-        for(int i = 0; i < stringLength; i++){
-            a[i] = 1;
-        }
+        int s_length = s.length();
+        vector<int> lengthCounter(s_length, 1);
 
-        //DP
-        bool merge;
-        for(int i = 0; i < stringLength - 1; i++){
-            int magicNumber = i + 1;
-            merge = false;
-            for(int j = 0; j < stringLength - magicNumber; j++){
-                if(a[j] == magicNumber and a[j] == a[j+1] and s[j] != s[j+magicNumber]){
-                    a[j]++;
-                    merge = true;
+        //lengthCounter
+        for(int i = 1; i < s_length; i++){
+            int intervalWidth = i;
+            bool isDone = true;
+            for(int j = 0; j < s_length - intervalWidth; j++){
+                if((lengthCounter[j] == intervalWidth) and (lengthCounter[j + 1] == intervalWidth) and (s[j] != s[j + intervalWidth])){
+                    lengthCounter[j] = lengthCounter[j] + 1;
+                    result = lengthCounter[j];
+                    isDone = false;
                 }
             }
-            if(merge){
-                maxLength++;
-            }
-            else{ //no merge happened
+            if(isDone){ //no merge happened
                 break;
             }
         }
-        return maxLength;
+
+        return result;
     }
 };
 
@@ -43,7 +39,7 @@ int main(){
     Solution* S = new Solution();
 
     //input
-    string s = "abcabcbb";
+    string s = "aaabcdeababb";
 
     cout << S->lengthOfLongestSubstring(s) << endl;
 
