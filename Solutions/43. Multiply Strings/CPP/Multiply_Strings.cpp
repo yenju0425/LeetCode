@@ -26,6 +26,8 @@ public:
             
             result.push_back(c);
         }
+
+        //remove leading 0's
         while(result.back() == '0'){
             result.pop_back();
         }
