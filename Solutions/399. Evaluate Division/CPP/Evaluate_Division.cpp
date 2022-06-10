@@ -7,7 +7,7 @@ using namespace std;
 
 class UnionFind{
 private:
-    map<string, tuple<string, double>> root; //find the root, and its ratio
+    map<string, tuple<string, double>> root; //find the root, and the ratio
     map<string, int> rank;
 
 public:
@@ -80,16 +80,17 @@ public:
 };
 
 int main(){
+    Solution* S = new Solution();
+
+    //inputs
     vector<vector<string>> equations{{"a", "b"}, {"d", "b"}, {"w", "x"}, {"z", "x"}, {"w", "d"}};
     vector<double> values{2, 4, 5, 7, 8};
     vector<vector<string>> queries{{"a", "z"}};
 
-    Solution* S = new Solution();
-
     vector<double> ans = S->calcEquation(equations, values, queries);
 
-    for(vector<double>::iterator i = ans.begin(); i != ans.end(); i++){
-        cout << *i << ' ';
+    for(auto i : ans){
+        cout << i << ' ';
     }
     cout << endl;
 

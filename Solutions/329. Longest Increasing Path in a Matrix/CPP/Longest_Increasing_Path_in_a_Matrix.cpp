@@ -59,13 +59,14 @@ public:
 int main(){
     Solution* S = new Solution();
 
-    vector<vector<int>> m{
+    //input
+    vector<vector<int>> matrix{
         {9, 9, 4},
         {6, 6, 8},
         {2, 1, 1}
     };
 
-    cout << S->longestIncreasingPath(m) << endl;
+    cout << S->longestIncreasingPath(matrix) << endl;
 
     return 0;
 }

@@ -86,6 +86,7 @@ int main(){
     vector<NestedInteger> V1{I0};
 
     NestedIterator* N = new NestedIterator(V1);
+
     while(N->hasNext()){
         cout << N->next() << ' ';
     }
