@@ -14,7 +14,7 @@ private:
 public:
     bool isMatch(int si, int pi){
         if(DP[si][pi] != -1){ //check the DP table first
-            return bool(DP[si][pi]);
+            return DP[si][pi];
         }
 
         bool match;
@@ -37,10 +37,10 @@ public:
     }
     
     bool isMatch(string s, string p){
-        this->s = s;
-        this->p = p;
         this->s_size = s.size();
         this->p_size = p.size();
+        this->s = s + "&";
+        this->p = p + "&";
         this->DP = vector<vector<int>>(s_size + 1, vector<int>(p_size + 1, -1));
     
         return isMatch(0, 0);
