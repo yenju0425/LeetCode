@@ -4,21 +4,12 @@ using namespace std;
 
 class Solution{
 private:
-    string s = "";
-    string p = "";
-    int s_size = 0;
-    int p_size = 0;
+    string s;
+    string p;
+    int s_size;
+    int p_size;
 
 public:
-    bool isMatch(string s, string p){
-        this->s = s;
-        this->p = p;
-        this->s_size = s.size();
-        this->p_size = p.size();
-
-        return isMatch(0, 0);
-    }
-
     bool isMatch(int si, int pi){
         if(pi == p_size){
             return si == s_size;
@@ -32,14 +23,23 @@ public:
             return (fistMatch and isMatch(si + 1, pi + 1));
         }
     }
+
+    bool isMatch(string s, string p){
+        this->s = s;
+        this->p = p;
+        this->s_size = s.size();
+        this->p_size = p.size();
+
+        return isMatch(0, 0);
+    }
 };
 
 int main(){
     Solution* S = new Solution();
 
     //inputs
-    string s = "c";
-    string p = "c*";
+    string s = "ab";
+    string p = ".*";
 
     cout << S->isMatch(s, p) << endl;
 

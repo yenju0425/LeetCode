@@ -5,26 +5,16 @@ using namespace std;
 
 class Solution{
 private:
-    string s = "";
-    string p = "";
-    int s_size = 0;
-    int p_size = 0;
-    vector<vector<int>> dp;
+    string s;
+    string p;
+    int s_size;
+    int p_size;
+    vector<vector<int>> DP;
 
 public:
-    bool isMatch(string s, string p){
-        this->s = s;
-        this->p = p;
-        this->s_size = s.size();
-        this->p_size = p.size();
-        this->dp = vector<vector<int>>(s_size + 1, vector<int>(p_size + 1, -1));
-    
-        return isMatch(0, 0);
-    }
-
     bool isMatch(int si, int pi){
-        if(dp[si][pi] != -1){ //check the dp table first
-            return bool(dp[si][pi]);
+        if(DP[si][pi] != -1){ //check the DP table first
+            return bool(DP[si][pi]);
         }
 
         bool match;
@@ -32,7 +22,7 @@ public:
             match = (si == s_size);
         }
         else{
-            bool fistMatch = si != s_size and (s[si] == p[pi] or p[pi] == '.');
+            bool fistMatch = (si != s_size) and (s[si] == p[pi] or p[pi] == '.');
             if(pi + 1 != p_size and p[pi + 1] == '*'){ //next pi is '*'
                 match = isMatch(si, pi + 2) or (fistMatch and isMatch(si + 1, pi));
             }
@@ -41,9 +31,19 @@ public:
             }
         }
     
-        dp[si][pi] = match;
+        DP[si][pi] = match;
     
         return match;
+    }
+    
+    bool isMatch(string s, string p){
+        this->s = s;
+        this->p = p;
+        this->s_size = s.size();
+        this->p_size = p.size();
+        this->DP = vector<vector<int>>(s_size + 1, vector<int>(p_size + 1, -1));
+    
+        return isMatch(0, 0);
     }
 };
 
@@ -51,8 +51,8 @@ int main(){
     Solution* S = new Solution();
 
     //inputs
-    string s = "c";
-    string p = "c*";
+    string s = "ab";
+    string p = ".*";
 
     cout << S->isMatch(s, p) << endl;
 
