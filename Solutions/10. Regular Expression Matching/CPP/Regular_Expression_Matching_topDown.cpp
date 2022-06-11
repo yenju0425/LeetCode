@@ -23,7 +23,7 @@ public:
         }
         else{
             bool fistMatch = (si != s_size) and (s[si] == p[pi] or p[pi] == '.');
-            if(pi + 1 != p_size and p[pi + 1] == '*'){ //next pi is '*'
+            if(p[pi + 1] == '*'){ //next pi is '*'
                 match = isMatch(si, pi + 2) or (fistMatch and isMatch(si + 1, pi));
             }
             else{
