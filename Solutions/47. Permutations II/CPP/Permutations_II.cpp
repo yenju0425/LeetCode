@@ -1,55 +1,49 @@
 #include <iostream>
-#include <utility>
 #include <algorithm>
 #include <vector>
+#include <unordered_map>
 
 using namespace std;
 
 class Solution{
 public:
-    vector<vector<int>> permutation(vector<pair<int, int>> numList){
-        vector<vector<int>> P{};
-        int numList_size = numList.size();
-        for(int i = 0; i < numList_size; i++){
+    vector<vector<int>> permutation(unordered_map<int, int> &numCount){
+        vector<vector<int>> P;
+        for(unordered_map<int, int>::iterator iter = numCount.begin(); iter != numCount.end(); iter++){
+            if(iter->second == 0){
+                continue;
+            }
+
             //get the first number
-            int prefix = numList[i].first;
+            iter->second = iter->second - 1;
 
             //get the permutation of the remaining numbers
-            vector<pair<int, int>> new_numList = numList;
-            new_numList[i].second = new_numList[i].second - 1;
-            if(new_numList[i].second == 0){
-                new_numList.erase(new_numList.begin() + i);
-            }
-
-            vector<vector<int>> p = permutation(new_numList);
-            if(p.empty()){
-                p = vector<vector<int>>{{}};
-            }
+            vector<vector<int>> p = permutation(numCount);
 
             int p_size = p.size();
             for(int j = 0; j < p_size; j++){
-                p[j].push_back(prefix);
+                p[j].push_back(iter->first);
                 P.push_back(p[j]);
             }
+
+            //restore numCount
+            iter->second = iter->second + 1;
         }
-        return P;
+
+        return P.empty() ? vector<vector<int>>{{}} : P;
     }
 
     vector<vector<int>> permuteUnique(vector<int> &nums){
-        sort(nums.begin(), nums.end());
-
-        //create number list
-        vector<pair<int, int>> numList;
+        //create numCount
+        unordered_map<int, int> numCount;
+    
         int nums_size = nums.size();
         for(int i = 0; i < nums_size; i++){
-            if(numList.empty() or numList.back().first != nums[i]){
-                numList.push_back(pair<int, int>(nums[i], 1));
-            }
-            else{
-                numList.back().second = numList.back().second + 1;
-            }
+            int num = nums[i];
+            numCount[num] = (numCount.count(num) == 0) ? 1 : numCount[num] + 1;
         }
-        return permutation(numList);
+    
+        return permutation(numCount);
     }
 };
 
@@ -57,7 +51,7 @@ int main(){
     Solution* S = new Solution();
 
     //input
-    vector<int> nums{1, 1, 2, 2, 3};
+    vector<int> nums{3, 3, 0, 3};
 
     vector<vector<int>> result = S->permuteUnique(nums);
 
