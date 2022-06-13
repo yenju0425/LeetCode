@@ -16,7 +16,7 @@ public:
             triangle[i][i] = triangle[i][i] + triangle[i - 1][i - 1];
         }
 
-        //get minSum
+        //look for the minimum path sum
         int result = INT_MAX;
         for(int i = 0; i < depth; i++){
             result = min(result, triangle[depth - 1][i]);
@@ -29,6 +29,7 @@ public:
 int main(){
     Solution* S = new Solution();
 
+    //input
     vector<vector<int>> triangle{
        {2},
        {3, 4},

@@ -6,7 +6,7 @@ using namespace std;
 class Solution{
 public:
     int minimumTotal(vector<vector<int>> &triangle){
-        //calculate pathSum from 0 ~ (maxDepth - 1)
+        //calculate path sum from 0 ~ (maxDepth - 1)
         int maxDepth = triangle.size() - 1;
 
         if(maxDepth == 0){
@@ -21,7 +21,7 @@ public:
             triangle[i][i] = triangle[i][i] + triangle[i - 1][i - 1];
         }
 
-        //calculate pathSum of maxDepth
+        //look for the minimum path sum
         int result = triangle[maxDepth][0] + triangle[maxDepth - 1][0];
         for(int i = 1; i < maxDepth; i++){
             result = min(result, triangle[maxDepth][i] + min(triangle[maxDepth - 1][i], triangle[maxDepth - 1][i - 1]));
@@ -35,6 +35,7 @@ public:
 int main(){
     Solution* S = new Solution();
 
+    //input
     vector<vector<int>> triangle{
        {2},
        {3, 4},
