@@ -16,6 +16,7 @@ class Solution:
 
 S = Solution()
 
+#input
 triangle = [
     [2], 
     [3, 4],

@@ -31,7 +31,8 @@ class Solution:
 
 S = Solution()
 
-nums = [15, 7, 11, 2]
+#inputs
 target = 9
+nums = [15, 7, 11, 2]
 
 print(S.twoSum(nums, target))
