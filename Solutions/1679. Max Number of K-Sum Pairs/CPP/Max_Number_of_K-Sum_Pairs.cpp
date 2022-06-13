@@ -1,6 +1,6 @@
 #include <iostream>
-#include <vector>
 #include <algorithm>
+#include <vector>
 
 using namespace std;
 
@@ -36,8 +36,8 @@ int main(){
     Solution* S = new Solution();
 
     //inputs
-    vector<int> nums{1, 2, 3, 4};
     int k = 5;
+    vector<int> nums{1, 2, 3, 4};
 
     cout << S->maxOperations(nums, k) << endl;
 
