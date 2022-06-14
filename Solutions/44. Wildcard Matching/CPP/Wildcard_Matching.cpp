@@ -9,7 +9,7 @@ public:
         int s_length = s.length();
         int p_length = p.length();
 
-        s = "$" + s; //'$' is the begin of string char
+        s = "$" + s; //'$' is the "begin of string" char
         p = "$" + p;
 
         vector<vector<bool>> DP(s_length + 1, vector<bool>(p_length + 1, false));
