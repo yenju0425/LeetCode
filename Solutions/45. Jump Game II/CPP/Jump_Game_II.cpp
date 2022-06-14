@@ -15,6 +15,7 @@ public:
         for(int i = 0; i < goal; i++){
             auxiFuelTank = max(auxiFuelTank, nums[i] - mainFuelTank);
 
+            //refill mainFuelTank
             if(mainFuelTank == 0){
                 mainFuelTank = auxiFuelTank;
                 auxiFuelTank = 0;
