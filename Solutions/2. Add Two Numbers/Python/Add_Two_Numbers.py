@@ -38,4 +38,3 @@ result = S.addTwoNumbers(n0, m0)
 while result != None:
     print(result.val, ' ')
     result = result.next
-
