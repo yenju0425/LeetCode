@@ -37,7 +37,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     //input
     vector<int> height{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};

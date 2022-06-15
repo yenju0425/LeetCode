@@ -4,19 +4,19 @@ using namespace std;
 
 struct ListNode{
     int val;
-    ListNode* next;
+    ListNode *next;
     ListNode() : val(0), next(nullptr){}
     ListNode(int x) : val(x), next(nullptr){}
-    ListNode(int x, ListNode* next) : val(x), next(next){}
+    ListNode(int x, ListNode *next) : val(x), next(next){}
 };
 
 class Solution{
 public:
-    ListNode* removeNthFromEnd(ListNode* head, int n){
+    ListNode *removeNthFromEnd(ListNode *head, int n){
         int counter = 0;
 
         //count size of the lisked-list
-        ListNode* temp = head;
+        ListNode *temp = head;
         while(temp != nullptr){
             counter = counter + 1; 
             temp = temp->next;
@@ -38,15 +38,15 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
     
     //inputs
     int n = 2;
-    ListNode* a2 = new ListNode(2);
-    ListNode* a1 = new ListNode(7, a2);
-    ListNode* hd = new ListNode(9, a1);
+    ListNode *a2 = new ListNode(2);
+    ListNode *a1 = new ListNode(7, a2);
+    ListNode *hd = new ListNode(9, a1);
 
-    ListNode* result = S->removeNthFromEnd(hd, n);
+    ListNode *result = S->removeNthFromEnd(hd, n);
     while(result != nullptr){
         cout << result->val << ' ';
         result = result->next;

@@ -23,8 +23,9 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
+    //input
     vector<int> nums{9, 9, 9};
 
     vector<int> result = S->plusOne(nums);
@@ -32,6 +33,7 @@ int main(){
     for(auto i : result){
         cout << i << ' ';
     }
+    cout << endl;
 
     return 0;
 }

@@ -5,21 +5,21 @@ using namespace std;
 
 struct TreeNode{
     int val;
-    TreeNode* left;
-    TreeNode* right;
+    TreeNode *left;
+    TreeNode *right;
     TreeNode() : val(0), left(nullptr), right(nullptr){}
     TreeNode(int x) : val(x), left(nullptr), right(nullptr){}
-    TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right){}
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right){}
 };
 
 class Solution{
 private:
-    TreeNode* prevoiusNode = nullptr;
-    TreeNode* errorNode1   = nullptr;
-    TreeNode* errorNode2   = nullptr;
+    TreeNode *prevoiusNode = nullptr;
+    TreeNode *errorNode1   = nullptr;
+    TreeNode *errorNode2   = nullptr;
 
 public:
-    void recoverTree(TreeNode* root){
+    void recoverTree(TreeNode *root){
         DFS_recover(root);
         if(errorNode1 != nullptr and errorNode2 != nullptr){
             int temp        = errorNode1->val;
@@ -27,7 +27,7 @@ public:
             errorNode2->val = temp;
         }
     }
-    void DFS_recover(TreeNode* root){
+    void DFS_recover(TreeNode *root){
         if(root == nullptr){
             return;
         }
@@ -48,7 +48,7 @@ public:
     }
 };
 
-void DFS_inorder(TreeNode* root){
+void DFS_inorder(TreeNode *root){
     if(root == nullptr){
         return;
     }
@@ -58,16 +58,17 @@ void DFS_inorder(TreeNode* root){
 }
 
 int main(){
-    Solution* S = new  Solution();
+    Solution *S = new  Solution();
 
-    TreeNode* node2 = new TreeNode(2);
-    TreeNode* node4 = new TreeNode(4, node2,   nullptr);
-    TreeNode* node1 = new TreeNode(1, nullptr, nullptr);
-    TreeNode* root  = new TreeNode(3, node1,   node4);
+    //inputs
+    TreeNode *n2 = new TreeNode(2);
+    TreeNode *n4 = new TreeNode(4, n2, nullptr);
+    TreeNode *n1 = new TreeNode(1, nullptr, nullptr);
+    TreeNode *rt = new TreeNode(3, n1, n4);
     
-    S->recoverTree(root);
+    S->recoverTree(rt);
 
-    DFS_inorder(root);
+    DFS_inorder(rt);
     cout << endl;
 
     return 0;

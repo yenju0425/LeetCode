@@ -62,7 +62,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     //input
     int n = 4;

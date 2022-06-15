@@ -157,7 +157,7 @@ public:
                                 // guess k is the answer for board[i][j]
                                 board_clone[i][j] = k + '1';
 
-                                Solution* S = new Solution();
+                                Solution *S = new Solution();
                                 S->solveSudoku(board_clone);
 
                                 if(board_clone[0][0] != '!'){ //if the guess is correct
@@ -179,7 +179,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     //input
     vector<vector<char>> board{

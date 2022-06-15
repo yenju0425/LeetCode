@@ -139,7 +139,7 @@ int main(){
     vector<int> b;
     b.push_back(2);
 
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     cout << S->findMedianSortedArrays(a, b) << endl;
 

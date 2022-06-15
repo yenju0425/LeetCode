@@ -7,25 +7,25 @@ using namespace std;
 class Node{
 public:
     int val;
-    Node* left;
-    Node* right;
-    Node* next;
+    Node *left;
+    Node *right;
+    Node *next;
 
     Node() : val(0), left(NULL), right(NULL), next(NULL){}
 
     Node(int _val) : val(_val), left(NULL), right(NULL), next(NULL){}
 
     //for initializing the binary search tree
-    Node(int _val, Node* _left, Node* _right)
+    Node(int _val, Node *_left, Node *_right)
         : val(_val), left(_left), right(_right), next(NULL){}
 
-    Node(int _val, Node* _left, Node* _right, Node* _next)
+    Node(int _val, Node *_left, Node *_right, Node *_next)
         : val(_val), left(_left), right(_right), next(_next){}
 };
 
 class Solution{
 public:
-    Node* connect(Node* root){
+    Node* connect(Node *root){
         vector<queue<Node*>> Q(2); //two queues are neeeded
         int idx = 0;
         if(root != nullptr){
@@ -33,9 +33,9 @@ public:
         }
         while(!Q[idx].empty()){
             int _idx = (idx + 1) % 2; //_idx: another queue's index
-            Node* nextNode = nullptr;
+            Node *nextNode = nullptr;
             while(!Q[idx].empty()){
-                Node* node = Q[idx].front();
+                Node *node = Q[idx].front();
                 Q[idx].pop();
                 node->next = nextNode;
                 nextNode = node;
@@ -53,14 +53,14 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
-    Node* node3 = new Node(3);
-    Node* node4 = new Node(4);
-    Node* node1 = new Node(1, node3, node4);
-    Node* node5 = new Node(5);
-    Node* node2 = new Node(2, nullptr, node5);
-    Node* root  = new Node(0, node1, node2);
+    Node *node3 = new Node(3);
+    Node *node4 = new Node(4);
+    Node *node1 = new Node(1, node3, node4);
+    Node *node5 = new Node(5);
+    Node *node2 = new Node(2, nullptr, node5);
+    Node *root  = new Node(0, node1, node2);
 
     root = S->connect(root);
 
@@ -68,7 +68,7 @@ int main(){
     queue<Node*> Q;
     Q.push(root);
     while(!Q.empty()){
-        Node* node = Q.front();
+        Node *node = Q.front();
         Q.pop();
         cout << node->val << ' ';
         if(node->next == nullptr){

@@ -51,13 +51,13 @@ public:
 class Solution{
 public:
     int search(vector<int>& nums, int target){
-        Finder* F = new Finder(nums, target);
+        Finder *F = new Finder(nums, target);
         return F->find(0);
     }
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     //inputs
     int target = 2;

@@ -32,7 +32,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     vector<vector<int>> obstacleGrid{
         {0, 0, 0},

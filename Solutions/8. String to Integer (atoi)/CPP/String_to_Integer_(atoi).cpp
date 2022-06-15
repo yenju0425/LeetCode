@@ -43,7 +43,7 @@ public:
                         //state = 3; state remain the same
 
                         //overflow detection
-                        outputNumber = outputNumber * 10 + signBit * (int(character) - '0');
+                        outputNumber = outputNumber  *10 + signBit  *(int(character) - '0');
                         if(outputNumber > 2147483647){
                             outputNumber = 2147483647;
                             state = 0;
@@ -70,7 +70,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     //input
     string s = "-21474836";

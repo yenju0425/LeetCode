@@ -137,7 +137,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     cout << S->isNumber("-3.4e3") << endl;
 

@@ -41,7 +41,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     //input
     vector<string> strs{"eat", "tea", "tan", "ate", "nat", "bat"};

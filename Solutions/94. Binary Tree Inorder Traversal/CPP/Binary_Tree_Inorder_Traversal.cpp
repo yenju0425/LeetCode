@@ -5,11 +5,11 @@ using namespace std;
 
 struct TreeNode{
     int val;
-    TreeNode* left;
-    TreeNode* right;
+    TreeNode *left;
+    TreeNode *right;
     TreeNode() : val(0), left(nullptr), right(nullptr){}
     TreeNode(int x) : val(x), left(nullptr), right(nullptr){}
-    TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right){}
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right){}
 };
 
 class Solution{
@@ -20,7 +20,7 @@ public:
         }
     }
 
-    vector<int> inorderTraversal(TreeNode* root){
+    vector<int> inorderTraversal(TreeNode *root){
         vector<int> inorder;
         if(root == nullptr){
             return inorder;
@@ -33,19 +33,19 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
-    TreeNode* node0 = new TreeNode(0);
-    TreeNode* node3 = new TreeNode(3);
-    TreeNode* node5 = new TreeNode(5);
-    
-    TreeNode* node1 = new TreeNode(1, node0, nullptr);
-    TreeNode* node4 = new TreeNode(4, node3, node5);
+    //inputs
+    TreeNode *n0 = new TreeNode(0);
+    TreeNode *n3 = new TreeNode(3);
+    TreeNode *n5 = new TreeNode(5);
+    TreeNode *n1 = new TreeNode(1, n0, nullptr);
+    TreeNode *n4 = new TreeNode(4, n3, n5);
+    TreeNode *rt = new TreeNode(2, n1, n4);
 
-    TreeNode* root  = new TreeNode(2, node1, node4);
+    vector<int> result = S->inorderTraversal(rt);
 
     cout << "inorder  : ";
-    vector<int> result = S->inorderTraversal(root);
     for(auto i : result){
         cout << i << ' ';
     }
