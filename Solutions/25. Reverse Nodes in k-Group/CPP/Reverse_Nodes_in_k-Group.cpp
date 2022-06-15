@@ -25,7 +25,7 @@ dummyHead          |
 
 class Solution{
 public:
-    ListNode *reverseKGroup(ListNode *head, int k){
+    ListNode* reverseKGroup(ListNode *head, int k){
         ListNode *dummyHead = new ListNode(0, head);
         
         //init PTR

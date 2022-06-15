@@ -12,7 +12,7 @@ struct ListNode{
 
 class Solution{
 public:
-    ListNode *deleteDuplicates(ListNode *head){
+    ListNode* deleteDuplicates(ListNode *head){
         ListNode *pointer = head;
         while(pointer != nullptr){
             ListNode *pointer_next = pointer->next;

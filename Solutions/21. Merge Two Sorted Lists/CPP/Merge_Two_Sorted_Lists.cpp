@@ -12,7 +12,7 @@ struct ListNode{
 
 class Solution{
 public:
-    ListNode *mergeTwoLists(ListNode *list1, ListNode *list2){
+    ListNode* mergeTwoLists(ListNode *list1, ListNode *list2){
         ListNode *headNode    = new ListNode(0, list1);
         ListNode *currentNode = headNode;
 

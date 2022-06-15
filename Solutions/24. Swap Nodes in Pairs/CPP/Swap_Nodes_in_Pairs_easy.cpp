@@ -12,7 +12,7 @@ struct ListNode{
 
 class Solution{
 public:
-    ListNode *swapPairs(ListNode *head){
+    ListNode* swapPairs(ListNode *head){
         ListNode *dummyHead = new ListNode(0, head);
         
         ListNode *n0 = dummyHead;
