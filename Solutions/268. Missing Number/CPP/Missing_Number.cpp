@@ -25,8 +25,9 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
+    //input
     vector<int> nums{9, 6, 4, 2, 3, 5, 7, 0, 1};
 
     cout << S->missingNumber(nums) << endl;

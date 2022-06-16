@@ -37,8 +37,9 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
     
+    //input
     vector<vector<int>> board{
         {0, 1, 0},
         {0, 0, 1},

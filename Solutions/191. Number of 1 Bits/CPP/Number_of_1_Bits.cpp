@@ -15,9 +15,12 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
-    cout << S->hammingWeight(26) << endl;
+    //input
+    int n = 26;
+
+    cout << S->hammingWeight(n) << endl;
 
     return 0;
 }

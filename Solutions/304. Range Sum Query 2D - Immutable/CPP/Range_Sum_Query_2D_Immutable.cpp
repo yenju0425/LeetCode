@@ -41,6 +41,7 @@ public:
 };
 
 int main(){
+    //input
     vector<vector<int>> matrix{
         {3, 0, 1, 4, 2},
         {5, 6, 3, 2, 1},
@@ -49,11 +50,11 @@ int main(){
         {1, 0, 3, 0, 5}
     };
 
-    NumMatrix* N = new NumMatrix(matrix);
+    NumMatrix *N = new NumMatrix(matrix);
 
-    cout << N->sumRegion(2, 1, 4, 3) << endl; // return 8
-    cout << N->sumRegion(1, 1, 2, 2) << endl; // return 11
-    cout << N->sumRegion(1, 2, 2, 4) << endl; // return 12
+    cout << N->sumRegion(2, 1, 4, 3) << endl; //return 8
+    cout << N->sumRegion(1, 1, 2, 2) << endl; //return 11
+    cout << N->sumRegion(1, 2, 2, 4) << endl; //return 12
 
     return 0;
 }

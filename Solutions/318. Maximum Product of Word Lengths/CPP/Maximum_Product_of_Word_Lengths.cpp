@@ -55,9 +55,10 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
-    vector<string> coins{"abcw","baz","foo","bar","xtfn","abcdef"};
+    //input
+    vector<string> coins{"abcw", "baz", "foo", "bar", "xtfn", "abcdef"};
 
     cout << S->maxProduct(coins) << endl;
 

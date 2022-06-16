@@ -63,7 +63,7 @@ int main(){
     
     //inputs
     int maxWidth = 16;
-    vector<string> words{"What","must","be","acknowledgment","shall","be"};
+    vector<string> words{"What", "must", "be", "acknowledgment", "shall", "be"};
 
     vector<string> result = S->fullJustify(words, maxWidth);
 

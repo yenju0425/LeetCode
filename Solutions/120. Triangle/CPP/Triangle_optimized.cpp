@@ -13,7 +13,7 @@ public:
             return triangle[0][0];
         }
 
-        for(i = 1; i < maxDepth; i++){
+        for(int i = 1; i < maxDepth; i++){
             triangle[i][0] = triangle[i][0] + triangle[i - 1][0];
             for(int j = 1; j < i; j++){
                 triangle[i][j] = triangle[i][j] + min(triangle[i - 1][j], triangle[i - 1][j - 1]);
@@ -33,7 +33,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     //input
     vector<vector<int>> triangle{

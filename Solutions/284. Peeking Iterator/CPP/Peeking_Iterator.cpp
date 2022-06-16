@@ -5,18 +5,18 @@ using namespace std;
 
 struct Data{
 	int val = 0;
-	Data* nextData = nullptr;
+	Data *nextData = nullptr;
 };
 
 class Iterator{
 private:
-    Data* data; //pointer to the current data in the lisked-list
+    Data *data; //pointer to the current data in the lisked-list
     
 public:
     Iterator(const vector<int> &nums){
-		Data* preNode = nullptr;
+		Data *preNode = nullptr;
 		for(vector<int>::const_iterator i = nums.end() - 1; i - nums.begin() >= 0; i--){
-			Data* node = new Data();
+			Data *node = new Data();
 			node->val  = *i;
 			node->nextData = preNode;
 			preNode = node;
@@ -66,9 +66,10 @@ public:
 };
 
 int main(){
+	//input
     vector<int> v{};
 
-	PeekingIterator* P = new PeekingIterator(v);
+	PeekingIterator *P = new PeekingIterator(v);
 
 	cout << P->hasNext() << endl;
 	cout << P->peek()    << endl;

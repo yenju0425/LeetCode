@@ -6,11 +6,11 @@ using namespace std;
 
 struct TreeNode{
     int val;
-    TreeNode* left;
-    TreeNode* right;
+    TreeNode *left;
+    TreeNode *right;
     TreeNode() : val(0), left(nullptr), right(nullptr){}
     TreeNode(int x) : val(x), left(nullptr), right(nullptr){}
-    TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right){}
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right){}
 };
 
 class BSTIterator{
@@ -18,8 +18,8 @@ private:
     queue<TreeNode*> Tree;
 
 public:
-    BSTIterator(TreeNode* root){
-        TreeNode* currentNode = root;
+    BSTIterator(TreeNode *root){
+        TreeNode *currentNode = root;
         stack<TreeNode*> S;
         while(currentNode != nullptr || !S.empty()){
             if(currentNode != nullptr){
@@ -40,7 +40,7 @@ public:
             return -1;
         }
         else{
-            TreeNode* n = Tree.front();
+            TreeNode *n = Tree.front();
             Tree.pop();
             return n->val;
         }
@@ -52,27 +52,24 @@ public:
 };
 
 int main(){
-    TreeNode* node0 = new TreeNode(0);
-    TreeNode* node3 = new TreeNode(3);
-    TreeNode* node5 = new TreeNode(5);
-    
-    TreeNode* node1 = new TreeNode(1, node0, nullptr);
-    TreeNode* node4 = new TreeNode(4, node3, node5);
+    //inputs
+    TreeNode *n0 = new TreeNode(0);
+    TreeNode *n3 = new TreeNode(3);
+    TreeNode *n5 = new TreeNode(5);
+    TreeNode *n1 = new TreeNode(1, n0, nullptr);
+    TreeNode *n4 = new TreeNode(4, n3, n5);
+    TreeNode *rt = new TreeNode(2, n1, n4);
 
-    TreeNode* root  = new TreeNode(2, node1, node4);
+    BSTIterator *B = new BSTIterator(rt);
 
-    BSTIterator* B = new BSTIterator(root);
-
-    cout << B->next() << endl;    //return 3
-    cout << B->next() << endl;    //return 7
-    cout << B->next() << endl;    //return 9
-    cout << B->next() << endl;    //return 15
-    cout << B->next() << endl;    //return 20
-    cout << B->next() << endl;    //return 3
-    cout << B->next() << endl;    //return 7
-    cout << B->next() << endl;    //return 9
-    cout << B->next() << endl;    //return 15
-    cout << B->next() << endl;    //return 20
+    cout << B->next() << endl;
+    cout << B->next() << endl;
+    cout << B->next() << endl;
+    cout << B->next() << endl;
+    cout << B->next() << endl;
+    cout << B->next() << endl;
+    cout << B->next() << endl;
+    cout << B->next() << endl;
 
     return 0;
 }

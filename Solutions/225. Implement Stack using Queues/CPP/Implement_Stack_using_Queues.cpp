@@ -37,7 +37,7 @@ public:
 };
 
 int main(){
-    MyStack* S = new MyStack();
+    MyStack *S = new MyStack();
 
     S->push(1);
     S->push(2);

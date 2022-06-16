@@ -22,7 +22,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     //input
     vector<int> prices{7, 1, 5, 3, 6, 4};

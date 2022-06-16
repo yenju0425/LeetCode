@@ -33,13 +33,17 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
-    vector<vector<int>> comb = S->combinationSum3(3, 9);
+    //inputs
+    int k = 3;
+    int n = 9;
 
-    for(int i = 0; i < comb.size(); i++){
-        for(int j = 0; j < comb[i].size(); j++){
-            cout << comb[i][j] << ' ';
+    vector<vector<int>> comb = S->combinationSum3(k, n);
+
+    for(auto i : comb){
+        for(auto j : i){
+            cout << j << ' ';
         }
         cout << endl;
     }

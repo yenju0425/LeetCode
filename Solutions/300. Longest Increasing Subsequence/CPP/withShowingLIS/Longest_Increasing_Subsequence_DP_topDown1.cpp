@@ -65,13 +65,13 @@ public:
 };
 
 int main(){
-    vector<int> seq;
+    Solution *S = new Solution();
 
+    //input
+    vector<int> seq;
     for(int i = 0; i < 10; i++){
         seq.push_back(i);
     }
-
-    Solution* S = new Solution();
 
     cout << S->lengthOfLIS(seq) << endl;
 

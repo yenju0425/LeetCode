@@ -5,7 +5,7 @@ using namespace std;
 
 class NestedInteger{
 private:
-    int* integer = nullptr;
+    int *integer = nullptr;
     vector<NestedInteger> nestedList;
 
 public:
@@ -85,7 +85,7 @@ int main(){
     NestedInteger I0(vector<NestedInteger>{});
     vector<NestedInteger> V1{I0};
 
-    NestedIterator* N = new NestedIterator(V1);
+    NestedIterator *N = new NestedIterator(V1);
 
     while(N->hasNext()){
         cout << N->next() << ' ';

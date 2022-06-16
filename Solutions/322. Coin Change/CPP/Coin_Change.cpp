@@ -34,11 +34,13 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
-    vector<int> coins{2};
+    //inputs
+    int amount = 42;
+    vector<int> coins{2, 7, 9};
 
-    cout << S->coinChange(coins, 3) << endl;
+    cout << S->coinChange(coins, amount) << endl;
 
     return 0;
 }
