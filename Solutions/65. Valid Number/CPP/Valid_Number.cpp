@@ -139,7 +139,10 @@ public:
 int main(){
     Solution *S = new Solution();
 
-    cout << S->isNumber("-3.4e3") << endl;
+    //input
+    string s = "-3.4e3";
+
+    cout << S->isNumber(s) << endl;
 
     return 0;
 }

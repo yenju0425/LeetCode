@@ -34,6 +34,7 @@ public:
 int main(){
     Solution *S = new Solution();
 
+    //input
     vector<vector<int>> obstacleGrid{
         {0, 0, 0},
         {0, 1, 0},
