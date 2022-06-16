@@ -27,7 +27,7 @@ public:
 int main(){
     Solution *S = new Solution();
 
-    //input
+    //inputs
     int target = 34;
     vector<vector<int>> matrix{
         { 1,  3,  5,  7},
