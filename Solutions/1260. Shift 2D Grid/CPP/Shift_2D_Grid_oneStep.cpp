@@ -13,7 +13,7 @@ public:
  
         for(int i = 0; i < m; i = i + 1){
             for(int j = 0; j < n; j = j + 1){
-                k = k % (m * n);
+                k = k % (m  *n);
 
                 int m_index = k / n;
                 int n_index = k % n;
@@ -28,7 +28,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
     
     //inputs
     int k = 1;

@@ -43,7 +43,7 @@ public:
 };
 
 int main(){
-    MyHashSet* H = new MyHashSet();
+    MyHashSet *H = new MyHashSet();
 
     H->add(0);
     H->add(0);

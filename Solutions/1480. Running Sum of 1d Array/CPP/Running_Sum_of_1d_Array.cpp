@@ -21,7 +21,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     //input
     vector<int> nums{1, 2, 3, 4};

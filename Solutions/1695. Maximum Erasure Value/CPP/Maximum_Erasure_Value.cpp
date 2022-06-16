@@ -40,7 +40,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     //input
     vector<int> nums{5, 2, 1, 2, 5, 2, 1, 2, 5};

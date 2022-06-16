@@ -15,7 +15,7 @@ public:
 
         //doExist[num] = true, if the corresponding binary code of "num" do exist
         //e.g. k = 3, doExist[3] will be set to "true", if "011" is witnessed
-        bool* doExist = new bool[numOfSubstrings]{false};
+        bool *doExist = new bool[numOfSubstrings]{false};
 
         //fill "num" with the first (k - 1) bits
         int num = 0;
@@ -50,7 +50,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     //inputs
     string s = "00110110";

@@ -40,7 +40,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution;
+    Solution *S = new Solution;
 
     //input
     vector<string> words{"bella", "label", "roller"};

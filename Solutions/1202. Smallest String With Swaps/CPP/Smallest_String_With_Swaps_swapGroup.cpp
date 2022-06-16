@@ -51,7 +51,7 @@ public:
         int s_size = s.size();
         int pairs_size = pairs.size();
 
-        UnionFind* UF = new UnionFind(s_size);
+        UnionFind *UF = new UnionFind(s_size);
         for(int i = 0; i < pairs_size; i++){
             UF->unionSet(pairs[i][0], pairs[i][1]);
         }
@@ -90,7 +90,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     //inputs
     string s = "gfedcbaaaa";

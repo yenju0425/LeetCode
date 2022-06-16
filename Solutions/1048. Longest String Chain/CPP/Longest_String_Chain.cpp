@@ -52,10 +52,10 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution;
+    Solution *S = new Solution;
 
     //input
-    vector<string> words{"a","ab","ac","bd","abc","abd","abdd"};
+    vector<string> words{"a", "ab", "ac", "bd", "abc", "abd", "abdd"};
 
     cout << S->longestStrChain(words) << endl;
 

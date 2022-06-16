@@ -29,7 +29,7 @@ public:
 int main(){
     vector<int> cards{3, 4, 5, 7, 99, 98, 3, 6, 1, 2, 1, 3};
 
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     cout << S->minimumCardPickup(cards) << endl;
 

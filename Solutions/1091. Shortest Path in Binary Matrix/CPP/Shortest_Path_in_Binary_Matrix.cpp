@@ -60,8 +60,9 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
+    //input
     vector<vector<int>> grid{
         {1, 0, 0},
         {1, 1, 0},

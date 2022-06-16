@@ -27,7 +27,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     //inputs
     vector<string> words{"aa", "aabd", "c"};

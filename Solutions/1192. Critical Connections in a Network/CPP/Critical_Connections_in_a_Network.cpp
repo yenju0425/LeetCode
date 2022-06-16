@@ -73,7 +73,7 @@ class Solution{
 public:
     vector<vector<int>> criticalConnections(int n, vector<vector<int>> &connections){
         //build servers
-        Servers* S = new Servers(n, connections);
+        Servers *S = new Servers(n, connections);
 
         //find CCs
         vector<vector<int>> CCs = S->findCriticalConnections();
@@ -83,7 +83,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     //inputs
     int n = 7;

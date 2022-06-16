@@ -26,7 +26,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     //inputs
     string s = "qlkzenwmmnpkopu";

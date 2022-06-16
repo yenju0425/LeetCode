@@ -35,7 +35,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     vector<vector<int>> sets{
         {1, 2, 3},

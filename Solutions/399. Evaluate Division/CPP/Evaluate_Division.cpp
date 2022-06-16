@@ -52,7 +52,7 @@ class Solution{
 public:
     vector<double> calcEquation(vector<vector<string>> &equations, vector<double> &values, vector<vector<string>> &queries){
         vector<double> results;
-        UnionFind* UF = new UnionFind();
+        UnionFind *UF = new UnionFind();
 
         //store data
         for(int i = 0; i < equations.size(); i++){
@@ -80,7 +80,7 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
     //inputs
     vector<vector<string>> equations{{"a", "b"}, {"d", "b"}, {"w", "x"}, {"z", "x"}, {"w", "d"}};

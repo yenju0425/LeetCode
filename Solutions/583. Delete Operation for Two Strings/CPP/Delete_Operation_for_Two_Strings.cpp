@@ -30,9 +30,9 @@ public:
 };
 
 int main(){
-    Solution* S = new Solution();
+    Solution *S = new Solution();
 
-    //input
+    //inputs
     string word1 = "Richard";
     string word2 = "Lillard";
 
