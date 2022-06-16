@@ -40,7 +40,7 @@ public:
                 if(i == wordsCounter - 1){ //last word
                     space = totalSpace;
                 }
-                else if(nextWidth == INT_MAX){ //every space is '1' in last line
+                else if(nextWidth == INT_MAX){ //last line, every space is 1
                     space = 1;
                 }
                 else{
