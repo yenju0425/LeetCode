@@ -20,25 +20,36 @@ public:
         if(p == nullptr xor q == nullptr){
             return false;
         }
-        if(p->val == q->val and isSameTree(p->left, q->left) and isSameTree(p->right, q->right)){
+        if(p->val == q->val and isSameTree(p->left, q->right) and isSameTree(p->right, q->left)){
             return true;
         }
         return false;
+    }
+
+    bool isSymmetric(TreeNode *root){
+        return isSameTree(root->left, root->right);
     }
 };
 
 int main(){
     Solution *S = new  Solution();
 
-    //inputs
-    TreeNode *n2 = new TreeNode(2);
-    TreeNode *n4 = new TreeNode(4, n2, nullptr);
-    TreeNode *n1 = new TreeNode(1, nullptr, nullptr);
-
-    TreeNode *r1 = new TreeNode(3, n4, n1);
-    TreeNode *r2 = new TreeNode(3, n1, n4);
+    //input tree structure:
+    //
+    //    rt
+    //    |  \
+    //    n1  n2
+    //    |   |  \
+    //    n3  n4  n5
+    //
+    TreeNode *n5 = new TreeNode(5);
+    TreeNode *n4 = new TreeNode(4);
+    TreeNode *n3 = new TreeNode(3);
+    TreeNode *n2 = new TreeNode(2, n4, n5);
+    TreeNode *n1 = new TreeNode(1, n3, nullptr);
+    TreeNode *rt = new TreeNode(0, n1, n2);
     
-    cout << S->isSameTree(r1, r2) << endl;
+    cout << S->isSymmetric(rt) << endl;
 
     return 0;
 }
