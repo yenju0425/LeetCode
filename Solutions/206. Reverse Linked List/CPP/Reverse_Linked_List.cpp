@@ -30,15 +30,15 @@ int main(){
     Solution *S = new Solution();
 
     //inputs
-    ListNode *n0 = new ListNode(0);
-    ListNode *n1 = new ListNode(1, n0);
-    ListNode *n2 = new ListNode(2, n1);
+    ListNode *n3 = new ListNode(3);
+    ListNode *n2 = new ListNode(2, n3);
+    ListNode *n1 = new ListNode(1, n2);
 
-    ListNode *reverse = S->reverseList(n2);
+    ListNode *result = S->reverseList(n1);
 
-    while(reverse != nullptr){
-        cout << reverse->val << ' ';
-        reverse = reverse->next;
+    while(result != nullptr){
+        cout << result->val << ' ';
+        result = result->next;
     }
     cout << endl;
 

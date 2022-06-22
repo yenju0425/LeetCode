@@ -12,15 +12,14 @@ struct ListNode{
 
 /*
 ex: k = 2
-               NEXT_PTR
-               |
-          PTR  |    LAST_PTR
-          |    |    |
+                
+          CUR_PTR   LST_PTR
+          |         |
 O--> O--> O--> O--> O--> O--> O--> O--> X
 |    [       ] [ Group ] [       ]
 |                  |
-dummyHead          |
-                   currently reversing Group
+dummyHead          currently reversing Group
+
 */
 
 class Solution{
@@ -28,40 +27,40 @@ public:
     ListNode* reverseKGroup(ListNode *head, int k){
         ListNode *dummyHead = new ListNode(0, head);
         
-        //init PTR
-        ListNode *PTR = dummyHead;
+        //init CUR_PTR
+        ListNode *CUR_PTR = dummyHead;
         while(true){
-            //init NEXT_PTR
-            ListNode *NEXT_PTR = PTR->next;
-
             //init LAST_PTR
-            ListNode *LAST_PTR = PTR;
+            ListNode *LST_PTR = CUR_PTR;
             for(int i = 0; i < k; i++){
-                LAST_PTR = LAST_PTR->next;
-                if(LAST_PTR == nullptr){
+                LST_PTR = LST_PTR->next;
+                if(LST_PTR == nullptr){
                     return dummyHead->next;
                 }
             }
     
             //init new_nxt, current, next
             ListNode *new_nxt = nullptr;
-            ListNode *current = LAST_PTR->next;
-            ListNode *next    = NEXT_PTR;
+            ListNode *cur_ptr = LST_PTR->next;
+            ListNode *nxt_ptr = CUR_PTR->next;
 
-            while(current != LAST_PTR){
+            while(cur_ptr != LST_PTR){
                 //update new_nxt, current, next
-                new_nxt = current;
-                current = next;
-                next    = next->next;
+                new_nxt = cur_ptr;
+                cur_ptr = nxt_ptr;
+                nxt_ptr = nxt_ptr->next;
 
                 //reverse
-                current->next = new_nxt;
+                cur_ptr->next = new_nxt;
             }
 
             //update PTR
-            PTR->next = LAST_PTR;
-            PTR = NEXT_PTR;
+            ListNode *NEW_NXT = CUR_PTR->next;
+            CUR_PTR->next = LST_PTR;
+            CUR_PTR = NEW_NXT;
         }
+
+        return dummyHead->next;
     }
 };
 
