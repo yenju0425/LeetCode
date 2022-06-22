@@ -13,12 +13,17 @@ struct TreeNode{
 
 class Solution{
 public:
-    int maxDepth(TreeNode* root){
+    int minDepth(TreeNode* root){
         if(root == nullptr){
             return 0;
         }
 
-        return max(maxDepth(root->left), maxDepth(root->right)) + 1;
+        int left  = minDepth(root->left);
+        int right = minDepth(root->right);
+        if(left == 0 xor right == 0){
+            return left + right + 1;
+        }
+        return min(left, right) + 1;
     }
 };
 
@@ -40,7 +45,7 @@ int main(){
     TreeNode *n1 = new TreeNode(0, n3, nullptr);
     TreeNode *rt = new TreeNode(0, n1, n2);
     
-    cout << S->maxDepth(rt) << endl;
+    cout << S->minDepth(rt) << endl;
 
     return 0;
 }
