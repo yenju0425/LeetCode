@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
@@ -14,26 +13,24 @@ struct TreeNode{
 
 class Solution{
 public:
-    void concatenate(vector<int> &target, vector<int> source){
-        for(int i = 0; i < source.size(); i++){
-            target.push_back(source[i]);
+    int treeHeight(TreeNode* root){
+        if(root == nullptr){
+            return 0;
         }
+        return max(treeHeight(root->left), treeHeight(root->right)) + 1;
     }
 
-    vector<int> preorderTraversal(TreeNode *root){
-        vector<int> preorder;
+    bool isBalanced(TreeNode* root){
         if(root == nullptr){
-            return preorder;
+            return true;
         }
-        concatenate(preorder, vector<int>{root->val});
-        concatenate(preorder, preorderTraversal(root->left));
-        concatenate(preorder, preorderTraversal(root->right));
-        return preorder;
+    
+        return isBalanced(root->left) and isBalanced(root->right) and (abs(treeHeight(root->left) - treeHeight(root->right)) <= 1);
     }
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution *S = new  Solution();
 
     //input tree structure:
     //
@@ -49,12 +46,8 @@ int main(){
     TreeNode *n2 = new TreeNode(2, n4, n5);
     TreeNode *n1 = new TreeNode(1, n3, nullptr);
     TreeNode *rt = new TreeNode(0, n1, n2);
-
-    vector<int> result = S->preorderTraversal(rt);
     
-    for(auto i : result){
-        cout << i << ' ';
-    }
+    cout << S->isBalanced(rt) << endl;
 
     return 0;
 }

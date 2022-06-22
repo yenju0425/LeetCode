@@ -28,19 +28,18 @@ public:
         int levelSum;
         while(!Q[idx].empty()){
             levelSum = 0;
-            int _idx = (idx + 1) % 2;
             while(!Q[idx].empty()){
                 TreeNode *node = Q[idx].front();
                 Q[idx].pop();
                 levelSum = levelSum + node -> val;
                 if(node -> left  != nullptr){
-                    Q[_idx].push(node -> left);
+                    Q[!idx].push(node -> left);
                 }
                 if(node -> right != nullptr){
-                    Q[_idx].push(node -> right);
+                    Q[!idx].push(node -> right);
                 }
             }
-            idx = _idx; //whitch to another Q
+            idx = !idx; //whitch to another Q
         }
 
         return levelSum;
@@ -50,23 +49,22 @@ public:
 int main(){
     Solution *S = new Solution();
 
-    //level 3
-    TreeNode *node8 = new TreeNode(8);
-    TreeNode *node7 = new TreeNode(7);
-    
-    //level 2
-    TreeNode *node6 = new TreeNode(6, nullptr, node8);
-    TreeNode *node5 = new TreeNode(5);
-    TreeNode *node4 = new TreeNode(4, node7,   nullptr);
+    //input tree structure:
+    //
+    //    rt(2)
+    //    |     \
+    //    n1(1)  n2(4)
+    //    |      |     \
+    //    n3(0)  n4(3)  n5(5)
+    //
+    TreeNode *n5 = new TreeNode(5);
+    TreeNode *n4 = new TreeNode(3);
+    TreeNode *n3 = new TreeNode(0);
+    TreeNode *n2 = new TreeNode(4, n4, n5);
+    TreeNode *n1 = new TreeNode(1, n3, nullptr);
+    TreeNode *rt = new TreeNode(2, n1, n2);
 
-    //level 1
-    TreeNode *node3 = new TreeNode(3, nullptr, node6);
-    TreeNode *node2 = new TreeNode(2, node4,   node5);
-
-    //level 0
-    TreeNode *node1 = new TreeNode(1, node2, node3);
-
-    cout << S->deepestLeavesSum(node1) << endl;
+    cout << S->deepestLeavesSum(rt) << endl;
 
     return 0;
 }

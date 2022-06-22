@@ -36,17 +36,17 @@ int main(){
 
     //input tree structure:
     //
-    //    rt
-    //    |  \
-    //    n1  n2
-    //    |   |  \
-    //    n3  n4  n5
+    //    rt(0)
+    //    |     \
+    //    n1(0)  n2(0)
+    //    |      |     \
+    //    n3(0)  n4(0)  n5(0)
     //
-    TreeNode *n5 = new TreeNode(5);
-    TreeNode *n4 = new TreeNode(4);
-    TreeNode *n3 = new TreeNode(3);
-    TreeNode *n2 = new TreeNode(2, n4, n5);
-    TreeNode *n1 = new TreeNode(1, n3, nullptr);
+    TreeNode *n5 = new TreeNode(0);
+    TreeNode *n4 = new TreeNode(0);
+    TreeNode *n3 = new TreeNode(0);
+    TreeNode *n2 = new TreeNode(0, n4, n5);
+    TreeNode *n1 = new TreeNode(0, n3, nullptr);
     TreeNode *rt = new TreeNode(0, n1, n2);
     
     cout << S->isSymmetric(rt) << endl;

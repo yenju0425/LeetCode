@@ -37,24 +37,31 @@ public:
 int main(){
     Solution *S = new Solution();
 
-    //original
-    TreeNode *node0 = new TreeNode(0);
-    TreeNode *node3 = new TreeNode(3);
-    TreeNode *node5 = new TreeNode(5);
-    TreeNode *node1 = new TreeNode(1, node0, nullptr);
-    TreeNode *node4 = new TreeNode(4, node3, node5);
-    TreeNode *root  = new TreeNode(2, node1, node4);
+    //original tree structure:
+    //
+    //    rt(2)
+    //    |     \
+    //    n1(1)  n2(4)
+    //    |      |     \
+    //    n3(0)  n4(3)  n5(5)
+    //
+    TreeNode *n5 = new TreeNode(5);
+    TreeNode *n4 = new TreeNode(3);
+    TreeNode *n3 = new TreeNode(0);
+    TreeNode *n2 = new TreeNode(4, n4, n5);
+    TreeNode *n1 = new TreeNode(1, n3, nullptr);
+    TreeNode *rt = new TreeNode(2, n1, n2);
 
     //cloned
-    TreeNode *_node0 = new TreeNode(0);
-    TreeNode *_node3 = new TreeNode(3);
-    TreeNode *_node5 = new TreeNode(5);
-    TreeNode *_node1 = new TreeNode(1, _node0, nullptr);
-    TreeNode *_node4 = new TreeNode(4, _node3, _node5);
-    TreeNode *_root  = new TreeNode(2, _node1, _node4);
+    TreeNode *_n5 = new TreeNode(5);
+    TreeNode *_n4 = new TreeNode(3);
+    TreeNode *_n3 = new TreeNode(0);
+    TreeNode *_n2 = new TreeNode(4, _n4, _n5);
+    TreeNode *_n1 = new TreeNode(1, _n3, nullptr);
+    TreeNode *_rt = new TreeNode(2, _n1, _n2);
 
-    cout << S->getTargetCopy(root, _root, node4) << endl;
-    cout << "Real Target: " << _node4 << endl;
+    cout << S->getTargetCopy(rt, _rt, n4) << endl;
+    cout << "Real Target: " << _n4 << endl;
 
     return 0;
 }

@@ -35,20 +35,25 @@ public:
 int main(){
     Solution *S = new Solution();
 
-    //inputs
-    TreeNode *node0 = new TreeNode(0);
-    TreeNode *node3 = new TreeNode(3);
-    TreeNode *node5 = new TreeNode(5);
+    //input tree structure:
+    //
+    //    rt(0)
+    //    |     \
+    //    n1(1)  n2(2)
+    //    |      |     \
+    //    n3(3)  n4(4)  n5(5)
+    //
+    TreeNode *n5 = new TreeNode(5);
+    TreeNode *n4 = new TreeNode(4);
+    TreeNode *n3 = new TreeNode(3);
+    TreeNode *n2 = new TreeNode(2, n4, n5);
+    TreeNode *n1 = new TreeNode(1, n3, nullptr);
+    TreeNode *rt = new TreeNode(0, n1, n2);
+
+    vector<int> result = S->postorderTraversal(rt);
     
-    TreeNode *node1 = new TreeNode(1, node0, nullptr);
-    TreeNode *node4 = new TreeNode(4, node3, node5);
-
-    TreeNode *root  = new TreeNode(2, node1, node4);
-
-    cout << "postorder  : ";
-    vector<int> ans = S->postorderTraversal(root);
-    for(int i = 0; i < ans.size(); i++){
-        cout << ans[i] << ' ';
+    for(auto i : result){
+        cout << i << ' ';
     }
 
     return 0;

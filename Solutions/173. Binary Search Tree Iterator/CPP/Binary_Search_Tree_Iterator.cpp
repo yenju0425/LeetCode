@@ -52,13 +52,20 @@ public:
 };
 
 int main(){
-    //inputs
-    TreeNode *n0 = new TreeNode(0);
-    TreeNode *n3 = new TreeNode(3);
+    //input tree structure:
+    //
+    //    rt(0)
+    //    |     \
+    //    n1(1)  n2(2)
+    //    |      |     \
+    //    n3(3)  n4(4)  n5(5)
+    //
     TreeNode *n5 = new TreeNode(5);
-    TreeNode *n1 = new TreeNode(1, n0, nullptr);
-    TreeNode *n4 = new TreeNode(4, n3, n5);
-    TreeNode *rt = new TreeNode(2, n1, n4);
+    TreeNode *n4 = new TreeNode(4);
+    TreeNode *n3 = new TreeNode(3);
+    TreeNode *n2 = new TreeNode(2, n4, n5);
+    TreeNode *n1 = new TreeNode(1, n3, nullptr);
+    TreeNode *rt = new TreeNode(0, n1, n2);
 
     BSTIterator *B = new BSTIterator(rt);
 

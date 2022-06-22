@@ -12,15 +12,9 @@ public:
     Node *next;
 
     Node() : val(0), left(NULL), right(NULL), next(NULL){}
-
     Node(int _val) : val(_val), left(NULL), right(NULL), next(NULL){}
-
-    //for initializing the binary search tree
-    Node(int _val, Node *_left, Node *_right)
-        : val(_val), left(_left), right(_right), next(NULL){}
-
-    Node(int _val, Node *_left, Node *_right, Node *_next)
-        : val(_val), left(_left), right(_right), next(_next){}
+    Node(int _val, Node *_left, Node *_right) : val(_val), left(_left), right(_right), next(NULL){}
+    Node(int _val, Node *_left, Node *_right, Node *_next) : val(_val), left(_left), right(_right), next(_next){}
 };
 
 class Solution{
@@ -32,7 +26,6 @@ public:
             Q[idx].push(root);
         }
         while(!Q[idx].empty()){
-            int _idx = (idx + 1) % 2; //_idx: another queue's index
             Node *nextNode = nullptr;
             while(!Q[idx].empty()){
                 Node *node = Q[idx].front();
@@ -40,13 +33,13 @@ public:
                 node->next = nextNode;
                 nextNode = node;
                 if(node->right != nullptr){
-                    Q[_idx].push(node->right);
+                    Q[!idx].push(node->right);
                 }
                 if(node->left  != nullptr){
-                    Q[_idx].push(node->left);
+                    Q[!idx].push(node->left);
                 }
             }
-            idx = _idx; //switch to another Q
+            idx = !idx; //switch to another Q
         }
         return root;
     }
@@ -55,35 +48,36 @@ public:
 int main(){
     Solution *S = new Solution();
 
-    Node *node3 = new Node(3);
-    Node *node4 = new Node(4);
-    Node *node1 = new Node(1, node3, node4);
-    Node *node5 = new Node(5);
-    Node *node2 = new Node(2, nullptr, node5);
-    Node *root  = new Node(0, node1, node2);
+    //input tree structure:
+    //
+    //    rt(0)
+    //    |     \
+    //    n1(1)  n2(2)
+    //    |      |     \
+    //    n3(3)  n4(4)  n5(5)
+    //
+    Node *n5 = new Node(5);
+    Node *n4 = new Node(4);
+    Node *n3 = new Node(3);
+    Node *n2 = new Node(2, n4, n5);
+    Node *n1 = new Node(1, n3, nullptr);
+    Node *rt = new Node(0, n1, n2);
 
-    root = S->connect(root);
+    Node *result = S->connect(rt);
 
-    //using BFS traversal to check every "next" pointer
-    queue<Node*> Q;
-    Q.push(root);
-    while(!Q.empty()){
-        Node *node = Q.front();
-        Q.pop();
-        cout << node->val << ' ';
-        if(node->next == nullptr){
-            cout << "#" << endl;
+    while(result != nullptr){
+        Node *ptr = result;
+        while(ptr != nullptr){
+            cout << ptr->val << ' ';
+            ptr = ptr->next;
+        }
+        cout << "#" << endl;
+
+        if(result->left != nullptr){
+            result = result->left;
         }
         else{
-            cout << node->next->val << endl;
-        }
-        
-        //push new nodes to Q
-        if(node->left  != nullptr){
-            Q.push(node->left);
-        }
-        if(node->right != nullptr){
-            Q.push(node->right);
+            result = result->right;
         }
     }
 

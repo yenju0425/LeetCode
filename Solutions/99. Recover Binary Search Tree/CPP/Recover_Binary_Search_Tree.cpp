@@ -14,37 +14,35 @@ struct TreeNode{
 
 class Solution{
 private:
-    TreeNode *prevoiusNode = nullptr;
-    TreeNode *errorNode1   = nullptr;
-    TreeNode *errorNode2   = nullptr;
+    TreeNode *prev_Node  = nullptr;
+    TreeNode *errorNode1 = nullptr;
+    TreeNode *errorNode2 = nullptr;
 
 public:
-    void recoverTree(TreeNode *root){
-        DFS_recover(root);
-        if(errorNode1 != nullptr and errorNode2 != nullptr){
-            int temp        = errorNode1->val;
-            errorNode1->val = errorNode2->val;
-            errorNode2->val = temp;
-        }
-    }
-    void DFS_recover(TreeNode *root){
+    void DFS_recover(TreeNode *root){ //mark the error nodes
         if(root == nullptr){
             return;
         }
+
+        //DFS: Inorder
         DFS_recover(root->left);
-        if(prevoiusNode != nullptr and errorNode1 == nullptr){
-            if(root->val < prevoiusNode->val){ //if current root node < previous node: first error node is found!
-                errorNode1 = prevoiusNode;
+        if(prev_Node != nullptr and root->val < prev_Node->val){
+            if(errorNode1 == nullptr){
+                errorNode1 = prev_Node;
                 errorNode2 = root;
             }
-        }
-        else if(errorNode1 != nullptr){
-            if(root->val < errorNode1->val){
+            else if(errorNode1 != nullptr){
                 errorNode2 = root;
+                return;
             }
         }
-        prevoiusNode = root;
+        prev_Node = root;
         DFS_recover(root->right);
+    }
+
+    void recoverTree(TreeNode *root){
+        DFS_recover(root);
+        swap(errorNode1->val, errorNode2->val);
     }
 };
 
@@ -60,11 +58,20 @@ void DFS_inorder(TreeNode *root){
 int main(){
     Solution *S = new  Solution();
 
-    //inputs
-    TreeNode *n2 = new TreeNode(2);
-    TreeNode *n4 = new TreeNode(4, n2, nullptr);
-    TreeNode *n1 = new TreeNode(1, nullptr, nullptr);
-    TreeNode *rt = new TreeNode(3, n1, n4);
+    //input tree structure:
+    //
+    //    rt(2)
+    //    |     \
+    //   *n1(4) *n2(1)
+    //    |      |     \
+    //    n3(0)  n4(3)  n5(5)
+    //
+    TreeNode *n5 = new TreeNode(5);
+    TreeNode *n4 = new TreeNode(3);
+    TreeNode *n3 = new TreeNode(0);
+    TreeNode *n2 = new TreeNode(1, n4, n5);
+    TreeNode *n1 = new TreeNode(4, n3, nullptr);
+    TreeNode *rt = new TreeNode(2, n1, n2);
     
     S->recoverTree(rt);
 
