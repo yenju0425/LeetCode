@@ -12,17 +12,18 @@ struct ListNode{
 
 class Solution{
 public:
-    ListNode* reverseList(ListNode *curNode){
-        ListNode *preNode = nullptr;
-        while(curNode != nullptr){
-            ListNode *temp = preNode;
-            preNode = curNode;
-            curNode = curNode->next;
+    ListNode* reverseList(ListNode *head){
+        ListNode* pre_ptr = nullptr;
+        ListNode* cur_ptr = head;
+        while(cur_ptr != nullptr){
+            ListNode* nxt_ptr = cur_ptr->next;
+            cur_ptr->next = pre_ptr;
 
-            //reverse
-            preNode->next = temp;
+            pre_ptr = cur_ptr;
+            cur_ptr = nxt_ptr;
         }
-        return preNode;
+
+        return pre_ptr;
     }
 };
 

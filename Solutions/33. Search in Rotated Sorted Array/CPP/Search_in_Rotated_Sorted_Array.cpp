@@ -7,6 +7,7 @@ class Finder{
 private:
     vector<int> nums;
     int nums_size;
+    int cur_ptr;
     int target;
     int fuel;
 
@@ -14,13 +15,14 @@ public:
     Finder(vector<int> nums, int target){
         this->nums      = nums;
         this->nums_size = nums.size();
+        this->cur_ptr   = 0;
         this->target    = target;
         this->fuel      = nums_size; //fill the finder with "nums_size" unit of fuel
     }
 
-    int find(int position){
-        if(nums[position] == target){
-            return position;
+    int find(){
+        if(nums[cur_ptr] == target){
+            return cur_ptr;
         }
 
         //attempt to find next position
@@ -29,30 +31,26 @@ public:
         }
 
         //find next position, and it will cost you half of the current fuel
-        int next_position = 0;
-        int fuel_used = (fuel == 1) ? fuel : fuel / 2; //O(logN)
-        if(nums[position] < target){
-            next_position = (position + fuel_used) % nums_size;
-            if(nums[next_position] < nums[position]){ //if we will go too far
-                next_position = position; //then stay at the current position
-            }
+        int nxt_ptr = 0;
+        int fuel_used = fuel - fuel / 2;
+        if(nums[cur_ptr] < target){
+            nxt_ptr = (cur_ptr + fuel_used) % nums_size;
+            cur_ptr = (nums[nxt_ptr] < nums[cur_ptr]) ? cur_ptr : nxt_ptr; //if it will go too far, then stay at the current position
         }
         else{
-            next_position = (position + nums_size - fuel_used) % nums_size;
-            if(nums[next_position] > nums[position]){
-                next_position = position;
-            }
+            nxt_ptr = (cur_ptr + nums_size - fuel_used) % nums_size;
+            cur_ptr = (nums[nxt_ptr] > nums[cur_ptr]) ? cur_ptr : nxt_ptr; //if it will go too far, then stay at the current position
         }
-        fuel = fuel - fuel_used;
-        return find(next_position);
+        fuel = fuel / 2;
+        return find();
     }
 };
 
 class Solution{
 public:
-    int search(vector<int>& nums, int target){
+    int search(vector<int> &nums, int target){
         Finder *F = new Finder(nums, target);
-        return F->find(0);
+        return F->find();
     }
 };
 
@@ -61,7 +59,7 @@ int main(){
 
     //inputs
     int target = 2;
-    vector<int> nums{3, 4, 5, 6, 1, 2}; //view "nums" as a circular array
+    vector<int> nums{3, 4, 5, 6, 1, 2};
 
     cout << S->search(nums, target) << endl;
 
