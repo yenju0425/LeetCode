@@ -4,7 +4,7 @@
 
 | Title | Difficulty | Hashtags | C++ | Python |
 | ----- |------------| :------: | :-: | :----: |
-|[665. Non-decreasing Array](https://leetcode.com/problemset/all)                                                                                           |:star::star:      |                            |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/665.%20Non-decreasing%20Array/CPP)                                                                               |                                                                                                                                                                                                 |
+|[1423. Maximum Points You Can Obtain from Cards](https://leetcode.com/problemset/all)                                                                      |:star::star:      |                            |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/1423.%20Maximum%20Points%20You%20Can%20Obtain%20from%20Cards/CPP)                                                |                                                                                                                                                                                                 |
 
 ## :brain: Problems
 
