@@ -21,8 +21,8 @@ public:
         }
 
         //look for swapping interval
-        int maxDiff_2to1_start = INT_MIN;
-        int maxDiff_2to1_final = INT_MIN;
+        int maxDiff_2to1_start = 0;
+        int maxDiff_2to1_final = 0;
         for(int i = 0; i < size; i++){
             maxDiff_2to1_start = max(maxDiff_2to1_start,                    + acc_diff[i]);
             maxDiff_2to1_final = max(maxDiff_2to1_final, maxDiff_2to1_start - acc_diff[i]);
@@ -30,7 +30,7 @@ public:
 
         //look for swapping interval
         int maxDiff_1to2_start = 0;
-        int maxDiff_1to2_final = INT_MIN;
+        int maxDiff_1to2_final = 0;
         for(int i = 0; i < size; i++){
             maxDiff_1to2_start = max(maxDiff_1to2_start,                    - acc_diff[i]);
             maxDiff_1to2_final = max(maxDiff_1to2_final, maxDiff_1to2_start + acc_diff[i]);

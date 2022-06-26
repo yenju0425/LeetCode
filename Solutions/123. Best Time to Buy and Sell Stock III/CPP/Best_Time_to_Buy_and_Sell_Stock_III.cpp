@@ -7,8 +7,8 @@ class Solution{
 public:
     int maxProfit(vector<int> &prices){
         int profitAfter_b1 = INT_MIN;
-        int profitAfter_b2 = INT_MIN;
         int profitAfter_s1 = 0;
+        int profitAfter_b2 = INT_MIN;
         int profitAfter_s2 = 0;
         
         //greedy algorithm
