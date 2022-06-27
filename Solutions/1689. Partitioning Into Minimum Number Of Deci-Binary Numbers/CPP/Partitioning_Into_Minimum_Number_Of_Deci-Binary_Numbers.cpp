@@ -1,16 +1,12 @@
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int minPartitions(string n){
-        int maxInt = 0;
-        for(string::iterator iter = n.begin(); iter != n.end(); iter++){
-            maxInt = max(maxInt, *iter - '0');
-        }
-
-        return maxInt;
+    int minPartitions(string n) {
+        return *max_element(n.begin(), n.end()) - '0';
     }
 };
 
