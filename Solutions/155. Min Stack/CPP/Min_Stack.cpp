@@ -35,8 +35,11 @@ int main(){
     MS->push(-2);
     MS->push(0);
     MS->push(-3);
+
     cout << MS->getMin() << endl;
+
     MS->pop();
+    
     cout << MS->top() << endl;
     cout << MS->getMin() << endl;
 

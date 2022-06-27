@@ -17,7 +17,7 @@ public:
 int main(){
     Solution *S = new Solution();
 
-    //inputs
+    //input
     string n = "1987";
 
     cout << S->minPartitions(n) << endl;
