@@ -52,7 +52,7 @@ int main(){
     //inputs
     int bricks  = 10;
     int ladders = 2;
-    vector<int> heights = {4,12,2,7,3,18,20,3,19};
+    vector<int> heights{4, 12, 2, 7, 3, 18, 20, 3, 19};
 
     cout << S->furthestBuilding(heights, bricks, ladders) << endl;
 
