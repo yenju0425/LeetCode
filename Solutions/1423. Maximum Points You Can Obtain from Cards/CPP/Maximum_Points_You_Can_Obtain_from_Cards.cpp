@@ -28,8 +28,8 @@ int main(){
     Solution *S = new Solution();
 
     //inputs
-    vector<int> cardPoints{1, 2, 3, 4, 5, 6, 1};
     int k = 3;
+    vector<int> cardPoints{1, 2, 3, 4, 5, 6, 1};
 
     cout << S->maxScore(cardPoints, k) << endl;
 

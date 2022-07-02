@@ -53,8 +53,8 @@ int main(){
     Solution *S = new Solution();
 
     //inputs
-    string s = "00110110";
     int k = 2;
+    string s = "00110110";
 
     cout << S->hasAllCodes(s, k) << endl;
 

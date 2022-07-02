@@ -6,19 +6,19 @@ using namespace std;
 class Solution{
 public:
     vector<vector<int>> shiftGrid(vector<vector<int>> &grid, int k){
-        int m = grid.size();
-        int n = grid[0].size();
+        int M = grid.size();
+        int N = grid[0].size();
 
-        vector<vector<int>> newGrid(m, vector<int>(n, 0));
+        vector<vector<int>> newGrid(M, vector<int>(N, 0));
  
-        for(int i = 0; i < m; i = i + 1){
-            for(int j = 0; j < n; j = j + 1){
-                k = k % (m  *n);
+        for(int i = 0; i < M; i = i + 1){
+            for(int j = 0; j < N; j = j + 1){
+                k = k % (M * N);
 
-                int m_index = k / n;
-                int n_index = k % n;
+                int m = k / N;
+                int n = k % N;
                 
-                newGrid[m_index][n_index] = grid[i][j];
+                newGrid[m][n] = grid[i][j];
 
                 k = k + 1;
             }

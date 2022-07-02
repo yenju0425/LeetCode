@@ -6,24 +6,24 @@ using namespace std;
 class Solution{
 public:
     vector<vector<int>> shiftGrid(vector<vector<int>> &grid, int k){
-        int m = grid.size();
-        int n = grid[0].size();
+        int M = grid.size();
+        int N = grid[0].size();
 
-        vector<int> temp(m, 0);
+        vector<int> temp(M, 0);
 
         while(k > 0){
-            for(int i = 0; i < m; i = i + 1){
-                temp[i] = grid[i][n-1];
+            for(int i = 0; i < M; i = i + 1){
+                temp[i] = grid[i][N - 1];
             }
 
-            for(int j = n - 1; j > 0; j = j - 1){ //j = n - 1 -> 1
-                for(int i = 0; i < m; i = i + 1){ //i = 0     -> m
+            for(int j = N - 1; j > 0; j = j - 1){ //j = N - 1 -> 1
+                for(int i = 0; i < M; i = i + 1){ //i = 0     -> M
                     grid[i][j] = grid[i][j - 1];
                 }
             }
 
-            for(int i = 0; i < m; i = i + 1){
-                grid[i][0] = temp[(i + m - 1) % m];
+            for(int i = 0; i < M; i = i + 1){
+                grid[i][0] = temp[(i + M - 1) % M];
             }
             k = k - 1;
         }

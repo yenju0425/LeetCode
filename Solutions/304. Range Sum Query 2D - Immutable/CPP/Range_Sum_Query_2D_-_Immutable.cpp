@@ -5,38 +5,30 @@ using namespace std;
 
 class NumMatrix{
 private:
-    vector<vector<int>> M;
-    int m;
-    int n;
+    int M;
+    int N;
+    vector<vector<int>> mat;
 
 public:
     NumMatrix(vector<vector<int>> &matrix){
-        M = matrix;
-        m = matrix.size();
-        n = matrix[0].size();
+        this->M = matrix.size();
+        this->N = matrix[0].size();
+        this->mat = matrix;
 
         //re-use "matrix" to store the summation from (0, 0) to (i, j)
-        for(int i = 0; i < m; i++){
-            for(int j = 0; j < n; j++){
-                int a = readMatrix(i - 1, j    );
-                int b = readMatrix(i    , j - 1);
-                int c = readMatrix(i - 1, j - 1);
-
-                M[i][j] = M[i][j] + a + b - c; //by union & intersection theory
+        for(int i = 0; i < M; i++){
+            for(int j = 0; j < N; j++){
+                mat[i][j] = mat[i][j] + readMatrix(i - 1, j) + readMatrix(i, j - 1) - readMatrix(i - 1, j - 1);
             }
         }
     }
 
-    int readMatrix(int i, int j){
-        return (i >= 0 and j >= 0) ? M[i][j] : 0; //check up border and right border
+    int readMatrix(int m, int n){
+        return (m >= 0 and n >= 0) ? mat[m][n] : 0; //check up border and right border
     }
     
     int sumRegion(int row1, int col1, int row2, int col2){
-        int a = readMatrix(row1 - 1, col2    );
-        int b = readMatrix(row2    , col1 - 1);
-        int c = readMatrix(row1 - 1, col1 - 1);
-
-        return M[row2][col2] - a - b + c; //by union & intersection theory
+        return mat[row2][col2] - readMatrix(row1 - 1, col2) - readMatrix(row2, col1 - 1) + readMatrix(row1 - 1, col1 - 1);
     }
 };
 

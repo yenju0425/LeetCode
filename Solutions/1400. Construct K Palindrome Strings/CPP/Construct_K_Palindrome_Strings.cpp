@@ -29,8 +29,8 @@ int main(){
     Solution *S = new Solution();
 
     //inputs
-    string s = "qlkzenwmmnpkopu";
     int k = 15;
+    string s = "qlkzenwmmnpkopu";
 
     cout << S->canConstruct(s, k) << endl;
 

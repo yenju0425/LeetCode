@@ -42,6 +42,7 @@ public:
 int main(){
     UndergroundSystem *U = new UndergroundSystem();
 
+    //inputs
     U->checkIn(45, "Leyton", 3);
     U->checkIn(32, "Paradise", 8);
     U->checkIn(27, "Leyton", 10);

@@ -36,8 +36,8 @@ int main(){
     Solution *S = new Solution();
 
     //inputs
-    string s = "deeedbbcccbda";
     int k = 3;
+    string s = "deeedbbcccbda";
 
     cout << S->removeDuplicates(s, k) << endl;
 
