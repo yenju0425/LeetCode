@@ -5,50 +5,49 @@ using namespace std;
 
 class Solution{
 private:
-    vector<vector<char>> map;
     int M;
     int N;
+    vector<vector<char>> map;
 
 public:
-    bool isValid(int i, int j){
-        if(i < M and i >= 0 and j < N and j >= 0 and (map[i][j] == ' ' or map[i][j] == 'v')){
-            return true;
-        }
-        return false;
+    bool isValid(int m, int n){
+        return m < M and m >= 0 and n < N and n >= 0 and (map[m][n] == ' ' or map[m][n] == 'v');
     }
 
     int countUnguarded(int m, int n, vector<vector<int>> &guards, vector<vector<int>> &walls){
-        M = m;
-        N = n;
-        map = vector<vector<char>>(m, vector<char>(n, ' '));
+        this->M = m;
+        this->N = n;
+        this->map = vector<vector<char>>(m, vector<char>(n, ' '));
 
-        for(int i = 0; i < guards.size(); i++){
+        int numOfGuards = guards.size();
+        for(int i = 0; i < numOfGuards; i++){
             map[guards[i][0]][guards[i][1]] = 'g';
         }
 
-        for(int i = 0; i < walls.size(); i++){
+        int numOfWalls = walls.size();
+        for(int i = 0; i < numOfWalls; i++){
             map[walls[i][0]][walls[i][1]] = 'w';
         }
 
-        int couter = 0;
-        int dirR[4] = {-1,  0,  1,  0};
-        int dirC[4] = { 0, -1,  0,  1};
-        for(int i = 0; i < guards.size(); i++){
-            for(int dir = 0; dir < 4; dir++){
-                int offsetR = dirR[dir];
-                int offsetC = dirC[dir];
-                while(isValid(guards[i][0] + offsetR, guards[i][1] + offsetC)){
-                    if(map[guards[i][0] + offsetR][guards[i][1] + offsetC] != 'v'){
-                        map[guards[i][0] + offsetR][guards[i][1] + offsetC] = 'v';
-                        couter++;
+        int couter = m * n - numOfGuards - numOfWalls;
+        vector<vector<int>> dir{{ 1,  0}, { 0,  1}, {-1,  0}, { 0, -1}};
+
+        for(int i = 0; i < numOfGuards; i++){
+            for(int j = 0; j < 4; j++){
+                int row = guards[i][0] + dir[j][0];
+                int col = guards[i][1] + dir[j][1];
+                while(isValid(row, col)){
+                    if(map[row][col] != 'v'){
+                        map[row][col] = 'v';
+                        couter = couter - 1;
                     }
-                    offsetR += dirR[dir];
-                    offsetC += dirC[dir];
+                    row = row + dir[j][0];
+                    col = col + dir[j][1];
                 }
             }
         }
     
-        return m * n - couter - guards.size() - walls.size();
+        return couter;
     }
 };
 

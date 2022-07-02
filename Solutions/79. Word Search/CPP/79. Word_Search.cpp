@@ -35,7 +35,7 @@ public:
     }
 
     bool exist(vector<vector<char>> &board, string word){
-        this->dir = vector<vector<int>>{{ 0,  1}, { 1,  0}, { 0, -1}, {-1,  0}};
+        this->dir = vector<vector<int>>{{ 1,  0}, { 0,  1}, {-1,  0}, { 0, -1}};
         this->board = board;
         this->word  = word;
         this->M = board.size();

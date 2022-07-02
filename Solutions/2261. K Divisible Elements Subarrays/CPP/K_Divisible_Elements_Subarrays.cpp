@@ -48,9 +48,9 @@ int main(){
     Solution *S = new Solution();
 
     //inputs
-    vector<int> nums{5, 11, 17, 13, 16, 9, 4, 9, 20};
     int k = 7;
     int p = 1;
+    vector<int> nums{5, 11, 17, 13, 16, 9, 4, 9, 20};
 
     cout << S -> countDistinct(nums, k, p) << endl;
 

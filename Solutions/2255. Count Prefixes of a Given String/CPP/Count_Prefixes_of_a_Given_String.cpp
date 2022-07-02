@@ -30,8 +30,8 @@ int main(){
     Solution *S = new Solution();
 
     //inputs
-    vector<string> words{"aa", "aabd", "c"};
     string s = "aabdk";
+    vector<string> words{"aa", "aabd", "c"};
 
     cout << S->countPrefixes(words, s) << endl;
 

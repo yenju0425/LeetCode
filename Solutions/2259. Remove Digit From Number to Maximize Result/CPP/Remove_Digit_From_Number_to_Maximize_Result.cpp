@@ -26,8 +26,9 @@ public:
 };
 
 int main(){
-    //inputs
     Solution *S = new Solution();
+
+    //inputs
     string number = "81235038532348435348983";
     char digit = '8';
 
