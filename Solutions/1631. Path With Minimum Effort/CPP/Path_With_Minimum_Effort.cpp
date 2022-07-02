@@ -1,0 +1,73 @@
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <tuple>
+
+using namespace std;
+
+class Solution{
+private:
+    int M;
+    int N;
+
+public:
+    bool isValid(const int &m, const int &n){
+        return m < M and m >= 0 and n < N and n >= 0;
+    }
+
+    int minimumEffortPath(vector<vector<int>> &heights){ //Dijkstra's Algorithm
+        this->M = heights.size();
+        this->N = heights[0].size();
+
+        vector<vector<int>> effort(M, vector<int>(N, INT_MAX));
+        priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, greater<tuple<int, int, int>>> pq;
+
+        effort[0][0] = 0;
+        pq.push(tuple<int, int, int>(0, 0, 0));
+
+        while(!pq.empty()){
+            //get next position
+            tuple<int, int, int> minimum = pq.top();
+            int e = get<0>(minimum);
+            int m = get<1>(minimum);
+            int n = get<2>(minimum);
+            pq.pop();
+
+            if(m == M - 1 and n == N - 1){
+                return e;
+            }
+
+            //update neighbors
+            int dir_r[4] = {1,  0, -1,  0};
+            int dir_c[4] = {0,  1,  0, -1};
+            for(int i = 0; i < 4; i++){
+                int m_ = m + dir_r[i];
+                int n_ = n + dir_c[i];
+                if(isValid(m_, n_)){
+                    int e_ = max(e, abs(heights[m][n] - heights[m_][n_]));
+                    if(effort[m_][n_] > e_){
+                        effort[m_][n_] = e_;
+                        pq.push(tuple<int, int, int>(e_, m_, n_));
+                    }
+                }
+            }
+        }
+
+        return -1;
+    }
+};
+
+int main(){
+    Solution *S = new Solution();
+
+    //input
+    vector<vector<int>> heights{
+        {1, 2, 2},
+        {3, 8, 2},
+        {5, 3, 5}
+    };
+
+    cout << S->minimumEffortPath(heights) << endl;
+
+    return 0;
+}
