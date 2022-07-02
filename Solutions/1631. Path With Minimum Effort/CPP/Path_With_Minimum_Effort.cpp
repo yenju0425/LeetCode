@@ -9,6 +9,7 @@ class Solution{
 private:
     int M;
     int N;
+    vector<vector<int>> dir;
 
 public:
     bool isValid(const int &m, const int &n){
@@ -18,6 +19,7 @@ public:
     int minimumEffortPath(vector<vector<int>> &heights){ //Dijkstra's Algorithm
         this->M = heights.size();
         this->N = heights[0].size();
+        this->dir = vector<vector<int>>{{ 1,  0}, { 0,  1}, {-1,  0}, { 0, -1}};
 
         vector<vector<int>> effort(M, vector<int>(N, INT_MAX));
         priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, greater<tuple<int, int, int>>> pq;
@@ -26,7 +28,6 @@ public:
         pq.push(tuple<int, int, int>(0, 0, 0));
 
         while(!pq.empty()){
-            //get next position
             tuple<int, int, int> minimum = pq.top();
             int e = get<0>(minimum);
             int m = get<1>(minimum);
@@ -38,11 +39,9 @@ public:
             }
 
             //update neighbors
-            int dir_r[4] = {1,  0, -1,  0};
-            int dir_c[4] = {0,  1,  0, -1};
             for(int i = 0; i < 4; i++){
-                int m_ = m + dir_r[i];
-                int n_ = n + dir_c[i];
+                int m_ = m + dir[i][0];
+                int n_ = n + dir[i][1];
                 if(isValid(m_, n_)){
                     int e_ = max(e, abs(heights[m][n] - heights[m_][n_]));
                     if(effort[m_][n_] > e_){

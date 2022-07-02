@@ -8,6 +8,7 @@ private:
     int M;
     int N;
     vector<vector<char>> map;
+    vector<vector<int>> dir;
 
 public:
     bool isValid(int m, int n){
@@ -18,6 +19,7 @@ public:
         this->M = m;
         this->N = n;
         this->map = vector<vector<char>>(m, vector<char>(n, ' '));
+        this->dir = vector<vector<int>>{{ 1,  0}, { 0,  1}, {-1,  0}, { 0, -1}};
 
         int numOfGuards = guards.size();
         for(int i = 0; i < numOfGuards; i++){
@@ -30,8 +32,6 @@ public:
         }
 
         int couter = m * n - numOfGuards - numOfWalls;
-        vector<vector<int>> dir{{ 1,  0}, { 0,  1}, {-1,  0}, { 0, -1}};
-
         for(int i = 0; i < numOfGuards; i++){
             for(int j = 0; j < 4; j++){
                 int row = guards[i][0] + dir[j][0];
