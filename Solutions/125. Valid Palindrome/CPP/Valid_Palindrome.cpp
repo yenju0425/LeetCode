@@ -29,6 +29,7 @@ public:
 int main(){
     Solution *S = new Solution();
 
+    //input
     string s = " ";
 
     cout << S->isPalindrome(s) << endl;
