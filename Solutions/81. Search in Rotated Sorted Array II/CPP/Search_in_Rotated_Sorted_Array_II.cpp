@@ -7,15 +7,15 @@ class Solution{
 public:
     int binary_search(vector<int> &nums, int &target, int left, int right){
         if(left >= right){
-            return -1;
+            return false;
         }
 
         int idx = (left + right) / 2;
         if(nums[idx] == target){
-            return idx;
+            return true;
         }
         
-        if(nums[left] < nums[idx]){
+        if(nums[left] < nums[idx] or nums[idx] > nums[right - 1]){
             if(nums[left] <= target and target < nums[idx]){
                 return binary_search(nums, target, left, idx);
             }
@@ -23,13 +23,16 @@ public:
                 return binary_search(nums, target, idx + 1, right);
             }
         }
-        else{
+        else if(nums[idx] < nums[right - 1] or nums[left] > nums[idx]){
             if(nums[idx] < target and target <= nums[right - 1]){
                 return binary_search(nums, target, idx + 1, right);
             }
             else{
                 return binary_search(nums, target, left, idx);
             }
+        }
+        else{
+            return binary_search(nums, target, left, idx) or binary_search(nums, target, idx + 1, right);
         }
     }
 
@@ -42,10 +45,10 @@ int main(){
     Solution *S = new Solution();
 
     //inputs
-    int target = 2;
-    vector<int> nums{3, 4, 5, 6, 1, 2};
+    int target = 1;
+    vector<int> nums{2, 5, 6, 0, 0, 1, 2};
 
-    cout << S->search(nums, target) << endl;
+    cout << S->search(nums, target);
 
     return 0;
 }

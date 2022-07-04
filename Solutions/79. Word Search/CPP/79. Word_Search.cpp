@@ -63,7 +63,7 @@ int main(){
         {'A', 'D', 'E', 'E'}
     };
 
-    cout << S->exist(board, word);
+    cout << S->exist(board, word) << endl;
 
     return 0;
 }
