@@ -7,18 +7,21 @@ using namespace std;
 class Solution{
 public:
     int maxSubArray(vector<int> &nums){
-        int maxSum = INT_MIN;
         int sum = 0;
-        
+
+        //get min -> max
+        int maximum = INT_MIN;
+        int minimun = 0;
+
         int nums_size = nums.size();
         for(int i = 0; i < nums_size; i++){
             sum = sum + nums[i];
-
-            maxSum = max(maxSum, sum);
-            sum    = max(sum, 0); //re-accumulate sum
+    
+            maximum = max(maximum, minimun + sum);
+            minimun = max(minimun,         - sum);
         }
 
-        return maxSum;
+        return maximum;
     }
 };
 
@@ -26,7 +29,7 @@ int main(){
     Solution *S = new Solution();
 
     //input
-    vector<int> nums{-2};
+    vector<int> nums{-2, 1, -3, 4, -1, 2, 1, -5, 4};
 
     cout << S->maxSubArray(nums) << endl;
 

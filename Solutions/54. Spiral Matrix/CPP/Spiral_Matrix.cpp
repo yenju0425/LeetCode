@@ -4,48 +4,52 @@
 using namespace std;
 
 class Solution{
-private:
-    //border[0]: min_row
-    //border[1]: max_col
-    //border[2]: max_row
-    //border[3]: min_col
-
-    int border[4];
-
 public:
-    bool isValid(int r, int c){
-        return (border[0] <= r and r < border[2] and border[3] <= c and c < border[1]);
-    }
-
     vector<int> spiralOrder(vector<vector<int>> &matrix){
-        border[0] = 0;
-        border[1] = matrix[0].size();
-        border[2] = matrix.size();
-        border[3] = 0;
-
-        int direction[4][2] = {{ 0,  1}, { 1,  0}, { 0, -1}, {-1,  0}};
         vector<int> result;
 
-        int matrixSize = border[1] * border[2];
-        for(int i = 0, r = 0, c = 0, d = 0; i < matrixSize; i++){
-            result.push_back(matrix[r][c]);
+        int M = matrix.size();
+        int N = matrix[0].size();
 
-            //look for next element
-            int next_r = r + direction[d][0];
-            int next_c = c + direction[d][1];
-            if(isValid(next_r, next_c)){
-                r = next_r;
-                c = next_c;
-            }
-            else{
-                //update border, d
-                int next_d = (d + 1) % 4;
-                border[d] = border[d] + direction[next_d][0] + direction[next_d][1]; //magic 
+        int m; //row index
+        int n; //col index
 
-                d = next_d; //rotate direction clockwise must be a valid move
-                r = r + direction[d][0];
-                c = c + direction[d][1];
+        int numOfIter = min(M + 1, N + 1) / 2;
+        for(int i = 0; i < numOfIter; i++){
+            //init m, n
+            m = i;
+            n = i;
+    
+            //push back first element
+            result.push_back(matrix[m][n]);
+
+            //go right N - 1 steps
+            for(int j = 1; j < N; j++){
+                n = n + 1;
+                result.push_back(matrix[m][n]);
             }
+
+            //go down M - 1 steps
+            for(int j = 1; j < M; j++){
+                m = m + 1;
+                result.push_back(matrix[m][n]);
+            }
+
+            //go left N - 1 steps
+            for(int j = 1; j < N and M > 1; j++){
+                n = n - 1;
+                result.push_back(matrix[m][n]);
+            }
+
+            //go up M - 2 steps
+            for(int j = 2; j < M and N > 1; j++){
+                m = m - 1;
+                result.push_back(matrix[m][n]);
+            }
+
+            //update M, N
+            M = M - 2;
+            N = N - 2;
         }
 
         return result;
