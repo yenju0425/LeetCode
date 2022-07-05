@@ -8,8 +8,6 @@ class Solution{
 public:
     int maxSubArray(vector<int> &nums){
         int sum = 0;
-
-        //get min -> max
         int maximum = INT_MIN;
         int minimun = 0;
 
