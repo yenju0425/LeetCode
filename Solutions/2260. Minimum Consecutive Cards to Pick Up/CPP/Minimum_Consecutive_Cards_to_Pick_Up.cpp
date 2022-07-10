@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <map>
+#include <unordered_map>
 
 using namespace std;
 
@@ -8,21 +8,20 @@ class Solution{
 public:
     int minimumCardPickup(vector<int> &cards){
         int numOfCards  = cards.size();
-        int minDistance = -1;
+        int minDistance = INT_MAX;
 
-        map<int, int> db;
+        unordered_map<int, int> UM; //e.g. UM[2] = 3 -> the last time seeing a "2" is at index "3"
         for(int i = 0; i < numOfCards; i++){
-            map<int, int>::iterator existingCard = db.find(cards[i]);
-            if(existingCard != db.end()){
-                int distance = i - existingCard->second + 1;
-                if(minDistance == -1 or distance < minDistance){
-                    minDistance = distance;
-                }
+            unordered_map<int, int>::iterator iter = UM.find(cards[i]);
+            if(iter != UM.end()){
+                int distance = i - iter->second + 1;
+                minDistance = min(minDistance, distance);
             }
-            db[cards[i]] = i;
+
+            UM[cards[i]] = i;
         }
 
-        return minDistance;
+        return (minDistance == INT_MAX) ? -1 : minDistance;
     }
 };
 

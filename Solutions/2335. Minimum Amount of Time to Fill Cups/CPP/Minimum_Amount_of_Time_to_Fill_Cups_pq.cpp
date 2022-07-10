@@ -7,25 +7,25 @@ using namespace std;
 class Solution{
 public:
     int fillCups(vector<int> &amount){
-        priority_queue<int> pq(amount.begin(), amount.end());
+        priority_queue<int> PQ(amount.begin(), amount.end());
 
-        int first  = pq.top();
-        pq.pop();
+        int fst = PQ.top();
+        PQ.pop();
 
-        int second = pq.top();
-        pq.pop();
+        int snd = PQ.top();
+        PQ.pop();
 
         int stepConter = 0;
-        while(first > 0 or second > 0){
+        while(fst > 0 or snd > 0){
+            PQ.push(fst - 1);
+            PQ.push(snd - 1);
             stepConter = stepConter + 1;
-            pq.push(first  - 1);
-            pq.push(second - 1);
             
-            first  = pq.top();
-            pq.pop();
+            fst = PQ.top();
+            PQ.pop();
 
-            second = pq.top();
-            pq.pop();
+            snd = PQ.top();
+            PQ.pop();
         }
 
         return stepConter;

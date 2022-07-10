@@ -1,41 +1,43 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 using namespace std;
 
 class Solution{
 public:
     int countLatticePoints(vector<vector<int>> &circles){
-        int LP = 0;
-        
-        if(circles.empty()){
-            return LP;
+        int numOfLPs = 0;
+
+        int x_min = INT_MAX;
+        int x_max = INT_MIN;
+        int y_min = INT_MAX;
+        int y_max = INT_MIN;
+
+        int circles_size = circles.size();
+        for(int i = 0; i < circles_size; i++){
+            x_min = min(x_min, circles[i][0] - circles[i][2]);
+            x_max = max(x_max, circles[i][0] + circles[i][2]);
+            y_min = min(y_min, circles[i][1] - circles[i][2]);
+            y_max = max(y_max, circles[i][1] + circles[i][2]);
         }
 
-        int x_min = circles[0][0] - circles[0][2];
-        int x_max = circles[0][0] + circles[0][2];
-        int y_min = circles[0][1] - circles[0][2];
-        int y_max = circles[0][1] + circles[0][2];
-        for(vector<vector<int>>::iterator i = circles.begin() + 1; i != circles.end(); i++){
-            x_min = min(x_min, (*i)[0]-(*i)[2]);
-            x_max = max(x_max, (*i)[0]+(*i)[2]);
-            y_min = min(y_min, (*i)[1]-(*i)[2]);
-            y_max = max(y_max, (*i)[1]+(*i)[2]);
-        }
-
+        //check every point in the rectangle
+        int x, y, r;
         for(int i = x_min; i <= x_max; i++){
             for(int j = y_min; j <= y_max; j++){
-                for(vector<vector<int>>::iterator c = circles.begin(); c != circles.end(); c++){
-                    if(((*c)[0] - i)*((*c)[0] - i) + ((*c)[1] - j)*((*c)[1] - j) <= (*c)[2] * (*c)[2]){
-                        LP = LP + 1;
+                for(int c = 0; c < circles_size; c++){
+                    x = circles[c][0] - i;
+                    y = circles[c][1] - j;
+                    r = circles[c][2];
+                    if(x * x + y * y <= r * r){
+                        numOfLPs = numOfLPs + 1;
                         break;
                     }
                 }
             }
         }
 
-        return LP;
+        return numOfLPs;
     }
 };
 

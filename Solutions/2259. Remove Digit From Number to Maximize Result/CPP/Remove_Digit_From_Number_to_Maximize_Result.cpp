@@ -7,14 +7,11 @@ public:
     string removeDigit(string number, char digit){
         string::iterator rmDigit;
 
-        for(string::iterator i = number.begin(); i != number.end(); i++){
-            if(*i == digit){
-                if(*(i + 1) > digit){
-                    number.erase(i);
-                    return number;
-                }
-                else{
-                    rmDigit = i;
+        for(string::iterator iter = number.begin(); iter != number.end(); iter++){
+            if(*iter == digit){
+                rmDigit = iter;
+                if(*(iter + 1) > digit){
+                    break;
                 }
             }
         }

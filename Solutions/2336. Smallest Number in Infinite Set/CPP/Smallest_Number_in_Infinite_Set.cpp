@@ -7,7 +7,7 @@ using namespace std;
 class SmallestInfiniteSet{
 private:
     int front;
-    unordered_set<int> S; //contains all the removed integers
+    unordered_set<int> US; //contains all the removed integers
 
 public:
     SmallestInfiniteSet(){
@@ -15,23 +15,19 @@ public:
     }
     
     int popSmallest(){
-        int pop = front;
+        int smallest = front;
     
-        S.insert(front);
-
-        front = front + 1;
-        while(S.count(front)){
+        US.insert(front);
+        while(US.count(front)){ //get the fisrt "not removed" integer
             front = front + 1;
         }
 
-        return pop;
+        return smallest;
     }
     
     void addBack(int num){
-        S.erase(num);
-        if(num < front){
-            front = num;
-        }
+        US.erase(num);
+        front = min(front, num);
     }
 };
 

@@ -10,21 +10,21 @@ public:
         sort(buses.begin(),      buses.end());
         sort(passengers.begin(), passengers.end());
 
-        vector<int>::iterator nxt_passenger = passengers.begin();
+        vector<int>::iterator p = passengers.begin(); //p: the first passenger entering the upcomming bus
         for(vector<int>::iterator bus = buses.begin(); bus != buses.end() - 1; bus++){
-            nxt_passenger = min(nxt_passenger + capacity, upper_bound(nxt_passenger, passengers.end(), *bus));
+            p = min(p + capacity, upper_bound(p, passengers.end(), *bus));
         }
 
         //last bus
-        vector<int>::iterator temp = min(nxt_passenger + capacity, upper_bound(nxt_passenger, passengers.end(), buses.back()));
-        if(temp - nxt_passenger == capacity){ //last bus is full
-            nxt_passenger = temp - 1;
+        vector<int>::iterator nxt_p = min(p + capacity, upper_bound(p, passengers.end(), buses.back()));
+        if(nxt_p - p == capacity){ //last bus is full
+            p = nxt_p - 1; //p: the last passenger
         }
         else{
-            nxt_passenger = passengers.insert(temp, buses.back() + 1);
+            p = passengers.insert(nxt_p, buses.back() + 1); //p: the last passenger (dummy)
         }
 
-        for(vector<int>::iterator iter = nxt_passenger; iter != passengers.begin(); iter--){
+        for(vector<int>::iterator iter = p; iter != passengers.begin(); iter--){
             if(*iter - 1 != *(iter - 1)){
                 return *iter - 1;
             }

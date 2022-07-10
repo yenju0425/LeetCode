@@ -9,50 +9,47 @@ public:
     bool canChange(string start, string target){
         int n = start.length();
 
-        vector<int> start_R_idx;
-        vector<int> start_L_idx;
-        vector<int> target_R_idx;
-        vector<int> target_L_idx;
+        vector<int> s_R_ids, s_L_ids, t_R_ids, t_L_ids;
         for(int i = 0; i < n; i++){
             if(start[i] == 'R'){
-                start_R_idx.push_back(i);
+                s_R_ids.push_back(i);
             }
             else if(start[i] == 'L'){
-                start_L_idx.push_back(i);
+                s_L_ids.push_back(i);
             }
 
             if(target[i] == 'R'){
-                target_R_idx.push_back(i);
+                t_R_ids.push_back(i);
             }
             else if(target[i] == 'L'){
-                target_L_idx.push_back(i);
+                t_L_ids.push_back(i);
             }
         }
 
-        //check R's
-        int numOfR = start_R_idx.size();
-        if(numOfR != target_R_idx.size()){
+        //check R
+        int numOfR = s_R_ids.size();
+        if(numOfR != t_R_ids.size()){
             return false;
         }
         for(int i = 0; i < numOfR; i++){
-            if(target_R_idx[i] < start_R_idx[i]){
+            if(t_R_ids[i] < s_R_ids[i]){
                 return false;
             }
         }
 
-        //check L's
-        int numOfL = start_L_idx.size();
-        if(numOfL != target_L_idx.size()){
+        //check L
+        int numOfL = s_L_ids.size();
+        if(numOfL != t_L_ids.size()){
             return false;
         }
         for(int i = 0; i < numOfL; i++){
-            if(target_L_idx[i] > start_L_idx[i]){
+            if(t_L_ids[i] > s_L_ids[i]){
                 return false;
             }
         }
 
         //check relative posistion
-        start.erase( remove(start.begin(),  start.end(),  '_'), start.end());
+        start.erase(remove(start.begin(), start.end(), '_'), start.end());
         target.erase(remove(target.begin(), target.end(), '_'), target.end());
         if(start != target){
             return false;

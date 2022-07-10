@@ -11,15 +11,13 @@ public:
         int word_size = words.size();
         for(int i = 0; i < word_size; i++){
             bool match = true;
-            for(int j = 0; j < words[i].size(); j++){
+            for(int j = 0; j < words[i].size() and match; j++){
                 if(j >= s.size() or words[i][j] != s[j]){
                     match = false;
-                    break;
                 }
             }
-            if(match){
-                counter++;
-            }
+
+            counter = counter + match;
         }
 
         return counter;
