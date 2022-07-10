@@ -4,7 +4,7 @@
 
 | Title | Difficulty | Hashtags | C++ | Python |
 | ----- |------------| :------: | :-: | :----: |
-|[135. Candy](https://leetcode.com/problemset/all)                                                                                                          |:star::star::star:|                            |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/135.%20Candy/CPP)                                                                                                |                                                                                                                                                                                                 |
+|[746. Min Cost Climbing Stairs](https://leetcode.com/problemset/all)                                                                                       |:star:            |`DP`                        |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/746.%20Min%20Cost%20Climbing%20Stairs/CPP)                                                                       |                                                                                                                                                                                                 |
 
 ## :brain: Problems
 
