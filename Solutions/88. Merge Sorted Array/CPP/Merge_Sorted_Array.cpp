@@ -1,5 +1,4 @@
 #include <iostream>
-#include <algorithm>
 #include <vector>
 
 using namespace std;
@@ -23,7 +22,6 @@ public:
         }
 
         nums1 = result;
-        return;
     }
 };
 

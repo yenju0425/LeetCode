@@ -44,9 +44,9 @@ int main(){
 
     //inputs
     int x = 3;
-    ListNode *n3 = new ListNode(2);
-    ListNode *n2 = new ListNode(3, n3);
-    ListNode *hd = new ListNode(9, n2);
+    ListNode *n2 = new ListNode(2);
+    ListNode *n1 = new ListNode(3, n2);
+    ListNode *hd = new ListNode(9, n1);
 
     ListNode *result = S->partition(hd, x);
 
