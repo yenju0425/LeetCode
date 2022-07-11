@@ -1,5 +1,4 @@
 #include <iostream>
-#include <algorithm>
 #include <vector>
 #include <unordered_set>
 
@@ -14,25 +13,21 @@ public:
         int left   = 0;
         int right  = 0;
 
-        unordered_set<int> numsUsed;
+        unordered_set<int> US;
 
-        while(true){
-            if(right != left and numsUsed.count(nums[right])){
-                numsUsed.erase(nums[left]);
+        while(right != nums_size){
+            if(right != left and US.count(nums[right])){
+                US.erase(nums[left]);
                 sum = sum - nums[left];
                 left = left + 1;
             }
             else{
-                numsUsed.insert(nums[right]);
+                US.insert(nums[right]);
                 sum = sum + nums[right];
                 right = right + 1;
             }
 
             maxSum = max(maxSum, sum);
-            
-            if(right == nums_size){
-                break;
-            }
         }
 
         return maxSum;

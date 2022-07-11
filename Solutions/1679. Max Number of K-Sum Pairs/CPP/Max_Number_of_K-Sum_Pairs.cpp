@@ -9,7 +9,7 @@ public:
     int maxOperations(vector<int> &nums, int k){
         sort(nums.begin(), nums.end());
     
-        int count = 0;
+        int counter = 0;
 
         int i = 0;
         int j = nums.size() - 1;
@@ -22,13 +22,13 @@ public:
                 i = i + 1;
             }
             else{
-                count = count + 1;
+                counter = counter + 1;
                 j = j - 1;
                 i = i + 1;
             }
         }
 
-        return count;
+        return counter;
     }
 };
 

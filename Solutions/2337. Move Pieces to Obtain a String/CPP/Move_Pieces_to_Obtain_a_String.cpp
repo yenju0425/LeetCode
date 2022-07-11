@@ -48,7 +48,7 @@ public:
             }
         }
 
-        //check relative posistion
+        //check relative position
         start.erase(remove(start.begin(), start.end(), '_'), start.end());
         target.erase(remove(target.begin(), target.end(), '_'), target.end());
         if(start != target){
