@@ -1,36 +1,38 @@
 #include <iostream>
-#include <vector>
 #include <algorithm>
+#include <vector>
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    vector<int> intersection(vector<vector<int>> &nums){
-        vector<int> I{};
+    vector<int> intersection(vector<vector<int>> &nums) {
+        vector<int> result;
 
         if(nums.empty()){
-            return I;
+            return result;
         }
 
-        for(vector<vector<int>>::iterator i = nums.begin(); i != nums.end(); i++){
-            sort(i->begin(), i->end());
+        //sort nums[i]
+        int nums_size = nums.size();
+        for(int i = 0; i < nums_size; i++){
+            sort(nums[i].begin(), nums[i].end());
         }
 
-        for(vector<int>::iterator i = nums[0].begin(); i != nums[0].end(); i++){
+        int size = nums[0].size();
+        for(int i = 0; i < size; i++){
             bool found = true;
-            for(vector<vector<int>>::iterator j = nums.begin(); j != nums.end(); j++){
-                if(!binary_search(j->begin(), j->end(), *i)){
+            for(int j = 0; j < nums_size and found; j++){
+                if(!binary_search(nums[j].begin(), nums[j].end(), nums[0][i])){
                     found = false;
-                    break;
                 }
             }
             if(found){
-                I.push_back(*i);
+                result.push_back(nums[0][i]);
             }
         }
 
-        return I;
+        return result;
     }
 };
 
@@ -39,14 +41,14 @@ int main(){
 
     vector<vector<int>> sets{
         {1, 2, 3},
-        {1, 3, 99},
-        {1, 2, 78, 3}
+        {1, 3, 9},
+        {1, 2, 8, 3}
     };
 
-    vector<int> I = S->intersection(sets);
+    vector<int> result = S->intersection(sets);
 
-    for(vector<int>::iterator i = I.begin(); i != I.end(); i++){
-        cout << *i << ' ';
+    for(auto i : result){
+        cout << i << ' ';
     }
     cout << endl;
 

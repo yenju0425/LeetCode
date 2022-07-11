@@ -20,18 +20,22 @@ public:
 class Solution{
 public:
     Node* connect(Node *root){
-        vector<queue<Node*>> Q(2); //two queues are neeeded
+        vector<queue<Node*>> Q(2);
+
         int idx = 0;
         if(root != nullptr){
             Q[idx].push(root);
         }
+
         while(!Q[idx].empty()){
             Node *nextNode = nullptr;
             while(!Q[idx].empty()){
                 Node *node = Q[idx].front();
                 Q[idx].pop();
+
                 node->next = nextNode;
                 nextNode = node;
+                
                 if(node->right != nullptr){
                     Q[!idx].push(node->right);
                 }
@@ -39,8 +43,10 @@ public:
                     Q[!idx].push(node->left);
                 }
             }
+    
             idx = !idx; //switch to another Q
         }
+
         return root;
     }
 };

@@ -15,22 +15,22 @@ struct TreeNode{
 
 class Solution{
 public:
-    vector<vector<int>> levelOrder(TreeNode *root){
-        vector<vector<int>> levels;
+    vector<int> rightSideView(TreeNode *root){
+        vector<int> result;
         vector<queue<TreeNode*>> Q(2);
-    
+
         int idx = 0;
         if(root != nullptr){
             Q[idx].push(root);
         }
 
         while(!Q[idx].empty()){
-            vector<int> level;
+            result.push_back(0); //resize "result"
             while(!Q[idx].empty()){
                 TreeNode *node = Q[idx].front();
                 Q[idx].pop();
 
-                level.push_back(node->val);
+                result.back() = node->val; //update
 
                 if(node->left != nullptr){
                     Q[!idx].push(node->left);
@@ -39,12 +39,11 @@ public:
                     Q[!idx].push(node->right);
                 }
             }
-    
-            levels.push_back(level);
-            idx = !idx; //switch to another Q
+
+            idx = !idx;
         }
 
-        return levels;
+        return result;
     }
 };
 
@@ -66,14 +65,12 @@ int main(){
     TreeNode *n1 = new TreeNode(1, n3, nullptr);
     TreeNode *rt = new TreeNode(0, n1, n2);
 
-    vector<vector<int>> result = S->levelOrder(rt);
+    vector<int> result = S->rightSideView(rt);
 
     for(auto i : result){
-        for(auto j : i){
-            cout << j << ' ';
-        }
-        cout << endl;
+        cout << i << ' ';
     }
+    cout << endl;
 
     return 0;
 }
