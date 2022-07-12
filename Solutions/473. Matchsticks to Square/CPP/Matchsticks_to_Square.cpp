@@ -47,7 +47,7 @@ public:
         sort(matchsticks.begin(), matchsticks.end(), greater<int>());
 
         this->MSs      = matchsticks;
-        this->target  = sum >> 2; //side_len = sum / 4
+        this->target   = sum >> 2; //side_len = sum / 4
         this->side_len = vector<int>(4, 0);
 
         return squareGenarator(0);
