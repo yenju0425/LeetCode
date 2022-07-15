@@ -4,7 +4,7 @@
 
 | Title | Difficulty | Hashtags | C++ | Python |
 | ----- |------------| :------: | :-: | :----: |
-|[473. Matchsticks to Square](https://leetcode.com/problemset/all)                                                                                          |:star::star:      |                            |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/473.%20Matchsticks%20to%20Square/CPP)                                                                            |                                                                                                                                                                                                 |
+|[695. Max Area of Island](https://leetcode.com/problemset/all)                                                                                             |:star::star:      |`BFS` `DFS`                 |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/695.%20Max%20Area%20of%20Island/CPP)                                                                             |                                                                                                                                                                                                 |
 
 ## :brain: Problems
 
