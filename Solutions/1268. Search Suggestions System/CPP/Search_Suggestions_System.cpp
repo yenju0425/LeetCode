@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution{
 public:
-    vector<vector<string>> suggestedProducts(vector<string>& products, string searchWord){
+    vector<vector<string>> suggestedProducts(vector<string> &products, string searchWord){
         vector<vector<string>> result;
 
         sort(products.begin(), products.end());

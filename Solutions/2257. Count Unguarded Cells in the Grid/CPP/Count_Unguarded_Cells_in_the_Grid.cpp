@@ -12,7 +12,7 @@ private:
 
 public:
     bool isValid(int m, int n){
-        return m < M and m >= 0 and n < N and n >= 0 and (grid[m][n] == ' ' or grid[m][n] == 'v');
+        return m < M && m >= 0 && n < N && n >= 0 && (grid[m][n] == ' ' || grid[m][n] == 'v');
     }
 
     int countUnguarded(int m, int n, vector<vector<int>> &guards, vector<vector<int>> &walls){

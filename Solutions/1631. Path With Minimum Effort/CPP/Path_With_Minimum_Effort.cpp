@@ -12,8 +12,8 @@ private:
     vector<vector<int>> dir;
 
 public:
-    bool isValid(const int &m, const int &n){
-        return m < M and m >= 0 and n < N and n >= 0;
+    bool isValid(int m, int n){
+        return m < M && m >= 0 && n < N && n >= 0;
     }
 
     int minimumEffortPath(vector<vector<int>> &heights){ //Dijkstra's Algorithm
@@ -34,7 +34,7 @@ public:
             int n = get<2>(minimum);
             pq.pop();
 
-            if(m == M - 1 and n == N - 1){
+            if(m == M - 1 && n == N - 1){
                 return e;
             }
 

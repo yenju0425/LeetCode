@@ -26,7 +26,7 @@ public:
             //find next node
             int minIndex = -1;
             for(int j = 0; j < numOfPoints; j++){
-                if(visited[j] == false and (minIndex == -1 or distance[j] < distance[minIndex])){
+                if(visited[j] == false && (minIndex == -1 || distance[j] < distance[minIndex])){
                     minIndex = j;
                 }
             }

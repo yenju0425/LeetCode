@@ -16,7 +16,7 @@ public:
         unordered_set<int> US;
 
         while(right != nums_size){
-            if(right != left and US.count(nums[right])){
+            if(right != left && US.count(nums[right])){
                 US.erase(nums[left]);
                 sum = sum - nums[left];
                 left = left + 1;

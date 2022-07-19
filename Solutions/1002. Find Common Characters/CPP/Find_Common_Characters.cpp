@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <limits>
 
 using namespace std;
 
@@ -50,6 +49,7 @@ int main(){
     for(auto i : result){
         cout << i << ' ';
     }
+    cout << endl;
 
     return 0;
 }

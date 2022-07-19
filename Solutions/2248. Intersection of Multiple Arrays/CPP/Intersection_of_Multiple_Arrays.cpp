@@ -22,7 +22,7 @@ public:
         int size = nums[0].size();
         for(int i = 0; i < size; i++){
             bool found = true;
-            for(int j = 0; j < nums_size and found; j++){
+            for(int j = 0; j < nums_size && found; j++){
                 if(!binary_search(nums[j].begin(), nums[j].end(), nums[0][i])){
                     found = false;
                 }

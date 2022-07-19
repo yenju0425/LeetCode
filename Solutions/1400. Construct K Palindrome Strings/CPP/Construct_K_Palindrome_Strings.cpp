@@ -21,7 +21,7 @@ public:
             non_pair = non_pair + parity;
         }
 
-        return (non_pair <= k and pair + non_pair >= k) ? true : false;
+        return (non_pair <= k && pair + non_pair >= k) ? true : false;
     }
 };
 

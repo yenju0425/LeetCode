@@ -5,7 +5,7 @@ using namespace std;
 class Solution{
 public:
     bool hasAllCodes(string s, int k){
-        int s_size = s.size();
+        int s_size = s.length();
         int numOfSubstrings = 1 << k;
         
         //return false, if the string does not have enough length

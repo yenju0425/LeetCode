@@ -21,7 +21,7 @@ public:
 
     int longestStrChain(vector<string> &words){
         sort(words.begin(), words.end(), [](string &w1, string &w2){
-            return w1.size() < w2.size();
+            return w1.length() < w2.length();
         });
 
         int numOfWords = words.size();

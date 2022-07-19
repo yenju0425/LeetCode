@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <queue>
 
 using namespace std;
 
@@ -55,7 +54,7 @@ public:
             minTime = min(minTime, servers[neighbor]->time);
         }
 
-        if(time == minTime and parent != -1){ //magic
+        if(time == minTime && parent != -1){ //magic
             CCs.push_back(vector<int>{parent, id});
         }
 

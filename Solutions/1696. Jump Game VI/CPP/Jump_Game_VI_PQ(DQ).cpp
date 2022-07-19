@@ -14,7 +14,7 @@ public:
         for(int i = 1; i < nums_size; i++){
             nums[i] = nums[i] + nums[DQ.front()];
 
-            while(!DQ.empty() and nums[DQ.back()] <= nums[i]){
+            while(!DQ.empty() && nums[DQ.back()] <= nums[i]){
                 DQ.pop_back();
             }
 

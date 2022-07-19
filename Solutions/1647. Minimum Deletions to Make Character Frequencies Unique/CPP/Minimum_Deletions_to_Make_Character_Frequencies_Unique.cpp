@@ -30,7 +30,7 @@ public:
             for(int i = 1; i < iter->second; i++){
                 for(int j = iter->first - 1; j >= 0; j--){
                     numOfDeletions = numOfDeletions + 1;
-                    if(!freqCounter.count(j) and j){
+                    if(!freqCounter.count(j) && j){
                         freqCounter[j] = 1;
                         break;
                     }

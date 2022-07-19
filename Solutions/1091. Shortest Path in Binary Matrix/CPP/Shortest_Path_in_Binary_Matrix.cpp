@@ -12,7 +12,7 @@ private:
 
 public:
     int isValid(int m, int n){
-        return m < N and m >= 0 and n < N and n >= 0;
+        return m < N && m >= 0 && n < N && n >= 0;
     }
 
     int shortestPathBinaryMatrix(vector<vector<int>> &grid){
@@ -37,14 +37,14 @@ public:
                 int m = pos.first;
                 int n = pos.second;
 
-                if(m == N - 1 and n == N - 1){
+                if(m == N - 1 && n == N - 1){
                     return stepCounter;
                 }
 
                 for(int i = 0; i < 8; i++){
                     int m_ = m + dir[i][0];
                     int n_ = n + dir[i][1];
-                    if(isValid(m_, n_) and grid[m_][n_] == 0){
+                    if(isValid(m_, n_) && grid[m_][n_] == 0){
                         Q[!idx].push(pair<int, int>(m_, n_));
                         grid[m_][n_] = 1;
                     }

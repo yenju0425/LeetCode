@@ -35,7 +35,7 @@ public:
             }
 
             //update
-            if(j < numOfDivisible and i == divisible_i[j]){
+            if(j < numOfDivisible && i == divisible_i[j]){
                 j++;
             }
         }

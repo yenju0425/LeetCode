@@ -7,21 +7,22 @@ using namespace std;
 class Solution{
 public:
     bool isPossible(vector<int> &target){
-        priority_queue<int> pq(target.begin(), target.end());
+        priority_queue<int> PQ(target.begin(), target.end());
+
         unsigned int sum = 0;
         for(vector<int>::iterator iter = target.begin(); iter != target.end(); iter++){
             sum = sum + *iter;
         }
     
-        while(pq.top() != 1){
-            int maxVal = pq.top();
+        while(PQ.top() != 1){
+            int maxVal = PQ.top();
             
             //pop
-            pq.pop();
+            PQ.pop();
             sum = sum - maxVal;
 
             //check maxVal, sum
-            if(sum > maxVal or sum == 0){ //stuck, but pq.top() != 1
+            if(sum > maxVal || sum == 0){ //stuck, but PQ.top() != 1
                 return false;
             }
 
@@ -29,7 +30,7 @@ public:
 
             //push
             sum = sum + maxVal;
-            pq.push(maxVal ? maxVal : sum);
+            PQ.push(maxVal ? maxVal : sum);
         }
 
         return true;

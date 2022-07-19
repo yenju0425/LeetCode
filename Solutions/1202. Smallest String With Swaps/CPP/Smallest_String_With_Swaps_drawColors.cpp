@@ -19,14 +19,14 @@ public:
             int index_b  = pairs[i][1];
             int &a_group = getGroupId[index_a];
             int &b_group = getGroupId[index_b];
-            if(a_group == -1 and b_group == -1){ //assign to new group i
+            if(a_group == -1 && b_group == -1){ //assign to new group i
                 a_group = i;
                 b_group = i;
             }
-            else if(a_group != -1 and b_group == -1){ //assign "index_b" to "a_group"
+            else if(a_group != -1 && b_group == -1){ //assign "index_b" to "a_group"
                 b_group = a_group;
             }
-            else if(a_group == -1 and b_group != -1){ //assign "index_a" to "b_group"
+            else if(a_group == -1 && b_group != -1){ //assign "index_a" to "b_group"
                 a_group = b_group;
             }
             else if(a_group != b_group){

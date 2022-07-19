@@ -7,7 +7,7 @@ public:
     int maxNumberOfBalloons(string text){
         int charCount[26] = {0};
     
-        int text_size = text.size();
+        int text_size = text.length();
         for(int i = 0; i < text_size; i++){
             int index = text[i] - 'a';
             charCount[index] = charCount[index] + 1;

@@ -19,10 +19,10 @@ public:
         }
         else{ //none leaf node
             if(root->val == 2){ //or
-                return evaluateTree(root->left) or evaluateTree(root->right);
+                return evaluateTree(root->left) || evaluateTree(root->right);
             }
             else{ //and
-                return evaluateTree(root->left) and evaluateTree(root->right);
+                return evaluateTree(root->left) && evaluateTree(root->right);
             }
         }
     }

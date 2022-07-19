@@ -8,7 +8,7 @@ using namespace std;
 class UndergroundSystem{
 private:
     map<int, tuple<string, int>> passengers;
-    map<tuple<string, string>, vector<int>> DB;
+    map<tuple<string, string>, vector<int>> dataBase;
 
 public:
     void checkIn(int id, string stationName, int t){
@@ -21,20 +21,20 @@ public:
 
         tuple<string, string> start_end{startStation, stationName};
 
-        auto iter = DB.find(start_end);
-        if(iter != DB.end()){
+        auto iter = dataBase.find(start_end);
+        if(iter != dataBase.end()){
             (iter->second)[0] += duration;
             (iter->second)[1] += 1;
         }
         else{
-            DB[start_end] = vector<int>{duration, 1};
+            dataBase[start_end] = vector<int>{duration, 1};
         }
         passengers.erase(id);
     }
     
     double getAverageTime(string startStation, string endStation){
-        double duration   = DB[tuple<string, string>{startStation, endStation}][0];
-        int    passengers = DB[tuple<string, string>{startStation, endStation}][1];
+        double duration   = dataBase[tuple<string, string>{startStation, endStation}][0];
+        int    passengers = dataBase[tuple<string, string>{startStation, endStation}][1];
         return duration/passengers;
     }
 };

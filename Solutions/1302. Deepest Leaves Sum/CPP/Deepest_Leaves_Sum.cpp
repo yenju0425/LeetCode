@@ -20,7 +20,7 @@ public:
             return -1;
         }
 
-        vector<queue<TreeNode*>> Q(2); //two Qs are needed
+        vector<queue<TreeNode*>> Q(2);
 
         int idx = 0;
         Q[idx].push(root);
