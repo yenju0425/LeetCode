@@ -6,27 +6,18 @@ using namespace std;
 class Solution{
 public:
     vector<int> sortArrayByParity(vector<int> &nums){
-        int l = 0;
-        int r = nums.size() - 1;
-
-        while(l < r){
+        for(int l = 0, r = nums.size() - 1; l < r; l++, r--){
             //find the first odd num from left
-            while((nums[l] & 1) == 0 and l < r){
+            while(!(nums[l] & 1) && l < r){
                 l = l + 1;
             }
 
             //find the first even num from right
-            while((nums[r] & 1) == 1 and l < r){
+            while((nums[r] & 1)  && l < r){
                 r = r - 1;
             }
 
-            //swap them
-            int temp = nums[l];
-            nums[l] = nums[r];
-            nums[r] = temp;
-
-            l = l + 1;
-            r = r - 1;
+            swap(nums[l], nums[r]);
         }
 
         return nums;

@@ -8,7 +8,7 @@ class Solution{
 public:
     vector<int> sortArrayByParity(vector<int> &nums){
         sort(nums.begin(), nums.end(), [](int a, int b){
-            return (a % 2 != b % 2) ? bool(b % 2) : a < b;
+            return ((a ^ b) & 1) ? b & 1 : a < b;
         });
 
         return nums;

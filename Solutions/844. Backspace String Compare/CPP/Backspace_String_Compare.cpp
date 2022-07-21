@@ -5,7 +5,7 @@ using namespace std;
 class Solution{
 public:
     bool backspaceCompare(string s, string t){
-        string new_s = "";
+        string new_s;
         for(string::iterator i = s.begin(); i != s.end(); i++){
             if(*i != '#'){
                 new_s.push_back(*i);

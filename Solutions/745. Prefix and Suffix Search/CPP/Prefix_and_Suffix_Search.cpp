@@ -1,13 +1,13 @@
 //Reference: https://leetcode.com/problems/prefix-and-suffix-search/discuss/1185249/C%2B%2B-No-TRIE-A-HashMap-soln.
 #include <iostream>
-#include <unordered_map>
 #include <vector>
+#include <unordered_map>
 
 using namespace std;
 
 class WordFilter{
 public:
-    unordered_map<string, int> Dict;
+    unordered_map<string, int> UM;
     
     WordFilter(vector<string>& words){
         int words_size = words.size();
@@ -21,15 +21,15 @@ public:
                 string suffix;
                 for(int k = wordsLength - 1; k >= 0; k--){
                     suffix = word[k] + suffix;
-                    Dict[prefix + "|" + suffix] = i;
+                    UM[prefix + "|" + suffix] = i;
                 }
             }
         }
     }
     
     int f(string prefix, string suffix){
-        unordered_map<string, int>::iterator iter = Dict.find(prefix + "|" + suffix);
-        return (iter == Dict.end()) ? -1 : iter->second;
+        unordered_map<string, int>::iterator iter = UM.find(prefix + "|" + suffix);
+        return (iter == UM.end()) ? -1 : iter->second;
     }
 };
 
@@ -38,7 +38,7 @@ int main(){
     //inputs
     string prefix = "a";
     string suffx  = "e";
-    vector<string> words{"cabaabaaaa","ccbcababac","bacaabccba","bcbbcbacaa","abcaccbcaa","accabaccaa","cabcbbbcca","ababccabcb","caccbbcbab","bccbacbcba"};
+    vector<string> words{"cabaabaaaa", "ccbcababac", "bacaabccba", "bcbbcbacaa", "abcaccbcaa", "accabaccaa", "cabcbbbcca", "ababccabcb", "caccbbcbab", "bccbacbcba"};
     
     WordFilter *W = new WordFilter(words);
 

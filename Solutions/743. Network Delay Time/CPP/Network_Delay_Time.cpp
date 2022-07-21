@@ -87,7 +87,7 @@ public:
             for(int i = 1; i <= n; i++){
                 int neighborV = i;
                 int neighborT = neighbors[i];
-                if(neighborT == -1 or vertices[neighborV]->isVisited()){
+                if(neighborT == -1 || vertices[neighborV]->isVisited()){
                     continue;
                 }
                 findMin.push(vector<int>{T + neighborT, neighborV});

@@ -4,28 +4,28 @@
 using namespace std;
 
 class MyHashSet{
-    vector<vector<int>> H;
+    vector<vector<int>> HS;
 
 public:
     MyHashSet(){
-        H = vector<vector<int>>(1024);
+        HS = vector<vector<int>>(1024);
     }
     
     void add(int key){
         int index = key & 1023;
-        for(vector<int>::iterator i = H[index].begin(); i != H[index].end(); i = i + 1){
+        for(vector<int>::iterator i = HS[index].begin(); i != HS[index].end(); i = i + 1){
             if(*i == key){
                 return;
             }
         }
-        H[index].push_back(key);
+        HS[index].push_back(key);
     }
     
     void remove(int key){
         int index = key & 1023;
-        for(vector<int>::iterator i = H[index].begin(); i != H[index].end(); i = i + 1){
+        for(vector<int>::iterator i = HS[index].begin(); i != HS[index].end(); i = i + 1){
             if(*i == key){
-                H[index].erase(i);
+                HS[index].erase(i);
                 return;
             }
         }
@@ -33,7 +33,7 @@ public:
     
     bool contains(int key){
         int index = key & 1023;
-        for(vector<int>::iterator i = H[index].begin(); i != H[index].end(); i = i + 1){
+        for(vector<int>::iterator i = HS[index].begin(); i != HS[index].end(); i = i + 1){
             if(*i == key){
                 return true;
             }
@@ -43,14 +43,14 @@ public:
 };
 
 int main(){
-    MyHashSet *H = new MyHashSet();
+    MyHashSet *HS = new MyHashSet();
 
-    H->add(0);
-    H->add(0);
-    H->add(34);
-    H->remove(0);
+    HS->add(0);
+    HS->add(0);
+    HS->add(34);
+    HS->remove(0);
 
-    cout << H->contains(34) << endl;
+    cout << HS->contains(34) << endl;
 
     return 0;
 }

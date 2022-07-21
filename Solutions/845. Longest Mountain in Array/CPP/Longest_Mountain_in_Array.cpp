@@ -6,63 +6,44 @@ using namespace std;
 class Solution{
 public:
     int longestMountain(vector<int> &arr){
-        int state = 0; //0: invalid, 1: acc, -1: dec
-        int maxSize     = 0;
-        int currentSize = 0;
+        arr.push_back(arr.back());
 
-        if(arr.size() <= 1){
-            return 0;
-        }
+        int cur_state = 0; //"0": non, "+": acc, "-": dec
+        int nxt_state = 0;
+        int max_len   = 0;
+        int cur_len   = 0;
 
-        arr.push_back(*(arr.end() - 1)); //keep the dynamic of the last element
-
-        for(vector<int>::iterator iter = arr.begin(); iter + 1 != arr.end(); iter = iter + 1){
-            switch(state){
-                case 0:
-                    if(*iter < *(iter + 1)){
-                        currentSize = 1;
-                        state = 1;
-                    }
-                    break;
-
-                case 1:
-                    if(*iter < *(iter + 1)){
-                        currentSize = currentSize + 1;
-                    }
-                    else if(*iter == *(iter + 1)){
-                        state = 0;
-                        currentSize = 0;
-                    }
-                    if(*iter > *(iter + 1)){
-                        state = -1;
-                        currentSize = currentSize + 1;
-                    }
-                    break;
-
-                case -1:
-                    if(*iter < *(iter + 1)){
-                        state = 1;
-                        currentSize = currentSize + 1;
-                        maxSize = max(maxSize, currentSize);
-                        currentSize = 1;
-                    }
-                    else if(*iter == *(iter + 1)){
-                        state = 0;
-                        currentSize = currentSize + 1;
-                        maxSize = max(maxSize, currentSize);
-                        currentSize = 0;
-                    }
-                    if(*iter > *(iter + 1)){
-                        currentSize = currentSize + 1;
-                    }
-                    break;
-                    
-                default:
-                    break;
+        int arr_size = arr.size();
+        for(int i = 1; i < arr_size; i++){
+            nxt_state = arr[i] - arr[i - 1];
+            if(cur_state == 0){
+                if(nxt_state > 0){
+                    cur_len   = 1;
+                    cur_state = nxt_state;
+                }
+            }
+            else if(cur_state > 0){
+                if(nxt_state != 0){
+                    cur_len = cur_len + 1;
+                }
+                else{
+                    cur_len = 0;
+                }
+                cur_state = nxt_state;
+            }
+            else{
+                if(nxt_state >= 0){
+                    max_len = max(max_len, cur_len + 1);
+                    cur_len = (nxt_state > 0);
+                }
+                else{
+                    cur_len = cur_len + 1;
+                }
+                cur_state = nxt_state;
             }
         }
     
-        return maxSize;
+        return max_len;
     }
 };
 
