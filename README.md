@@ -4,7 +4,7 @@
 
 | Title | Difficulty | Hashtags | C++ | Python |
 | ----- |------------| :------: | :-: | :----: |
-|[92. Reverse Linked List II](https://leetcode.com/problemset/all)                                                                                          |:star::star:      |`Linked List`               |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/92.%20Reverse%20Linked%20List%20II/CPP)                                                                          |                                                                                                                                                                                                 |
+|[86. Partition List](https://leetcode.com/problemset/all)                                                                                                  |:star::star:      |`Linked List`               |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/86.%20Partition%20List/CPP)                                                                                      |                                                                                                                                                                                                 |
 
 ## :brain: Problems
 
