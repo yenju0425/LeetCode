@@ -6,7 +6,7 @@ using namespace std;
 class Solution{
 public:
     bool BS(int r_begin, int r_end, int c_begin, int c_end, vector<vector<int>> &M, int &T){
-        if(r_begin == r_end or c_begin == c_end){
+        if(r_begin == r_end || c_begin == c_end){
             return false;
         }
 
@@ -14,18 +14,17 @@ public:
         int col = (c_begin + c_end) >> 1;
     
         if(M[row][col] < T){
-            return BS( row + 1,   r_end, col + 1,   c_end, M, T) or
-                   BS( row + 1,   r_end, c_begin, col + 1, M, T) or
+            return BS( row + 1,   r_end, col + 1,   c_end, M, T) ||
+                   BS( row + 1,   r_end, c_begin, col + 1, M, T) ||
                    BS( r_begin, row + 1, col + 1,   c_end, M, T);
         }
         else if(M[row][col] > T){
-            return BS( r_begin,     row, c_begin,     col, M, T) or
-                   BS( r_begin,     row, col    ,   c_end, M, T) or
+            return BS( r_begin,     row, c_begin,     col, M, T) ||
+                   BS( r_begin,     row, col    ,   c_end, M, T) ||
                    BS(     row,   r_end, c_begin,     col, M, T);
         }
-        else{
-            return true;
-        }
+        
+        return true;
     }
 
     bool searchMatrix(vector<vector<int>> &matrix, int &target){
