@@ -12,8 +12,9 @@ end
 
 def add_two_numbers_with_carry(l1, l2, c)
     if (l1 || l2 || c)
-        sum = l1&.val + l2&.val + c
-        return ListNode.new(sum % 10, add_two_numbers_carry(l1.next, l2.next, sum >= 10))
+        sum = (l1&.val || 0) + (l2&.val || 0) + (c ? 1 : 0)
+        return ListNode.new(sum % 10, add_two_numbers_with_carry(l1&.next, l2&.next, sum >= 10))
+    end
 end
 
 n2 = ListNode.new(9);
