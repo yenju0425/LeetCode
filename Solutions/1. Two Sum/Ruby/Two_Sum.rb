@@ -1,6 +1,3 @@
-# @param {Integer[]} nums
-# @param {Integer} target
-# @return {Integer[]}
 def two_sum(nums, target)
     # a hash that store the indices
     hash = {}
