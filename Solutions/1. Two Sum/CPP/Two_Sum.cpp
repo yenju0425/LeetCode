@@ -4,9 +4,11 @@
 
 using namespace std;
 
-class Solution{
+class Solution
+{
 public:
-    vector<int> twoSum(vector<int> &nums, int target){
+    vector<int> twoSum (vector<int> &nums, int target)
+    {
         int nums_size = nums.size();
 
         vector<int> sortedNum = nums;
@@ -16,23 +18,31 @@ public:
 
         int low  = 0;
         int high = nums_size - 1;
-        while(low != high){
+        while (low != high)
+        {
             int sum = sortedNum[low] + sortedNum[high];
-            if(sum > target){
+            if (sum > target)
+            {
                 high = high - 1;
             }
-            else if(sum < target){
+            else if (sum < target)
+            {
                 low = low + 1;
             }
-            else{ //solution found, get index
-                for(int i = 0; i < nums_size; i++){
-                    if(nums[i] == sortedNum[low]){
+            else
+            { //solution found, get index
+                for (int i = 0; i < nums_size; i++)
+                {
+                    if (nums[i] == sortedNum[low])
+                    {
                         result.push_back(i);
                         break;
                     }
                 }
-                for(int i = nums_size - 1; i >= 0; i--){
-                    if(nums[i] == sortedNum[high]){
+                for (int i = nums_size - 1; i >= 0; i--)
+                {
+                    if (nums[i] == sortedNum[high])
+                    {
                         result.push_back(i);
                         break;
                     }
@@ -44,7 +54,8 @@ public:
     }
 };
 
-int main(){
+int main()
+{
     Solution *S = new Solution();
 
     //inputs
@@ -53,7 +64,8 @@ int main(){
 
     vector<int> result = S->twoSum(nums, target);
 
-    for(auto i : result){
+    for (auto i : result)
+    {
         cout << i << ' ';
     }
     cout << endl;
