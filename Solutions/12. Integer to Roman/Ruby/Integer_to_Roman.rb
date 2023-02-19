@@ -27,10 +27,9 @@ def int_to_roman(num)
     result = ""
     num.to_s.reverse.chars.map.with_index do |digit, index|
         result = digit_to_symbol(digit, index) + result
-        puts result
     end
 
     result
 end
 
-puts int_to_roman(1994)
+puts int_to_roman(1994) # MCMXCIV

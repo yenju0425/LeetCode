@@ -27,6 +27,6 @@ m0 = ListNode.new(9, m1)
 iter = add_two_numbers(n0, m0)
 
 while iter
-    puts iter.val
+    puts iter.val # 8, 9, 0, 1
     iter = iter.next
 end

@@ -24,4 +24,4 @@ def roman_to_int(s)
     result + roman_values[s[-1]]
 end
 
-puts roman_to_int("VI")
+puts roman_to_int("III") # 3

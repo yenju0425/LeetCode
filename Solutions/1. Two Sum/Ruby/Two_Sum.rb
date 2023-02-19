@@ -17,4 +17,4 @@ end
 target = 9
 nums = [15, 7, 11, 2]
 
-p two_sum(nums, target)
+p two_sum(nums, target) # [1, 3]
