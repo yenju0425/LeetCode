@@ -2,14 +2,14 @@
 
 ## :pencil2: Daily Challenge
 
-| Title | Difficulty | .cpp | .py | .rb | .js |
-| ----- |------------| :--: | :-: | :-: | :-: |
+| Title | :bulb: | .cpp | .py | .rb | .js |
+| ----- |--------| :--: | :-: | :-: | :-: |
 |[240. Search a 2D Matrix II](https://leetcode.com/problemset/all)                                                                                                              |:star::star:      |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/240.%20Search%20a%202D%20Matrix%20II/CPP)                                                                        |                                                                                                                                                                                                 ||
 
 ## :brain: Problems
 
-| Title | Difficulty | .cpp | .py | .rb | .js |
-| ----- |------------| :--: | :-: | :-: | :-: |
+| Title | :bulb: | .cpp | .py | .rb | .js |
+| ----- |--------| :--: | :-: | :-: | :-: |
 |[1. Two Sum](https://leetcode.com/problems/two-sum)                                                                                                                            |:star:            |[:page_facing_up:](https://github.com/yenju0425/LeetCode/blob/main/Solutions/1.%20Two%20Sum/CPP)                                                                                              |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/1.%20Two%20Sum/Python)                                                                                              |[:page_facing_up:](https://github.com/yenju0425/LeetCode/blob/main/Solutions/1.%20Two%20Sum/Ruby)                                                                                              |[:page_facing_up:](https://github.com/yenju0425/LeetCode/blob/main/Solutions/1.%20Two%20Sum/JavaScript)                                                                                              |
 |[2. Add Two Numbers](https://leetcode.com/problems/add-two-numbers)                                                                                                            |:star::star:      |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/2.%20Add%20Two%20Numbers/CPP)                                                                                    |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/2.%20Add%20Two%20Numbers/Python)                                                                                    |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/2.%20Add%20Two%20Numbers/Ruby)                                                                                    ||
 |[3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters)                                              |:star::star:      |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/3.%20Longest%20Substring%20Without%20Repeating%20Characters/CPP)                                                 |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/3.%20Longest%20Substring%20Without%20Repeating%20Characters/Python)                                                 |[:page_facing_up:](https://github.com/yenju0425/LeetCode/tree/main/Solutions/3.%20Longest%20Substring%20Without%20Repeating%20Characters/Ruby)                                                 ||
