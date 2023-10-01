@@ -31,13 +31,13 @@ public:
 
 int main()
 {
-    Solution *S = new Solution();
+    Solution S;
 
     //inputs
     int target = 9;
     vector<int> nums{15, 7, 11, 2};
 
-    vector<int> result = S->twoSum(nums, target);
+    vector<int> result = S.twoSum(nums, target);
 
     for (auto i : result)
     {
