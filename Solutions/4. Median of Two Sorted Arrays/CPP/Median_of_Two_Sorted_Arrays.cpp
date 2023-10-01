@@ -31,7 +31,7 @@ public:
                     int n3 = nums2[(nums2_left + nums2_right) / 2];     //nums2MedianRight
                     return double(n1 + n2 + n3 - max(n1, n3) - min(n1, n2));
                 }
-                else{                   //nums1 has 1, nums2 has odd (3, 5, 7, ......)
+                else{ //nums1 has 1, nums2 has odd (3, 5, 7, ......)
                     int n1 = nums1[nums1_left];                         //nums1Median
                     int n2 = nums2[(nums2_left + nums2_right) / 2 - 1]; //nums2MedianLeft
                     int n3 = nums2[(nums2_left + nums2_right) / 2];     //nums2Median
@@ -46,7 +46,7 @@ public:
                     int n3 = nums1[(nums1_left + nums1_right) / 2];     //nums1MedianRight
                     return double(n1 + n2 + n3 - max(n1, n3) - min(n1, n2));
                 }
-                else{                   //nums2 has 1, nums1 has odd (3, 5, 7, ......)
+                else{ //nums2 has 1, nums1 has odd (3, 5, 7, ......)
                     int n1 = nums2[nums2_left];                         //nums2Median
                     int n2 = nums1[(nums1_left + nums1_right) / 2 - 1]; //nums1MedianLeft
                     int n3 = nums1[(nums1_left + nums1_right) / 2];     //nums1Median
@@ -139,9 +139,9 @@ int main(){
     vector<int> b;
     b.push_back(2);
 
-    Solution *S = new Solution();
+    Solution S;
 
-    cout << S->findMedianSortedArrays(a, b) << endl;
+    cout << S.findMedianSortedArrays(a, b) << endl;
 
     return 0;
 }

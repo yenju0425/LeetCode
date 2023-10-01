@@ -36,12 +36,12 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution S;
 
     //input
     string s = "aaabcdeababb";
 
-    cout << S->lengthOfLongestSubstring(s) << endl;
+    cout << S.lengthOfLongestSubstring(s) << endl;
 
     return 0;
 }

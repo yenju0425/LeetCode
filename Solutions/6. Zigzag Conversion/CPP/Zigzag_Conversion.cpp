@@ -30,13 +30,13 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution S;
 
     //inputs
     string s = "PAYPALISHIRING";
     int numRows = 3;
 
-    cout << S->convert(s, numRows);
+    cout << S.convert(s, numRows);
 
     return 0;
 }

@@ -48,13 +48,13 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution S;
 
     //inputs
     string s = "ab";
     string p = ".*";
 
-    cout << S->isMatch(s, p) << endl;
+    cout << S.isMatch(s, p) << endl;
 
     return 0;
 }

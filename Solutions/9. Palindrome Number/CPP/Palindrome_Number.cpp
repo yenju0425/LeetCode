@@ -19,12 +19,12 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution S;
 
     //input
     int x = 12321;
 
-    cout << S->isPalindrome(x) << endl;
+    cout << S.isPalindrome(x) << endl;
 
     return 0;
 }

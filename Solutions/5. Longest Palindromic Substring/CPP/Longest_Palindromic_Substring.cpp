@@ -32,12 +32,12 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution S;
 
     //input
     string s = "eabcb";
 
-    cout << S->longestPalindrome(s) << endl;
+    cout << S.longestPalindrome(s) << endl;
 
     return 0;
 }

@@ -70,12 +70,12 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution S;
 
     //input
     string s = "-21474836";
 
-    cout << S->myAtoi(s) << endl;
+    cout << S.myAtoi(s) << endl;
 
     return 0;
 }

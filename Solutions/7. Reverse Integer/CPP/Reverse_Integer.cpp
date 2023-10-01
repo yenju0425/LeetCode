@@ -35,12 +35,12 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution S;
 
     //input
     int x = -123;
 
-    cout << S->reverse(x) << endl;
+    cout << S.reverse(x) << endl;
 
     return 0;
 }
