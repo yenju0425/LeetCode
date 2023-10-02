@@ -3,38 +3,38 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    bool isValid(string s){
+    bool isValid(string s) {
         stack<char> S;
-        for(string::iterator c = s.begin(); c != s.end(); c = c + 1){
-            if(*c == '(' or *c == '[' or *c == '{'){
-                S.push(*c);
+        for(const char& c : s) {
+            if(c == '(' || c == '[' || c == '{') {
+                S.push(c);
             }
-            else if(*c == ')'){
-                if(S.empty() or S.top() != '('){
+            else if(c == ')') {
+                if(S.empty() || S.top() != '(') {
                     return false;
                 }
                 S.pop();
             }
-            else if(*c == ']'){
-                if(S.empty() or S.top() != '['){
+            else if(c == ']') {
+                if(S.empty() || S.top() != '[') {
                     return false;
                 }
                 S.pop();
             }
-            else if(*c == '}'){
-                if(S.empty() or S.top() != '{'){
+            else if(c == '}') {
+                if(S.empty() || S.top() != '{') {
                     return false;
                 }
                 S.pop();
             }
-            else{
+            else {
                 return false;
             }
         }
 
-        if(!S.empty()){
+        if(!S.empty()) {
             return false;
         }
 
@@ -42,11 +42,11 @@ public:
     }
 };
 
-int main(){
+int main() {
     Solution S;
 
     //input
-    string s = "([)]";
+    string s = "()[]{}";
 
     cout << S.isValid(s) << endl;
 

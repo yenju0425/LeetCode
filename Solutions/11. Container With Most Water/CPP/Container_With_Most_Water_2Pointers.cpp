@@ -4,23 +4,23 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int maxArea(vector<int> &height){
+    int maxArea(vector<int>& height) {
         int currentMax = 0;
         int height_size = height.size();
 
         int left  = 0;
         int right = height_size - 1;
 
-        for(int i = 0; i < height_size - 1; i++){ //why ?
+        for(int i = 0; i < height_size - 1; ++i) { //why ?
             int area = min(height[left], height[right]) * (right - left);
             currentMax = max(currentMax, area);
 
-            if(height[left] < height[right]){
+            if(height[left] < height[right]) {
                 left = left + 1;
             }
-            else{
+            else {
                 right = right - 1;
             }
         }
@@ -29,7 +29,7 @@ public:
     }
 };
 
-int main(){
+int main() {
     Solution S;
 
     //input

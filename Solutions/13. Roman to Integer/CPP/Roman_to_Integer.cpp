@@ -3,9 +3,9 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 private:
-    map<char, int> romanNum{
+    map<char, int> romanNum {
         {'M', 1000},
         {'D', 500},
         {'C', 100},
@@ -16,14 +16,14 @@ private:
     };
 
 public:
-    int romanToInt(string s){
+    int romanToInt(string s) {
         int sum = romanNum[s[0]];
 
-        for(string::iterator iter = s.begin() + 1; iter != s.end(); iter = iter + 1){
-            if(romanNum[*(iter - 1)] < romanNum[*iter]){
+        for(string::iterator iter = s.begin() + 1; iter != s.end(); ++iter) {
+            if(romanNum[*(iter - 1)] < romanNum[*iter]) {
                 sum = sum - 2 * romanNum[*(iter - 1)] + romanNum[*iter];
             }
-            else{
+            else {
                 sum = sum + romanNum[*iter];
             }
         }
@@ -32,7 +32,7 @@ public:
     }
 };
 
-int main(){
+int main() {
     Solution S;
 
     //input

@@ -3,77 +3,59 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 private:
-    vector<int> dp_len;
-    vector<vector<int>> dp_seq;
+    vector<vector<int>> LISs;
 
 public:
-    int lengthOfLIS(vector<int> &nums){
-        int lengthOfnums = nums.size();
-        dp_len = vector<int>(lengthOfnums + 1, -1); //dp_len.shape() = n + 1, initialized with "-1"
-        dp_seq = vector<vector<int>>(lengthOfnums + 1, vector<int>()); //initialized every entry with empty vector
+    int lengthOfLIS(vector<int> &nums) {
+        LISs = vector<vector<int>>(nums.size() + 1, vector<int>());
 
-        vector<int> lis = LIS(nums, lengthOfnums, 0); //lengthOfnums: previous_i is null
-        int sizeOflis = lis.size();
+        vector<int> LIS = findLIS(nums, nums.size(), 0);
 
-        //this part is to show the fianl LIS result
-        for(int i = sizeOflis - 1; i >= 0; i = i - 1){
-            cout << lis[i] << ' ';
+        for(const int& currentIndex : LIS){
+            cout << currentIndex << " ";
         }
         cout << endl;
 
-        return sizeOflis; 
+        return LIS.size();
     }
 
-    vector<int> LIS(vector<int> &nums, int previous_i, int i){
-        int lengthOfnums = nums.size();
-
-        vector<int> s;
-        if(i >= lengthOfnums){
-            return s;
+    vector<int> findLIS(vector<int>& nums, int previousIndex, int currentIndex) {
+        if(currentIndex >= nums.size()) {
+            return vector<int>();
         }
 
-        if(dp_len[previous_i] != -1){ //the sequence stored in the 2D-vector is valid
-            return dp_seq[previous_i];
+        if(LISs[previousIndex].size() > 0) {
+            return LISs[previousIndex];
         }
 
-        //The remianing section deal with the situation we can't decide the LIS immediately
-        vector<int> s_skip_n = LIS(nums, previous_i, i + 1);
-        vector<int> s_take_n; //default: assume n is untakeable
-        if(previous_i == lengthOfnums or nums[i] > nums[previous_i]){//if n is takeable: take n
-            s_take_n = LIS(nums, i, i + 1);
-            s_take_n.push_back(nums[i]);
+        vector<int> takeCurrentIndex;
+        if (previousIndex == nums.size() || nums[currentIndex] > nums[previousIndex]) {
+            takeCurrentIndex = findLIS(nums, currentIndex, currentIndex + 1);
+            takeCurrentIndex.push_back(nums[currentIndex]);
         }
 
-        int skip_n = s_skip_n.size();
-        int take_n = s_take_n.size();
+        vector<int> skipCurrentIndex = findLIS(nums, previousIndex, currentIndex + 1);
 
-        //update dp_len and dp_seq
-        if(take_n > skip_n){
-            dp_len[previous_i] = take_n;
-            dp_seq[previous_i] = s_take_n;
-            s = s_take_n;
+        if (takeCurrentIndex.size() > skipCurrentIndex.size()) {
+            LISs[previousIndex] = takeCurrentIndex;
         }
-        else{
-            dp_len[previous_i] = skip_n;
-            dp_seq[previous_i] = s_skip_n;
-            s = s_skip_n;
+        else {
+            LISs[previousIndex] = skipCurrentIndex;
         }
-        return s;
+
+        return LISs[previousIndex];
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution S;
 
     //input
-    vector<int> seq;
-    for(int i = 0; i < 10; i++){
-        seq.push_back(i);
-    }
+    vector<int> seq{0, 8, 4, 18, 16, 7, 15, 20, 17, 6, 14, 1, 9, 5, 13, 3, 11, 12, 2, 10, 19};
 
-    cout << S->lengthOfLIS(seq) << endl;
+    cout << S.lengthOfLIS(seq) << endl;
 
     return 0;
 }

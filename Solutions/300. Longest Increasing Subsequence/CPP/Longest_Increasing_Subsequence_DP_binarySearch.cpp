@@ -3,36 +3,34 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 private:
-    vector<int> lis_multiverse;
+    vector<int> partialLIS;
 
 public:
-    int lengthOfLIS(vector<int> &nums){
-        int lengthOfnums = nums.size();
-        for(int i = 0; i < lengthOfnums; i = i + 1){
-            int index = lower_bound(lis_multiverse.begin(), lis_multiverse.end(), nums[i]) - lis_multiverse.begin();
-            if(index >= lis_multiverse.size()){
-                lis_multiverse.push_back(nums[i]);
+    int lengthOfLIS(vector<int>& nums) {
+        for (const int& num : nums) {
+            auto insertionIndex = lower_bound(partialLIS.begin(), partialLIS.end(), num);
+
+            if (insertionIndex == partialLIS.end()) {
+                partialLIS.push_back(num);
             }
-            else{
-                lis_multiverse[index] = nums[i];
+            else {
+                *insertionIndex = num;
             }
         }
-        return lis_multiverse.size(); 
+
+        return partialLIS.size(); 
     }
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution S;
 
     //input
-    vector<int> seq;
-    for(int i = 0; i < 10; i++){
-        seq.push_back(i);
-    }
+    vector<int> seq{0, 8, 4, 18, 16, 7, 15, 20, 17, 6, 14, 1, 9, 5, 13, 3, 11, 12, 2, 10, 19};
 
-    cout << S->lengthOfLIS(seq) << endl;
+    cout << S.lengthOfLIS(seq) << endl;
 
     return 0;
 }

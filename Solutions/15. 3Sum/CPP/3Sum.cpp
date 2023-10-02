@@ -4,41 +4,41 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    vector<vector<int>> threeSum(vector<int> &nums){
+    vector<vector<int>> threeSum(vector<int>& nums) {
         sort(nums.begin(), nums.end());
 
         vector<vector<int>> three_Sum;
 
         int nums_size = nums.size();
-        for(int i = 0; i < nums_size - 2; i = i + 1){
+        for(int i = 0; i < nums_size - 2; ++i) {
             //skipping same numbers
-            if(i > 0 and nums[i] == nums[i - 1]){
+            if(i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
 
             int left  = i + 1;
             int right = nums_size - 1;
-            while(left < right){
+            while(left < right) {
                 int sum = nums[left] + nums[right] + nums[i];
-                if(sum > 0){
+                if(sum > 0) {
                     right = right - 1;
                 }
-                else if(sum < 0){
+                else if(sum < 0) {
                     left  = left  + 1;
                 }
-                else{ //solution found
-                    three_Sum.push_back(vector<int>{nums[i], nums[left], nums[right]});
+                else { //solution found
+                    three_Sum.push_back(vector<int> {nums[i], nums[left], nums[right]});
 
                     //skipping same numbers
-                    while(nums[right] == nums[right - 1] and left < right){
+                    while(nums[right] == nums[right - 1] && left < right) {
                         right = right - 1;
                     }
                     right = right - 1;
 
                     //skipping same numbers
-                    while(nums[left]  == nums[left  + 1] and left < right){
+                    while(nums[left]  == nums[left  + 1] && left < right) {
                         left  = left  + 1;
                     }
                     left  = left  + 1;
@@ -50,16 +50,16 @@ public:
     }
 };
 
-int main(){
+int main() {
     Solution S;
     
     //input
-    vector<int> nums{-1, 0, 1, 2, -1, -4};
+    vector<int> nums {-1, 0, 1, 2, -1, -4};
 
     vector<vector<int>> result = S.threeSum(nums);
 
-    for(auto i : result){
-        for(auto j : i){
+    for(auto i : result) {
+        for(auto j : i) {
             cout << j << ' ';
         }
         cout << endl;

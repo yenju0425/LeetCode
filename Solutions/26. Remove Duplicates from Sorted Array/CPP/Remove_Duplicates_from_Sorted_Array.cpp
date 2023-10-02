@@ -3,14 +3,14 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int removeDuplicates(vector<int> &nums){
+    int removeDuplicates(vector<int>& nums) {
         int counter = 0;
 
         int nums_size = nums.size();
-        for(int i = 1; i < nums_size; i++){
-            if(nums[i] > nums[counter]){
+        for(int i = 1; i < nums_size; ++i) {
+            if(nums[i] > nums[counter]) {
                 counter = counter + 1;
                 nums[counter] = nums[i];
             }
@@ -20,14 +20,14 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution S;
 
     //input
     vector<int> nums{0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
 
-    int result = S->removeDuplicates(nums);
-    for(int i = 0; i < result; i++){
+    int result = S.removeDuplicates(nums);
+    for(int i = 0; i < result; ++i) {
         cout << nums[i] << ' ';
     }
     cout << endl;

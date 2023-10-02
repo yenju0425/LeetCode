@@ -3,9 +3,9 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 private:
-    vector<vector<string>> charSet{
+    vector<vector<string>> charSet {
         {"a", "b", "c"},
         {"d", "e", "f"},
         {"g", "h", "i"},
@@ -17,14 +17,14 @@ private:
     };
 
 public:
-    vector<string> letterCombinations(string digits){
+    vector<string> letterCombinations(string digits) {
         vector<string> combinations{};
-        if(digits.size() == 0){
+        if(digits.size() == 0) {
             return combinations;
         }
         
         int c = digits.front() - '2'; //characters start from '2' button
-        if(digits.size() == 1){
+        if(digits.size() == 1) {
             return charSet[c];
         }
 
@@ -33,8 +33,8 @@ public:
 
         int charSet_size = charSet[c].size();
         int _combinations_size = _combinations.size();
-        for(int i = 0; i < charSet_size; i++){
-            for(int j = 0; j < _combinations_size; j++){
+        for(int i = 0; i < charSet_size; ++i) {
+            for(int j = 0; j < _combinations_size; ++j) {
                 combinations.push_back(charSet[c][i] + _combinations[j]);
             }
         }
@@ -43,7 +43,7 @@ public:
     }
 };
 
-int main(){
+int main() {
     Solution S;
 
     //input
@@ -51,7 +51,7 @@ int main(){
 
     vector<string> result = S.letterCombinations(digits);
 
-    for(auto i : result){
+    for(auto i : result) {
         cout << i << endl;
     }
 

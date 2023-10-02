@@ -3,64 +3,50 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 private:
-    vector<int> dp_len;
-    vector<vector<int>> dp_seq;
+    vector<vector<int>> LISs;
 
 public:
-    int lengthOfLIS(vector<int> &nums){
-        int lengthOfnums = nums.size();
-        dp_len = vector<int>(lengthOfnums + 1, 0);
-        dp_seq = vector<vector<int>>(lengthOfnums + 1, vector<int>());
+    int lengthOfLIS(vector<int>& nums) {
+        int n = nums.size();
+        LISs = vector<vector<int>>(n, vector<int>());
 
-        //buttomUp
-        int lis = lengthOfnums;
-
-        for(int i = lengthOfnums - 1; i >= 0; i = i - 1){
-            int maxLength = 1;
-            int nextIndex = lengthOfnums; //default: assume there is no nextIndex, nums[i] is the last number taken
-
-            for(int j = i + 1; j < lengthOfnums; j = j + 1){
-                if(nums[j] > nums[i]){ //if j is takeable: take j
-                    int length = dp_len[j] + 1;
-                    if(length > maxLength){ //update 
-                        maxLength = length;
+        int LISLengthIndex = 0;
+        for(int i = n - 1; i >= 0; --i) {
+            int nextIndex = i;
+            for(int j = i + 1; j < n; ++j) {
+                if(nums[i] < nums[j]){
+                    if (LISs[j].size() > LISs[nextIndex].size()) {
                         nextIndex = j;
                     }
                 }
             }
-            dp_len[i] = dp_len[nextIndex] + 1;
-            dp_seq[i] = dp_seq[nextIndex];
-            dp_seq[i].push_back(nums[i]);
 
-            //update lis
-            if(dp_len[lis] < dp_len[i]){
-                lis = i;
+            LISs[i] = LISs[nextIndex];
+            LISs[i].push_back(nums[i]);
+
+            if (LISs[i].size() > LISs[LISLengthIndex].size()) {
+                LISLengthIndex = i;
             }
         }
-        int sizeOflis = dp_len[lis];
 
-        //this part is to show the fianl LIS result
-        for(int i = sizeOflis - 1; i >= 0; i = i - 1){
-            cout << dp_seq[lis][i] << ' ';
+        for (const int& num : LISs[LISLengthIndex]) {
+            cout << num << " ";
         }
         cout << endl;
 
-        return sizeOflis; 
+        return LISs[LISLengthIndex].size();
     }
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution S;
 
     //input
-    vector<int> seq;
-    for(int i = 0; i < 10; i++){
-        seq.push_back(i);
-    }
+    vector<int> seq{0, 8, 4, 18, 16, 7, 15, 20, 17, 6, 14, 1, 9, 5, 13, 3, 11, 12, 2, 10, 19};
 
-    cout << S->lengthOfLIS(seq) << endl;
+    cout << S.lengthOfLIS(seq) << endl;
 
     return 0;
 }

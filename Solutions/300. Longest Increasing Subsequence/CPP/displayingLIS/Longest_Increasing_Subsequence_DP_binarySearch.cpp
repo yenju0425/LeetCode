@@ -3,59 +3,50 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 private:
-    vector<int> lis_multiverse;
-    vector<vector<int>> lis_history; //ex: lis_history[3] represents the full history of how we get to lis_multiverse[3]
+    vector<int> partialLIS;
+    vector<vector<int>> LTSs;
 
 public:
-    int lengthOfLIS(vector<int> &nums){
-        int lengthOfnums = nums.size();
-        for(int i = 0; i < lengthOfnums; i = i + 1){
-            //using binary search to find out the timespace that we can develope from
-            int index = lower_bound(lis_multiverse.begin(), lis_multiverse.end(), nums[i]) - lis_multiverse.begin();
+    int lengthOfLIS(vector<int>& nums) {
+        for (const int& num : nums) {
+            int insertionIndex = lower_bound(partialLIS.begin(), partialLIS.end(), num) - partialLIS.begin();
 
-            //multiverse start evolving......
-            if(index >= lis_multiverse.size()){
-                lis_multiverse.push_back(nums[i]);
-
-                vector<int> history;
-                if(index > 0){
-                    history = lis_history[index - 1];
-                }
-                history.push_back(nums[i]);
-                lis_history.push_back(history);
+            if (insertionIndex >= partialLIS.size()) {
+                partialLIS.push_back(num);
             }
-            else{
-                lis_multiverse[index] = nums[i];
-                lis_history[index].pop_back(); //roll back to the previous generation
-                lis_history[index].push_back(nums[i]);
+            else {
+                partialLIS[insertionIndex] = num;
+            }
+
+            vector<int> LTS = (insertionIndex > 0) ? LTSs[insertionIndex - 1] : vector<int>();
+            LTS.push_back(num);
+
+            if (insertionIndex >= LTSs.size()) {
+                LTSs.push_back(LTS);
+            }
+            else {
+                LTSs[insertionIndex] = LTS;
             }
         }
 
-        int sizeOflis = lis_multiverse.size();
-
-        //this part is to show the fianl LIS result
-        for(int i = 0; i < sizeOflis; i = i + 1){
-            cout << lis_history[sizeOflis - 1][i] << ' ';
+        for (const int& num : LTSs.back()) {
+            cout << num << " ";
         }
         cout << endl;
 
-        //return the universe with longest history
-        return sizeOflis; 
+        return partialLIS.size();
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution S;
 
     //input
-    vector<int> seq;
-    for(int i = 0; i < 10; i++){
-        seq.push_back(i);
-    }
+    vector<int> seq{0, 8, 4, 18, 16, 7, 15, 20, 17, 6, 14, 1, 9, 5, 13, 3, 11, 12, 2, 10, 19};
 
-    cout << S->lengthOfLIS(seq) << endl;
+    cout << S.lengthOfLIS(seq) << endl;
 
     return 0;
 }
