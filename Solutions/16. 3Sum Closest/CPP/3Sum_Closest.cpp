@@ -46,13 +46,13 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution S;
 
     //inputs
     vector<int> nums{1, 1, 1, 1};
     int target = -100;
 
-    cout << S->threeSumClosest(nums, target) << endl;
+    cout << S.threeSumClosest(nums, target) << endl;
 
     return 0;
 }

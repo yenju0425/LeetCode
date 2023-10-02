@@ -44,12 +44,12 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution S;
 
     //input
     string digits = "225";
 
-    vector<string> result = S->letterCombinations(digits);
+    vector<string> result = S.letterCombinations(digits);
 
     for(auto i : result){
         cout << i << endl;

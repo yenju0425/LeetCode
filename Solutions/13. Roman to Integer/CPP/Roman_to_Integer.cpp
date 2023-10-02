@@ -33,12 +33,12 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution S;
 
     //input
     string s = "MCMLXXXVII";
 
-    cout << S->romanToInt(s) << endl;
+    cout << S.romanToInt(s) << endl;
 
     return 0;
 }

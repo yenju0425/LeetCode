@@ -46,12 +46,12 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution S;
 
     //input
     int num = 1987;
 
-    cout << S->intToRoman(num) << endl;
+    cout << S.intToRoman(num) << endl;
 
     return 0;
 }

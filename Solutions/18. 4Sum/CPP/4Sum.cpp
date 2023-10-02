@@ -59,13 +59,13 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution S;
     
     //inputs
     vector<int> nums{1, 0, -1, 0, -2, 2};
     int target = 0;
 
-    vector<vector<int>> result = S->fourSum(nums, target);
+    vector<vector<int>> result = S.fourSum(nums, target);
 
     for(auto i : result){
         for(auto j : i){

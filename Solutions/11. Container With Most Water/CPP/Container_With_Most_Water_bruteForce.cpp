@@ -21,12 +21,12 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution S;
 
     //input
     vector<int> height{1, 8, 6, 2, 5, 4, 8, 3, 7};
 
-    cout << S->maxArea(height) << endl;
+    cout << S.maxArea(height) << endl;
 
     return 0;
 }

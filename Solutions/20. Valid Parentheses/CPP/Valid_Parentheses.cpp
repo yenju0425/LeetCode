@@ -43,12 +43,12 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution S;
 
     //input
     string s = "([)]";
 
-    cout << S->isValid(s) << endl;
+    cout << S.isValid(s) << endl;
 
     return 0;
 }

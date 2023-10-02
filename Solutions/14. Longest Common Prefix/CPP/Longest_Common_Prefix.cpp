@@ -24,10 +24,10 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution S;
 
     //input
     vector<string> strs{"a", "abc", "apple"};
 
-    cout << S->longestCommonPrefix(strs) << endl;
+    cout << S.longestCommonPrefix(strs) << endl;
 }

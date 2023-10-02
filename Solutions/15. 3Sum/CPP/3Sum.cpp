@@ -51,12 +51,12 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution S;
     
     //input
     vector<int> nums{-1, 0, 1, 2, -1, -4};
 
-    vector<vector<int>> result = S->threeSum(nums);
+    vector<vector<int>> result = S.threeSum(nums);
 
     for(auto i : result){
         for(auto j : i){

@@ -38,15 +38,15 @@ public:
 };
 
 int main(){
-    Solution *S = new Solution();
+    Solution S;
     
     //inputs
     int n = 2;
-    ListNode *a2 = new ListNode(2);
-    ListNode *a1 = new ListNode(7, a2);
-    ListNode *hd = new ListNode(9, a1);
+    ListNode a2(2);
+    ListNode a1(7, &a2);
+    ListNode hd(9, &a1);
 
-    ListNode *result = S->removeNthFromEnd(hd, n);
+    ListNode *result = S.removeNthFromEnd(&hd, n);
     while(result != nullptr){
         cout << result->val << ' ';
         result = result->next;
