@@ -2,9 +2,9 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int myAtoi(string s){
+    int myAtoi(string s) {
         /*
             state = 0: terminate
             state = 1: wait
@@ -16,44 +16,44 @@ public:
         int signBit = 1; //set default to '+'
         long outputNumber = 0;
 
-        while(state and reader < stringLength){
+        while(state && reader < stringLength) {
             char character = s[reader];
-            switch(state){
+            switch(state) {
                 case 1:
-                    if(character == ' '){
+                    if(character == ' ') {
                         //state = 1; state remain the same
                     }
-                    else if(character == '+' or character == '-'){
+                    else if(character == '+' || character == '-') {
                         state = 2;
-                        if(character == '-'){
+                        if(character == '-') {
                             signBit = -1;
                         }
                     }
-                    else if(character >= '0' and character <= '9'){
+                    else if(character >= '0' && character <= '9') {
                         state = 2;
                         outputNumber = int(character) - '0'; //transfer the ascii code to integer, and store it into the outputNumber
                     }
-                    else{ //get invalid character
+                    else { //get invalid character
                         state = 0;
                     }
                     break;
 
                 case 2:
-                    if(character >= '0' and character <= '9'){
+                    if(character >= '0' && character <= '9') {
                         //state = 3; state remain the same
 
                         //overflow detection
                         outputNumber = outputNumber  *10 + signBit  *(int(character) - '0');
-                        if(outputNumber > 2147483647){
+                        if(outputNumber > 2147483647) {
                             outputNumber = 2147483647;
                             state = 0;
                         }
-                        else if(outputNumber < -2147483648){
+                        else if(outputNumber < -2147483648) {
                             outputNumber = -2147483648;
                             state = 0;
                         }
                     }
-                    else{ //get invalid character
+                    else { //get invalid character
                         state = 0;
                     }
                     break;
@@ -69,7 +69,7 @@ public:
     }
 };
 
-int main(){
+int main() {
     Solution S;
 
     //input

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 private:
     string s = "";
     string p = "";
@@ -12,7 +12,7 @@ private:
     vector<vector<int>> DP;
 
 public:
-    bool isMatch(string s, string p){
+    bool isMatch(string s, string p) {
         int s_length = s.length();
         int p_length = p.length();
         
@@ -24,21 +24,21 @@ public:
         DP[s_length][p_length] = true;
 
         //init last row
-        for(int i = p_length - 1; i >= 0; i--){
-            if(p[i + 1] == '*'){
+        for(int i = p_length - 1; i >= 0; --i) {
+            if(p[i + 1] == '*') {
                 DP[s_length][i] = DP[s_length][i + 2];
             }
         }
 
-        for(int i = s_length - 1; i >= 0; i--){
-            for(int j = p_length - 1; j >= 0; j--){
-                switch(p[j + 1]){
+        for(int i = s_length - 1; i >= 0; --i) {
+            for(int j = p_length - 1; j >= 0; --j) {
+                switch(p[j + 1]) {
                     case '*':
-                        DP[i][j] = ((s[i] == p[j] or p[j] == '.') and DP[i + 1][j]) or DP[i][j + 2];
+                        DP[i][j] = ((s[i] == p[j] || p[j] == '.') && DP[i + 1][j]) || DP[i][j + 2];
                         break;
                     
                     default:
-                        DP[i][j] = ((s[i] == p[j] or p[j] == '.') and DP[i + 1][j + 1]);
+                        DP[i][j] = ((s[i] == p[j] || p[j] == '.') && DP[i + 1][j + 1]);
                 }
             }
         }
@@ -47,7 +47,7 @@ public:
     }
 };
 
-int main(){
+int main() {
     Solution S;
 
     //inputs

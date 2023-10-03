@@ -3,15 +3,15 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    bool isPalindrome(int x){
-        if(x < 0 || (x % 10 == 0 and x != 0)){
+    bool isPalindrome(int x) {
+        if(x < 0 || (x % 10 == 0 && x != 0)) {
             return false;
         }
 
         int reverted_x = 0;
-        while(x > reverted_x){
+        while(x > reverted_x) {
             reverted_x = reverted_x * 10 + x % 10;
             x = x / 10;
         }
@@ -20,7 +20,7 @@ public:
     }
 };
 
-int main(){
+int main() {
     Solution S;
 
     //input

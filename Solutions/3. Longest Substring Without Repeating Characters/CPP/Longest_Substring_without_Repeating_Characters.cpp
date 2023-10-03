@@ -3,10 +3,10 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int lengthOfLongestSubstring(string s){
-        if(s.empty()){
+    int lengthOfLongestSubstring(string s) {
+        if(s.empty()) {
             return 0;
         }
 
@@ -16,17 +16,17 @@ public:
         vector<int> lengthCounter(s_length, 1);
 
         //lengthCounter
-        for(int i = 1; i < s_length; i++){
+        for(int i = 1; i < s_length; ++i) {
             int intervalWidth = i;
             bool isDone = true;
-            for(int j = 0; j < s_length - intervalWidth; j++){
-                if((lengthCounter[j] == intervalWidth) and (lengthCounter[j + 1] == intervalWidth) and (s[j] != s[j + intervalWidth])){
+            for(int j = 0; j < s_length - intervalWidth; ++j) {
+                if((lengthCounter[j] == intervalWidth) && (lengthCounter[j + 1] == intervalWidth) && (s[j] != s[j + intervalWidth])) {
                     lengthCounter[j] = lengthCounter[j] + 1;
                     result = lengthCounter[j];
                     isDone = false;
                 }
             }
-            if(isDone){ //no merge happened
+            if(isDone) { //no merge happened
                 break;
             }
         }
@@ -35,7 +35,7 @@ public:
     }
 };
 
-int main(){
+int main() {
     Solution S;
 
     //input

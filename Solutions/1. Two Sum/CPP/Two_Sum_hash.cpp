@@ -4,23 +4,18 @@
 
 using namespace std;
 
-class Solution
-{
+class Solution {
 public:
-    vector<int> twoSum (vector<int> &nums, int target)
-    {
+    vector<int> twoSum (vector<int>& nums, int target) {
         //a hash that store the indices
         unordered_map<int, int> nums_idx;
 
         int nums_size = nums.size();
-        for (int i = 0; i < nums_size; i++)
-        {
-            if (nums_idx.find(target - nums[i]) != nums_idx.end())
-            {
+        for (int i = 0; i < nums_size; ++i) {
+            if (nums_idx.find(target - nums[i]) != nums_idx.end()) {
                 return vector<int>{nums_idx[target - nums[i]], i};
             }
-            else
-            {
+            else {
                 nums_idx[nums[i]] = i;
             }
         }
@@ -29,8 +24,7 @@ public:
     }
 };
 
-int main()
-{
+int main() {
     Solution S;
 
     //inputs
@@ -39,8 +33,7 @@ int main()
 
     vector<int> result = S.twoSum(nums, target);
 
-    for (auto i : result)
-    {
+    for (auto i : result) {
         cout << i << ' ';
     }
     cout << endl;

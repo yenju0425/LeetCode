@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 private:
     string s;
     string p;
@@ -12,22 +12,22 @@ private:
     vector<vector<int>> DP;
 
 public:
-    bool isMatch(int si, int pi){
-        if(DP[si][pi] != -1){ //check the DP table first
+    bool isMatch(int si, int pi) {
+        if(DP[si][pi] != -1) { //check the DP table first
             return DP[si][pi];
         }
 
         bool match;
-        if(pi == p_size){
+        if(pi == p_size) {
             match = (si == s_size);
         }
-        else{
-            bool fistMatch = (si != s_size) and (s[si] == p[pi] or p[pi] == '.');
-            if(p[pi + 1] == '*'){ //next pi is '*'
-                match = isMatch(si, pi + 2) or (fistMatch and isMatch(si + 1, pi));
+        else {
+            bool fistMatch = (si != s_size) && (s[si] == p[pi] || p[pi] == '.');
+            if(p[pi + 1] == '*') { //next pi is '*'
+                match = isMatch(si, pi + 2) || (fistMatch && isMatch(si + 1, pi));
             }
-            else{
-                match = fistMatch and isMatch(si + 1, pi + 1);
+            else {
+                match = fistMatch && isMatch(si + 1, pi + 1);
             }
         }
     
@@ -36,7 +36,7 @@ public:
         return match;
     }
     
-    bool isMatch(string s, string p){
+    bool isMatch(string s, string p) {
         this->s_size = s.size();
         this->p_size = p.size();
         this->s = s + "&";
@@ -47,7 +47,7 @@ public:
     }
 };
 
-int main(){
+int main() {
     Solution S;
 
     //inputs
