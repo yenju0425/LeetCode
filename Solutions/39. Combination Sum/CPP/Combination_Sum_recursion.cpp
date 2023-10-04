@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 private:
     int target;
 
@@ -14,23 +14,23 @@ private:
     vector<vector<int>> result;
 
 public:
-    void combGenerator(int currentNumIdx, int currentSum){
-        if(currentSum > target){
+    void combGenerator(int currentNumIdx, int currentSum) {
+        if(currentSum > target) {
             return;
         }
-        else if(currentSum == target){
+        else if(currentSum == target) {
             result.push_back(currentComb);
             return;
         }
 
-        for(int i = currentNumIdx; i < numOfCandidates; i++){
+        for(int i = currentNumIdx; i < numOfCandidates; ++i) {
             currentComb.push_back(candidates[i]);
             combGenerator(i, currentSum + candidates[i]);
             currentComb.pop_back();
         }
     }
 
-    vector<vector<int>> combinationSum(vector<int> &candidates, int target){
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
         this->target = target;
         this->candidates = candidates;
         this->numOfCandidates = candidates.size();
@@ -41,17 +41,17 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution S;
 
     //inputs
     int target = 8;
     vector<int> candidates{2, 3, 5};
 
-    vector<vector<int>> result = S->combinationSum(candidates, target);
+    vector<vector<int>> result = S.combinationSum(candidates, target);
 
-    for(auto i : result){
-        for(auto j : i){
+    for(auto i : result) {
+        for(auto j : i) {
             cout << j << ' ';
         }
         cout << endl;

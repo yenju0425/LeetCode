@@ -4,32 +4,32 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    void nextPermutation(vector<int> &nums){
+    void nextPermutation(vector<int>& nums) {
         vector<int>::iterator i = nums.end() - 1;
 
-        while(i != nums.begin() and *(i - 1) >= *i){
+        while(i != nums.begin() && *(i - 1) >= *i) {
             i = i - 1;
         }
 
         reverse(i, nums.end());
         
-        if(i != nums.begin()){
+        if(i != nums.begin()) {
             iter_swap(i - 1, upper_bound(i, nums.end(), *(i - 1)));
         }
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution S;
 
     //input
     vector<int> nums{1, 4, 5, 3, 2};
 
-    S->nextPermutation(nums);
+    S.nextPermutation(nums);
 
-    for(auto i : nums){
+    for(auto i : nums) {
         cout << i << ' ';
     }
     cout << endl;

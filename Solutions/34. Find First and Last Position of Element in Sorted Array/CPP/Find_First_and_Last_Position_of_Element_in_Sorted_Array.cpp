@@ -4,12 +4,12 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    vector<int> searchRange(vector<int> &nums, int target){
+    vector<int> searchRange(vector<int>& nums, int target) {
         vector<int> result(2, -1);
 
-        if(!binary_search(nums.begin(), nums.end(), target)){
+        if(!binary_search(nums.begin(), nums.end(), target)) {
             return result;
         }
         
@@ -20,16 +20,16 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution S;
 
     //inputs
     int target = 8;
     vector<int> nums{5, 7, 7, 8, 8, 10};
 
-    vector<int> result = S->searchRange(nums, target);
+    vector<int> result = S.searchRange(nums, target);
 
-    for(auto i : result){
+    for(auto i : result) {
         cout << i << ' ';
     }
 

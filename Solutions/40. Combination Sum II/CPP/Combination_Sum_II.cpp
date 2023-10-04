@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
     int target;
 
     int numOfCandidates;
@@ -17,31 +17,31 @@ class Solution{
     vector<vector<int>> result;
 
 public:
-    void combGenerator(int currentNumIdx, int currentSum, int currentNumId){
-        if(currentSum > target){
+    void combGenerator(int currentNumIdx, int currentSum, int currentNumId) {
+        if(currentSum > target) {
             return;
         }
-        if(currentSum == target){
+        if(currentSum == target) {
             result.push_back(currentComb);
             return;
         }
-        if(currentNumIdx >= numOfCandidates){
+        if(currentNumIdx >= numOfCandidates) {
             return;
         }
 
-        for(int i = currentNumId; i < getNumIdx_size; i++){
+        for(int i = currentNumId; i < getNumIdx_size; ++i) {
             int currentNum = candidates[getNumIdx[i]];
             currentComb.push_back(currentNum);
 
             int nextIdx   = max(currentNumIdx + 1, getNumIdx[i] + 1);
-            int nextNumId = i + (nextIdx == numOfCandidates or currentNum != candidates[nextIdx]);
+            int nextNumId = i + (nextIdx == numOfCandidates || currentNum != candidates[nextIdx]);
             combGenerator(nextIdx, currentSum + currentNum, nextNumId);
 
             currentComb.pop_back();
         }
     }
 
-    vector<vector<int>> combinationSum2(vector<int> &candidates, int target){
+    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
         //sort candidates
         sort(candidates.begin(), candidates.end());
 
@@ -49,8 +49,8 @@ public:
         this->target = target;
         this->candidates = candidates;
         this->numOfCandidates = candidates.size();
-        for(int i = 0; i < numOfCandidates; i++){
-            if(i == 0 or candidates[i] != candidates[i - 1]){
+        for(int i = 0; i < numOfCandidates; ++i) {
+            if(i == 0 || candidates[i] != candidates[i - 1]) {
                 this->getNumIdx.push_back(i);
             }
         }
@@ -63,17 +63,17 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution S;
 
     //inputs
     int target = 8;
     vector<int> candidates{3, 1, 3, 5, 1, 1};
 
-    vector<vector<int>> result = S->combinationSum2(candidates, target);
+    vector<vector<int>> result = S.combinationSum2(candidates, target);
 
-    for(auto i : result){
-        for(auto j : i){
+    for(auto i : result) {
+        for(auto j : i) {
             cout << j << ' ';
         }
         cout << endl;
