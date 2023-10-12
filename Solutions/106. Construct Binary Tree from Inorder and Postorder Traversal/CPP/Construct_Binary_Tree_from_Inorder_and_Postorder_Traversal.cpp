@@ -15,27 +15,27 @@ struct TreeNode {
 
 class Solution {
 public:
-    TreeNode* treeBuilder(const vector<int>& preorder, const vector<int>& inorder, int inorder_begin, int inorder_end, int& preorder_index) {
+    TreeNode* treeBuilder(const vector<int>& inorder, const vector<int>& postorder, int inorder_begin, int inorder_end, int& postorder_index) {
         if (inorder_begin == inorder_end) {
             return nullptr;
         }
 
-        int val = preorder[preorder_index];
-        preorder_index++;
+        int val = postorder[postorder_index];
+        postorder_index--;
 
         TreeNode* node = new TreeNode(val);
 
         int inorder_index = distance(inorder.begin(), find(inorder.begin(), inorder.end(), val));
 
-        node->left = treeBuilder(preorder, inorder, inorder_begin, inorder_index, preorder_index);
-        node->right = treeBuilder(preorder, inorder, inorder_index + 1, inorder_end, preorder_index);
+        node->right = treeBuilder(inorder, postorder, inorder_index + 1, inorder_end, postorder_index);
+        node->left = treeBuilder(inorder, postorder, inorder_begin, inorder_index, postorder_index);
 
         return node;
     }
 
-    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
-        int preorder_index = 0;
-        return treeBuilder(preorder, inorder, 0, inorder.size(), preorder_index);
+    TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
+        int postorder_index = postorder.size() - 1;
+        return treeBuilder(inorder, postorder, 0, inorder.size(), postorder_index);
     }
 
     void cleanTree(TreeNode* root) {
@@ -63,10 +63,10 @@ int main(){
     //           |     \
     //           n4(5)  n5(7)
     //
-    vector<int> preorder{3, 9, 0, 5, 7};
     vector<int> inorder{9, 3, 5, 0, 7};
+    vector<int> postorder{9, 5, 7, 0, 3};
     
-    TreeNode* result = S.buildTree(preorder, inorder);
+    TreeNode* result = S.buildTree(inorder, postorder);
 
     S.cleanTree(result);
     cout << endl;
