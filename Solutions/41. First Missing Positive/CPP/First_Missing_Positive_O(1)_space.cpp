@@ -4,29 +4,29 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int firstMissingPositive(vector<int> &nums){
+    int firstMissingPositive(vector<int>& nums) {
         int nums_size = nums.size();
 
         //init
-        for(int i = 0; i < nums_size; i++){
-            if(nums[i] <= 0){
+        for(int i = 0; i < nums_size; ++i) {
+            if(nums[i] <= 0) {
                 nums[i] = nums_size + 1; //number > nums_size: invalid
             }
         }
 
         //using sign to indicate the existance of the corresponding number
         //e.g. nums[5 - 1] = -87 -> '5' do exist 
-        for(int i = 0; i < nums_size; i++){
+        for(int i = 0; i < nums_size; ++i) {
             int number = abs(nums[i]);
-            if(number <= nums_size and nums[number - 1] > 0){
+            if(number <= nums_size && nums[number - 1] > 0) {
                 nums[number - 1] = -nums[number - 1];
             }
         }
 
-        for(int i = 0; i < nums_size; i++){
-            if(nums[i] > 0){
+        for(int i = 0; i < nums_size; ++i) {
+            if(nums[i] > 0) {
                 return i + 1;
             }
         }
@@ -35,13 +35,13 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution S;
 
     //input
-    vector<int> nums = {3, 4, -1, 1};
+    vector<int> nums{3, 4, -1, 1};
 
-    cout << S->firstMissingPositive(nums) << endl;
+    cout << S.firstMissingPositive(nums) << endl;
 
     return 0;
 }

@@ -4,9 +4,9 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    string multiply(string num1, string num2){
+    string multiply(string num1, string num2) {
         int num1_length = num1.length();
         int num2_length = num2.length();
 
@@ -14,8 +14,8 @@ public:
         int temp = 0;
 
         int result_length = num1_length + num2_length;
-        for(int i = 0; i < result_length; i++){
-            for(int j = 0; j <= i; j++){
+        for(int i = 0; i < result_length; ++i) {
+            for(int j = 0; j <= i; ++j) {
                 int n1 = (j     < num1_length) ? num1[num1_length - 1 - j    ] - '0' : 0;
                 int n2 = (i - j < num2_length) ? num2[num2_length - 1 - i + j] - '0' : 0;
                 temp = temp + n1 * n2;
@@ -28,10 +28,10 @@ public:
         }
 
         //remove leading 0's
-        while(result.back() == '0'){
+        while(result.back() == '0') {
             result.pop_back();
         }
-        if(result.empty()){
+        if(result.empty()) {
             result = "0";
         }
 
@@ -40,14 +40,14 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution S;
 
     //inputs
     string num1 = "99999";
     string num2 = "0";
 
-    cout << S->multiply(num1, num2) << endl;
+    cout << S.multiply(num1, num2) << endl;
 
     return 0;
 }

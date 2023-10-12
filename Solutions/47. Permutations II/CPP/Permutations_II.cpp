@@ -5,12 +5,12 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    vector<vector<int>> permutation(unordered_map<int, int> &numCount){
+    vector<vector<int>> permutation(unordered_map<int, int>& numCount) {
         vector<vector<int>> P;
-        for(unordered_map<int, int>::iterator iter = numCount.begin(); iter != numCount.end(); iter++){
-            if(iter->second == 0){
+        for(unordered_map<int, int>::iterator iter = numCount.begin(); iter != numCount.end(); ++iter) {
+            if(iter->second == 0) {
                 continue;
             }
 
@@ -21,7 +21,7 @@ public:
             vector<vector<int>> p = permutation(numCount);
 
             int p_size = p.size();
-            for(int j = 0; j < p_size; j++){
+            for(int j = 0; j < p_size; ++j) {
                 p[j].push_back(iter->first);
                 P.push_back(p[j]);
             }
@@ -33,12 +33,12 @@ public:
         return P.empty() ? vector<vector<int>>{{}} : P;
     }
 
-    vector<vector<int>> permuteUnique(vector<int> &nums){
+    vector<vector<int>> permuteUnique(vector<int>& nums) {
         //create numCount
         unordered_map<int, int> numCount;
     
         int nums_size = nums.size();
-        for(int i = 0; i < nums_size; i++){
+        for(int i = 0; i < nums_size; ++i) {
             int num = nums[i];
             numCount[num] = (numCount.count(num) == 0) ? 1 : numCount[num] + 1;
         }
@@ -47,17 +47,17 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution S;
 
     //input
     vector<int> nums{3, 3, 0, 3};
 
-    vector<vector<int>> result = S->permuteUnique(nums);
+    vector<vector<int>> result = S.permuteUnique(nums);
 
     cout << "number of permutations: " << result.size() << endl;
-    for(auto i : result){
-        for(auto j : i){
+    for(auto i : result) {
+        for(auto j : i) {
             cout << j << ' ';
         }
         cout << endl;
