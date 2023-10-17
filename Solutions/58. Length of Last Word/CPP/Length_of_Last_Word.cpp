@@ -4,9 +4,9 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int lengthOfLastWord(string s){
+    int lengthOfLastWord(string s) {
         reverse(s.begin(), s.end());
     
         stringstream ss(s);
@@ -17,12 +17,12 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution S;
 
     string s = "   fly me   to   the moon  ";
 
-    cout << S->lengthOfLastWord(s) << endl;
+    cout << S.lengthOfLastWord(s) << endl;
     
     return 0;
 }

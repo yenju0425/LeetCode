@@ -3,15 +3,15 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 private:
     int N; 
     int numOfSolutions;
 
 public:
-    void place(int l, int r, int v, int counter){
+    void place(int l, int r, int v, int counter) {
         //check if N Queens are placed successfully
-        if(counter == N){
+        if(counter == N) {
             numOfSolutions = numOfSolutions + 1;
             return;
         }
@@ -23,10 +23,10 @@ public:
         //                                  ^    ^
         //                         Queen can be placed here
         //
-        for(int i = 0; i < N; i++){ //look for empty cells
+        for(int i = 0; i < N; ++i) { //look for empty cells
             int newQueen = 1 << i;
             int availableCells = l | r | v; // left diagonal | right diagonal | vitercal line
-            if((availableCells & newQueen) == 0){ //0: no collision; 1: collision
+            if((availableCells & newQueen) == 0) { //0: no collision; 1: collision
                 //place (counter + 1) row
                 place(((l | newQueen) >> 1), ((r | newQueen) << 1), (v | newQueen), counter + 1);
             }
@@ -34,7 +34,7 @@ public:
         return;
     }
 
-    int totalNQueens(int n){
+    int totalNQueens(int n) {
         N = n;
         numOfSolutions = 0;
         place(0, 0, 0, 0);
@@ -42,13 +42,13 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution S;
 
     //input
     int n = 4;
 
-    cout << S->totalNQueens(n) << endl;
+    cout << S.totalNQueens(n) << endl;
 
     return 0;
 }

@@ -3,21 +3,21 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    bool canJump(vector<int> &nums){
+    bool canJump(vector<int>& nums) {
         bool result = true;
 
         int mainFuelTank = 0;
         int auxiFuelTank = 0;
 
         int goal = nums.size() - 1;
-        for(int i = 0; i < goal; i++){
+        for(int i = 0; i < goal; ++i) {
             auxiFuelTank = max(auxiFuelTank, nums[i] - mainFuelTank);
 
             //refill mainFuelTank
-            if(mainFuelTank == 0){
-                if(auxiFuelTank == 0){
+            if(mainFuelTank == 0) {
+                if(auxiFuelTank == 0) {
                     result = false;
                     break;
                 }
@@ -26,7 +26,7 @@ public:
             }
 
             //if the fuel is enough to reach the goal
-            if(mainFuelTank >= goal - i){
+            if(mainFuelTank >= goal - i) {
                 break;
             }
 
@@ -37,13 +37,13 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution S;
 
     //input
     vector<int> nums{2, 3, 1, 1, 4};
 
-    cout << S->canJump(nums) << endl;
+    cout << S.canJump(nums) << endl;
 
     return 0;
 }
