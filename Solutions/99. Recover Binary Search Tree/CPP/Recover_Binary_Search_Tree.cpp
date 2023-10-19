@@ -19,13 +19,13 @@ private:
     TreeNode* errorNode2 = nullptr;
 
 public:
-    void DFSRecover(TreeNode* root) {  // mark the error nodes
+    void inorderRecover(TreeNode* root) {  // mark the error nodes
         if (root == nullptr) {
             return;
         }
 
         // DFS: Inorder
-        DFSRecover(root->left);
+        inorderRecover(root->left);
         if (prev_Node != nullptr && root->val < prev_Node->val) {
             if (errorNode1 == nullptr) {
                 errorNode1 = prev_Node;
@@ -37,21 +37,21 @@ public:
             }
         }
         prev_Node = root;
-        DFSRecover(root->right);
+        inorderRecover(root->right);
     }
 
     void recoverTree(TreeNode* root) {
-        DFSRecover(root);
+        inorderRecover(root);
         swap(errorNode1->val, errorNode2->val);
     }
 
-    void PostOrderPrint(TreeNode* root) {
+    void postorderPrint(TreeNode* root) {
         if (root == nullptr) {
             return;
         }
 
-        PostOrderPrint(root->left);
-        PostOrderPrint(root->right);
+        postorderPrint(root->left);
+        postorderPrint(root->right);
 
         cout << root->val << " ";
     }
@@ -76,7 +76,7 @@ int main() {
     TreeNode rt(2, &n1, &n2);
 
     S.recoverTree(&rt);
-    S.PostOrderPrint(&rt);
+    S.postorderPrint(&rt);
 
     return 0;
 }

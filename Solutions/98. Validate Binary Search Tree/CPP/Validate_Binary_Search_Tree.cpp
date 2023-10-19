@@ -16,13 +16,13 @@ private:
     long prev_val;
 
 public:
-    bool DFS_inorder(TreeNode* root) {
+    bool inorderValidate(TreeNode* root) {
         if (root == nullptr) {
             return true;
         }
-        if (DFS_inorder(root->left) && root->val > prev_val) {
+        if (inorderValidate(root->left) && root->val > prev_val) {
             prev_val = root->val;
-            if (DFS_inorder(root->right)) {
+            if (inorderValidate(root->right)) {
                 return true;
             }
         }
@@ -32,7 +32,7 @@ public:
 
     bool isValidBST(TreeNode* root) {
         prev_val = LONG_MIN;
-        return DFS_inorder(root);
+        return inorderValidate(root);
     }
 };
 
