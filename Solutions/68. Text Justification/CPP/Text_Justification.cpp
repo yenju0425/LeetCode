@@ -9,7 +9,7 @@ public:
     vector<string> fullJustify(vector<string>& words, int maxWidth) {
         int numOfWords = words.size();
         vector<int> word_length(numOfWords, 0);
-        for (int i = 0; i < numOfWords; i++) {
+        for (int i = 0; i < numOfWords; ++i) {
             word_length[i] = words[i].length();
         }
 
@@ -33,7 +33,7 @@ public:
             // write into nextLine
             string nextLine;
             int totalSpace = maxWidth - width + wordsCounter - 1;
-            for (int i = 0; i < wordsCounter; i++) {
+            for (int i = 0; i < wordsCounter; ++i) {
                 nextLine.append(buffer[i]);
 
                 int space;

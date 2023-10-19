@@ -24,7 +24,6 @@ public:
             return;
         }
 
-        // DFS: Inorder
         inorderRecover(root->left);
         if (prev_Node != nullptr && root->val < prev_Node->val) {
             if (errorNode1 == nullptr) {

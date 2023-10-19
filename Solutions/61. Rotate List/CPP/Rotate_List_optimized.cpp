@@ -32,7 +32,7 @@ public:
 
         lastNode->next = head;
         k = numOfNodes - k;
-        for (int i = 0; i < k; i++) {
+        for (int i = 0; i < k; ++i) {
             lastNode = head;
             head = head->next;
         }

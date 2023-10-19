@@ -11,7 +11,7 @@ public:
         bool carry = 0;
         int a_size = a.size();
         int b_size = b.size();
-        for (int i = 0; i < a_size or i < b_size; i++) {
+        for (int i = 0; i < a_size or i < b_size; ++i) {
             bool ai = (i >= a_size) ? 0 : a[a_size - i - 1] == '1';
             bool bi = (i >= b_size) ? 0 : b[b_size - i - 1] == '1';
 
