@@ -20,11 +20,11 @@ public:
             return true;
         }
 
-        if (i1 <= s1_length and i2 <= s2_length and DP[i1][i2] != -1) {
+        if (i1 <= s1_length && i2 <= s2_length && DP[i1][i2] != -1) {
             return DP[i1][i2];
         }
 
-        DP[i1][i2] = (i1 < s1_length and s1[i1] == s3[i3] and IL(i1 + 1, i2, i3 + 1)) or (i2 < s2_length and s2[i2] == s3[i3] and IL(i1, i2 + 1, i3 + 1));
+        DP[i1][i2] = (i1 < s1_length && s1[i1] == s3[i3] && IL(i1 + 1, i2, i3 + 1)) || (i2 < s2_length && s2[i2] == s3[i3] && IL(i1, i2 + 1, i3 + 1));
         return DP[i1][i2];
     }
 
@@ -47,14 +47,14 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // inputs
     string s1 = "aabcc";
     string s2 = "dbbca";
     string s3 = "aadbbcbcac";
 
-    cout << S->isInterleave(s1, s2, s3) << endl;
+    cout << S.isInterleave(s1, s2, s3) << endl;
 
     return 0;
 }

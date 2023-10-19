@@ -13,7 +13,7 @@ public:
         if (n == 0) {
             if (s == "") {
                 string IP = to_string(nums[0]);
-                for (int i = 1; i < 4; i++) {
+                for (int i = 1; i < 4; ++i) {
                     IP.append('.' + to_string(nums[i]));
                 }
                 IPs.push_back(IP);
@@ -21,11 +21,11 @@ public:
             return;
         }
 
-        for (int i = 1; i <= 3 and i <= s.size(); i++) {
+        for (int i = 1; i <= 3 && i <= s.size(); ++i) {
             // check if the number is valid
             string num_str = s.substr(0, i);
             int num_int = stoi(num_str);
-            if ((i > 1 and num_str[0] == '0') or num_int > 255) {
+            if ((i > 1 && num_str[0] == '0') || num_int > 255) {
                 continue;
             }
 
@@ -42,12 +42,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     string s = "0000";
 
-    vector<string> result = S->restoreIpAddresses(s);
+    vector<string> result = S.restoreIpAddresses(s);
 
     for (auto i : result) {
         cout << i << endl;

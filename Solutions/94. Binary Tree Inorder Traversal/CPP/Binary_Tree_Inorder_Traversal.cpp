@@ -15,7 +15,7 @@ struct TreeNode {
 class Solution {
 public:
     void concatenate(vector<int>& target, vector<int> source) {
-        for (int i = 0; i < source.size(); i++) {
+        for (int i = 0; i < source.size(); ++i) {
             target.push_back(source[i]);
         }
     }
@@ -33,7 +33,7 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input tree structure:
     //
@@ -43,14 +43,14 @@ int main() {
     //     |      |     \
     //    n3(3)  n4(4)  n5(5)
     //
-    TreeNode* n5 = new TreeNode(5);
-    TreeNode* n4 = new TreeNode(4);
-    TreeNode* n3 = new TreeNode(3);
-    TreeNode* n2 = new TreeNode(2, n4, n5);
-    TreeNode* n1 = new TreeNode(1, n3, nullptr);
-    TreeNode* rt = new TreeNode(0, n1, n2);
+    TreeNode n5(5);
+    TreeNode n4(4);
+    TreeNode n3(3);
+    TreeNode n2(2, &n4, &n5);
+    TreeNode n1(1, &n3, nullptr);
+    TreeNode rt(0, &n1, &n2);
 
-    vector<int> result = S->inorderTraversal(rt);
+    vector<int> result = S.inorderTraversal(&rt);
 
     for (auto i : result) {
         cout << i << ' ';

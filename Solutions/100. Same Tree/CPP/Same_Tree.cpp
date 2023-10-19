@@ -14,13 +14,13 @@ struct TreeNode {
 class Solution {
 public:
     bool isSameTree(TreeNode* p, TreeNode* q) {
-        if (p == nullptr and q == nullptr) {
+        if (p == nullptr && q == nullptr) {
             return true;
         }
-        if (p == nullptr xor q == nullptr) {
+        if (p == nullptr ^ q == nullptr) {
             return false;
         }
-        if (p->val == q->val and isSameTree(p->left, q->left) and isSameTree(p->right, q->right)) {
+        if (p->val == q->val && isSameTree(p->left, q->left) && isSameTree(p->right, q->right)) {
             return true;
         }
         return false;
@@ -28,17 +28,17 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // inputs
-    TreeNode* n2 = new TreeNode(2);
-    TreeNode* n4 = new TreeNode(4, n2, nullptr);
-    TreeNode* n1 = new TreeNode(1, nullptr, nullptr);
+    TreeNode n2(2);
+    TreeNode n4(4, &n2, nullptr);
+    TreeNode n1(1, nullptr, nullptr);
 
-    TreeNode* r1 = new TreeNode(3, n4, n1);
-    TreeNode* r2 = new TreeNode(3, n1, n4);
+    TreeNode r1(3, &n4, &n1);
+    TreeNode r2(3, &n1, &n4);
 
-    cout << S->isSameTree(r1, r2) << endl;
+    cout << S.isSameTree(&r1, &r2) << endl;
 
     return 0;
 }

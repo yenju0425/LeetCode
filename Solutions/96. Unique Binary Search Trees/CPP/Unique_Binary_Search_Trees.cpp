@@ -9,7 +9,7 @@ public:
         // catalan number
         double c = 1;
 
-        for (int i = 1, j = 2 * n; i <= n; i++, j--) {
+        for (int i = 1, j = 2 * n; i <= n; ++i, --j) {
             c = c * j;
             c = c / i;
         }
@@ -19,12 +19,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     int n = 3;
 
-    cout << S->numTrees(n) << endl;
+    cout << S.numTrees(n) << endl;
 
     return 0;
 }

@@ -19,14 +19,14 @@ private:
     TreeNode* errorNode2 = nullptr;
 
 public:
-    void DFS_recover(TreeNode* root) {  // mark the error nodes
+    void DFSRecover(TreeNode* root) {  // mark the error nodes
         if (root == nullptr) {
             return;
         }
 
         // DFS: Inorder
-        DFS_recover(root->left);
-        if (prev_Node != nullptr and root->val < prev_Node->val) {
+        DFSRecover(root->left);
+        if (prev_Node != nullptr && root->val < prev_Node->val) {
             if (errorNode1 == nullptr) {
                 errorNode1 = prev_Node;
                 errorNode2 = root;
@@ -37,26 +37,28 @@ public:
             }
         }
         prev_Node = root;
-        DFS_recover(root->right);
+        DFSRecover(root->right);
     }
 
     void recoverTree(TreeNode* root) {
-        DFS_recover(root);
+        DFSRecover(root);
         swap(errorNode1->val, errorNode2->val);
+    }
+
+    void PostOrderPrint(TreeNode* root) {
+        if (root == nullptr) {
+            return;
+        }
+
+        PostOrderPrint(root->left);
+        PostOrderPrint(root->right);
+
+        cout << root->val << " ";
     }
 };
 
-void DFS_inorder(TreeNode* root) {
-    if (root == nullptr) {
-        return;
-    }
-    DFS_inorder(root->left);
-    cout << root->val << ' ';
-    DFS_inorder(root->right);
-}
-
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input tree structure:
     //
@@ -66,17 +68,15 @@ int main() {
     //     |      |     \
     //    n3(0)  n4(3)  n5(5)
     //
-    TreeNode* n5 = new TreeNode(5);
-    TreeNode* n4 = new TreeNode(3);
-    TreeNode* n3 = new TreeNode(0);
-    TreeNode* n2 = new TreeNode(1, n4, n5);
-    TreeNode* n1 = new TreeNode(4, n3, nullptr);
-    TreeNode* rt = new TreeNode(2, n1, n2);
+    TreeNode n5(5);
+    TreeNode n4(3);
+    TreeNode n3(0);
+    TreeNode n2(1, &n4, &n5);
+    TreeNode n1(4, &n3, nullptr);
+    TreeNode rt(2, &n1, &n2);
 
-    S->recoverTree(rt);
-
-    DFS_inorder(rt);
-    cout << endl;
+    S.recoverTree(&rt);
+    S.PostOrderPrint(&rt);
 
     return 0;
 }

@@ -24,7 +24,7 @@ public:
         subset.pop_back();
 
         // skip
-        while (idx + 1 < nums_size and nums[idx] == nums[idx + 1]) {
+        while (idx + 1 < nums_size && nums[idx] == nums[idx + 1]) {
             idx = idx + 1;
         }
         subsetsGenerator(idx + 1);
@@ -43,12 +43,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> nums{1, 2, 2};
 
-    vector<vector<int>> result = S->subsetsWithDup(nums);
+    vector<vector<int>> result = S.subsetsWithDup(nums);
 
     for (auto i : result) {
         for (auto j : i) {

@@ -14,10 +14,10 @@ public:
 
         vector<int> numOfWays(s_len, 0);
         numOfWays[0] = (s[0] != '0');
-        numOfWays[1] = numOfWays[0] * (s[1] != '0') + (s[0] != '0' and stoi(s.substr(0, 2)) <= 26);
+        numOfWays[1] = numOfWays[0] * (s[1] != '0') + (s[0] != '0' && stoi(s.substr(0, 2)) <= 26);
 
-        for (int i = 2; i < s_len; i++) {
-            numOfWays[i] = numOfWays[i - 1] * (s[i] != '0') + numOfWays[i - 2] * (s[i - 1] != '0' and (stoi(s.substr(i - 1, 2)) <= 26));
+        for (int i = 2; i < s_len; ++i) {
+            numOfWays[i] = numOfWays[i - 1] * (s[i] != '0') + numOfWays[i - 2] * (s[i - 1] != '0' && (stoi(s.substr(i - 1, 2)) <= 26));
         }
 
         return numOfWays.back();
@@ -25,12 +25,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     string s = "226";
 
-    cout << S->numDecodings(s) << endl;
+    cout << S.numDecodings(s) << endl;
 
     return 0;
 }

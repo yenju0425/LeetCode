@@ -23,7 +23,7 @@ public:
         countWays(idx + 1);
 
         // take 2
-        if (idx < s_len - 1 and stoi(s.substr(idx, 2)) <= 26) {
+        if (idx < s_len - 1 && stoi(s.substr(idx, 2)) <= 26) {
             countWays(idx + 2);
         }
     }
@@ -40,12 +40,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     string s = "226";
 
-    cout << S->numDecodings(s) << endl;
+    cout << S.numDecodings(s) << endl;
 
     return 0;
 }

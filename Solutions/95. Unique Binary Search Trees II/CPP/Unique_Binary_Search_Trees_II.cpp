@@ -21,7 +21,7 @@ public:
         }
 
         vector<TreeNode*> trees;
-        for (int i = idx; i < idx + n; i++) {
+        for (int i = idx; i < idx + n; ++i) {
             vector<TreeNode*> left = growTrees(idx, i - idx);
             vector<TreeNode*> right = growTrees(i + 1, n + idx - i - 1);
 
@@ -39,47 +39,32 @@ public:
     vector<TreeNode*> generateTrees(int n) {
         return growTrees(1, n);
     }
-};
 
-void BFS_levelorder(TreeNode* root) {
-    vector<queue<TreeNode*>> Q(2);
-
-    int idx = 0;
-    if (root != nullptr) {
-        Q[idx].push(root);
-    }
-    while (!Q[idx].empty()) {
-        while (!Q[idx].empty()) {
-            TreeNode* node = Q[idx].front();
-            Q[idx].pop();
-
-            if (node == nullptr) {
-                cout << "# ";
-            }
-            else {
-                cout << node->val << ' ';
-                Q[!idx].push(node->left);
-                Q[!idx].push(node->right);
-            }
+    void cleanTree(TreeNode* root) {
+        if (root == nullptr) {
+            return;
         }
 
-        idx = !idx;
-        cout << "| ";
-    }
+        cleanTree(root->left);
+        cleanTree(root->right);
 
-    cout << endl;
-}
+        cout << root->val << " ";
+
+        delete root;
+    }
+};
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     int n = 3;
 
-    vector<TreeNode*> result = S->generateTrees(n);
+    vector<TreeNode*> result = S.generateTrees(n);
 
     for (auto i : result) {
-        BFS_levelorder(i);
+        S.cleanTree(i);
+        cout << endl;
     }
 
     return 0;

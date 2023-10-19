@@ -17,13 +17,13 @@ public:
 
         // init CUR_PTR
         ListNode* CUR_PTR = dummyHead;
-        for (int i = 1; i < left; i++) {
+        for (int i = 1; i < left; ++i) {
             CUR_PTR = CUR_PTR->next;
         }
 
         // init LAST_PTR
         ListNode* LST_PTR = dummyHead;
-        for (int i = 1; i <= right; i++) {
+        for (int i = 1; i <= right; ++i) {
             LST_PTR = LST_PTR->next;
         }
 
@@ -52,7 +52,7 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // inputs
     ListNode* n5 = new ListNode(5);
@@ -61,7 +61,7 @@ int main() {
     ListNode* n2 = new ListNode(2, n3);
     ListNode* n1 = new ListNode(1, n2);
 
-    ListNode* result = S->reverseBetween(n1, 2, 3);
+    ListNode* result = S.reverseBetween(n1, 2, 3);
 
     while (result != nullptr) {
         cout << result->val << ' ';
