@@ -15,7 +15,7 @@ public:
             return;
         }
 
-        for (int i = k; i <= n; i++) {
+        for (int i = k; i <= n; ++i) {
             combanation.push_back(i);
             generateCombanations(i - 1, k - 1);
             combanation.pop_back();
@@ -29,13 +29,13 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // inputs
     int n = 4;
     int k = 2;
 
-    vector<vector<int>> result = S->combine(n, k);
+    vector<vector<int>> result = S.combine(n, k);
 
     for (auto i : result) {
         for (auto j : i) {

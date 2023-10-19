@@ -30,12 +30,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> nums{1, 1, 1, 2, 2, 3};
 
-    cout << S->removeDuplicates(nums) << endl;
+    cout << S.removeDuplicates(nums) << endl;
 
     return 0;
 }

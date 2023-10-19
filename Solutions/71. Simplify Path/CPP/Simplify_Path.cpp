@@ -18,7 +18,7 @@ public:
 
             // read next dir
             string dir;
-            while (idx < path_length and path[idx] != '/') {
+            while (idx < path_length && path[idx] != '/') {
                 dir.push_back(path[idx]);
                 idx = idx + 1;
             }
@@ -42,7 +42,7 @@ public:
 
         string result;
         int numOfDirectories = directories.size();
-        for (int i = 0; i < numOfDirectories; i++) {
+        for (int i = 0; i < numOfDirectories; ++i) {
             result.push_back('/');
             result.append(directories[i]);
         }
@@ -52,12 +52,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     string path = "/../";
 
-    cout << S->simplifyPath(path) << endl;
+    cout << S.simplifyPath(path) << endl;
 
     return 0;
 }

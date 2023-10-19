@@ -15,7 +15,7 @@ public:
             return;
         }
 
-        for (int i = idx; i < nums.size(); i++) {
+        for (int i = idx; i < nums.size(); ++i) {
             s_set.push_back(nums[i]);
             generateSunsets(nums, i + 1);
             s_set.pop_back();
@@ -30,12 +30,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> nums{1, 2, 3};
 
-    vector<vector<int>> result = S->subsets(nums);
+    vector<vector<int>> result = S.subsets(nums);
 
     for (auto i : result) {
         for (auto j : i) {

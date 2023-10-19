@@ -10,7 +10,7 @@ public:
 
         // init charCounter
         int charCounter[58] = {0};  //'z' - 'A' + 1 = 58
-        for (int i = 0; i < t_length; i++) {
+        for (int i = 0; i < t_length; ++i) {
             int idx = t[i] - 'A';
             charCounter[idx] = charCounter[idx] + 1;
         }
@@ -19,7 +19,7 @@ public:
         int minString_len = INT_MAX;
 
         // iterate through s
-        for (int left = 0, right = 0; right < s_length; right++) {
+        for (int left = 0, right = 0; right < s_length; ++right) {
             int right_idx = s[right] - 'A';
             charCounter[right_idx] = charCounter[right_idx] - 1;
             t_length = (charCounter[right_idx] < 0) ? t_length : t_length - 1;
@@ -44,13 +44,13 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // inputs
     string s = "ADOBECODEBANC";
     string t = "ABC";
 
-    cout << S->minWindow(s, t) << endl;
+    cout << S.minWindow(s, t) << endl;
 
     return 0;
 }

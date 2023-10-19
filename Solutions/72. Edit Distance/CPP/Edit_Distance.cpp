@@ -15,17 +15,17 @@ public:
         vector<vector<int>> DP(word1_length + 1, vector<int>(word2_length + 1, 0));
 
         // init first col
-        for (int i = 1; i <= word1_length; i++) {
+        for (int i = 1; i <= word1_length; ++i) {
             DP[i][0] = i;
         }
 
         // init first row
-        for (int i = 1; i <= word2_length; i++) {
+        for (int i = 1; i <= word2_length; ++i) {
             DP[0][i] = i;
         }
 
-        for (int i = 1; i <= word1_length; i++) {
-            for (int j = 1; j <= word2_length; j++) {
+        for (int i = 1; i <= word1_length; ++i) {
+            for (int j = 1; j <= word2_length; ++j) {
                 if (word1[i] != word2[j]) {
                     DP[i][j] = min(DP[i - 1][j - 1], min(DP[i - 1][j], DP[i][j - 1])) + 1;
                 }
@@ -40,13 +40,13 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // inputs
     string word1 = "horse";
     string word2 = "ros";
 
-    cout << S->minDistance(word1, word2) << endl;
+    cout << S.minDistance(word1, word2) << endl;
 
     return 0;
 }

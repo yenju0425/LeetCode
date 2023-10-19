@@ -25,7 +25,7 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // inputs
     int target = 34;
@@ -35,7 +35,7 @@ int main() {
         {23, 30, 34, 60}
     };
 
-    cout << S->searchMatrix(matrix, target) << endl;
+    cout << S.searchMatrix(matrix, target) << endl;
 
     return 0;
 }

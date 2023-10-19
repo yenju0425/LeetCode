@@ -11,8 +11,8 @@ public:
 
         vector<vector<int>> zeros;
 
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
                 if (matrix[i][j] == 0) {
                     zeros.push_back(vector<int>{i, j});
                 }
@@ -20,17 +20,17 @@ public:
         }
 
         int numOfZeros = zeros.size();
-        for (int i = 0; i < numOfZeros; i++) {
+        for (int i = 0; i < numOfZeros; ++i) {
             int row = zeros[i][0];
             int col = zeros[i][1];
 
             // reset col
-            for (int j = 0; j < m; j++) {
+            for (int j = 0; j < m; ++j) {
                 matrix[j][col] = 0;
             }
 
             // reset row
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < n; ++j) {
                 matrix[row][j] = 0;
             }
         }
@@ -38,7 +38,7 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<vector<int>> matrix{
@@ -47,7 +47,7 @@ int main() {
         {1, 1, 1}
     };
 
-    S->setZeroes(matrix);
+    S.setZeroes(matrix);
 
     for (auto i : matrix) {
         for (auto j : i) {

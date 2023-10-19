@@ -13,19 +13,19 @@ private:
 
 public:
     bool isValid(int m, int n) {
-        return m < M and m >= 0 and n < N and n >= 0;
+        return m < M && m >= 0 && n < N && n >= 0;
     }
 
     bool DFS(int m, int n, int idx) {
         if (idx >= word.size()) {
             return true;
         }
-        if (!isValid(m, n) or board[m][n] != word[idx]) {
+        if (!isValid(m, n) || board[m][n] != word[idx]) {
             return false;
         }
 
         bool result = false;
-        for (int i = 0; i < 4 and !result; i++) {
+        for (int i = 0; i < 4 && !result; ++i) {
             board[m][n] = -board[m][n];
             result = DFS(m + dir[i][0], n + dir[i][1], idx + 1);
             board[m][n] = -board[m][n];
@@ -45,8 +45,8 @@ public:
         this->word = word;
         this->M = board.size();
         this->N = board[0].size();
-        for (int i = 0; i < M; i++) {
-            for (int j = 0; j < N; j++) {
+        for (int i = 0; i < M; ++i) {
+            for (int j = 0; j < N; ++j) {
                 if (DFS(i, j, 0)) {
                     return true;
                 }
@@ -58,7 +58,7 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // inputs
     string word = "ABCCED";
@@ -68,7 +68,7 @@ int main() {
         {'A', 'D', 'E', 'E'}
     };
 
-    cout << S->exist(board, word) << endl;
+    cout << S.exist(board, word) << endl;
 
     return 0;
 }

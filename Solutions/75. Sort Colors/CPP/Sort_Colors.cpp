@@ -19,7 +19,7 @@ public:
 
         int idx = 0;
         while (idx <= right) {
-            if (idx < left or nums[idx] == 1) {
+            if (idx < left || nums[idx] == 1) {
                 idx = idx + 1;
             }
             else if (nums[idx] == 0) {
@@ -35,12 +35,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> nums{2, 0, 2, 1, 1, 0};
 
-    S->sortColors(nums);
+    S.sortColors(nums);
 
     for (auto i : nums) {
         cout << i << ' ';
