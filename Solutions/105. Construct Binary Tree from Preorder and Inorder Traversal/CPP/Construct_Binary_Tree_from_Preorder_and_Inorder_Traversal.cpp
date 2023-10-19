@@ -38,13 +38,13 @@ public:
         return treeBuilder(preorder, inorder, 0, inorder.size(), preorder_index);
     }
 
-    void cleanTree(TreeNode* root) {
+    void postorderClean(TreeNode* root) {
         if (root == nullptr) {
             return;
         }
 
-        cleanTree(root->left);
-        cleanTree(root->right);
+        postorderClean(root->left);
+        postorderClean(root->right);
 
         cout << root->val << " ";
 
@@ -68,7 +68,7 @@ int main() {
 
     TreeNode* result = S.buildTree(preorder, inorder);
 
-    S.cleanTree(result);
+    S.postorderClean(result);
     cout << endl;
 
     return 0;

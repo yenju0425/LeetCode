@@ -15,15 +15,15 @@ struct TreeNode {
 
 class Solution {
 public:
-    vector<TreeNode*> generateTreesHelper(int idx, int n) {
+    vector<TreeNode*> treesGenerator(int idx, int n) {
         if (n == 0) {
             return vector<TreeNode*>{nullptr};
         }
 
         vector<TreeNode*> trees;
         for (int i = idx; i < idx + n; ++i) {
-            vector<TreeNode*> left  = generateTreesHelper(idx, i - idx);
-            vector<TreeNode*> right = generateTreesHelper(i + 1, n + idx - i - 1);
+            vector<TreeNode*> left  = treesGenerator(idx, i - idx);
+            vector<TreeNode*> right = treesGenerator(i + 1, n + idx - i - 1);
 
             for (auto l : left) {
                 for (auto r : right) {
@@ -37,7 +37,7 @@ public:
     }
 
     vector<TreeNode*> generateTrees(int n) {
-        return generateTreesHelper(1, n);
+        return treesGenerator(1, n);
     }
 
     void postorderClean(TreeNode* root) {
