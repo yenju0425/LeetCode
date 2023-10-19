@@ -57,12 +57,12 @@ int main() {
 
     // input tree structure:
     //
-    //     rt(3)
-    //     |     \
+    //    rt(3)
+    //     |    \
     //    n1(9)  n2(0)
-    //            |     \
+    //            |    \
     //           n4(5)  n5(7)
-    //
+
     vector<int> inorder{9, 3, 5, 0, 7};
     vector<int> postorder{9, 5, 7, 0, 3};
 

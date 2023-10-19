@@ -41,12 +41,12 @@ int main() {
 
     // input tree structure:
     //
-    //     rt(2)
-    //     |     \
+    //    rt(2)
+    //     |    \
     //    n1(1)  n2(4)
-    //     |      |     \
+    //     |      |    \
     //    n3(0)  n4(3)  n5(5)
-    //
+
     TreeNode n5(5);
     TreeNode n4(3);
     TreeNode n3(0);

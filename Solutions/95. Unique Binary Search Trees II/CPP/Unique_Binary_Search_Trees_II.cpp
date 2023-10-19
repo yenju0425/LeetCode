@@ -61,7 +61,6 @@ int main() {
     int n = 3;
 
     vector<TreeNode*> result = S.generateTrees(n);
-
     for (auto i : result) {
         S.postorderClean(i);
         cout << endl;

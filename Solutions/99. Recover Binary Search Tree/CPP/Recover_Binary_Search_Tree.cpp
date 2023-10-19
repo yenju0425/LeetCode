@@ -61,12 +61,12 @@ int main() {
 
     // input tree structure:
     //
-    //     rt(2)
-    //      |     \
+    //    rt(2)
+    //     |    \
     //   *n1(4) *n2(1)
-    //     |      |     \
+    //     |      |    \
     //    n3(0)  n4(3)  n5(5)
-    //
+
     TreeNode n5(5);
     TreeNode n4(3);
     TreeNode n3(0);
@@ -75,7 +75,9 @@ int main() {
     TreeNode rt(2, &n1, &n2);
 
     S.recoverTree(&rt);
+
     S.postorderPrint(&rt);
+    cout << endl;
 
     return 0;
 }

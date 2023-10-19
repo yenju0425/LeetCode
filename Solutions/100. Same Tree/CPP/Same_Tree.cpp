@@ -35,7 +35,6 @@ int main() {
     TreeNode n2(2);
     TreeNode n4(4, &n2, nullptr);
     TreeNode n1(1, nullptr, nullptr);
-
     TreeNode r1(3, &n4, &n1);
     TreeNode r2(3, &n1, &n4);
 

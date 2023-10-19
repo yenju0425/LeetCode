@@ -37,12 +37,12 @@ int main() {
 
     // input tree structure:
     //
-    //     rt(0)
-    //     |     \
+    //    rt(0)
+    //     |    \
     //    n1(1)  n2(2)
-    //     |      |     \
+    //     |      |    \
     //    n3(3)  n4(4)  n5(5)
-    //
+
     TreeNode n5(5);
     TreeNode n4(4);
     TreeNode n3(3);
@@ -51,7 +51,6 @@ int main() {
     TreeNode rt(0, &n1, &n2);
 
     vector<int> result = S.inorderTraversal(&rt);
-
     for (auto i : result) {
         cout << i << ' ';
     }

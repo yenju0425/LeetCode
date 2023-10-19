@@ -14,15 +14,16 @@ struct TreeNode {
 class Solution {
 public:
     bool isSameTree(TreeNode* p, TreeNode* q) {
-        if (p == nullptr and q == nullptr) {
+        if (p == nullptr && q == nullptr) {
             return true;
         }
-        if (p == nullptr xor q == nullptr) {
+        else if (p == nullptr || q == nullptr) {
             return false;
         }
-        if (p->val == q->val and isSameTree(p->left, q->right) and isSameTree(p->right, q->left)) {
+        else if (p->val == q->val && isSameTree(p->left, q->left) && isSameTree(p->right, q->right)) {
             return true;
         }
+
         return false;
     }
 
@@ -32,24 +33,24 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input tree structure:
     //
-    //     rt(0)
-    //     |     \
+    //    rt(0)
+    //     |    \
     //    n1(0)  n2(0)
-    //     |      |     \
+    //     |      |    \
     //    n3(0)  n4(0)  n5(0)
-    //
-    TreeNode* n5 = new TreeNode(0);
-    TreeNode* n4 = new TreeNode(0);
-    TreeNode* n3 = new TreeNode(0);
-    TreeNode* n2 = new TreeNode(0, n4, n5);
-    TreeNode* n1 = new TreeNode(0, n3, nullptr);
-    TreeNode* rt = new TreeNode(0, n1, n2);
 
-    cout << S->isSymmetric(rt) << endl;
+    TreeNode n5(0);
+    TreeNode n4(0);
+    TreeNode n3(0);
+    TreeNode n2(0, &n4, &n5);
+    TreeNode n1(0, &n3, nullptr);
+    TreeNode rt(0, &n1, &n2);
+
+    cout << S.isSymmetric(&rt) << endl;
 
     return 0;
 }

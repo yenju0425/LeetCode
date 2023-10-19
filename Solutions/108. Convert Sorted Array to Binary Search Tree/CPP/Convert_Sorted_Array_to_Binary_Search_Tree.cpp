@@ -19,14 +19,14 @@ private:
     vector<int> nums;
 
 public:
-    TreeNode* growTrees(int idx, int n) {
+    TreeNode* treeBuilder(int idx, int n) {
         if (n == 0) {
             return nullptr;
         }
 
         int i = idx + n / 2;
-        TreeNode* left = growTrees(idx, i - idx);
-        TreeNode* right = growTrees(i + 1, idx + n - i - 1);
+        TreeNode* left = treeBuilder(idx, i - idx);
+        TreeNode* right = treeBuilder(i + 1, idx + n - i - 1);
 
         return new TreeNode(nums[i], left, right);
     }
@@ -35,48 +35,48 @@ public:
         this->nums = nums;
         this->nums_size = nums.size();
 
-        return growTrees(0, nums_size);
+        return treeBuilder(0, nums_size);
+    }
+
+    void inorderPrint(TreeNode* root) {
+        if (root == nullptr) {
+            return;
+        }
+
+        inorderPrint(root->left);
+
+        cout << root->val << " ";
+
+        inorderPrint(root->right);
+    }
+
+    void postorderClean(TreeNode* root) {
+        if (root == nullptr) {
+            return;
+        }
+
+        postorderClean(root->left);
+        postorderClean(root->right);
+
+        cout << root->val << " ";
+
+        delete root;
     }
 };
 
-void BFS_levelorder(TreeNode* root) {
-    vector<queue<TreeNode*>> Q(2);
-
-    int idx = 0;
-    if (root != nullptr) {
-        Q[idx].push(root);
-    }
-    while (!Q[idx].empty()) {
-        while (!Q[idx].empty()) {
-            TreeNode* node = Q[idx].front();
-            Q[idx].pop();
-
-            if (node == nullptr) {
-                cout << "# ";
-            }
-            else {
-                cout << node->val << ' ';
-                Q[!idx].push(node->left);
-                Q[!idx].push(node->right);
-            }
-        }
-
-        idx = !idx;
-        cout << "| ";
-    }
-
-    cout << endl;
-}
-
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> nums{-10, -3, 0, 5, 9};
 
-    TreeNode* result = S->sortedArrayToBST(nums);
+    TreeNode* result = S.sortedArrayToBST(nums);
 
-    BFS_levelorder(result);
+    S.inorderPrint(result);
+    cout << endl;
+
+    S.postorderClean(result);
+    cout << endl;
 
     return 0;
 }
