@@ -13,10 +13,10 @@ public:
         LISs = vector<vector<int>>(n, vector<int>());
 
         int LISLengthIndex = 0;
-        for(int i = n - 1; i >= 0; --i) {
+        for (int i = n - 1; i >= 0; --i) {
             int nextIndex = i;
-            for(int j = i + 1; j < n; ++j) {
-                if(nums[i] < nums[j]){
+            for (int j = i + 1; j < n; ++j) {
+                if (nums[i] < nums[j]) {
                     if (LISs[j].size() > LISs[nextIndex].size()) {
                         nextIndex = j;
                     }
@@ -40,10 +40,10 @@ public:
     }
 };
 
-int main(){
+int main() {
     Solution S;
 
-    //input
+    // input
     vector<int> seq{0, 8, 4, 18, 16, 7, 15, 20, 17, 6, 14, 1, 9, 5, 13, 3, 11, 12, 2, 10, 19};
 
     cout << S.lengthOfLIS(seq) << endl;

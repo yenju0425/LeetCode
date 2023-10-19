@@ -1,13 +1,13 @@
 #include <iostream>
-#include <vector>
 #include <unordered_map>
+#include <vector>
 
 using namespace std;
 
 class Solution {
 public:
-    vector<int> twoSum (vector<int>& nums, int target) {
-        //a hash that store the indices
+    vector<int> twoSum(vector<int>& nums, int target) {
+        // a hash that store the indices
         unordered_map<int, int> nums_idx;
 
         int nums_size = nums.size();
@@ -27,7 +27,7 @@ public:
 int main() {
     Solution S;
 
-    //inputs
+    // inputs
     int target = 9;
     vector<int> nums{15, 7, 11, 2};
 

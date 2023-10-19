@@ -3,15 +3,15 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    vector<int> runningSum(vector<int> &nums){
+    vector<int> runningSum(vector<int>& nums) {
         int nums_size = nums.size();
-        vector<int> result(nums_size, 0); //init result with size of nums_size
+        vector<int> result(nums_size, 0);  // init result with size of nums_size
 
         int temp = 0;
 
-        for(int i = 0; i < nums_size; i++){
+        for (int i = 0; i < nums_size; i++) {
             temp = temp + nums[i];
             result[i] = temp;
         }
@@ -20,15 +20,15 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     vector<int> nums{1, 2, 3, 4};
 
     vector<int> result = S->runningSum(nums);
 
-    for(auto i : result){
+    for (auto i : result) {
         cout << i << ' ';
     }
     cout << endl;

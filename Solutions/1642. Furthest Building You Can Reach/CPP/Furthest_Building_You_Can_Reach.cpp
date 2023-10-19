@@ -1,43 +1,43 @@
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <vector>
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int furthestBuilding(vector<int> &heights, int bricks, int ladders){
+    int furthestBuilding(vector<int>& heights, int bricks, int ladders) {
         int heights_size = heights.size();
 
         unsigned long totalCost = 0;
         unsigned long laddersCost = 0;
-        vector<int> useLadders; 
+        vector<int> useLadders;
 
-        for(int i = 1; i < heights_size; i++){
-            //calculate "how much" is the cost
+        for (int i = 1; i < heights_size; i++) {
+            // calculate "how much" is the cost
             int cost = heights[i] - heights[i - 1];
-            if(cost <= 0){
+            if (cost <= 0) {
                 continue;
             }
 
-            //calculate "where" to insert the cost
+            // calculate "where" to insert the cost
             vector<int>::iterator iter = upper_bound(useLadders.begin(), useLadders.end(), cost, greater<int>());
 
-            //update totalCost
+            // update totalCost
             totalCost = totalCost + cost;
 
-            //update laddersCost, "cost" should be covered by ladder
-            if(useLadders.size() < ladders){
+            // update laddersCost, "cost" should be covered by ladder
+            if (useLadders.size() < ladders) {
                 laddersCost = laddersCost + cost;
                 useLadders.insert(iter, cost);
             }
-            else if(iter - useLadders.begin() < ladders){
+            else if (iter - useLadders.begin() < ladders) {
                 laddersCost = laddersCost + cost - useLadders.back();
                 useLadders.insert(iter, cost);
                 useLadders.pop_back();
             }
 
-            if(totalCost - laddersCost > bricks){
+            if (totalCost - laddersCost > bricks) {
                 return i - 1;
             }
         }
@@ -46,11 +46,11 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
-    int bricks  = 10;
+    // inputs
+    int bricks = 10;
     int ladders = 2;
     vector<int> heights{4, 12, 2, 7, 3, 18, 20, 3, 19};
 

@@ -1,13 +1,13 @@
+#include <algorithm>
 #include <iostream>
-#include <algorithm>  
 #include <vector>
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    vector<int> sortArrayByParity(vector<int> &nums){
-        sort(nums.begin(), nums.end(), [](int a, int b){
+    vector<int> sortArrayByParity(vector<int>& nums) {
+        sort(nums.begin(), nums.end(), [](int a, int b) {
             return ((a ^ b) & 1) ? b & 1 : a < b;
         });
 
@@ -15,15 +15,15 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     vector<int> nums{3, 1, 2, 4};
 
     vector<int> result = S->sortArrayByParity(nums);
 
-    for(auto i : result){
+    for (auto i : result) {
         cout << i << ' ';
     }
     cout << endl;

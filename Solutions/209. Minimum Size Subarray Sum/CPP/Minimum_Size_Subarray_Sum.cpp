@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
     int minSubArrayLen(int target, vector<int>& nums) {
         int sum = 0;
@@ -29,10 +29,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
+    // inputs
     int target = 7;
     vector<int> nums = {2, 3, 1, 2, 4, 3};
 

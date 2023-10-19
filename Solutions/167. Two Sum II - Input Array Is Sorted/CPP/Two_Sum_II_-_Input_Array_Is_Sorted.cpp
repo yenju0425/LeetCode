@@ -1,44 +1,44 @@
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <vector>
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    vector<int> twoSum(vector<int> &numbers, int target){
+    vector<int> twoSum(vector<int>& numbers, int target) {
         int numbers_size = numbers.size();
 
-        int left  = 0;
+        int left = 0;
         int right = numbers_size - 1;
 
-        while(left < right){
-            if(numbers[left] + numbers[right] < target){
+        while (left < right) {
+            if (numbers[left] + numbers[right] < target) {
                 left = left + 1;
             }
-            else if(numbers[left] + numbers[right] > target){
+            else if (numbers[left] + numbers[right] > target) {
                 right = right - 1;
             }
-            else{
+            else {
                 break;
             }
         }
 
-        vector<int> result = {left + 1, right + 1}; //1-indexed array
+        vector<int> result = {left + 1, right + 1};  // 1-indexed array
         return result;
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
+    // inputs
     int target = 9;
     vector<int> numbers{2, 7, 11, 15};
 
     vector<int> result = S->twoSum(numbers, target);
 
-    for(auto i : result){
+    for (auto i : result) {
         cout << i << ' ';
     }
     cout << endl;

@@ -3,27 +3,27 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    bool checkPossibility(vector<int> &nums){
+    bool checkPossibility(vector<int>& nums) {
         int nums_size = nums.size();
-    
+
         int errorCounter = 0;
-        for(int i = 2; i < nums_size; i++){
-            if(nums[i - 2] > nums[i - 1]){
+        for (int i = 2; i < nums_size; i++) {
+            if (nums[i - 2] > nums[i - 1]) {
                 errorCounter = errorCounter + 1;
             }
-            if(nums[i - 1] > nums[i]){
+            if (nums[i - 1] > nums[i]) {
                 errorCounter = errorCounter + 1;
-                if(nums[i] >= nums[i - 2]){
+                if (nums[i] >= nums[i - 2]) {
                     nums[i - 1] = nums[i];
                 }
-                else{
+                else {
                     nums[i] = nums[i - 1];
                 }
             }
 
-            if(errorCounter == 2){
+            if (errorCounter == 2) {
                 return false;
             }
         }
@@ -32,10 +32,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     vector<int> nums{5, 4, 3};
 
     cout << S->checkPossibility(nums) << endl;

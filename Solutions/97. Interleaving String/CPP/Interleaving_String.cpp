@@ -1,10 +1,10 @@
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <vector>
 
 using namespace std;
 
-class Solution{
+class Solution {
 private:
     string s1;
     string s2;
@@ -15,12 +15,12 @@ private:
     vector<vector<int>> DP;
 
 public:
-    bool IL(int i1, int i2, int i3){
-        if(i3 == s3_length){
+    bool IL(int i1, int i2, int i3) {
+        if (i3 == s3_length) {
             return true;
         }
 
-        if(i1 <= s1_length and i2 <= s2_length and DP[i1][i2] != -1){
+        if (i1 <= s1_length and i2 <= s2_length and DP[i1][i2] != -1) {
             return DP[i1][i2];
         }
 
@@ -28,7 +28,7 @@ public:
         return DP[i1][i2];
     }
 
-    bool isInterleave(string s1, string s2, string s3){
+    bool isInterleave(string s1, string s2, string s3) {
         this->s1 = s1;
         this->s2 = s2;
         this->s3 = s3;
@@ -38,7 +38,7 @@ public:
 
         this->DP = vector<vector<int>>(s1_length + 1, vector<int>(s2_length + 1, -1));
 
-        if(s1_length + s2_length != s3_length){
+        if (s1_length + s2_length != s3_length) {
             return false;
         }
 
@@ -46,10 +46,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
+    // inputs
     string s1 = "aabcc";
     string s2 = "dbbca";
     string s3 = "aadbbcbcac";

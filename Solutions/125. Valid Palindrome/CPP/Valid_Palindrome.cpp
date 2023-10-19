@@ -1,23 +1,23 @@
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <string>
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    bool isPalindrome(string s){
-        //convert s to lowercase
+    bool isPalindrome(string s) {
+        // convert s to lowercase
         transform(s.begin(), s.end(), s.begin(), ::tolower);
 
-        //move alphabets and numbers foward
-        string::iterator lastChar = remove_if(s.begin(), s.end(), [](char const &c){
+        // move alphabets and numbers foward
+        string::iterator lastChar = remove_if(s.begin(), s.end(), [](char const& c) {
             return !std::isalnum(c);
         });
 
-        //palindrome checker
-        for(string::iterator l = s.begin(), r = lastChar - 1; l <= r; l++, r--){
-            if(*l != *r){
+        // palindrome checker
+        for (string::iterator l = s.begin(), r = lastChar - 1; l <= r; l++, r--) {
+            if (*l != *r) {
                 return false;
             }
         }
@@ -26,10 +26,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     string s = " ";
 
     cout << S->isPalindrome(s) << endl;

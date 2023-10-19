@@ -1,5 +1,5 @@
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -20,8 +20,8 @@ public:
         sort(start.begin(), start.end());
         sort(end.begin(), end.end());
 
-        vector<int> result(people.size());   
-        transform(people.begin(), people.end(), result.begin(), [&](int n){
+        vector<int> result(people.size());
+        transform(people.begin(), people.end(), result.begin(), [&](int n) {
             return (upper_bound(start.begin(), start.end(), n) - start.begin()) - (lower_bound(end.begin(), end.end(), n) - end.begin());
         });
 
@@ -29,10 +29,10 @@ public:
     }
 };
 
-int main(){
+int main() {
     Solution S;
 
-    //input
+    // input
     vector<vector<int>> flowers = {{1, 6}, {3, 7}, {9, 12}, {4, 13}};
     vector<int> people = {2, 3, 7, 11};
 

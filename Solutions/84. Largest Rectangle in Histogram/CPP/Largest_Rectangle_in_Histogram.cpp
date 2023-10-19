@@ -3,19 +3,19 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int largestRectangleArea(vector<int> &heights){
+    int largestRectangleArea(vector<int>& heights) {
         int maxArea = 0;
 
-        vector<vector<int>> S; //stack
-        
+        vector<vector<int>> S;  // stack
+
         int heights_size = heights.size();
-        for(int i = 0; i < heights_size; i++){
+        for (int i = 0; i < heights_size; i++) {
             int temp = i;
 
-            while(!S.empty() and S.back()[0] > heights[i]){
-                temp    = S.back()[1];
+            while (!S.empty() and S.back()[0] > heights[i]) {
+                temp = S.back()[1];
                 maxArea = max(maxArea, S.back()[0] * (i - S.back()[1]));
                 S.pop_back();
             }
@@ -24,7 +24,7 @@ public:
         }
 
         int size = S.size();
-        for(int i = 0; i < size; i++){
+        for (int i = 0; i < size; i++) {
             maxArea = max(maxArea, S[i][0] * (heights_size - S[i][1]));
         }
 
@@ -32,10 +32,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
-    
-    //input
+int main() {
+    Solution* S = new Solution();
+
+    // input
     vector<int> heights{2, 1, 5, 6, 2, 3};
 
     cout << S->largestRectangleArea(heights) << endl;

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 private:
     vector<int> houses;
     vector<vector<int>> cost;
@@ -13,36 +13,36 @@ private:
     int minC;
 
 public:
-    void paint(int idx, int preColor, int numOfNbh, int C){
-        if(idx == m){
-            if(numOfNbh == target){
+    void paint(int idx, int preColor, int numOfNbh, int C) {
+        if (idx == m) {
+            if (numOfNbh == target) {
                 minC = min(minC, C);
             }
             return;
         }
 
-        if(numOfNbh <= target){
+        if (numOfNbh <= target) {
             int curColor = houses[idx];
-            if(curColor == 0){
-                for(int i = 1; i <= n; i++){
+            if (curColor == 0) {
+                for (int i = 1; i <= n; i++) {
                     houses[idx] = i;
                     paint(idx + 1, i, numOfNbh + (i != preColor), C + cost[idx][i - 1]);
                 }
                 houses[idx] = 0;
             }
-            else{
+            else {
                 paint(idx + 1, curColor, numOfNbh + (curColor != preColor), C);
             }
         }
     }
 
-    int minCost(vector<int> &houses, vector<vector<int>> &cost, int m, int n, int target){
+    int minCost(vector<int>& houses, vector<vector<int>>& cost, int m, int n, int target) {
         this->houses = houses;
-        this->cost   = cost;
-        this->m      = m;
-        this->n      = n;
+        this->cost = cost;
+        this->m = m;
+        this->n = n;
         this->target = target;
-        this->minC   = INT_MAX;
+        this->minC = INT_MAX;
 
         paint(0, 0, 0, 0);
 
@@ -50,10 +50,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
+    // inputs
     int m = 5;
     int n = 2;
     int target = 3;

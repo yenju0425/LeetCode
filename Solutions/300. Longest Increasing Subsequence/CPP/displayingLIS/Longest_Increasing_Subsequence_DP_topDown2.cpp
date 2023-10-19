@@ -8,12 +8,12 @@ private:
     vector<vector<int>> LISs;
 
 public:
-    int lengthOfLIS(vector<int> &nums) {
+    int lengthOfLIS(vector<int>& nums) {
         LISs = vector<vector<int>>(nums.size() + 1, vector<int>());
 
         vector<int> LIS = findLIS(nums, nums.size(), 0);
 
-        for(const int& currentIndex : LIS){
+        for (const int& currentIndex : LIS) {
             cout << currentIndex << " ";
         }
         cout << endl;
@@ -22,11 +22,11 @@ public:
     }
 
     vector<int> findLIS(vector<int>& nums, int previousIndex, int currentIndex) {
-        if(currentIndex >= nums.size()) {
+        if (currentIndex >= nums.size()) {
             return vector<int>();
         }
 
-        if(LISs[previousIndex].size() > 0) {
+        if (LISs[previousIndex].size() > 0) {
             return LISs[previousIndex];
         }
 
@@ -52,7 +52,7 @@ public:
 int main() {
     Solution S;
 
-    //input
+    // input
     vector<int> seq{0, 8, 4, 18, 16, 7, 15, 20, 17, 6, 14, 1, 9, 5, 13, 3, 11, 12, 2, 10, 19};
 
     cout << S.lengthOfLIS(seq) << endl;

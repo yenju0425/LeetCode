@@ -1,18 +1,18 @@
 #include <iostream>
-#include <vector>
 #include <queue>
+#include <vector>
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int findKthLargest(vector<int> &nums, int k){
+    int findKthLargest(vector<int>& nums, int k) {
         priority_queue<int, vector<int>, greater<int>> pq;
 
         int nums_size = nums.size();
-        for(int i = 0; i < nums_size; i++){
+        for (int i = 0; i < nums_size; i++) {
             pq.push(nums[i]);
-            if(pq.size() > k){
+            if (pq.size() > k) {
                 pq.pop();
             }
         }
@@ -21,10 +21,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
+    // inputs
     int k = 2;
     vector<int> nums{3, 2, 1, 5, 6, 4};
 

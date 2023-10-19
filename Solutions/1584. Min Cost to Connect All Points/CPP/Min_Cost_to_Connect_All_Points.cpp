@@ -3,39 +3,39 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int manhattanDistance(vector<int> p1, vector<int> p2){
+    int manhattanDistance(vector<int> p1, vector<int> p2) {
         return abs(p1[0] - p2[0]) + abs(p1[1] - p2[1]);
     }
 
-    int minCostConnectPoints(vector<vector<int>> &points){
+    int minCostConnectPoints(vector<vector<int>>& points) {
         int numOfPoints = points.size();
-        vector<bool> visited(numOfPoints, false); //true if a node is visited
-        vector<int> distance(numOfPoints);        //the distance to MST
+        vector<bool> visited(numOfPoints, false);  // true if a node is visited
+        vector<int> distance(numOfPoints);         // the distance to MST
 
-        //choose point 0 as the root
+        // choose point 0 as the root
         visited[0] = true;
         distance[0] = 0;
-        for(int i = 1; i < numOfPoints; i++){
+        for (int i = 1; i < numOfPoints; i++) {
             distance[i] = manhattanDistance(points[0], points[i]);
         }
 
         int cost = 0;
-        for(int i = 1; i < numOfPoints; i++){
-            //find next node
+        for (int i = 1; i < numOfPoints; i++) {
+            // find next node
             int minIndex = -1;
-            for(int j = 0; j < numOfPoints; j++){
-                if(visited[j] == false && (minIndex == -1 || distance[j] < distance[minIndex])){
+            for (int j = 0; j < numOfPoints; j++) {
+                if (visited[j] == false && (minIndex == -1 || distance[j] < distance[minIndex])) {
                     minIndex = j;
                 }
             }
             visited[minIndex] = true;
             cost = cost + distance[minIndex];
 
-            //update the distance of the non-visited nodes
-            for(int j = 0; j < numOfPoints; j++){
-                if(visited[j] == false){
+            // update the distance of the non-visited nodes
+            for (int j = 0; j < numOfPoints; j++) {
+                if (visited[j] == false) {
                     distance[j] = min(distance[j], manhattanDistance(points[minIndex], points[j]));
                 }
             }
@@ -45,15 +45,14 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     vector<vector<int>> points{
-        { 3, 12},
-        {-2,  5},
-        {-4,  1}
-    };
+        {3, 12},
+        {-2, 5},
+        {-4, 1}};
 
     cout << S->minCostConnectPoints(points);
 

@@ -2,22 +2,22 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    bool canConstruct(string s, int k){
+    bool canConstruct(string s, int k) {
         int charCount[26] = {0};
 
         int s_size = s.size();
-        for(int i = 0; i < s_size; i++){
+        for (int i = 0; i < s_size; i++) {
             int index = s[i] - 'a';
             charCount[index] = charCount[index] + 1;
         }
 
-        int pair     = 0;
+        int pair = 0;
         int non_pair = 0;
-        for(int i = 0; i < 26; i++){
+        for (int i = 0; i < 26; i++) {
             int parity = charCount[i] % 2;
-            pair     = pair     + charCount[i] - parity;
+            pair = pair + charCount[i] - parity;
             non_pair = non_pair + parity;
         }
 
@@ -25,10 +25,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
+    // inputs
     int k = 15;
     string s = "qlkzenwmmnpkopu";
 

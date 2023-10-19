@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 private:
     int M;
     int N;
@@ -11,33 +11,33 @@ private:
     vector<vector<int>> dir;
 
 public:
-    bool isValid(int m, int n){
+    bool isValid(int m, int n) {
         return m < M && m >= 0 && n < N && n >= 0 && (grid[m][n] == ' ' || grid[m][n] == 'v');
     }
 
-    int countUnguarded(int m, int n, vector<vector<int>> &guards, vector<vector<int>> &walls){
+    int countUnguarded(int m, int n, vector<vector<int>>& guards, vector<vector<int>>& walls) {
         this->M = m;
         this->N = n;
         this->grid = vector<vector<char>>(m, vector<char>(n, ' '));
-        this->dir  = vector<vector<int>>{{ 1,  0}, { 0,  1}, {-1,  0}, { 0, -1}};
+        this->dir = vector<vector<int>>{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 
         int numOfGuards = guards.size();
-        for(int i = 0; i < numOfGuards; i++){
+        for (int i = 0; i < numOfGuards; i++) {
             grid[guards[i][0]][guards[i][1]] = 'g';
         }
 
         int numOfWalls = walls.size();
-        for(int i = 0; i < numOfWalls; i++){
+        for (int i = 0; i < numOfWalls; i++) {
             grid[walls[i][0]][walls[i][1]] = 'w';
         }
 
         int couter = m * n - numOfGuards - numOfWalls;
-        for(int i = 0; i < numOfGuards; i++){
-            for(int j = 0; j < 4; j++){
+        for (int i = 0; i < numOfGuards; i++) {
+            for (int j = 0; j < 4; j++) {
                 int row = guards[i][0] + dir[j][0];
                 int col = guards[i][1] + dir[j][1];
-                while(isValid(row, col)){
-                    if(grid[row][col] != 'v'){
+                while (isValid(row, col)) {
+                    if (grid[row][col] != 'v') {
                         grid[row][col] = 'v';
                         couter = couter - 1;
                     }
@@ -46,15 +46,15 @@ public:
                 }
             }
         }
-    
+
         return couter;
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
+    // inputs
     int m = 4;
     int n = 6;
     vector<vector<int>> guards{{0, 0}, {1, 1}, {2, 3}};

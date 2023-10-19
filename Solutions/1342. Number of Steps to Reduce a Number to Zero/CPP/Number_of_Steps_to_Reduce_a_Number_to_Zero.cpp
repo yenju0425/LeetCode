@@ -2,15 +2,15 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int numberOfSteps(int num){
-        if(num == 0){
+    int numberOfSteps(int num) {
+        if (num == 0) {
             return 0;
         }
 
-        int numOf[2] ={0};
-        while(num){
+        int numOf[2] = {0};
+        while (num) {
             int bit = num & 1;
             numOf[bit] = numOf[bit] + 1;
             num = num >> 1;
@@ -20,10 +20,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     int num = 14;
 
     cout << S->numberOfSteps(num) << endl;

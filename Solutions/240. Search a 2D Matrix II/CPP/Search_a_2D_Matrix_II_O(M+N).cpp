@@ -3,22 +3,22 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    bool searchMatrix(vector<vector<int>> &matrix, int &target){
+    bool searchMatrix(vector<vector<int>>& matrix, int& target) {
         int M = matrix.size();
         int N = matrix[0].size();
         int m = 0;
         int n = N - 1;
         int size = M + N;
-        for(int i = 0; i < size && m < M && n >= 0; i++){
-            if(matrix[m][n] > target){
+        for (int i = 0; i < size && m < M && n >= 0; i++) {
+            if (matrix[m][n] > target) {
                 n = n - 1;
             }
-            else if(matrix[m][n] < target){
+            else if (matrix[m][n] < target) {
                 m = m + 1;
             }
-            else{
+            else {
                 return true;
             }
         }
@@ -27,14 +27,13 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
+    // inputs
     int target = 7;
     vector<vector<int>> matrix{
-        { 1,  4,  7}
-    };
+        {1, 4, 7}};
 
     cout << S->searchMatrix(matrix, target) << endl;
 

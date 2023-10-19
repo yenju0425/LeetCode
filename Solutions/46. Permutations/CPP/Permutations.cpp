@@ -1,5 +1,5 @@
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -18,12 +18,12 @@ public:
     }
 
     void permGenerator(int currentIdx) {
-        if(currentIdx == nums_size) {
+        if (currentIdx == nums_size) {
             p.push_back(nums);
             return;
         }
 
-        for(int i = currentIdx; i < nums_size; ++i) {
+        for (int i = currentIdx; i < nums_size; ++i) {
             swap(nums[currentIdx], nums[i]);
             permGenerator(currentIdx + 1);
             swap(nums[currentIdx], nums[i]);
@@ -31,7 +31,7 @@ public:
     }
 
     vector<vector<int>> permute(vector<int>& nums) {
-        this->nums      = nums;
+        this->nums = nums;
         this->nums_size = nums.size();
         permGenerator(0);
         return p;
@@ -41,14 +41,14 @@ public:
 int main() {
     Solution S;
 
-    //input
+    // input
     vector<int> nums{1, 2, 4, 8};
 
     vector<vector<int>> result = S.permute(nums);
 
     cout << "number of permutations: " << result.size() << endl;
-    for(auto i : result) {
-        for(auto j : i) {
+    for (auto i : result) {
+        for (auto j : i) {
             cout << j << ' ';
         }
         cout << endl;

@@ -2,11 +2,11 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int hammingWeight(uint32_t n){
+    int hammingWeight(uint32_t n) {
         int counter = 0;
-        while(n){
+        while (n) {
             counter = counter + (n & 1);
             n = n >> 1;
         }
@@ -14,10 +14,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     int n = 26;
 
     cout << S->hammingWeight(n) << endl;

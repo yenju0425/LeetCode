@@ -1,5 +1,5 @@
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -12,15 +12,15 @@ public:
         result.push_back(intervals[0]);
 
         int intervals_size = intervals.size();
-        for(int i = 1; i < intervals_size; ++i) {
-            if(intervals[i][0] <= result.back()[1]) {
+        for (int i = 1; i < intervals_size; ++i) {
+            if (intervals[i][0] <= result.back()[1]) {
                 result.back()[1] = max(intervals[i][1], result.back()[1]);
             }
             else {
                 result.push_back(intervals[i]);
             }
         }
-    
+
         return result;
     }
 };
@@ -28,16 +28,15 @@ public:
 int main() {
     Solution S;
 
-    //input
-    vector<vector<int>> v {
+    // input
+    vector<vector<int>> v{
         {1, 4},
         {0, 2},
-        {3, 5}
-    };
+        {3, 5}};
 
     vector<vector<int>> result = S.merge(v);
 
-    for(auto i : result) {
+    for (auto i : result) {
         cout << i[0] << ' ' << i[1] << endl;
     }
 

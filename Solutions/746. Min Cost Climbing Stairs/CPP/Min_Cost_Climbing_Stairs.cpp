@@ -3,11 +3,11 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int minCostClimbingStairs(vector<int> &cost){
+    int minCostClimbingStairs(vector<int>& cost) {
         int cost_size = cost.size();
-        for(int i = 2; i < cost_size; i++){
+        for (int i = 2; i < cost_size; i++) {
             cost[i] = cost[i] + min(cost[i - 1], cost[i - 2]);
         }
 
@@ -15,10 +15,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     vector<int> cost{10, 15, 20};
 
     cout << S->minCostClimbingStairs(cost) << endl;

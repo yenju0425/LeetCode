@@ -3,32 +3,32 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int minimumAverageDifference(vector<int> &nums){
+    int minimumAverageDifference(vector<int>& nums) {
         long sum = 0;
         long avg = 0;
 
         int numsSize = nums.size();
-        for(int i = 0; i < numsSize; i++){
+        for (int i = 0; i < numsSize; i++) {
             sum = sum + nums[i];
         }
 
         avg = sum / numsSize;
 
-        //iterate through all nums
-        long left  = sum;
+        // iterate through all nums
+        long left = sum;
         long right = 0;
         long minAD = avg;
 
         int minId = numsSize - 1;
-        for(int i = numsSize - 1; i > 0; i--){
-            left  = left  - nums[i];
+        for (int i = numsSize - 1; i > 0; i--) {
+            left = left - nums[i];
             right = right + nums[i];
 
             long AD = abs(left / i - right / (numsSize - i));
 
-            if(AD <= minAD){
+            if (AD <= minAD) {
                 minId = i - 1;
                 minAD = AD;
             }
@@ -38,10 +38,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     vector<int> nums{2, 5, 3, 9, 5, 3};
 
     cout << S->minimumAverageDifference(nums) << endl;

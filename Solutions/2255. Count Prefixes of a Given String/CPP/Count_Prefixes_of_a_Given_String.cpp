@@ -3,16 +3,16 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int countPrefixes(vector<string> &words, string s){
+    int countPrefixes(vector<string>& words, string s) {
         int counter = 0;
-    
+
         int word_size = words.size();
-        for(int i = 0; i < word_size; i++){
+        for (int i = 0; i < word_size; i++) {
             bool match = true;
-            for(int j = 0; j < words[i].length() && match; j++){
-                if(j >= s.length() || words[i][j] != s[j]){
+            for (int j = 0; j < words[i].length() && match; j++) {
+                if (j >= s.length() || words[i][j] != s[j]) {
                     match = false;
                 }
             }
@@ -24,10 +24,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
+    // inputs
     string s = "aabdk";
     vector<string> words{"aa", "aabd", "c"};
 

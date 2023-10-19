@@ -9,9 +9,9 @@ public:
         string result = "";
 
         int counter = 0;
-        while(counter < strs[0].size()) { //return if the first string is already empty
-            for(int i = 1; i < strs.size(); ++i) {
-                if(counter >= strs[i].size() || strs[i][counter] != strs[0][counter]) {
+        while (counter < strs[0].size()) {  // return if the first string is already empty
+            for (int i = 1; i < strs.size(); ++i) {
+                if (counter >= strs[i].size() || strs[i][counter] != strs[0][counter]) {
                     return result;
                 }
             }
@@ -26,7 +26,7 @@ public:
 int main() {
     Solution S;
 
-    //input
+    // input
     vector<string> strs{"a", "abc", "apple"};
 
     cout << S.longestCommonPrefix(strs) << endl;

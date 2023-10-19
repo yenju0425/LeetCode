@@ -7,24 +7,24 @@ class Solution {
 public:
     bool isValid(string s) {
         stack<char> S;
-        for(const char& c : s) {
-            if(c == '(' || c == '[' || c == '{') {
+        for (const char& c : s) {
+            if (c == '(' || c == '[' || c == '{') {
                 S.push(c);
             }
-            else if(c == ')') {
-                if(S.empty() || S.top() != '(') {
+            else if (c == ')') {
+                if (S.empty() || S.top() != '(') {
                     return false;
                 }
                 S.pop();
             }
-            else if(c == ']') {
-                if(S.empty() || S.top() != '[') {
+            else if (c == ']') {
+                if (S.empty() || S.top() != '[') {
                     return false;
                 }
                 S.pop();
             }
-            else if(c == '}') {
-                if(S.empty() || S.top() != '{') {
+            else if (c == '}') {
+                if (S.empty() || S.top() != '{') {
                     return false;
                 }
                 S.pop();
@@ -34,7 +34,7 @@ public:
             }
         }
 
-        if(!S.empty()) {
+        if (!S.empty()) {
             return false;
         }
 
@@ -45,7 +45,7 @@ public:
 int main() {
     Solution S;
 
-    //input
+    // input
     string s = "()[]{}";
 
     cout << S.isValid(s) << endl;

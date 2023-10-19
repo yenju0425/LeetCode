@@ -1,25 +1,25 @@
-//Reference: https://leetcode.com/problems/short-encoding-of-words/discuss/125811/C%2B%2BJavaPython-Easy-Understood-Solution-with-Explanation
+// Reference: https://leetcode.com/problems/short-encoding-of-words/discuss/125811/C%2B%2BJavaPython-Easy-Understood-Solution-with-Explanation
 #include <iostream>
-#include <vector>
 #include <unordered_set>
+#include <vector>
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int minimumLengthEncoding(vector<string> &words){
+    int minimumLengthEncoding(vector<string>& words) {
         unordered_set<string> pruned_words(words.begin(), words.end());
 
         int numOfWords = words.size();
-        for(int i = 0; i < numOfWords; i++){
+        for (int i = 0; i < numOfWords; i++) {
             int word_length = words[i].length();
-            for(int j = 1; j < word_length; j++){
+            for (int j = 1; j < word_length; j++) {
                 pruned_words.erase(words[i].substr(j));
             }
         }
 
         int minLength = 0;
-        for(unordered_set<string>::iterator iter = pruned_words.begin(); iter != pruned_words.end(); iter++){
+        for (unordered_set<string>::iterator iter = pruned_words.begin(); iter != pruned_words.end(); iter++) {
             minLength = minLength + iter->length() + 1;
         }
 
@@ -27,10 +27,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     vector<string> words{"time", "me", "bell"};
 
     cout << S->minimumLengthEncoding(words) << endl;

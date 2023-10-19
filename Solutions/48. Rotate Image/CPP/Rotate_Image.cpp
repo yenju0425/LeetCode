@@ -17,9 +17,9 @@ public:
         int m = matrix.size();
 
         int numOfLevel = m / 2;
-        for(int i = 0; i < numOfLevel; ++i) {
+        for (int i = 0; i < numOfLevel; ++i) {
             int maxColumnIdx = m - 1 - i;
-            for(int j = i; j < maxColumnIdx; ++j) {
+            for (int j = i; j < maxColumnIdx; ++j) {
                 int temp_i = m - 1 - i;
                 int temp_j = m - 1 - j;
                 swap(matrix[i][j], matrix[j][temp_i], matrix[temp_i][temp_j], matrix[temp_j][i]);
@@ -31,17 +31,16 @@ public:
 int main() {
     Solution S;
 
-    //input
-    vector<vector<int>> matrix {
+    // input
+    vector<vector<int>> matrix{
         {1, 2, 3},
         {4, 5, 6},
-        {7, 8, 9}
-    };
+        {7, 8, 9}};
 
     S.rotate(matrix);
 
-    for(auto i : matrix) {
-        for(auto j : i) {
+    for (auto i : matrix) {
+        for (auto j : i) {
             cout << j << ' ';
         }
         cout << endl;

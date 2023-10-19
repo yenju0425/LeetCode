@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 private:
-    vector<vector<vector<int>>> LISs; // previousIndex, currentIndex, LIS
+    vector<vector<vector<int>>> LISs;  // previousIndex, currentIndex, LIS
 
 public:
     int lengthOfLIS(vector<int>& nums) {
@@ -13,7 +13,7 @@ public:
 
         vector<int> LIS = findLIS(nums, nums.size(), 0);
 
-        for(const int& i : LIS){
+        for (const int& i : LIS) {
             cout << i << " ";
         }
         cout << endl;
@@ -31,8 +31,8 @@ public:
         }
 
         vector<int> takeCurrentIndex;
-        if(previousIndex == nums.size() || nums[currentIndex] > nums[previousIndex]) {
-            takeCurrentIndex = findLIS(nums,  currentIndex,  currentIndex + 1);
+        if (previousIndex == nums.size() || nums[currentIndex] > nums[previousIndex]) {
+            takeCurrentIndex = findLIS(nums, currentIndex, currentIndex + 1);
             takeCurrentIndex.push_back(nums[currentIndex]);
         }
 
@@ -52,7 +52,7 @@ public:
 int main() {
     Solution S;
 
-    //input
+    // input
     vector<int> seq{0, 8, 4, 18, 16, 7, 15, 20, 17, 6, 14, 1, 9, 5, 13, 3, 11, 12, 2, 10, 19};
 
     cout << S.lengthOfLIS(seq) << endl;

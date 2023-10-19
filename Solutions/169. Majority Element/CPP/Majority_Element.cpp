@@ -1,23 +1,23 @@
 #include <iostream>
-#include <vector>
 #include <unordered_map>
+#include <vector>
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int majorityElement(vector<int> &nums){
+    int majorityElement(vector<int>& nums) {
         int nums_size = nums.size();
         unordered_map<long, long> M;
-        for(int i = 0; i < nums_size; i++){
-            if(M.count(nums[i])){
+        for (int i = 0; i < nums_size; i++) {
+            if (M.count(nums[i])) {
                 M[nums[i]] = M[nums[i]] + 1;
             }
-            else{
+            else {
                 M[nums[i]] = 1;
             }
-            
-            if(M[nums[i]] > (nums_size / 2)){
+
+            if (M[nums[i]] > (nums_size / 2)) {
                 return nums[i];
             }
         }
@@ -26,13 +26,13 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     vector<int> nums{2, 2, 1, 1, 1, 2, 2};
 
     cout << S->majorityElement(nums) << endl;
-    
+
     return 0;
 }

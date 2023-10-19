@@ -25,8 +25,8 @@ class Solution {
 public:
     int binarySearch(const int& target, MountainArray& mountainArr, int begin, int end) {
         if (begin == end) {
-            return -1; // search failed
-        } 
+            return -1;  // search failed
+        }
 
         int partition = (begin + end) / 2;
         int height1 = mountainArr.get(partition);
@@ -55,8 +55,8 @@ public:
 
     int mountainSearch(const int& target, MountainArray& mountainArr, int begin, int end) {
         if (begin == end) {
-            return -1; // search failed
-        } 
+            return -1;  // search failed
+        }
 
         int partition = (begin + end) / 2;
         int height1 = mountainArr.get(partition);
@@ -98,10 +98,10 @@ public:
     }
 };
 
-int main(){
+int main() {
     Solution S;
 
-    //input
+    // input
     vector<int> vec = {1, 2, 3, 4, 5, 3, 1};
     MountainArray M(vec);
 

@@ -2,11 +2,11 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int titleToNumber(string columnTitle){
+    int titleToNumber(string columnTitle) {
         int result = 0;
-        for(string::iterator iter = columnTitle.begin(); iter != columnTitle.end(); iter++){
+        for (string::iterator iter = columnTitle.begin(); iter != columnTitle.end(); iter++) {
             result = result * 26 + *iter - '@';
         }
 
@@ -14,13 +14,13 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     string columnTitle = "AAA";
 
     cout << S->titleToNumber(columnTitle) << endl;
-    
+
     return 0;
 }

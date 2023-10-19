@@ -2,13 +2,13 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int maxNumberOfBalloons(string text){
+    int maxNumberOfBalloons(string text) {
         int charCount[26] = {0};
-    
+
         int text_size = text.length();
-        for(int i = 0; i < text_size; i++){
+        for (int i = 0; i < text_size; i++) {
             int index = text[i] - 'a';
             charCount[index] = charCount[index] + 1;
         }
@@ -17,10 +17,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     string text = "loonbalxballpoon";
 
     cout << S->maxNumberOfBalloons(text) << endl;

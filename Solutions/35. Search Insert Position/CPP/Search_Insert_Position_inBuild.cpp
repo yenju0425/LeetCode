@@ -1,5 +1,5 @@
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -14,7 +14,7 @@ public:
 int main() {
     Solution S;
 
-    //inputs
+    // inputs
     int target = 5;
     vector<int> nums{1, 3, 5, 6};
 

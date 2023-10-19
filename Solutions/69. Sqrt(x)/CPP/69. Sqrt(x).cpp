@@ -2,21 +2,21 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int mySqrt(int x){
+    int mySqrt(int x) {
         long i = 1;
-        while(i * i <= x){
+        while (i * i <= x) {
             i = i + 1;
         }
         return i - 1;
     }
 };
 
-int main(){
-    Solution *S = new Solution();
-    
-    //input
+int main() {
+    Solution* S = new Solution();
+
+    // input
     int x = 8;
 
     cout << S->mySqrt(x) << endl;

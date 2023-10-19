@@ -3,22 +3,22 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int maxProfit(vector<int> &prices){
+    int maxProfit(vector<int>& prices) {
         int profit = 0;
 
         int buyPrice = prices[0];
 
         int prices_size = prices.size();
-        for(int i = 1; i < prices_size; i++){
+        for (int i = 1; i < prices_size; i++) {
             int price = prices[i];
-            
-            //buy at a lower price
-            if(price < buyPrice){
+
+            // buy at a lower price
+            if (price < buyPrice) {
                 buyPrice = price;
             }
-            else{
+            else {
                 profit = max(profit, price - buyPrice);
             }
         }
@@ -27,10 +27,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     vector<int> prices{7, 1, 5, 3, 6, 4};
 
     cout << S->maxProfit(prices) << endl;

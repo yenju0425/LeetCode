@@ -2,33 +2,33 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 private:
     string s;
     int s_len;
     int numOfWays;
 
 public:
-    void countWays(int idx){
-        if(idx == s_len){
+    void countWays(int idx) {
+        if (idx == s_len) {
             numOfWays = numOfWays + 1;
             return;
         }
 
-        if(s[idx] == '0'){
+        if (s[idx] == '0') {
             return;
         }
 
-        //take 1
+        // take 1
         countWays(idx + 1);
 
-        //take 2
-        if(idx < s_len - 1 and stoi(s.substr(idx, 2)) <= 26){
+        // take 2
+        if (idx < s_len - 1 and stoi(s.substr(idx, 2)) <= 26) {
             countWays(idx + 2);
         }
     }
 
-    int numDecodings(string s){
+    int numDecodings(string s) {
         this->s = s;
         this->s_len = s.length();
         this->numOfWays = 0;
@@ -39,10 +39,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     string s = "226";
 
     cout << S->numDecodings(s) << endl;

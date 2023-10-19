@@ -15,15 +15,15 @@ private:
 
 public:
     void combGenerator(int currentNumIdx, int currentSum) {
-        if(currentSum > target) {
+        if (currentSum > target) {
             return;
         }
-        else if(currentSum == target) {
+        else if (currentSum == target) {
             result.push_back(currentComb);
             return;
         }
 
-        for(int i = currentNumIdx; i < numOfCandidates; ++i) {
+        for (int i = currentNumIdx; i < numOfCandidates; ++i) {
             currentComb.push_back(candidates[i]);
             combGenerator(i, currentSum + candidates[i]);
             currentComb.pop_back();
@@ -44,14 +44,14 @@ public:
 int main() {
     Solution S;
 
-    //inputs
+    // inputs
     int target = 8;
     vector<int> candidates{2, 3, 5};
 
     vector<vector<int>> result = S.combinationSum(candidates, target);
 
-    for(auto i : result) {
-        for(auto j : i) {
+    for (auto i : result) {
+        for (auto j : i) {
             cout << j << ' ';
         }
         cout << endl;

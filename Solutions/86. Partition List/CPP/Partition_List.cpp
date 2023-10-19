@@ -2,31 +2,31 @@
 
 using namespace std;
 
-struct ListNode{
+struct ListNode {
     int val;
-    ListNode *next;
-    ListNode() : val(0), next(nullptr){}
-    ListNode(int x) : val(x), next(nullptr){}
-    ListNode(int x, ListNode *next) : val(x), next(next){}
+    ListNode* next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode* next) : val(x), next(next) {}
 };
 
-class Solution{
+class Solution {
 public:
-    ListNode* partition(ListNode *head, int x){
-        ListNode *dummyHead_geq = new ListNode(0); //>=
-        ListNode *dummyHead_ltn = new ListNode(0); //<
+    ListNode* partition(ListNode* head, int x) {
+        ListNode* dummyHead_geq = new ListNode(0);  //>=
+        ListNode* dummyHead_ltn = new ListNode(0);  //<
 
-        ListNode *geq_ptr = dummyHead_geq;
-        ListNode *ltn_ptr = dummyHead_ltn;
+        ListNode* geq_ptr = dummyHead_geq;
+        ListNode* ltn_ptr = dummyHead_ltn;
 
-        while(head != nullptr){
-            if(head->val >= x){
+        while (head != nullptr) {
+            if (head->val >= x) {
                 geq_ptr->next = head;
-                geq_ptr       = head;
+                geq_ptr = head;
             }
-            else{
+            else {
                 ltn_ptr->next = head;
-                ltn_ptr       = head;
+                ltn_ptr = head;
             }
 
             head = head->next;
@@ -39,18 +39,18 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
+    // inputs
     int x = 3;
-    ListNode *n2 = new ListNode(2);
-    ListNode *n1 = new ListNode(3, n2);
-    ListNode *hd = new ListNode(9, n1);
+    ListNode* n2 = new ListNode(2);
+    ListNode* n1 = new ListNode(3, n2);
+    ListNode* hd = new ListNode(9, n1);
 
-    ListNode *result = S->partition(hd, x);
+    ListNode* result = S->partition(hd, x);
 
-    while(result != nullptr){
+    while (result != nullptr) {
         cout << result->val;
         result = result->next;
     }

@@ -3,12 +3,12 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int minCostClimbingStairs(vector<int> &cost){
+    int minCostClimbingStairs(vector<int>& cost) {
         int idx = 0;
         int temp[2] = {cost[0], cost[1]};
-        for(vector<int>::iterator iter = cost.begin() + 2; iter != cost.end(); iter++){
+        for (vector<int>::iterator iter = cost.begin() + 2; iter != cost.end(); iter++) {
             temp[idx] = min(temp[0], temp[1]) + *iter;
             idx = !idx;
         }
@@ -17,10 +17,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     vector<int> cost{10, 15, 20};
 
     cout << S->minCostClimbingStairs(cost) << endl;

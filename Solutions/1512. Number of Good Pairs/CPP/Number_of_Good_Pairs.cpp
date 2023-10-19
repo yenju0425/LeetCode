@@ -1,6 +1,6 @@
 #include <iostream>
-#include <vector>
 #include <map>
+#include <vector>
 
 using namespace std;
 
@@ -28,7 +28,7 @@ public:
 int main() {
     Solution S;
 
-    //input
+    // input
     vector<int> nums{1, 2, 3, 1, 1, 3};
 
     cout << S.numIdenticalPairs(nums) << endl;

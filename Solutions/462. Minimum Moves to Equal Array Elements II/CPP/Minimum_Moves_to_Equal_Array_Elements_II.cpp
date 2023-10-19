@@ -1,12 +1,12 @@
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <vector>
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int minMoves2(vector<int> &nums){
+    int minMoves2(vector<int>& nums) {
         int nums_size = nums.size();
 
         sort(nums.begin(), nums.end());
@@ -14,7 +14,7 @@ public:
         int mid = nums[nums_size / 2];
 
         int distance = 0;
-        for(int i = 0; i < nums_size; i++){
+        for (int i = 0; i < nums_size; i++) {
             distance = distance + abs(nums[i] - mid);
         }
 
@@ -22,10 +22,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     vector<int> nums{1, 10, 2, 9};
 
     cout << S->minMoves2(nums) << endl;

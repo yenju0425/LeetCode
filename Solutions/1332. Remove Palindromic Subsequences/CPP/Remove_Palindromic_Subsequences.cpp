@@ -2,12 +2,12 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    bool isPalindrome(string s){
+    bool isPalindrome(string s) {
         int s_size = s.size();
-        for(int i = 0, j = s_size - 1; i < j; i++, j--){
-            if(s[i] != s[j]){
+        for (int i = 0, j = s_size - 1; i < j; i++, j--) {
+            if (s[i] != s[j]) {
                 return false;
             }
         }
@@ -15,15 +15,15 @@ public:
         return true;
     }
 
-    int removePalindromeSub(string s){
-        return isPalindrome(s) ? 1 : 2; //if s is not palindrome, remove all a's, and then remove all b's (at most 2 steps)
+    int removePalindromeSub(string s) {
+        return isPalindrome(s) ? 1 : 2;  // if s is not palindrome, remove all a's, and then remove all b's (at most 2 steps)
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     string s = "aababbb";
 
     cout << S->removePalindromeSub(s) << endl;

@@ -1,5 +1,5 @@
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -8,9 +8,9 @@ struct TreeNode {
     int val;
     TreeNode* left;
     TreeNode* right;
-    TreeNode() : val(0), left(nullptr), right(nullptr){}
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr){}
-    TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right){}
+    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
 
 class Solution {
@@ -52,20 +52,20 @@ public:
     }
 };
 
-int main(){
+int main() {
     Solution S;
 
-    //input tree structure:
+    // input tree structure:
     //
-    //    rt(3)
-    //    |     \
+    //     rt(3)
+    //     |     \
     //    n1(9)  n2(0)
-    //           |     \
+    //            |     \
     //           n4(5)  n5(7)
     //
     vector<int> preorder{3, 9, 0, 5, 7};
     vector<int> inorder{9, 3, 5, 0, 7};
-    
+
     TreeNode* result = S.buildTree(preorder, inorder);
 
     S.cleanTree(result);

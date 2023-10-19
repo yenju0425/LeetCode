@@ -3,48 +3,48 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int binary_search(vector<int> &nums, int &target, int left, int right){
-        if(left >= right){
+    int binary_search(vector<int>& nums, int& target, int left, int right) {
+        if (left >= right) {
             return false;
         }
 
         int idx = (left + right) / 2;
-        if(nums[idx] == target){
+        if (nums[idx] == target) {
             return true;
         }
-        
-        if(nums[left] < nums[idx] or nums[idx] > nums[right - 1]){
-            if(nums[left] <= target and target < nums[idx]){
+
+        if (nums[left] < nums[idx] or nums[idx] > nums[right - 1]) {
+            if (nums[left] <= target and target < nums[idx]) {
                 return binary_search(nums, target, left, idx);
             }
-            else{
+            else {
                 return binary_search(nums, target, idx + 1, right);
             }
         }
-        else if(nums[idx] < nums[right - 1] or nums[left] > nums[idx]){
-            if(nums[idx] < target and target <= nums[right - 1]){
+        else if (nums[idx] < nums[right - 1] or nums[left] > nums[idx]) {
+            if (nums[idx] < target and target <= nums[right - 1]) {
                 return binary_search(nums, target, idx + 1, right);
             }
-            else{
+            else {
                 return binary_search(nums, target, left, idx);
             }
         }
-        else{
+        else {
             return binary_search(nums, target, left, idx) or binary_search(nums, target, idx + 1, right);
         }
     }
 
-    int search(vector<int> &nums, int target){
+    int search(vector<int>& nums, int target) {
         return binary_search(nums, target, 0, nums.size());
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
+    // inputs
     int target = 1;
     vector<int> nums{2, 5, 6, 0, 0, 1, 2};
 

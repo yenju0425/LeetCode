@@ -3,23 +3,23 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int removeDuplicates(vector<int> &nums){
+    int removeDuplicates(vector<int>& nums) {
         int counter = 1;
 
         vector<int>::iterator iter = nums.begin() + 1;
-        while(iter != nums.end()){
-            if(*iter == *(iter - 1)){
-                if(counter >= 2){
+        while (iter != nums.end()) {
+            if (*iter == *(iter - 1)) {
+                if (counter >= 2) {
                     nums.erase(iter);
                 }
-                else{
+                else {
                     counter = counter + 1;
                     iter = iter + 1;
                 }
             }
-            else{
+            else {
                 counter = 1;
                 iter = iter + 1;
             }
@@ -29,10 +29,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     vector<int> nums{1, 1, 1, 2, 2, 3};
 
     cout << S->removeDuplicates(nums) << endl;

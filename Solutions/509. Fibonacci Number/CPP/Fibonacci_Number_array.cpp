@@ -3,17 +3,17 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int fib(int n){
-        if(n < 2){
+    int fib(int n) {
+        if (n < 2) {
             return n;
         }
 
         vector<int> nums(n + 1, 0);
         nums[1] = 1;
 
-        for(int i = 2; i <= n; i++){
+        for (int i = 2; i <= n; i++) {
             nums[i] = nums[i - 2] + nums[i - 1];
         }
 
@@ -21,10 +21,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     int n = 5;
 
     cout << S->fib(n) << endl;

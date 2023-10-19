@@ -12,12 +12,12 @@ public:
         int auxiFuelTank = 0;
 
         int goal = nums.size() - 1;
-        for(int i = 0; i < goal; ++i) {
+        for (int i = 0; i < goal; ++i) {
             auxiFuelTank = max(auxiFuelTank, nums[i] - mainFuelTank);
 
-            //refill mainFuelTank
-            if(mainFuelTank == 0) {
-                if(auxiFuelTank == 0) {
+            // refill mainFuelTank
+            if (mainFuelTank == 0) {
+                if (auxiFuelTank == 0) {
                     result = false;
                     break;
                 }
@@ -25,8 +25,8 @@ public:
                 auxiFuelTank = 0;
             }
 
-            //if the fuel is enough to reach the goal
-            if(mainFuelTank >= goal - i) {
+            // if the fuel is enough to reach the goal
+            if (mainFuelTank >= goal - i) {
                 break;
             }
 
@@ -40,7 +40,7 @@ public:
 int main() {
     Solution S;
 
-    //input
+    // input
     vector<int> nums{2, 3, 1, 1, 4};
 
     cout << S.canJump(nums) << endl;

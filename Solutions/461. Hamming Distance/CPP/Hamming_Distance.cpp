@@ -2,12 +2,12 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int hammingDistance(int x, int y){
+    int hammingDistance(int x, int y) {
         int distance = 0;
         x = x ^ y;
-        while(x){
+        while (x) {
             distance += x & 1;
             x >>= 1;
         }
@@ -15,10 +15,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
+    // inputs
     int x = 1;
     int y = 4;
 

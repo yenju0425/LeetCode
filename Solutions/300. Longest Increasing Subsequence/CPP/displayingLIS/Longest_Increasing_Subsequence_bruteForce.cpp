@@ -8,7 +8,7 @@ public:
     int lengthOfLIS(vector<int>& nums) {
         vector<int> LIS = findLIS(nums, -1, 0);
 
-        for(const int& i : LIS){
+        for (const int& i : LIS) {
             cout << i << " ";
         }
         cout << endl;
@@ -33,10 +33,10 @@ public:
     }
 };
 
-int main(){
+int main() {
     Solution S;
 
-    //input
+    // input
     vector<int> seq{0, 8, 4, 18, 16, 7, 15, 20, 17, 6, 14, 1, 9, 5, 13, 3, 11, 12, 2, 10, 19};
 
     cout << S.lengthOfLIS(seq) << endl;

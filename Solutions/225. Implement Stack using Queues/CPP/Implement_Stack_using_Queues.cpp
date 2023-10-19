@@ -3,41 +3,41 @@
 
 using namespace std;
 
-//push to back, peek/pop from front, size and is empty
-class MyStack{
+// push to back, peek/pop from front, size and is empty
+class MyStack {
 private:
     queue<int> Q;
 
 public:
-    MyStack(){
+    MyStack() {
     }
-    
-    void push(int x){
+
+    void push(int x) {
         int Q_Size = Q.size();
         Q.push(x);
-        for(int i = 0; i < Q_Size; i++){
+        for (int i = 0; i < Q_Size; i++) {
             Q.push(Q.front());
             Q.pop();
         }
     }
-    
-    int pop(){
+
+    int pop() {
         int S_top = Q.front();
         Q.pop();
         return S_top;
     }
-    
-    int top(){
+
+    int top() {
         return Q.front();
     }
-    
-    bool empty(){
+
+    bool empty() {
         return Q.empty();
     }
 };
 
-int main(){
-    MyStack *S = new MyStack();
+int main() {
+    MyStack* S = new MyStack();
 
     S->push(1);
     S->push(2);

@@ -3,14 +3,14 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int uniquePaths(int m, int n){
+    int uniquePaths(int m, int n) {
         m = m - 1;
         n = n - 1;
         int steps = m + n;
-        vector<unsigned long long> fact(steps + 1, 1);//still overflow
-        for(int i = 1; i <= steps; i++){
+        vector<unsigned long long> fact(steps + 1, 1);  // still overflow
+        for (int i = 1; i <= steps; i++) {
             fact[i] = fact[i - 1] * i;
         }
 
@@ -18,10 +18,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
+    // inputs
     int m = 23;
     int n = 12;
 

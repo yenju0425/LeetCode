@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 private:
     int m;
     int n;
@@ -11,40 +11,40 @@ private:
     vector<vector<vector<int>>> dp;
 
 public:
-    int paint(vector<int> &houses, vector<vector<int>> &cost, int idx, int preColor, int numOfNbh){
+    int paint(vector<int>& houses, vector<vector<int>>& cost, int idx, int preColor, int numOfNbh) {
         unsigned int result = INT_MAX;
 
-        //out of border
-        if(numOfNbh > target){
+        // out of border
+        if (numOfNbh > target) {
             return result;
         }
-        if(idx >= m){
+        if (idx >= m) {
             return (numOfNbh == target) ? 0 : result;
         }
 
-        //if the cost is not cached
-        if(!dp[idx][preColor][numOfNbh]){
+        // if the cost is not cached
+        if (!dp[idx][preColor][numOfNbh]) {
             int curColor = houses[idx];
-            if(curColor == 0){
-                for(int i = 1; i <= n; i++){
+            if (curColor == 0) {
+                for (int i = 1; i <= n; i++) {
                     houses[idx] = i;
                     result = min(result, unsigned(cost[idx][i - 1]) + paint(houses, cost, idx + 1, i, numOfNbh + (i != preColor)));
                 }
                 houses[idx] = 0;
                 dp[idx][preColor][numOfNbh] = result;
             }
-            else{
+            else {
                 dp[idx][preColor][numOfNbh] = paint(houses, cost, idx + 1, curColor, numOfNbh + (curColor != preColor));
             }
         }
         return dp[idx][preColor][numOfNbh];
     }
 
-    int minCost(vector<int> &houses, vector<vector<int>> &cost, int m, int n, int target){
-        this->m      = m;
-        this->n      = n;
+    int minCost(vector<int>& houses, vector<vector<int>>& cost, int m, int n, int target) {
+        this->m = m;
+        this->n = n;
         this->target = target;
-        this->dp     = vector<vector<vector<int>>>(m, vector<vector<int>>(n + 1, vector<int>(target + 1, 0)));
+        this->dp = vector<vector<vector<int>>>(m, vector<vector<int>>(n + 1, vector<int>(target + 1, 0)));
 
         int result = paint(houses, cost, 0, 0, 0);
 
@@ -52,10 +52,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
+    // inputs
     int m = 5;
     int n = 2;
     int target = 3;

@@ -1,38 +1,38 @@
+#include <ctime>
 #include <iostream>
 #include <random>
-#include <ctime>
 #include <unordered_map>
 
 using namespace std;
 
-class Solution{
+class Solution {
 private:
     string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-    string prefix     = "https://www.shortURL.com/";
+    string prefix = "https://www.shortURL.com/";
     int urlLength = 10;
     unordered_map<string, string> DB;
 
 public:
-    Solution(){
+    Solution() {
         srand(time(nullptr));
     }
 
-    string encode(string longUrl){
+    string encode(string longUrl) {
         string shortUrl = prefix;
-        for(int i = 0; i < urlLength; i++){
+        for (int i = 0; i < urlLength; i++) {
             shortUrl += characters[rand() % 62];
         }
         DB[shortUrl] = longUrl;
         return shortUrl;
     }
 
-    string decode(string shortUrl){
+    string decode(string shortUrl) {
         return DB[shortUrl];
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
     string url = "https://www.apple.com/tw/";
 

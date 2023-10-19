@@ -6,17 +6,17 @@ using namespace std;
 class Solution {
 public:
     int binary_search(vector<int>& nums, int& target, int left, int right) {
-        if(left >= right) {
+        if (left >= right) {
             return -1;
         }
 
         int idx = (left + right) / 2;
-        if(nums[idx] == target) {
+        if (nums[idx] == target) {
             return idx;
         }
-        
-        if(nums[left] < nums[idx]) {
-            if(nums[left] <= target && target < nums[idx]) {
+
+        if (nums[left] < nums[idx]) {
+            if (nums[left] <= target && target < nums[idx]) {
                 return binary_search(nums, target, left, idx);
             }
             else {
@@ -24,7 +24,7 @@ public:
             }
         }
         else {
-            if(nums[idx] < target && target <= nums[right - 1]) {
+            if (nums[idx] < target && target <= nums[right - 1]) {
                 return binary_search(nums, target, idx + 1, right);
             }
             else {
@@ -41,7 +41,7 @@ public:
 int main() {
     Solution S;
 
-    //inputs
+    // inputs
     int target = 2;
     vector<int> nums{3, 4, 5, 6, 1, 2};
 

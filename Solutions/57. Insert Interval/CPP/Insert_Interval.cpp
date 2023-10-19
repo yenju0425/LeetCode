@@ -1,5 +1,5 @@
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -25,14 +25,14 @@ struct get_upperBound {
 class Solution {
 public:
     vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
-        if(intervals.empty()) {
+        if (intervals.empty()) {
             return vector<vector<int>>{newInterval};
         }
 
         vector<vector<int>>::iterator lb = lower_bound(intervals.begin(), intervals.end(), newInterval[0], get_lowerBound());
         vector<vector<int>>::iterator ub = upper_bound(intervals.begin(), intervals.end(), newInterval[1], get_upperBound()) - 1;
 
-        if(ub < lb) {
+        if (ub < lb) {
             intervals.insert(lb, newInterval);
         }
         else {
@@ -48,14 +48,14 @@ public:
 int main() {
     Solution S;
 
-    //inputs
+    // inputs
     vector<vector<int>> intervals{{1, 3}, {6, 9}};
     vector<int> newInterval{2, 5};
 
     vector<vector<int>> result = S.insert(intervals, newInterval);
 
-    for(auto i : result) {
-        for(auto j : i) {
+    for (auto i : result) {
+        for (auto j : i) {
             cout << j << ' ';
         }
         cout << endl;

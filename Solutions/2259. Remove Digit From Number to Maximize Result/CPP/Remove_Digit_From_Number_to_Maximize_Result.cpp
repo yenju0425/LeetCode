@@ -2,15 +2,15 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    string removeDigit(string number, char digit){
+    string removeDigit(string number, char digit) {
         string::iterator rmDigit;
 
-        for(string::iterator iter = number.begin(); iter != number.end(); iter++){
-            if(*iter == digit){
+        for (string::iterator iter = number.begin(); iter != number.end(); iter++) {
+            if (*iter == digit) {
                 rmDigit = iter;
-                if(*(iter + 1) > digit){
+                if (*(iter + 1) > digit) {
                     break;
                 }
             }
@@ -22,10 +22,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
+    // inputs
     string number = "81235038532348435348983";
     char digit = '8';
 

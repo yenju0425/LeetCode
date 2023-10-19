@@ -1,5 +1,5 @@
-#include <iostream>
 #include <climits>
+#include <iostream>
 
 using namespace std;
 
@@ -9,15 +9,15 @@ public:
         bool sameSign = ((dividend & INT_MIN) == (divisor & INT_MIN));
 
         unsigned int u_dividend = abs(dividend);
-        unsigned int u_divisor  = abs(divisor);
+        unsigned int u_divisor = abs(divisor);
 
         unsigned int buffer = 0;
         unsigned int result = 0;
-        for(int i = 0; i < 32; ++i) { //32 bits
-            buffer = (buffer << 1) + ((u_dividend & INT_MIN) == INT_MIN); //push_back the most significant bit of u_dividend
+        for (int i = 0; i < 32; ++i) {                                     // 32 bits
+            buffer = (buffer << 1) + ((u_dividend & INT_MIN) == INT_MIN);  // push_back the most significant bit of u_dividend
             u_dividend = u_dividend << 1;
 
-            if(buffer >= u_divisor) {
+            if (buffer >= u_divisor) {
                 result = (result << 1) + 1;
                 buffer = buffer - u_divisor;
             }
@@ -26,8 +26,8 @@ public:
             }
         }
 
-        //overflow detection
-        if(sameSign) {
+        // overflow detection
+        if (sameSign) {
             return (result == INT_MIN) ? result - 1 : result;
         }
         else {
@@ -39,7 +39,7 @@ public:
 int main() {
     Solution S;
 
-    //inputs
+    // inputs
     int dividend = -7;
     int divisor = 5;
 

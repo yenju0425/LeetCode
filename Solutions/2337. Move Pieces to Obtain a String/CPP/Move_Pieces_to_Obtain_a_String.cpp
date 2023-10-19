@@ -1,57 +1,57 @@
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <vector>
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    bool canChange(string start, string target){
+    bool canChange(string start, string target) {
         int n = start.length();
 
         vector<int> s_R_ids, s_L_ids, t_R_ids, t_L_ids;
-        for(int i = 0; i < n; i++){
-            if(start[i] == 'R'){
+        for (int i = 0; i < n; i++) {
+            if (start[i] == 'R') {
                 s_R_ids.push_back(i);
             }
-            else if(start[i] == 'L'){
+            else if (start[i] == 'L') {
                 s_L_ids.push_back(i);
             }
 
-            if(target[i] == 'R'){
+            if (target[i] == 'R') {
                 t_R_ids.push_back(i);
             }
-            else if(target[i] == 'L'){
+            else if (target[i] == 'L') {
                 t_L_ids.push_back(i);
             }
         }
 
-        //check R
+        // check R
         int numOfR = s_R_ids.size();
-        if(numOfR != t_R_ids.size()){
+        if (numOfR != t_R_ids.size()) {
             return false;
         }
-        for(int i = 0; i < numOfR; i++){
-            if(t_R_ids[i] < s_R_ids[i]){
+        for (int i = 0; i < numOfR; i++) {
+            if (t_R_ids[i] < s_R_ids[i]) {
                 return false;
             }
         }
 
-        //check L
+        // check L
         int numOfL = s_L_ids.size();
-        if(numOfL != t_L_ids.size()){
+        if (numOfL != t_L_ids.size()) {
             return false;
         }
-        for(int i = 0; i < numOfL; i++){
-            if(t_L_ids[i] > s_L_ids[i]){
+        for (int i = 0; i < numOfL; i++) {
+            if (t_L_ids[i] > s_L_ids[i]) {
                 return false;
             }
         }
 
-        //check relative position
+        // check relative position
         start.erase(remove(start.begin(), start.end(), '_'), start.end());
         target.erase(remove(target.begin(), target.end(), '_'), target.end());
-        if(start != target){
+        if (start != target) {
             return false;
         }
 
@@ -59,11 +59,11 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
-    string start  = "_R";
+    // inputs
+    string start = "_R";
     string target = "L_";
 
     cout << S->canChange(start, target) << endl;

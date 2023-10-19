@@ -1,26 +1,26 @@
+#include <deque>
 #include <iostream>
 #include <vector>
-#include <deque>
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int maxResult(vector<int> &nums, int k){
+    int maxResult(vector<int>& nums, int k) {
         deque<int> DQ;
         DQ.push_back(0);
 
         int nums_size = nums.size();
-        for(int i = 1; i < nums_size; i++){
+        for (int i = 1; i < nums_size; i++) {
             nums[i] = nums[i] + nums[DQ.front()];
 
-            while(!DQ.empty() && nums[DQ.back()] <= nums[i]){
+            while (!DQ.empty() && nums[DQ.back()] <= nums[i]) {
                 DQ.pop_back();
             }
 
             DQ.push_back(i);
 
-            while(DQ.front() <= i - k){
+            while (DQ.front() <= i - k) {
                 DQ.pop_front();
             }
         }
@@ -29,10 +29,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
+    // inputs
     int k = 2;
     vector<int> nums{100, -1, -100, -1, 100};
 

@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 private:
-    vector<vector<string>> charSet {
+    vector<vector<string>> charSet{
         {"a", "b", "c"},
         {"d", "e", "f"},
         {"g", "h", "i"},
@@ -13,18 +13,17 @@ private:
         {"m", "n", "o"},
         {"p", "q", "r", "s"},
         {"t", "u", "v"},
-        {"w", "x", "y", "z"}
-    };
+        {"w", "x", "y", "z"}};
 
 public:
     vector<string> letterCombinations(string digits) {
         vector<string> combinations{};
-        if(digits.size() == 0) {
+        if (digits.size() == 0) {
             return combinations;
         }
-        
-        int c = digits.front() - '2'; //characters start from '2' button
-        if(digits.size() == 1) {
+
+        int c = digits.front() - '2';  // characters start from '2' button
+        if (digits.size() == 1) {
             return charSet[c];
         }
 
@@ -33,8 +32,8 @@ public:
 
         int charSet_size = charSet[c].size();
         int _combinations_size = _combinations.size();
-        for(int i = 0; i < charSet_size; ++i) {
-            for(int j = 0; j < _combinations_size; ++j) {
+        for (int i = 0; i < charSet_size; ++i) {
+            for (int j = 0; j < _combinations_size; ++j) {
                 combinations.push_back(charSet[c][i] + _combinations[j]);
             }
         }
@@ -46,12 +45,12 @@ public:
 int main() {
     Solution S;
 
-    //input
+    // input
     string digits = "225";
 
     vector<string> result = S.letterCombinations(digits);
 
-    for(auto i : result) {
+    for (auto i : result) {
         cout << i << endl;
     }
 

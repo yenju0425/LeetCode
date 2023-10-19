@@ -11,12 +11,12 @@ private:
 
 public:
     bool isMatch(int si, int pi) {
-        if(pi == p_size) {
+        if (pi == p_size) {
             return si == s_size;
         }
 
         bool fistMatch = (si != s_size && (s[si] == p[pi] || p[pi] == '.'));
-        if(pi + 1 != p_size && p[pi + 1] == '*') { //next pi is '*'
+        if (pi + 1 != p_size && p[pi + 1] == '*') {  // next pi is '*'
             return isMatch(si, pi + 2) || (fistMatch && isMatch(si + 1, pi));
         }
         else {
@@ -37,7 +37,7 @@ public:
 int main() {
     Solution S;
 
-    //inputs
+    // inputs
     string s = "ab";
     string p = ".*";
 

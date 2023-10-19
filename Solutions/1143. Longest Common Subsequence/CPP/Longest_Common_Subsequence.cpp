@@ -24,10 +24,10 @@ public:
     }
 };
 
-int main(){
+int main() {
     Solution S;
 
-    //input
+    // input
     string text1 = "abcde";
     string text2 = "ace";
 

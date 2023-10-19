@@ -7,19 +7,19 @@ class Solution {
 public:
     string getPermutation(int n, int k) {
         vector<char> numbers;
-        for(int i = 0; i < n; ++i) {
+        for (int i = 0; i < n; ++i) {
             numbers.push_back('1' + i);
         }
 
         int fact[10] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
-        for(int i = 1; i < 10; ++i) {
+        for (int i = 1; i < 10; ++i) {
             fact[i] = fact[i - 1] * i;
         }
-        
+
         int p = 0;
         int r = k - 1;
         string result;
-        for(int i = n - 1; i > 0; --i) {
+        for (int i = n - 1; i > 0; --i) {
             p = r / fact[i];
             r = r % fact[i];
 
@@ -35,7 +35,7 @@ public:
 int main() {
     Solution S;
 
-    //inputs
+    // inputs
     int n = 4;
     int k = 9;
 

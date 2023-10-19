@@ -2,16 +2,16 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int fib(int n){
-        if(n < 2){
+    int fib(int n) {
+        if (n < 2) {
             return n;
         }
 
         int a = 0;
         int b = 1;
-        for(int i = 2; i <= n; i++){
+        for (int i = 2; i <= n; i++) {
             a = a + b;
             swap(a, b);
         }
@@ -20,10 +20,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     int n = 5;
 
     cout << S->fib(n) << endl;

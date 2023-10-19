@@ -1,5 +1,5 @@
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -7,15 +7,15 @@ using namespace std;
 class Solution {
 public:
     vector<int>::iterator LB(vector<int>::iterator left, vector<int>::iterator right, int& target) {
-        if(left == right) {
+        if (left == right) {
             return left;
         }
 
         vector<int>::iterator half = left + (right - left) / 2;
-        if(target > *half) {
+        if (target > *half) {
             return LB(half + 1, right, target);
         }
-        else if(target < *half) {
+        else if (target < *half) {
             return LB(left, half, target);
         }
         else {
@@ -31,7 +31,7 @@ public:
 int main() {
     Solution S;
 
-    //inputs
+    // inputs
     int target = 5;
     vector<int> nums{1, 3, 5, 6};
 

@@ -5,9 +5,9 @@ using namespace std;
 struct ListNode {
     int val;
     ListNode* next;
-    ListNode() : val(0), next(nullptr){}
-    ListNode(int x) : val(x), next(nullptr){}
-    ListNode(int x, ListNode* next) : val(x), next(next){}
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode* next) : val(x), next(next) {}
 };
 
 class Solution {
@@ -16,9 +16,9 @@ public:
         ListNode* headNode = new ListNode(0, list1);
         ListNode* currentNode = headNode;
 
-        //insert list2 to list1
-        while(list1 != nullptr || list2 != nullptr) {
-            if(list1 == nullptr || (list2 != nullptr && list2->val < list1->val)) { //list2 is smaller (insert list2)
+        // insert list2 to list1
+        while (list1 != nullptr || list2 != nullptr) {
+            if (list1 == nullptr || (list2 != nullptr && list2->val < list1->val)) {  // list2 is smaller (insert list2)
                 currentNode->next = list2;
                 currentNode = list2;
                 list2 = list2->next;
@@ -40,7 +40,7 @@ public:
 int main() {
     Solution S;
 
-    //inputs
+    // inputs
     ListNode n2(4);
     ListNode n1(2, &n2);
     ListNode n0(1, &n1);
@@ -50,9 +50,9 @@ int main() {
 
     ListNode* result = S.mergeTwoLists(&n0, &m0);
 
-    while(result != nullptr) {
+    while (result != nullptr) {
         cout << result->val << endl;
-        result = result->next;  
+        result = result->next;
     }
 
     return 0;

@@ -2,24 +2,24 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int mySqrt(int x){
+    int mySqrt(int x) {
         long i = 0;
 
-        //slow start method
+        // slow start method
         int step = 1;
-        while(true){
+        while (true) {
             i = i + step;
-            if(i * i <= x){
+            if (i * i <= x) {
                 step = max(step + 1, 16);
             }
-            else{
-                if(step != 1){
+            else {
+                if (step != 1) {
                     i = i - step;
                     step = 1;
                 }
-                else{
+                else {
                     return i - 1;
                 }
             }
@@ -27,10 +27,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
-    
-    //input
+int main() {
+    Solution* S = new Solution();
+
+    // input
     int x = 8;
 
     cout << S->mySqrt(x) << endl;

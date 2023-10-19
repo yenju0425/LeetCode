@@ -1,13 +1,13 @@
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    string convertToTitle(int columnNumber){
+    string convertToTitle(int columnNumber) {
         string result = "";
-        while(columnNumber > 0){
+        while (columnNumber > 0) {
             result.push_back(char((columnNumber - 1) % 26 + 65));
             columnNumber = (columnNumber - 1) / 26;
         }
@@ -16,13 +16,13 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     int columnNumber = 28;
 
     cout << S->convertToTitle(columnNumber) << endl;
-    
+
     return 0;
 }

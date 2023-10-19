@@ -3,46 +3,46 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    string simplifyPath(string path){
+    string simplifyPath(string path) {
         vector<string> directories;
 
         int idx = 0;
         int path_length = path.length();
-        while(idx < path_length){
-            if(path[idx] == '/'){
+        while (idx < path_length) {
+            if (path[idx] == '/') {
                 idx = idx + 1;
                 continue;
             }
 
-            //read next dir
+            // read next dir
             string dir;
-            while(idx < path_length and path[idx] != '/'){
+            while (idx < path_length and path[idx] != '/') {
                 dir.push_back(path[idx]);
                 idx = idx + 1;
             }
 
-            if(dir == ".."){
-                if(!directories.empty()){
+            if (dir == "..") {
+                if (!directories.empty()) {
                     directories.pop_back();
                 }
             }
-            else if(dir == "."){
+            else if (dir == ".") {
                 continue;
             }
-            else{
+            else {
                 directories.push_back(dir);
             }
         }
 
-        if(directories.empty()){
+        if (directories.empty()) {
             directories.push_back("");
         }
 
         string result;
         int numOfDirectories = directories.size();
-        for(int i = 0; i < numOfDirectories; i++){
+        for (int i = 0; i < numOfDirectories; i++) {
             result.push_back('/');
             result.append(directories[i]);
         }
@@ -51,10 +51,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     string path = "/../";
 
     cout << S->simplifyPath(path) << endl;

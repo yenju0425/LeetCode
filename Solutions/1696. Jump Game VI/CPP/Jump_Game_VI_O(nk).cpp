@@ -3,15 +3,15 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int maxResult(vector<int> &nums, int k){
+    int maxResult(vector<int>& nums, int k) {
         int nums_size = nums.size();
-        for(int i = 1; i < nums_size; i++){
+        for (int i = 1; i < nums_size; i++) {
             int maximum = INT_MIN;
 
             int temp = max(0, i - k);
-            for(int j = i - 1; j >= temp; j--){
+            for (int j = i - 1; j >= temp; j--) {
                 maximum = max(maximum, nums[j]);
             }
 
@@ -22,10 +22,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
+    // inputs
     int k = 2;
     vector<int> nums{100, -1, -100, -1, 100};
 

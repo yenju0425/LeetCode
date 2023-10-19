@@ -3,17 +3,17 @@
 
 using namespace std;
 
-struct Server{
+struct Server {
     int time;
     vector<int> neighbors;
 
-    Server(){
+    Server() {
         time = -1;
         neighbors = vector<int>{};
     }
 };
 
-class Servers{
+class Servers {
 private:
     int numOfconnections;
     vector<vector<int>> connections;
@@ -21,15 +21,15 @@ private:
     vector<Server*> servers;
 
 public:
-    Servers(int n, vector<vector<int>> c){
+    Servers(int n, vector<vector<int>> c) {
         connections = c;
         numOfconnections = c.size();
 
-        for(int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             servers.push_back(new Server());
         }
 
-        for(int i = 0; i < numOfconnections; i++){
+        for (int i = 0; i < numOfconnections; i++) {
             int id0 = connections[i][0];
             int id1 = connections[i][1];
             servers[id0]->neighbors.push_back(id1);
@@ -37,54 +37,54 @@ public:
         }
     }
 
-    void setCGs(int id, int parent, int time){
+    void setCGs(int id, int parent, int time) {
         servers[id]->time = time;
 
         int minTime = time;
         int numOfneighbors = servers[id]->neighbors.size();
-        for(int i = 0; i < numOfneighbors; i++){
+        for (int i = 0; i < numOfneighbors; i++) {
             int neighbor = servers[id]->neighbors[i];
-            if(neighbor == parent){
+            if (neighbor == parent) {
                 continue;
             }
 
-            if(servers[neighbor]->time == -1){
+            if (servers[neighbor]->time == -1) {
                 setCGs(neighbor, id, time + 1);
             }
             minTime = min(minTime, servers[neighbor]->time);
         }
 
-        if(time == minTime && parent != -1){ //magic
+        if (time == minTime && parent != -1) {  // magic
             CCs.push_back(vector<int>{parent, id});
         }
 
         servers[id]->time = minTime;
     }
 
-    vector<vector<int>> findCriticalConnections(){
-        //DFS
+    vector<vector<int>> findCriticalConnections() {
+        // DFS
         setCGs(0, -1, 0);
         return CCs;
     }
 };
 
-class Solution{
+class Solution {
 public:
-    vector<vector<int>> criticalConnections(int n, vector<vector<int>> &connections){
-        //build servers
-        Servers *S = new Servers(n, connections);
+    vector<vector<int>> criticalConnections(int n, vector<vector<int>>& connections) {
+        // build servers
+        Servers* S = new Servers(n, connections);
 
-        //find CCs
+        // find CCs
         vector<vector<int>> CCs = S->findCriticalConnections();
-    
+
         return CCs;
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
+    // inputs
     int n = 7;
     vector<vector<int>> connections{
         {0, 1},
@@ -93,12 +93,11 @@ int main(){
         {2, 4},
         {3, 5},
         {5, 4},
-        {5, 6}
-    };
+        {5, 6}};
 
     vector<vector<int>> result = S->criticalConnections(n, connections);
 
-    for(auto i : result){
+    for (auto i : result) {
         cout << '(' << i[0] << ", " << i[1] << ')' << endl;
     }
 

@@ -1,39 +1,39 @@
 #include <iostream>
-#include <vector>
 #include <map>
+#include <vector>
 
 using namespace std;
 
-class MyHashMap{
+class MyHashMap {
 private:
     vector<map<int, int>> HM;
 
 public:
-    MyHashMap(){
+    MyHashMap() {
         HM = vector<map<int, int>>(1024);
     }
-    
-    void put(int key, int value){
+
+    void put(int key, int value) {
         int index = key & 1023;
         HM[index][key] = value;
     }
-    
-    int get(int key){
+
+    int get(int key) {
         int index = key & 1023;
-        if(HM[index].find(key) == HM[index].end()){
+        if (HM[index].find(key) == HM[index].end()) {
             return -1;
         }
         return HM[index][key];
     }
-    
-    void remove(int key){
+
+    void remove(int key) {
         int index = key & 1023;
         HM[index].erase(key);
     }
 };
 
-int main(){
-    MyHashMap *HM = new MyHashMap();
+int main() {
+    MyHashMap* HM = new MyHashMap();
 
     HM->put(0, 1);
     HM->put(0, 3);

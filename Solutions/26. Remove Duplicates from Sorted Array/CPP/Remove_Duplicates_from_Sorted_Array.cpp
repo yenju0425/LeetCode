@@ -9,8 +9,8 @@ public:
         int counter = 0;
 
         int nums_size = nums.size();
-        for(int i = 1; i < nums_size; ++i) {
-            if(nums[i] > nums[counter]) {
+        for (int i = 1; i < nums_size; ++i) {
+            if (nums[i] > nums[counter]) {
                 counter = counter + 1;
                 nums[counter] = nums[i];
             }
@@ -23,11 +23,11 @@ public:
 int main() {
     Solution S;
 
-    //input
+    // input
     vector<int> nums{0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
 
     int result = S.removeDuplicates(nums);
-    for(int i = 0; i < result; ++i) {
+    for (int i = 0; i < result; ++i) {
         cout << nums[i] << ' ';
     }
     cout << endl;

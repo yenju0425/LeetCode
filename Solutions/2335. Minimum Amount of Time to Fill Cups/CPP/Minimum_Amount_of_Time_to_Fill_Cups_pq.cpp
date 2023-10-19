@@ -1,12 +1,12 @@
 #include <iostream>
-#include <vector>
 #include <queue>
+#include <vector>
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-    int fillCups(vector<int> &amount){
+    int fillCups(vector<int>& amount) {
         priority_queue<int> PQ(amount.begin(), amount.end());
 
         int fst = PQ.top();
@@ -16,11 +16,11 @@ public:
         PQ.pop();
 
         int stepConter = 0;
-        while(fst > 0 or snd > 0){
+        while (fst > 0 or snd > 0) {
             PQ.push(fst - 1);
             PQ.push(snd - 1);
             stepConter = stepConter + 1;
-            
+
             fst = PQ.top();
             PQ.pop();
 
@@ -32,10 +32,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //input
+    // input
     vector<int> amount{4, 5, 4, 3};
 
     cout << S->fillCups(amount) << endl;

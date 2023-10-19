@@ -3,42 +3,42 @@
 
 using namespace std;
 
-class Solution{
+class Solution {
 private:
     unordered_map<string, bool> dp;
 
 public:
-    bool isScramble(string s1, string s2){
+    bool isScramble(string s1, string s2) {
         string key = s1 + "|" + s2;
-        if(dp.count(key)){
+        if (dp.count(key)) {
             return dp[key];
         }
 
-        if(s1 == s2){
+        if (s1 == s2) {
             return true;
         }
 
         int charCount[26] = {0};
 
         int size = s1.length();
-        for(int i = 0; i < size; i++){
-            charCount[s1[i] - 'a']++; 
+        for (int i = 0; i < size; i++) {
+            charCount[s1[i] - 'a']++;
             charCount[s2[i] - 'a']--;
         }
 
-        for(int i = 0; i < 26; i++){
-            if(charCount[i] != 0){
+        for (int i = 0; i < 26; i++) {
+            if (charCount[i] != 0) {
                 return false;
             }
         }
 
-        //speed up
-        if(size <= 3){
+        // speed up
+        if (size <= 3) {
             return true;
         }
 
         dp[key] = false;
-        for(int i = 1; i < size and !dp[key]; i++){
+        for (int i = 1; i < size and !dp[key]; i++) {
             dp[key] = (isScramble(s1.substr(0, i), s2.substr(0, i)) and isScramble(s1.substr(i), s2.substr(i))) or
                       (isScramble(s1.substr(0, i), s2.substr(size - i)) and isScramble(s1.substr(i), s2.substr(0, size - i)));
         }
@@ -47,10 +47,10 @@ public:
     }
 };
 
-int main(){
-    Solution *S = new Solution();
+int main() {
+    Solution* S = new Solution();
 
-    //inputs
+    // inputs
     string s1 = "great";
     string s2 = "gtaer";
 
