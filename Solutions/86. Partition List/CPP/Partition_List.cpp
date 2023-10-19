@@ -35,20 +35,24 @@ public:
         ltn_ptr->next = dummyHead_geq->next;
         geq_ptr->next = nullptr;
 
-        return dummyHead_ltn->next;
+        ListNode* result = dummyHead_ltn->next;
+        delete dummyHead_ltn;
+        delete dummyHead_geq;
+
+        return result;
     }
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // inputs
     int x = 3;
-    ListNode* n2 = new ListNode(2);
-    ListNode* n1 = new ListNode(3, n2);
-    ListNode* hd = new ListNode(9, n1);
+    ListNode n2(2);
+    ListNode n1(3, &n2);
+    ListNode hd(9, &n1);
 
-    ListNode* result = S->partition(hd, x);
+    ListNode* result = S.partition(&hd, x);
 
     while (result != nullptr) {
         cout << result->val;

@@ -19,9 +19,9 @@ public:
         ListNode* nxt_ptr;
         while (cur_ptr != nullptr) {
             nxt_ptr = cur_ptr->next;
-            while (nxt_ptr != nullptr and nxt_ptr->next != nullptr and nxt_ptr->val == nxt_ptr->next->val) {
+            while (nxt_ptr != nullptr && nxt_ptr->next != nullptr && nxt_ptr->val == nxt_ptr->next->val) {
                 int num = nxt_ptr->val;
-                while (nxt_ptr != nullptr and nxt_ptr->val == num) {  // clean up the following node with val == num
+                while (nxt_ptr != nullptr && nxt_ptr->val == num) {  // clean up the following node with val == num
                     ListNode* del_ptr = nxt_ptr;
                     nxt_ptr = nxt_ptr->next;
                     delete del_ptr;
@@ -31,19 +31,22 @@ public:
             cur_ptr = nxt_ptr;
         }
 
-        return dummyHead->next;
+        ListNode* result = dummyHead->next;
+        delete dummyHead;
+
+        return result;
     }
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // inputs
-    ListNode* n2 = new ListNode(2);
-    ListNode* n1 = new ListNode(1, n2);
-    ListNode* hd = new ListNode(1, n1);
+    ListNode n2(2);
+    ListNode n1(1, &n2);
+    ListNode hd(1, &n1);
 
-    ListNode* result = S->deleteDuplicates(hd);
+    ListNode* result = S.deleteDuplicates(&hd);
     while (result != nullptr) {
         cout << result->val << ' ';
         result = result->next;

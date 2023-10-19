@@ -13,7 +13,7 @@ private:
 
 public:
     int findMaxRectangle(vector<int> range) {
-        if (range[2] - range[0] == 0 or range[3] - range[1] == 0) {
+        if (range[2] - range[0] == 0 || range[3] - range[1] == 0) {
             return 0;
         }
 
@@ -23,8 +23,8 @@ public:
             bool isRectangle = true;
 
             // check every cell
-            for (int i = range[0]; i < range[2] and isRectangle; i++) {
-                for (int j = range[1]; j < range[3] and isRectangle; j++) {
+            for (int i = range[0]; i < range[2] && isRectangle; ++i) {
+                for (int j = range[1]; j < range[3] && isRectangle; ++j) {
                     if (matrix[i][j] == '0') {
                         isRectangle = false;
 
@@ -54,7 +54,7 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<vector<char>> matrix{
@@ -64,7 +64,7 @@ int main() {
         {'1', '0', '0', '1', '0'}
     };
 
-    cout << S->maximalRectangle(matrix) << endl;
+    cout << S.maximalRectangle(matrix) << endl;
 
     return 0;
 }

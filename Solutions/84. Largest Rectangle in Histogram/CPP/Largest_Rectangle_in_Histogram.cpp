@@ -11,10 +11,10 @@ public:
         vector<vector<int>> S;  // stack
 
         int heights_size = heights.size();
-        for (int i = 0; i < heights_size; i++) {
+        for (int i = 0; i < heights_size; ++i) {
             int temp = i;
 
-            while (!S.empty() and S.back()[0] > heights[i]) {
+            while (!S.empty() && S.back()[0] > heights[i]) {
                 temp = S.back()[1];
                 maxArea = max(maxArea, S.back()[0] * (i - S.back()[1]));
                 S.pop_back();
@@ -24,7 +24,7 @@ public:
         }
 
         int size = S.size();
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size; ++i) {
             maxArea = max(maxArea, S[i][0] * (heights_size - S[i][1]));
         }
 
@@ -33,12 +33,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> heights{2, 1, 5, 6, 2, 3};
 
-    cout << S->largestRectangleArea(heights) << endl;
+    cout << S.largestRectangleArea(heights) << endl;
 
     return 0;
 }

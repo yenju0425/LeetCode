@@ -13,12 +13,12 @@ public:
         int charCount[26] = {0};
 
         int s_len = s1.length();
-        for (int i = 0; i < s_len; i++) {
+        for (int i = 0; i < s_len; ++i) {
             charCount[s1[i] - 'a']++;
             charCount[s2[i] - 'a']--;
         }
 
-        for (int i = 0; i < 26; i++) {
+        for (int i = 0; i < 26; ++i) {
             if (charCount[i] != 0) {
                 return false;
             }
@@ -29,11 +29,11 @@ public:
             return true;
         }
 
-        for (int i = 1; i < s_len; i++) {
-            if (isScramble(s1.substr(0, i), s2.substr(0, i)) and isScramble(s1.substr(i), s2.substr(i))) {
+        for (int i = 1; i < s_len; ++i) {
+            if (isScramble(s1.substr(0, i), s2.substr(0, i)) && isScramble(s1.substr(i), s2.substr(i))) {
                 return true;
             }
-            if (isScramble(s1.substr(0, i), s2.substr(s_len - i)) and isScramble(s1.substr(i), s2.substr(0, s_len - i))) {
+            if (isScramble(s1.substr(0, i), s2.substr(s_len - i)) && isScramble(s1.substr(i), s2.substr(0, s_len - i))) {
                 return true;
             }
         }
@@ -43,13 +43,13 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // inputs
     string s1 = "great";
     string s2 = "gtaer";
 
-    cout << S->isScramble(s1, s2) << endl;
+    cout << S.isScramble(s1, s2) << endl;
 
     return 0;
 }

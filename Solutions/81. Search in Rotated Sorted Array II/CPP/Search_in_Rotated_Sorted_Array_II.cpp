@@ -15,16 +15,16 @@ public:
             return true;
         }
 
-        if (nums[left] < nums[idx] or nums[idx] > nums[right - 1]) {
-            if (nums[left] <= target and target < nums[idx]) {
+        if (nums[left] < nums[idx] || nums[idx] > nums[right - 1]) {
+            if (nums[left] <= target && target < nums[idx]) {
                 return binary_search(nums, target, left, idx);
             }
             else {
                 return binary_search(nums, target, idx + 1, right);
             }
         }
-        else if (nums[idx] < nums[right - 1] or nums[left] > nums[idx]) {
-            if (nums[idx] < target and target <= nums[right - 1]) {
+        else if (nums[idx] < nums[right - 1] || nums[left] > nums[idx]) {
+            if (nums[idx] < target && target <= nums[right - 1]) {
                 return binary_search(nums, target, idx + 1, right);
             }
             else {
@@ -32,7 +32,7 @@ public:
             }
         }
         else {
-            return binary_search(nums, target, left, idx) or binary_search(nums, target, idx + 1, right);
+            return binary_search(nums, target, left, idx) || binary_search(nums, target, idx + 1, right);
         }
     }
 
@@ -42,13 +42,13 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // inputs
     int target = 1;
     vector<int> nums{2, 5, 6, 0, 0, 1, 2};
 
-    cout << S->search(nums, target);
+    cout << S.search(nums, target);
 
     return 0;
 }

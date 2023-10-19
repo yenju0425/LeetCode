@@ -31,12 +31,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     int n = 3;
 
-    vector<int> result = S->grayCode(n);
+    vector<int> result = S.grayCode(n);
 
     for (auto i : result) {
         cout << i << ' ';

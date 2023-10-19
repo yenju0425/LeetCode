@@ -17,10 +17,10 @@ public:
         vector<vector<int>> S;  // stack
 
         int heights_size = heights.size();
-        for (int i = 0; i < heights_size; i++) {
+        for (int i = 0; i < heights_size; ++i) {
             int temp = i;
 
-            while (!S.empty() and S.back()[0] > heights[i]) {
+            while (!S.empty() && S.back()[0] > heights[i]) {
                 temp = S.back()[1];
                 maxArea = max(maxArea, S.back()[0] * (i - S.back()[1]));
                 S.pop_back();
@@ -30,7 +30,7 @@ public:
         }
 
         int size = S.size();
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size; ++i) {
             maxArea = max(maxArea, S[i][0] * (heights_size - S[i][1]));
         }
 
@@ -43,8 +43,8 @@ public:
         this->heights = vector<int>(N, 0);
 
         int maxArea = 0;
-        for (int i = 0; i < M; i++) {
-            for (int j = 0; j < N; j++) {
+        for (int i = 0; i < M; ++i) {
+            for (int j = 0; j < N; ++j) {
                 heights[j] = (heights[j] + 1) * (matrix[i][j] != '0');  //'0': reset heights[j]; else: heights[j] = heights[j] + 1
             }
 
@@ -56,7 +56,7 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<vector<char>> matrix{
@@ -66,7 +66,7 @@ int main() {
         {'1', '0', '0', '1', '0'}
     };
 
-    cout << S->maximalRectangle(matrix) << endl;
+    cout << S.maximalRectangle(matrix) << endl;
 
     return 0;
 }

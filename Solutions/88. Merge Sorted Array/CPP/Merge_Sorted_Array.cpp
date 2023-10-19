@@ -11,8 +11,8 @@ public:
 
         int i1 = 0;
         int i2 = 0;
-        for (int i = 0; i < size; i++) {
-            if (i1 == m or (i2 != n and nums1[i1] > nums2[i2])) {
+        for (int i = 0; i < size; ++i) {
+            if (i1 == m || (i2 != n && nums1[i1] > nums2[i2])) {
                 result[i] = nums2[i2];
                 i2 = i2 + 1;
             }
@@ -27,7 +27,7 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // inputs
     int m = 1;
@@ -35,7 +35,7 @@ int main() {
     vector<int> nums1{1};
     vector<int> nums2{};
 
-    S->merge(nums1, m, nums2, n);
+    S.merge(nums1, m, nums2, n);
 
     for (auto i : nums1) {
         cout << i << ' ';
