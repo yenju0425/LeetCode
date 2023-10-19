@@ -46,10 +46,11 @@ int main() {
 
     // input
     vector<vector<int>> courses{
-        {100, 200},
-        {200, 1300},
+        { 100,  200},
+        { 200, 1300},
         {1000, 1250},
-        {2000, 3200}};
+        {2000, 3200}
+    };
 
     cout << S->scheduleCourse(courses) << endl;
 

@@ -28,12 +28,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     int x = 8;
 
-    cout << S->mySqrt(x) << endl;
+    cout << S.mySqrt(x) << endl;
 
     return 0;
 }

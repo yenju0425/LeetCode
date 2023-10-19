@@ -40,7 +40,12 @@ public:
     int findPaths(int m, int n, int maxMove, int startRow, int startColumn) {
         this->M = m;
         this->N = n;
-        this->dir = vector<vector<int>>{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+        this->dir = vector<vector<int>>{
+            { 1,  0},
+            { 0,  1},
+            {-1,  0},
+            { 0, -1}
+        };
         this->dp = vector<vector<vector<int>>>(m, vector<vector<int>>(n, vector<int>(maxMove, -1)));
 
         return DFS(startRow, startColumn, maxMove - 1);

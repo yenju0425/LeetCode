@@ -13,12 +13,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     int n = 45;
 
-    cout << S->climbStairs(n) << endl;
+    cout << S.climbStairs(n) << endl;
 
     return 0;
 }

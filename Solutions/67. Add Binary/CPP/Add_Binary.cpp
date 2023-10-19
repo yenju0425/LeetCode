@@ -34,13 +34,13 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // inputs
     string a = "010";
     string b = "1011";
 
-    cout << S->addBinary(a, b) << endl;
+    cout << S.addBinary(a, b) << endl;
 
     return 0;
 }

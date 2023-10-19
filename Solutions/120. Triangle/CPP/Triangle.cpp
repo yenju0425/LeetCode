@@ -34,7 +34,8 @@ int main() {
         {2},
         {3, 4},
         {6, 5, 7},
-        {4, 1, 8, 3}};
+        {4, 1, 8, 3}
+    };
 
     cout << S->minimumTotal(triangle) << endl;
 

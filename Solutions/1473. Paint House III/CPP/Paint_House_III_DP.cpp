@@ -60,7 +60,13 @@ int main() {
     int n = 2;
     int target = 3;
     vector<int> houses{0, 0, 0, 0, 0};
-    vector<vector<int>> cost{{1, 10}, {10, 1}, {10, 1}, {1, 10}, {5, 1}};
+    vector<vector<int>> cost{
+        { 1, 10},
+        {10,  1},
+        {10,  1},
+        { 1, 10},
+        { 5,  1}
+    };
 
     cout << S->minCost(houses, cost, m, n, target) << endl;
 

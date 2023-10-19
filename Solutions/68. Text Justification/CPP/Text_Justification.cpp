@@ -59,13 +59,13 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // inputs
     int maxWidth = 16;
     vector<string> words{"What", "must", "be", "acknowledgment", "shall", "be"};
 
-    vector<string> result = S->fullJustify(words, maxWidth);
+    vector<string> result = S.fullJustify(words, maxWidth);
 
     for (auto i : result) {
         cout << i << endl;

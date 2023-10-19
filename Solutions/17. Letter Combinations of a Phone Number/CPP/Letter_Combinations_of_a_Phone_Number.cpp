@@ -13,7 +13,8 @@ private:
         {"m", "n", "o"},
         {"p", "q", "r", "s"},
         {"t", "u", "v"},
-        {"w", "x", "y", "z"}};
+        {"w", "x", "y", "z"}
+    };
 
 public:
     vector<string> letterCombinations(string digits) {

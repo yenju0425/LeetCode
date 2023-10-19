@@ -10,7 +10,7 @@ public:
         n = n - 1;
         int steps = m + n;
         vector<unsigned long long> fact(steps + 1, 1);  // still overflow
-        for (int i = 1; i <= steps; i++) {
+        for (int i = 1; i <= steps; ++i) {
             fact[i] = fact[i - 1] * i;
         }
 
@@ -19,13 +19,13 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // inputs
     int m = 23;
     int n = 12;
 
-    cout << S->uniquePaths(m, n) << endl;
+    cout << S.uniquePaths(m, n) << endl;
 
     return 0;
 }

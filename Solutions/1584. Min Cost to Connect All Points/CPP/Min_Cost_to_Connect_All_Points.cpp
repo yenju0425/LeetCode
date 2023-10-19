@@ -50,9 +50,10 @@ int main() {
 
     // input
     vector<vector<int>> points{
-        {3, 12},
-        {-2, 5},
-        {-4, 1}};
+        { 3, 12},
+        {-2,  5},
+        {-4,  1}
+    };
 
     cout << S->minCostConnectPoints(points);
 

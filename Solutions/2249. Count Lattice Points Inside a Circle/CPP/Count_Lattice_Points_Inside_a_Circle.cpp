@@ -46,7 +46,8 @@ int main() {
 
     // input
     vector<vector<int>> ciecles{
-        {2, 2, 2}};
+        {2, 2, 2}
+    };
 
     cout << S->countLatticePoints(ciecles) << endl;
 

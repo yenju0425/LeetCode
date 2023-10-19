@@ -99,7 +99,8 @@ int main() {
         {3, 1},
         {0, 2},
         {5, 3},
-        {4, 0}};
+        {4, 0}
+    };
 
     cout << S->smallestStringWithSwaps(s, pairs) << endl;
 

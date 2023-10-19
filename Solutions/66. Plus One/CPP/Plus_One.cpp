@@ -23,12 +23,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> nums{9, 9, 9};
 
-    vector<int> result = S->plusOne(nums);
+    vector<int> result = S.plusOne(nums);
 
     for (auto i : result) {
         cout << i << ' ';

@@ -38,7 +38,12 @@ public:
         this->N = matrix[0].size();
         this->matrix = matrix;
         this->dp = vector<vector<int>>(M, vector<int>(N, 0));
-        this->dir = vector<vector<int>>{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+        this->dir = vector<vector<int>>{
+            { 1,  0},
+            { 0,  1},
+            {-1,  0},
+            { 0, -1}
+        };
 
         int maxLength = 0;
         for (int i = 0; i < M; i++) {
@@ -58,7 +63,8 @@ int main() {
     vector<vector<int>> matrix{
         {9, 9, 4},
         {6, 6, 8},
-        {2, 1, 1}};
+        {2, 1, 1}
+    };
 
     cout << S->longestIncreasingPath(matrix) << endl;
 

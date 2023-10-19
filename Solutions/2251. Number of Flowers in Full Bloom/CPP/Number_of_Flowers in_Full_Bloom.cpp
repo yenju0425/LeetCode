@@ -33,7 +33,12 @@ int main() {
     Solution S;
 
     // input
-    vector<vector<int>> flowers = {{1, 6}, {3, 7}, {9, 12}, {4, 13}};
+    vector<vector<int>> flowers = {
+        {1,  6},
+        {3,  7},
+        {9, 12},
+        {4, 13}
+    };
     vector<int> people = {2, 3, 7, 11};
 
     vector<int> result = S.fullBloomFlowers(flowers, people);

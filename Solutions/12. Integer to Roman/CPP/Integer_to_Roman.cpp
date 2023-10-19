@@ -9,7 +9,8 @@ private:
         {'I', 'V', 'X'},
         {'X', 'L', 'C'},
         {'C', 'D', 'M'},
-        {'M', '?', '?'}};
+        {'M', '?', '?'}
+    };
 
     vector<vector<int>> numRef{
         {},
@@ -21,7 +22,8 @@ private:
         {1, 0},
         {1, 0, 0},
         {1, 0, 0, 0},
-        {0, 2}};
+        {0, 2}
+    };
 
 public:
     string digitToString(int d, int n) {

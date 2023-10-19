@@ -23,7 +23,9 @@ public:
         for (int i = 0; i < N; i++) {
             for (int j = i; j < N; j++) {
                 sum = 0;
-                UM = {{0, 1}};
+                UM = {
+                    {0, 1}
+                };
                 for (int k = 0; k < M; k++) {
                     sum = sum + matrix[k][j] - (i > 0 ? matrix[k][i - 1] : 0);
                     result = result + UM[sum - target];
@@ -44,7 +46,8 @@ int main() {
     vector<vector<int>> matrix{
         {0, 1, 0},
         {1, 1, 1},
-        {0, 1, 0}};
+        {0, 1, 0}
+    };
 
     cout << S->numSubmatrixSumTarget(matrix, target) << endl;
 

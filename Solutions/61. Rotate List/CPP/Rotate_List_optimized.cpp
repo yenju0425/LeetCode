@@ -43,17 +43,17 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // inputs
     int k = 3;
-    ListNode* n4 = new ListNode(4);
-    ListNode* n3 = new ListNode(3, n4);
-    ListNode* n2 = new ListNode(2, n3);
-    ListNode* n1 = new ListNode(1, n2);
-    ListNode* hd = new ListNode(0, n1);
+    ListNode n4(4);
+    ListNode n3(3, &n4);
+    ListNode n2(2, &n3);
+    ListNode n1(1, &n2);
+    ListNode hd(0, &n1);
 
-    ListNode* result = S->rotateRight(hd, k);
+    ListNode* result = S.rotateRight(&hd, k);
 
     while (result != nullptr) {
         cout << result->val << ' ';

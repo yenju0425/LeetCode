@@ -21,10 +21,10 @@ public:
         for (string::iterator i = s.begin(); i != s.end(); i = i + 1) {
             switch (S) {
                 case init:
-                    if (*i == '+' or *i == '-') {
+                    if (*i == '+' || *i == '-') {
                         S = S_;
                     }
-                    else if (*i >= '0' and *i <= '9') {
+                    else if (*i >= '0' && *i <= '9') {
                         S = bD;
                     }
                     else if (*i == '.') {
@@ -36,7 +36,7 @@ public:
                     break;
 
                 case S_:
-                    if (*i >= '0' and *i <= '9') {
+                    if (*i >= '0' && *i <= '9') {
                         S = bD;
                     }
                     else if (*i == '.') {
@@ -48,13 +48,13 @@ public:
                     break;
 
                 case bD:
-                    if (*i >= '0' and *i <= '9') {
+                    if (*i >= '0' && *i <= '9') {
                         S = bD;
                     }
                     else if (*i == '.') {
                         S = _D;
                     }
-                    else if (*i == 'E' or *i == 'e') {
+                    else if (*i == 'E' || *i == 'e') {
                         S = E;
                     }
                     else {
@@ -63,7 +63,7 @@ public:
                     break;
 
                 case D_:
-                    if (*i >= '0' and *i <= '9') {
+                    if (*i >= '0' && *i <= '9') {
                         S = aD;
                     }
                     else {
@@ -72,10 +72,10 @@ public:
                     break;
 
                 case _D:
-                    if (*i >= '0' and *i <= '9') {
+                    if (*i >= '0' && *i <= '9') {
                         S = aD;
                     }
-                    else if (*i == 'E' or *i == 'e') {
+                    else if (*i == 'E' || *i == 'e') {
                         S = E;
                     }
                     else {
@@ -84,10 +84,10 @@ public:
                     break;
 
                 case aD:
-                    if (*i >= '0' and *i <= '9') {
+                    if (*i >= '0' && *i <= '9') {
                         S = aD;
                     }
-                    else if (*i == 'E' or *i == 'e') {
+                    else if (*i == 'E' || *i == 'e') {
                         S = E;
                     }
                     else {
@@ -96,10 +96,10 @@ public:
                     break;
 
                 case E:
-                    if (*i == '+' or *i == '-') {
+                    if (*i == '+' || *i == '-') {
                         S = eS;
                     }
-                    else if (*i >= '0' and *i <= '9') {
+                    else if (*i >= '0' && *i <= '9') {
                         S = N;
                     }
                     else {
@@ -108,7 +108,7 @@ public:
                     break;
 
                 case eS:
-                    if (*i >= '0' and *i <= '9') {
+                    if (*i >= '0' && *i <= '9') {
                         S = N;
                     }
                     else {
@@ -117,7 +117,7 @@ public:
                     break;
 
                 case N:
-                    if (*i >= '0' and *i <= '9') {
+                    if (*i >= '0' && *i <= '9') {
                         S = N;
                     }
                     else {
@@ -129,7 +129,7 @@ public:
                     return false;
             }
         }
-        if (S != bD and S != _D and S != aD and S != N) {
+        if (S != bD && S != _D && S != aD && S != N) {
             return false;
         }
         return true;
@@ -137,12 +137,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     string s = "-3.4e3";
 
-    cout << S->isNumber(s) << endl;
+    cout << S.isNumber(s) << endl;
 
     return 0;
 }

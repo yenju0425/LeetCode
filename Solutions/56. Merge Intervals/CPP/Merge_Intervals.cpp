@@ -32,7 +32,8 @@ int main() {
     vector<vector<int>> v{
         {1, 4},
         {0, 2},
-        {3, 5}};
+        {3, 5}
+    };
 
     vector<vector<int>> result = S.merge(v);
 

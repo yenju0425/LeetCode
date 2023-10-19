@@ -103,7 +103,11 @@ int main() {
     // inputs
     int n = 4;
     int k = 2;
-    vector<vector<int>> times{{2, 1, 1}, {2, 3, 1}, {3, 4, 1}};
+    vector<vector<int>> times{
+        {2, 1, 1},
+        {2, 3, 1},
+        {3, 4, 1}
+    };
 
     cout << S->networkDelayTime(times, n, k) << endl;
 

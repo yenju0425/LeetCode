@@ -56,7 +56,8 @@ int main() {
         {1, 3},
         {0, 2},
         {1, 3},
-        {0, 2}};
+        {0, 2}
+    };
 
     cout << S->isBipartite(graph) << endl;
 

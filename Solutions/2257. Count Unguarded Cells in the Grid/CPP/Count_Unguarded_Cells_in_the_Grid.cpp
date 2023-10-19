@@ -19,7 +19,12 @@ public:
         this->M = m;
         this->N = n;
         this->grid = vector<vector<char>>(m, vector<char>(n, ' '));
-        this->dir = vector<vector<int>>{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+        this->dir = vector<vector<int>>{
+            { 1,  0},
+            { 0,  1},
+            {-1,  0},
+            { 0, -1}
+        };
 
         int numOfGuards = guards.size();
         for (int i = 0; i < numOfGuards; i++) {
@@ -57,8 +62,16 @@ int main() {
     // inputs
     int m = 4;
     int n = 6;
-    vector<vector<int>> guards{{0, 0}, {1, 1}, {2, 3}};
-    vector<vector<int>> walls{{0, 1}, {2, 2}, {1, 4}};
+    vector<vector<int>> guards{
+        {0, 0},
+        {1, 1},
+        {2, 3}
+    };
+    vector<vector<int>> walls{
+        {0, 1},
+        {2, 2},
+        {1, 4}
+    };
 
     cout << S->countUnguarded(m, n, guards, walls) << endl;
 

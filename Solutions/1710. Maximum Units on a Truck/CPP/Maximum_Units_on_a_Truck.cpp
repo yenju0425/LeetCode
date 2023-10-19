@@ -29,7 +29,12 @@ int main() {
 
     // inputs
     int truckSize = 10;
-    vector<vector<int>> boxTypes{{5, 10}, {2, 5}, {4, 7}, {3, 9}};
+    vector<vector<int>> boxTypes{
+        {5, 10},
+        {2,  5},
+        {4,  7},
+        {3,  9}
+    };
 
     cout << S->maximumUnits(boxTypes, truckSize) << endl;
 

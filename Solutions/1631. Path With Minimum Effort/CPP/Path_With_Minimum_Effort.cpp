@@ -19,7 +19,12 @@ public:
     int minimumEffortPath(vector<vector<int>>& heights) {  // Dijkstra's Algorithm
         this->M = heights.size();
         this->N = heights[0].size();
-        this->dir = vector<vector<int>>{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+        this->dir = vector<vector<int>>{
+            { 1,  0},
+            { 0,  1},
+            {-1,  0},
+            { 0, -1}
+        };
 
         vector<vector<int>> effort(M, vector<int>(N, INT_MAX));
         priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, greater<tuple<int, int, int>>> pq;
@@ -63,7 +68,8 @@ int main() {
     vector<vector<int>> heights{
         {1, 2, 2},
         {3, 8, 2},
-        {5, 3, 5}};
+        {5, 3, 5}
+    };
 
     cout << S->minimumEffortPath(heights) << endl;
 

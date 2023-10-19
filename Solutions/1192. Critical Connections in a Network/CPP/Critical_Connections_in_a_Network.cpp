@@ -93,7 +93,8 @@ int main() {
         {2, 4},
         {3, 5},
         {5, 4},
-        {5, 6}};
+        {5, 6}
+    };
 
     vector<vector<int>> result = S->criticalConnections(n, connections);
 

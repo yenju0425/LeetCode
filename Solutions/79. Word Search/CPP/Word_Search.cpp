@@ -35,7 +35,12 @@ public:
     }
 
     bool exist(vector<vector<char>>& board, string word) {
-        this->dir = vector<vector<int>>{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+        this->dir = vector<vector<int>>{
+            { 1,  0},
+            { 0,  1},
+            {-1,  0},
+            { 0, -1}
+        };
         this->board = board;
         this->word = word;
         this->M = board.size();
@@ -60,7 +65,8 @@ int main() {
     vector<vector<char>> board{
         {'A', 'B', 'C', 'E'},
         {'S', 'F', 'C', 'S'},
-        {'A', 'D', 'E', 'E'}};
+        {'A', 'D', 'E', 'E'}
+    };
 
     cout << S->exist(board, word) << endl;
 

@@ -49,7 +49,10 @@ int main() {
     Solution S;
 
     // inputs
-    vector<vector<int>> intervals{{1, 3}, {6, 9}};
+    vector<vector<int>> intervals{
+        {1, 3},
+        {6, 9}
+    };
     vector<int> newInterval{2, 5};
 
     vector<vector<int>> result = S.insert(intervals, newInterval);

@@ -21,7 +21,16 @@ public:
         }
 
         this->N = grid.size();
-        this->dir = vector<vector<int>>{{1, 1}, {1, 0}, {1, -1}, {0, 1}, {0, -1}, {-1, 1}, {-1, 0}, {-1, -1}};
+        this->dir = vector<vector<int>>{
+            { 1,  1},
+            { 1,  0},
+            { 1, -1},
+            { 0,  1},
+            { 0, -1},
+            {-1,  1},
+            {-1,  0},
+            {-1, -1}
+        };
 
         vector<queue<pair<int, int>>> Q(2);
         Q[0].push(pair<int, int>(0, 0));
@@ -66,7 +75,8 @@ int main() {
     vector<vector<int>> grid{
         {0, 0, 0},
         {1, 1, 0},
-        {1, 1, 0}};
+        {1, 1, 0}
+    };
 
     cout << S->shortestPathBinaryMatrix(grid) << endl;
 

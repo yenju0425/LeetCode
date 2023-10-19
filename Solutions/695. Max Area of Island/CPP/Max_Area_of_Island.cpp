@@ -31,7 +31,12 @@ public:
         this->M = grid.size();
         this->N = grid[0].size();
         this->grid = grid;
-        this->dir = vector<vector<int>>{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+        this->dir = vector<vector<int>>{
+            { 1,  0},
+            { 0,  1},
+            {-1,  0},
+            { 0, -1}
+        };
 
         int maxArea = 0;
         for (int i = 0; i < M; i++) {
@@ -56,7 +61,8 @@ int main() {
         {0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
         {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0}};
+        {0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0}
+    };
 
     cout << S->maxAreaOfIsland(grid) << endl;
 

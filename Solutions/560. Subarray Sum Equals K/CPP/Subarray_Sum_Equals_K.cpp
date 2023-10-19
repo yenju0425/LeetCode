@@ -8,7 +8,9 @@ class Solution {
 public:
     int subarraySum(vector<int>& nums, int k) {
         int result = (nums[0] == k);
-        unordered_map<int, int> UM{{0, 1}};
+        unordered_map<int, int> UM{
+            {0, 1}
+        };
         UM[nums[0]] = UM[nums[0]] + 1;
 
         int nums_size = nums.size();

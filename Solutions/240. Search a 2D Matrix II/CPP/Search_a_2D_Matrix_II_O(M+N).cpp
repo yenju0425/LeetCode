@@ -33,7 +33,8 @@ int main() {
     // inputs
     int target = 7;
     vector<vector<int>> matrix{
-        {1, 4, 7}};
+        {1, 4, 7}
+    };
 
     cout << S->searchMatrix(matrix, target) << endl;
 
