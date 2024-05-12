@@ -1,4 +1,6 @@
+#include <algorithm>
 #include <iostream>
+#include <limits>
 #include <vector>
 
 using namespace std;
@@ -6,18 +8,14 @@ using namespace std;
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
-        int profitAfter_b = INT_MIN;
-        int profitAfter_s = 0;
-
-        // greedy algorithm
-        int prices_size = prices.size();
-        for (int i = 0; i < prices_size; i++) {
-            // look for the best buyTime and sellTime (from prices[0] ~ prices[i])
-            profitAfter_b = max(profitAfter_b, profitAfter_s - prices[i]);
-            profitAfter_s = max(profitAfter_s, profitAfter_b + prices[i]);
+        int profit = 0;
+        int current_buy = numeric_limits<int>::max();
+        for (const auto& p : prices) {
+            profit += max(0, p - current_buy);
+            current_buy = p;
         }
 
-        return profitAfter_s;
+        return profit;
     }
 };
 
