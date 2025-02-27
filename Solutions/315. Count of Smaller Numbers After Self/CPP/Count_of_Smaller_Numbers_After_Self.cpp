@@ -24,13 +24,12 @@ public:
         for (int i = 0; i < size; i++) {
             if (r >= right || (l < idx and numsIdx[l].first <= numsIdx[r].first)) {
                 result[numsIdx[l].second] = result[numsIdx[l].second] + temp;
-                merge[i] = numsIdx[l];
-                l = l + 1;
-            }
-            else {
+                merge[i]                  = numsIdx[l];
+                l                         = l + 1;
+            } else {
                 merge[i] = numsIdx[r];
-                r = r + 1;
-                temp = temp + 1;
+                r        = r + 1;
+                temp     = temp + 1;
             }
         }
 
@@ -53,12 +52,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> nums{5, 2, 6, 1};
 
-    vector<int> result = S->countSmaller(nums);
+    vector<int> result = S.countSmaller(nums);
 
     for (auto i : result) {
         cout << i << ' ';

@@ -35,11 +35,7 @@ int main() {
     Solution S;
 
     // input
-    vector<vector<int>> obstacleGrid{
-        {0, 0, 0},
-        {0, 1, 0},
-        {0, 0, 0}
-    };
+    vector<vector<int>> obstacleGrid{{0, 0, 0}, {0, 1, 0}, {0, 0, 0}};
 
     cout << S.uniquePathsWithObstacles(obstacleGrid) << endl;
 

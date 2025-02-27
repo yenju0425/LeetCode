@@ -6,7 +6,7 @@ using namespace std;
 class Solution {
 public:
     int minSubArrayLen(int target, vector<int>& nums) {
-        int sum = 0;
+        int sum        = 0;
         int min_length = 0;
 
         int i = 0, j = 0;
@@ -14,8 +14,7 @@ public:
             if (sum <= target) {
                 sum += nums[j];
                 j++;
-            }
-            else if (sum > target) {
+            } else if (sum > target) {
                 sum -= nums[i];
                 i++;
             }
@@ -30,13 +29,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
-    int target = 7;
+    int target       = 7;
     vector<int> nums = {2, 3, 1, 2, 4, 3};
 
-    cout << S->minSubArrayLen(target, nums) << endl;
+    cout << S.minSubArrayLen(target, nums) << endl;
 
     return 0;
 }

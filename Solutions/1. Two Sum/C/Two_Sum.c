@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int* twoSum(int* nums, int numsSize, int target, int* returnSize){
+int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
     *returnSize = 2;
     int* result = (int*)malloc(2 * sizeof(int));
 
@@ -22,13 +22,11 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize){
 }
 
 int main() {
-    // inputs
     int target = 13;
     int nums[] = {2, 7, 11, 15};
 
-    // outputs
     int returnSize = 0;
-    int* result = twoSum(nums, 4, target, &returnSize);
+    int* result    = twoSum(nums, 4, target, &returnSize);
 
     for (int i = 0; i < returnSize; ++i) {
         printf("%d ", result[i]);

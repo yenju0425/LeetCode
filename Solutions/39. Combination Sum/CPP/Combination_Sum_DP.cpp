@@ -40,7 +40,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     int target = 8;
     vector<int> candidates{2, 3, 5};
 

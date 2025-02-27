@@ -11,9 +11,9 @@ public:
 
         int numOf[2] = {0};
         while (num) {
-            int bit = num & 1;
+            int bit    = num & 1;
             numOf[bit] = numOf[bit] + 1;
-            num = num >> 1;
+            num        = num >> 1;
         }
 
         return numOf[0] + numOf[1] * 2 - 1;
@@ -21,12 +21,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     int num = 14;
 
-    cout << S->numberOfSteps(num) << endl;
+    cout << S.numberOfSteps(num) << endl;
 
     return 0;
 }

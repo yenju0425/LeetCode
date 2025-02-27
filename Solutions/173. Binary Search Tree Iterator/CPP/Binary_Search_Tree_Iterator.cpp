@@ -25,8 +25,7 @@ public:
             if (currentNode != nullptr) {
                 S.push(currentNode);
                 currentNode = currentNode->left;
-            }
-            else {
+            } else {
                 currentNode = S.top();
                 S.pop();
                 Tree.push(currentNode);
@@ -38,17 +37,14 @@ public:
     int next() {
         if (Tree.empty()) {
             return -1;
-        }
-        else {
+        } else {
             TreeNode* n = Tree.front();
             Tree.pop();
             return n->val;
         }
     }
 
-    bool hasNext() {
-        return !Tree.empty();
-    }
+    bool hasNext() { return !Tree.empty(); }
 };
 
 int main() {

@@ -6,12 +6,12 @@ using namespace std;
 class Solution {
 public:
     int fillCups(vector<int>& amount) {
-        int maximum = 0;
+        int maximum   = 0;
         int summation = 0;
 
         int amount_size = amount.size();
         for (int i = 0; i < amount_size; i++) {
-            maximum = max(maximum, amount[i]);
+            maximum   = max(maximum, amount[i]);
             summation = summation + amount[i];
         }
 
@@ -20,12 +20,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> amount{4, 5, 4, 3};
 
-    cout << S->fillCups(amount) << endl;
+    cout << S.fillCups(amount) << endl;
 
     return 0;
 }

@@ -19,9 +19,9 @@ public:
     TreeNode* convertBST(TreeNode* root) {
         if (root != nullptr) {
             root->right = convertBST(root->right);
-            currentSum = currentSum + root->val;
-            root->val = currentSum;
-            root->left = convertBST(root->left);
+            currentSum  = currentSum + root->val;
+            root->val   = currentSum;
+            root->left  = convertBST(root->left);
         }
 
         return root;
@@ -38,7 +38,7 @@ void DFS_inorder(TreeNode* root) {
 }
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input tree structure:
     //
@@ -55,7 +55,7 @@ int main() {
     TreeNode* n1 = new TreeNode(1, n3, nullptr);
     TreeNode* rt = new TreeNode(2, n1, n2);
 
-    TreeNode* result = S->convertBST(rt);
+    TreeNode* result = S.convertBST(rt);
 
     DFS_inorder(result);
     cout << endl;

@@ -18,17 +18,15 @@ public:
                 continue;
             }
 
-            int left = i + 1;
+            int left  = i + 1;
             int right = nums_size - 1;
             while (left < right) {
                 int sum = nums[left] + nums[right] + nums[i];
                 if (sum > 0) {
                     right = right - 1;
-                }
-                else if (sum < 0) {
+                } else if (sum < 0) {
                     left = left + 1;
-                }
-                else {  // solution found
+                } else {  // solution found
                     three_Sum.push_back(vector<int>{nums[i], nums[left], nums[right]});
 
                     // skipping same numbers

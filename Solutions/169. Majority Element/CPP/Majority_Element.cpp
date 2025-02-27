@@ -12,8 +12,7 @@ public:
         for (int i = 0; i < nums_size; i++) {
             if (M.count(nums[i])) {
                 M[nums[i]] = M[nums[i]] + 1;
-            }
-            else {
+            } else {
                 M[nums[i]] = 1;
             }
 
@@ -27,12 +26,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> nums{2, 2, 1, 1, 1, 2, 2};
 
-    cout << S->majorityElement(nums) << endl;
+    cout << S.majorityElement(nums) << endl;
 
     return 0;
 }

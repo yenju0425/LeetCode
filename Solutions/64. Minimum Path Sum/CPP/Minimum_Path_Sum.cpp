@@ -33,11 +33,7 @@ int main() {
     Solution S;
 
     // input
-    vector<vector<int>> grid{
-        {1, 3, 1},
-        {1, 5, 1},
-        {4, 2, 1}
-    };
+    vector<vector<int>> grid{{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
 
     cout << S.minPathSum(grid) << endl;
 

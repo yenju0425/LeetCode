@@ -19,12 +19,10 @@ public:
         }
         if (low < root->val and high < root->val) {
             return trimBST(root->left, low, high);
-        }
-        else if (low > root->val and high > root->val) {
+        } else if (low > root->val and high > root->val) {
             return trimBST(root->right, low, high);
-        }
-        else {  // low <= root->val and high >= root->val
-            root->left = trimBST(root->left, low, high);
+        } else {  // low <= root->val and high >= root->val
+            root->left  = trimBST(root->left, low, high);
             root->right = trimBST(root->right, low, high);
             return root;
         }
@@ -41,10 +39,9 @@ void DFS_inorder(TreeNode* root) {
 }
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
-    int low = 1;
+    int low  = 1;
     int high = 4;
 
     // input tree structure:
@@ -62,7 +59,7 @@ int main() {
     TreeNode* n1 = new TreeNode(1, n3, nullptr);
     TreeNode* rt = new TreeNode(2, n1, n2);
 
-    TreeNode* result = S->trimBST(rt, low, high);
+    TreeNode* result = S.trimBST(rt, low, high);
 
     DFS_inorder(result);
     cout << endl;

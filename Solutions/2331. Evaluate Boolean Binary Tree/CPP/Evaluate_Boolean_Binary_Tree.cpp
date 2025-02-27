@@ -16,12 +16,10 @@ public:
     bool evaluateTree(TreeNode* root) {
         if (root->left == nullptr) {  // leaf node
             return root->val;
-        }
-        else {                     // none leaf node
+        } else {                   // none leaf node
             if (root->val == 2) {  // or
                 return evaluateTree(root->left) || evaluateTree(root->right);
-            }
-            else {  // and
+            } else {  // and
                 return evaluateTree(root->left) && evaluateTree(root->right);
             }
         }
@@ -29,7 +27,7 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input tree structure:
     //
@@ -46,7 +44,7 @@ int main() {
     TreeNode* n1 = new TreeNode(3, n3, nullptr);
     TreeNode* rt = new TreeNode(3, n1, n2);
 
-    cout << S->evaluateTree(rt) << endl;
+    cout << S.evaluateTree(rt) << endl;
 
     return 0;
 }

@@ -44,8 +44,8 @@ public:
 
         // update PTR
         ListNode* NEW_NXT = CUR_PTR->next;
-        CUR_PTR->next = LST_PTR;
-        CUR_PTR = NEW_NXT;
+        CUR_PTR->next     = LST_PTR;
+        CUR_PTR           = NEW_NXT;
 
         ListNode* result = dummyHead->next;
         delete dummyHead;
@@ -57,7 +57,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     ListNode n5(5);
     ListNode n4(4, &n5);
     ListNode n3(3, &n4);

@@ -18,30 +18,24 @@ public:
         if (nums[left] < nums[idx]) {
             if (nums[left] <= target && target < nums[idx]) {
                 return binary_search(nums, target, left, idx);
-            }
-            else {
+            } else {
                 return binary_search(nums, target, idx + 1, right);
             }
-        }
-        else {
+        } else {
             if (nums[idx] < target && target <= nums[right - 1]) {
                 return binary_search(nums, target, idx + 1, right);
-            }
-            else {
+            } else {
                 return binary_search(nums, target, left, idx);
             }
         }
     }
 
-    int search(vector<int>& nums, int target) {
-        return binary_search(nums, target, 0, nums.size());
-    }
+    int search(vector<int>& nums, int target) { return binary_search(nums, target, 0, nums.size()); }
 };
 
 int main() {
     Solution S;
 
-    // inputs
     int target = 2;
     vector<int> nums{3, 4, 5, 6, 1, 2};
 

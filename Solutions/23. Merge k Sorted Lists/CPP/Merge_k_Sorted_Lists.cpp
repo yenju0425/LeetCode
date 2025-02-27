@@ -14,9 +14,7 @@ struct ListNode {
 };
 
 struct cmp {
-    bool operator()(pair<ListNode*, int>& a, pair<ListNode*, int>& b) {
-        return a.first->val > b.first->val;
-    }
+    bool operator()(pair<ListNode*, int>& a, pair<ListNode*, int>& b) { return a.first->val > b.first->val; }
 };
 
 class Solution {
@@ -32,7 +30,7 @@ public:
             }
         }
 
-        ListNode* HEAD = new ListNode();
+        ListNode* HEAD    = new ListNode();
         ListNode* pointer = HEAD;
         while (!PQ.empty()) {
             pair<ListNode*, int> P = PQ.top();
@@ -43,7 +41,7 @@ public:
             }
 
             pointer->next = P.first;
-            pointer = pointer->next;
+            pointer       = pointer->next;
         }
 
         ListNode* result = HEAD->next;
@@ -56,7 +54,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     ListNode a2(7);
     ListNode a1(3, &a2);
     ListNode a0(1, &a1);

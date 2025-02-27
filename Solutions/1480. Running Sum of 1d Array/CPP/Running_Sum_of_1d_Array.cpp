@@ -12,7 +12,7 @@ public:
         int temp = 0;
 
         for (int i = 0; i < nums_size; i++) {
-            temp = temp + nums[i];
+            temp      = temp + nums[i];
             result[i] = temp;
         }
 
@@ -21,12 +21,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> nums{1, 2, 3, 4};
 
-    vector<int> result = S->runningSum(nums);
+    vector<int> result = S.runningSum(nums);
 
     for (auto i : result) {
         cout << i << ' ';

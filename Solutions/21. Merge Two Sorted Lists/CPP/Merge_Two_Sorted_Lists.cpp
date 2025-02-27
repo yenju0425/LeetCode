@@ -13,20 +13,19 @@ struct ListNode {
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-        ListNode* headNode = new ListNode(0, list1);
+        ListNode* headNode    = new ListNode(0, list1);
         ListNode* currentNode = headNode;
 
         // insert list2 to list1
         while (list1 != nullptr || list2 != nullptr) {
             if (list1 == nullptr || (list2 != nullptr && list2->val < list1->val)) {  // list2 is smaller (insert list2)
                 currentNode->next = list2;
-                currentNode = list2;
-                list2 = list2->next;
-            }
-            else {
+                currentNode       = list2;
+                list2             = list2->next;
+            } else {
                 currentNode->next = list1;
-                currentNode = list1;
-                list1 = list1->next;
+                currentNode       = list1;
+                list1             = list1->next;
             }
         }
 
@@ -40,7 +39,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     ListNode n2(4);
     ListNode n1(2, &n2);
     ListNode n0(1, &n1);

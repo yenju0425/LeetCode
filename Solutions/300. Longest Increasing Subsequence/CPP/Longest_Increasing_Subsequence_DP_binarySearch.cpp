@@ -14,8 +14,7 @@ public:
 
             if (insertionIndex == partialLIS.end()) {
                 partialLIS.push_back(num);
-            }
-            else {
+            } else {
                 *insertionIndex = num;
             }
         }

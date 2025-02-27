@@ -1,4 +1,5 @@
-// Reference: https://leetcode.com/problems/short-encoding-of-words/discuss/125811/C%2B%2BJavaPython-Easy-Understood-Solution-with-Explanation
+// Reference:
+// https://leetcode.com/problems/short-encoding-of-words/discuss/125811/C%2B%2BJavaPython-Easy-Understood-Solution-with-Explanation
 #include <iostream>
 #include <unordered_set>
 #include <vector>
@@ -28,12 +29,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<string> words{"time", "me", "bell"};
 
-    cout << S->minimumLengthEncoding(words) << endl;
+    cout << S.minimumLengthEncoding(words) << endl;
 
     return 0;
 }

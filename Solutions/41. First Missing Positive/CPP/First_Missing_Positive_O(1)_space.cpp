@@ -1,4 +1,5 @@
-// Reference: https://leetcode.com/problems/first-missing-positive/discuss/781724/C%2B%2B-simple-5-line-solution-O(n)-time-and-O(1)-space
+// Reference:
+// https://leetcode.com/problems/first-missing-positive/discuss/781724/C%2B%2B-simple-5-line-solution-O(n)-time-and-O(1)-space
 #include <iostream>
 #include <vector>
 

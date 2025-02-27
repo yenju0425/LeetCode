@@ -14,7 +14,7 @@ public:
         for (int i = 0; i < numOfstrs; ++i) {
             int strLength = strs[i].length();
             for (int j = 0; j < strLength; ++j) {
-                int c = strs[i][j] - 'a';
+                int c             = strs[i][j] - 'a';
                 charCounter[i][c] = charCounter[i][c] + 1;
             }
         }
@@ -24,8 +24,7 @@ public:
         for (int i = 0; i < numOfstrs; ++i) {
             if (classifier.count(charCounter[i]) == 0) {
                 classifier[charCounter[i]] = vector<string>{strs[i]};
-            }
-            else {
+            } else {
                 classifier[charCounter[i]].push_back(strs[i]);
             }
         }

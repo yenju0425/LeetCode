@@ -13,8 +13,8 @@ public:
             int r = i + 0.5;                               // magic
             while (l >= 0 and r < s_size and s[l] == s[r]) {
                 stringCounter = stringCounter + 1;
-                l = l - 1;
-                r = r + 1;
+                l             = l - 1;
+                r             = r + 1;
             }
         }
 
@@ -23,12 +23,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     string s = "abcaac";
 
-    cout << S->countSubstrings(s) << endl;
+    cout << S.countSubstrings(s) << endl;
 
     return 0;
 }

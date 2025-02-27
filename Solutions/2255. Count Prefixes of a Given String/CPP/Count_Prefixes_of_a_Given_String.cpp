@@ -27,11 +27,10 @@ public:
 int main() {
     Solution* S = new Solution();
 
-    // inputs
     string s = "aabdk";
     vector<string> words{"aa", "aabd", "c"};
 
-    cout << S->countPrefixes(words, s) << endl;
+    cout << S.countPrefixes(words, s) << endl;
 
     return 0;
 }

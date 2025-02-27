@@ -5,8 +5,8 @@ using namespace std;
 
 class Solution {
 private:
-    string s = "";
-    string p = "";
+    string s   = "";
+    string p   = "";
     int s_size = 0;
     int p_size = 0;
     vector<vector<int>> DP;
@@ -50,7 +50,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     string s = "ab";
     string p = ".*";
 

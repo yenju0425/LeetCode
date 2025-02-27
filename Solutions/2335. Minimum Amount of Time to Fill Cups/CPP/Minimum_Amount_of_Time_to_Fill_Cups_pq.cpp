@@ -33,12 +33,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> amount{4, 5, 4, 3};
 
-    cout << S->fillCups(amount) << endl;
+    cout << S.fillCups(amount) << endl;
 
     return 0;
 }

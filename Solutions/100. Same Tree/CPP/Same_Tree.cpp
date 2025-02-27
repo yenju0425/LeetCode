@@ -16,11 +16,9 @@ public:
     bool isSameTree(TreeNode* p, TreeNode* q) {
         if (p == nullptr && q == nullptr) {
             return true;
-        }
-        else if (p == nullptr || q == nullptr) {
+        } else if (p == nullptr || q == nullptr) {
             return false;
-        }
-        else if (p->val == q->val && isSameTree(p->left, q->left) && isSameTree(p->right, q->right)) {
+        } else if (p->val == q->val && isSameTree(p->left, q->left) && isSameTree(p->right, q->right)) {
             return true;
         }
 
@@ -31,7 +29,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     TreeNode n2(2);
     TreeNode n4(4, &n2, nullptr);
     TreeNode n1(1, nullptr, nullptr);

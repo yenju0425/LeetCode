@@ -19,11 +19,11 @@ public:
             nxt_ptr = cur_ptr->next;
             while (nxt_ptr != nullptr && nxt_ptr->val == cur_ptr->val) {
                 ListNode* del_ptr = nxt_ptr;
-                nxt_ptr = nxt_ptr->next;
+                nxt_ptr           = nxt_ptr->next;
                 delete del_ptr;
             }
             cur_ptr->next = nxt_ptr;
-            cur_ptr = nxt_ptr;
+            cur_ptr       = nxt_ptr;
         }
 
         return head;
@@ -33,7 +33,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     ListNode n2(2);
     ListNode n1(1, &n2);
     ListNode hd(1, &n1);

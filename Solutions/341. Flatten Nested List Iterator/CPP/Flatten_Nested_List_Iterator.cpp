@@ -9,29 +9,19 @@ private:
     vector<NestedInteger> nestedList;
 
 public:
-    NestedInteger(int i) {
-        *integer = i;
-    }
-    NestedInteger(vector<NestedInteger> NI) {
-        nestedList = NI;
-    }
+    NestedInteger(int i) { *integer = i; }
+    NestedInteger(vector<NestedInteger> NI) { nestedList = NI; }
 
     // Return true if this NestedInteger holds a single integer, rather than a nested list.
-    bool isInteger() const {
-        return integer != nullptr;
-    }
+    bool isInteger() const { return integer != nullptr; }
 
     // Return the single integer that this NestedInteger holds, if it holds a single integer
     // The result is undefined if this NestedInteger holds a nested list
-    int getInteger() const {
-        return *integer;
-    }
+    int getInteger() const { return *integer; }
 
     // Return the nested list that this NestedInteger holds, if it holds a nested list
     // The result is undefined if this NestedInteger holds a single integer
-    const vector<NestedInteger>& getList() const {
-        return nestedList;
-    }
+    const vector<NestedInteger>& getList() const { return nestedList; }
 };
 
 class NestedIterator {
@@ -43,9 +33,9 @@ private:
 
 public:
     NestedIterator(vector<NestedInteger>& nestedList) {
-        N_Ints = nestedList;
+        N_Ints   = nestedList;
         listSize = nestedList.size();
-        index = 0;
+        index    = 0;
         for (int i = 0; i < listSize; i++) {
             vector<NestedInteger> temp;
             if (nestedList[i].isInteger() == false) {
@@ -58,10 +48,9 @@ public:
     int next() {
         if (N_Ints[index].isInteger()) {
             int temp = N_Ints[index].getInteger();
-            index = index + 1;
+            index    = index + 1;
             return temp;
-        }
-        else {
+        } else {
             int temp = N_Iters[index].next();
             if (N_Iters[index].hasNext() == false) {
                 index = index + 1;

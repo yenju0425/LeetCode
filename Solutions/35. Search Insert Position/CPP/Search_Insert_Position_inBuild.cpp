@@ -14,7 +14,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     int target = 5;
     vector<int> nums{1, 3, 5, 6};
 

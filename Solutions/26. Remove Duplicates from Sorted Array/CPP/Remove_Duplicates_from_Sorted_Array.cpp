@@ -11,7 +11,7 @@ public:
         int nums_size = nums.size();
         for (int i = 1; i < nums_size; ++i) {
             if (nums[i] > nums[counter]) {
-                counter = counter + 1;
+                counter       = counter + 1;
                 nums[counter] = nums[i];
             }
         }

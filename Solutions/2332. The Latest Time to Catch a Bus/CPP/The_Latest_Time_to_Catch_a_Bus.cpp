@@ -19,8 +19,7 @@ public:
         vector<int>::iterator nxt_p = min(p + capacity, upper_bound(p, passengers.end(), buses.back()));
         if (nxt_p - p == capacity) {  // last bus is full
             p = nxt_p - 1;            // p: the last passenger
-        }
-        else {
+        } else {
             p = passengers.insert(nxt_p, buses.back() + 1);  // p: the last passenger (dummy)
         }
 
@@ -35,14 +34,13 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int capacity = 1;
     vector<int> buses{3};
     vector<int> passengers{4};
 
-    cout << S->latestTimeCatchTheBus(buses, passengers, capacity) << endl;
+    cout << S.latestTimeCatchTheBus(buses, passengers, capacity) << endl;
 
     return 0;
 }

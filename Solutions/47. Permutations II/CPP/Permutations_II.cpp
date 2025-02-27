@@ -39,7 +39,7 @@ public:
 
         int nums_size = nums.size();
         for (int i = 0; i < nums_size; ++i) {
-            int num = nums[i];
+            int num       = nums[i];
             numCount[num] = (numCount.count(num) == 0) ? 1 : numCount[num] + 1;
         }
 

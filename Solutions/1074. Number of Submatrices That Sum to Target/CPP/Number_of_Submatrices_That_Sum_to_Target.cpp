@@ -23,12 +23,10 @@ public:
         for (int i = 0; i < N; i++) {
             for (int j = i; j < N; j++) {
                 sum = 0;
-                UM = {
-                    {0, 1}
-                };
+                UM  = {{0, 1}};
                 for (int k = 0; k < M; k++) {
-                    sum = sum + matrix[k][j] - (i > 0 ? matrix[k][i - 1] : 0);
-                    result = result + UM[sum - target];
+                    sum     = sum + matrix[k][j] - (i > 0 ? matrix[k][i - 1] : 0);
+                    result  = result + UM[sum - target];
                     UM[sum] = UM[sum] + 1;
                 }
             }
@@ -39,17 +37,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution;
+    Solution S;
 
-    // inputs
     int target = 0;
-    vector<vector<int>> matrix{
-        {0, 1, 0},
-        {1, 1, 1},
-        {0, 1, 0}
-    };
+    vector<vector<int>> matrix{{0, 1, 0}, {1, 1, 1}, {0, 1, 0}};
 
-    cout << S->numSubmatrixSumTarget(matrix, target) << endl;
+    cout << S.numSubmatrixSumTarget(matrix, target) << endl;
 
     return 0;
 }

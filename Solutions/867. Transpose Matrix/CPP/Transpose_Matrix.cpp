@@ -22,15 +22,11 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    vector<vector<int>> matrix{
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    };
+    vector<vector<int>> matrix{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
-    vector<vector<int>> result = S->transpose(matrix);
+    vector<vector<int>> result = S.transpose(matrix);
 
     for (auto i : result) {
         for (auto j : i) {

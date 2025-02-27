@@ -5,7 +5,7 @@ using namespace std;
 class Solution {
 public:
     bool hasAllCodes(string s, int k) {
-        int s_size = s.length();
+        int s_size          = s.length();
         int numOfSubstrings = 1 << k;
 
         // return false, if the string does not have enough length
@@ -18,7 +18,7 @@ public:
         bool* doExist = new bool[numOfSubstrings]{false};
 
         // fill "num" with the first (k - 1) bits
-        int num = 0;
+        int num                 = 0;
         string::iterator reader = s.begin();
         for (int i = 0; i < k - 1; i++) {
             // push_back current bit
@@ -36,7 +36,7 @@ public:
             num = (*reader == '1') ? (num << 1) + 1 : (num << 1);
 
             doExist[num] = true;
-            reader = reader + 1;
+            reader       = reader + 1;
         }
 
         for (int i = 0; i < numOfSubstrings; i++) {
@@ -50,13 +50,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
-    int k = 2;
+    int k    = 2;
     string s = "00110110";
 
-    cout << S->hasAllCodes(s, k) << endl;
+    cout << S.hasAllCodes(s, k) << endl;
 
     return 0;
 }

@@ -33,7 +33,7 @@ public:
             int currentNum = candidates[getNumIdx[i]];
             currentComb.push_back(currentNum);
 
-            int nextIdx = max(currentNumIdx + 1, getNumIdx[i] + 1);
+            int nextIdx   = max(currentNumIdx + 1, getNumIdx[i] + 1);
             int nextNumId = i + (nextIdx == numOfCandidates || currentNum != candidates[nextIdx]);
             combGenerator(nextIdx, currentSum + currentNum, nextNumId);
 
@@ -46,8 +46,8 @@ public:
         sort(candidates.begin(), candidates.end());
 
         // init
-        this->target = target;
-        this->candidates = candidates;
+        this->target          = target;
+        this->candidates      = candidates;
         this->numOfCandidates = candidates.size();
         for (int i = 0; i < numOfCandidates; ++i) {
             if (i == 0 || candidates[i] != candidates[i - 1]) {
@@ -66,7 +66,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     int target = 8;
     vector<int> candidates{3, 1, 3, 5, 1, 1};
 

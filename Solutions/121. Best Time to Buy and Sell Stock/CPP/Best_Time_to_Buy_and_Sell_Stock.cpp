@@ -22,12 +22,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> prices{7, 1, 5, 3, 6, 4};
 
-    cout << S->maxProfit(prices) << endl;
+    cout << S.maxProfit(prices) << endl;
 
     return 0;
 }

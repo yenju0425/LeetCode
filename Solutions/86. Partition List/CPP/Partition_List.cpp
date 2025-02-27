@@ -22,11 +22,10 @@ public:
         while (head != nullptr) {
             if (head->val >= x) {
                 geq_ptr->next = head;
-                geq_ptr = head;
-            }
-            else {
+                geq_ptr       = head;
+            } else {
                 ltn_ptr->next = head;
-                ltn_ptr = head;
+                ltn_ptr       = head;
             }
 
             head = head->next;
@@ -46,7 +45,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     int x = 3;
     ListNode n2(2);
     ListNode n1(3, &n2);

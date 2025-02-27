@@ -28,8 +28,7 @@ public:
             for (int j = 1; j <= word2_length; ++j) {
                 if (word1[i] != word2[j]) {
                     DP[i][j] = min(DP[i - 1][j - 1], min(DP[i - 1][j], DP[i][j - 1])) + 1;
-                }
-                else {
+                } else {
                     DP[i][j] = DP[i - 1][j - 1];
                 }
             }
@@ -42,7 +41,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     string word1 = "horse";
     string word2 = "ros";
 

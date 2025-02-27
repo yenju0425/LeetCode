@@ -20,13 +20,11 @@ public:
         bool match;
         if (pi == p_size) {
             match = (si == s_size);
-        }
-        else {
+        } else {
             bool fistMatch = (si != s_size) && (s[si] == p[pi] || p[pi] == '.');
             if (p[pi + 1] == '*') {  // next pi is '*'
                 match = isMatch(si, pi + 2) || (fistMatch && isMatch(si + 1, pi));
-            }
-            else {
+            } else {
                 match = fistMatch && isMatch(si + 1, pi + 1);
             }
         }
@@ -39,9 +37,9 @@ public:
     bool isMatch(string s, string p) {
         this->s_size = s.size();
         this->p_size = p.size();
-        this->s = s + "&";
-        this->p = p + "&";
-        this->DP = vector<vector<int>>(s_size + 1, vector<int>(p_size + 1, -1));
+        this->s      = s + "&";
+        this->p      = p + "&";
+        this->DP     = vector<vector<int>>(s_size + 1, vector<int>(p_size + 1, -1));
 
         return isMatch(0, 0);
     }
@@ -50,7 +48,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     string s = "ab";
     string p = ".*";
 

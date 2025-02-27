@@ -32,13 +32,13 @@ public:
 
         // Try to place a Queen:
         //
-        //     the binary representation of "l", "r", "v", and "availableCells" indicates the corresponding available cells
-        //     e.g. n = 9, availableCells = 10111101
+        //     the binary representation of "l", "r", "v", and "availableCells" indicates the corresponding available
+        //     cells e.g. n = 9, availableCells = 10111101
         //                                   ^    ^
         //                          Queen can be placed here
         //
         for (int i = 0; i < N; ++i) {  // look for empty cells
-            int newQueen = 1 << i;
+            int newQueen       = 1 << i;
             int availableCells = l | r | v;          // left diagonal | right diagonal | vitercal line
             if ((availableCells & newQueen) == 0) {  // 0: no collision; 1: collision
                 // place new Queen

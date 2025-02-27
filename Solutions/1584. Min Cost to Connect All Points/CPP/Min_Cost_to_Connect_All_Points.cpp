@@ -5,9 +5,7 @@ using namespace std;
 
 class Solution {
 public:
-    int manhattanDistance(vector<int> p1, vector<int> p2) {
-        return abs(p1[0] - p2[0]) + abs(p1[1] - p2[1]);
-    }
+    int manhattanDistance(vector<int> p1, vector<int> p2) { return abs(p1[0] - p2[0]) + abs(p1[1] - p2[1]); }
 
     int minCostConnectPoints(vector<vector<int>>& points) {
         int numOfPoints = points.size();
@@ -15,7 +13,7 @@ public:
         vector<int> distance(numOfPoints);         // the distance to MST
 
         // choose point 0 as the root
-        visited[0] = true;
+        visited[0]  = true;
         distance[0] = 0;
         for (int i = 1; i < numOfPoints; i++) {
             distance[i] = manhattanDistance(points[0], points[i]);
@@ -31,7 +29,7 @@ public:
                 }
             }
             visited[minIndex] = true;
-            cost = cost + distance[minIndex];
+            cost              = cost + distance[minIndex];
 
             // update the distance of the non-visited nodes
             for (int j = 0; j < numOfPoints; j++) {
@@ -46,16 +44,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
-    vector<vector<int>> points{
-        { 3, 12},
-        {-2,  5},
-        {-4,  1}
-    };
+    vector<vector<int>> points{{3, 12}, {-2, 5}, {-4, 1}};
 
-    cout << S->minCostConnectPoints(points);
+    cout << S.minCostConnectPoints(points);
 
     return 0;
 }

@@ -14,7 +14,7 @@ struct TreeNode {
 
 class Solution {
 private:
-    TreeNode* prev_Node = nullptr;
+    TreeNode* prev_Node  = nullptr;
     TreeNode* errorNode1 = nullptr;
     TreeNode* errorNode2 = nullptr;
 
@@ -29,8 +29,7 @@ public:
             if (errorNode1 == nullptr) {
                 errorNode1 = prev_Node;
                 errorNode2 = root;
-            }
-            else if (errorNode1 != nullptr) {
+            } else if (errorNode1 != nullptr) {
                 errorNode2 = root;
                 return;
             }

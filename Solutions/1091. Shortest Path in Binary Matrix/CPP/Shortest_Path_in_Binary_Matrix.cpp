@@ -11,32 +11,21 @@ private:
     vector<vector<int>> dir;
 
 public:
-    int isValid(int m, int n) {
-        return m < N && m >= 0 && n < N && n >= 0;
-    }
+    int isValid(int m, int n) { return m < N && m >= 0 && n < N && n >= 0; }
 
     int shortestPathBinaryMatrix(vector<vector<int>>& grid) {
         if (grid[0][0] == 1) {
             return -1;
         }
 
-        this->N = grid.size();
-        this->dir = vector<vector<int>>{
-            { 1,  1},
-            { 1,  0},
-            { 1, -1},
-            { 0,  1},
-            { 0, -1},
-            {-1,  1},
-            {-1,  0},
-            {-1, -1}
-        };
+        this->N   = grid.size();
+        this->dir = vector<vector<int>>{{1, 1}, {1, 0}, {1, -1}, {0, 1}, {0, -1}, {-1, 1}, {-1, 0}, {-1, -1}};
 
         vector<queue<pair<int, int>>> Q(2);
         Q[0].push(pair<int, int>(0, 0));
         grid[0][0] = 1;
 
-        int idx = 0;
+        int idx         = 0;
         int stepCounter = 1;
         while (!Q[idx].empty()) {
             while (!Q[idx].empty()) {
@@ -60,7 +49,7 @@ public:
                 }
             }
 
-            idx = !idx;
+            idx         = !idx;
             stepCounter = stepCounter + 1;
         }
 
@@ -69,16 +58,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
-    vector<vector<int>> grid{
-        {0, 0, 0},
-        {1, 1, 0},
-        {1, 1, 0}
-    };
+    vector<vector<int>> grid{{0, 0, 0}, {1, 1, 0}, {1, 1, 0}};
 
-    cout << S->shortestPathBinaryMatrix(grid) << endl;
+    cout << S.shortestPathBinaryMatrix(grid) << endl;
 
     return 0;
 }

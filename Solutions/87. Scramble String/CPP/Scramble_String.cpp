@@ -33,7 +33,8 @@ public:
             if (isScramble(s1.substr(0, i), s2.substr(0, i)) && isScramble(s1.substr(i), s2.substr(i))) {
                 return true;
             }
-            if (isScramble(s1.substr(0, i), s2.substr(s_len - i)) && isScramble(s1.substr(i), s2.substr(0, s_len - i))) {
+            if (isScramble(s1.substr(0, i), s2.substr(s_len - i)) &&
+                isScramble(s1.substr(i), s2.substr(0, s_len - i))) {
                 return true;
             }
         }
@@ -45,7 +46,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     string s1 = "great";
     string s2 = "gtaer";
 

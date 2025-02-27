@@ -17,12 +17,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> nums{4, 1, 2, 1, 2};
 
-    cout << S->singleNumber(nums) << endl;
+    cout << S.singleNumber(nums) << endl;
 
     return 0;
 }

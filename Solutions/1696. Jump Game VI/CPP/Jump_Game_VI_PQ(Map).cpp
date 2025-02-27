@@ -19,8 +19,7 @@ public:
             if (i >= k) {
                 if (M[nums[i - k]] == 1) {
                     M.erase(nums[i - k]);
-                }
-                else {
+                } else {
                     M[nums[i - k]] = M[nums[i - k]] - 1;
                 }
             }
@@ -31,13 +30,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int k = 2;
     vector<int> nums{100, -1, -100, -1, 100};
 
-    cout << S->maxResult(nums, k) << endl;
+    cout << S.maxResult(nums, k) << endl;
 
     return 0;
 }

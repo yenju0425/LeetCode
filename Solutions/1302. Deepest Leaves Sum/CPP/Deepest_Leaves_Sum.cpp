@@ -47,7 +47,7 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input tree structure:
     //
@@ -64,7 +64,7 @@ int main() {
     TreeNode* n1 = new TreeNode(1, n3, nullptr);
     TreeNode* rt = new TreeNode(2, n1, n2);
 
-    cout << S->deepestLeavesSum(rt) << endl;
+    cout << S.deepestLeavesSum(rt) << endl;
 
     return 0;
 }

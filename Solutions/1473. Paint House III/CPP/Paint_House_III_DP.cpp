@@ -28,12 +28,12 @@ public:
             if (curColor == 0) {
                 for (int i = 1; i <= n; i++) {
                     houses[idx] = i;
-                    result = min(result, unsigned(cost[idx][i - 1]) + paint(houses, cost, idx + 1, i, numOfNbh + (i != preColor)));
+                    result      = min(result, unsigned(cost[idx][i - 1]) +
+                                                  paint(houses, cost, idx + 1, i, numOfNbh + (i != preColor)));
                 }
-                houses[idx] = 0;
+                houses[idx]                 = 0;
                 dp[idx][preColor][numOfNbh] = result;
-            }
-            else {
+            } else {
                 dp[idx][preColor][numOfNbh] = paint(houses, cost, idx + 1, curColor, numOfNbh + (curColor != preColor));
             }
         }
@@ -41,10 +41,10 @@ public:
     }
 
     int minCost(vector<int>& houses, vector<vector<int>>& cost, int m, int n, int target) {
-        this->m = m;
-        this->n = n;
+        this->m      = m;
+        this->n      = n;
         this->target = target;
-        this->dp = vector<vector<vector<int>>>(m, vector<vector<int>>(n + 1, vector<int>(target + 1, 0)));
+        this->dp     = vector<vector<vector<int>>>(m, vector<vector<int>>(n + 1, vector<int>(target + 1, 0)));
 
         int result = paint(houses, cost, 0, 0, 0);
 
@@ -53,22 +53,15 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
-    int m = 5;
-    int n = 2;
+    int m      = 5;
+    int n      = 2;
     int target = 3;
     vector<int> houses{0, 0, 0, 0, 0};
-    vector<vector<int>> cost{
-        { 1, 10},
-        {10,  1},
-        {10,  1},
-        { 1, 10},
-        { 5,  1}
-    };
+    vector<vector<int>> cost{{1, 10}, {10, 1}, {10, 1}, {1, 10}, {5, 1}};
 
-    cout << S->minCost(houses, cost, m, n, target) << endl;
+    cout << S.minCost(houses, cost, m, n, target) << endl;
 
     return 0;
 }

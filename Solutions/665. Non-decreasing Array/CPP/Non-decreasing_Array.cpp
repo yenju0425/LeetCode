@@ -17,8 +17,7 @@ public:
                 errorCounter = errorCounter + 1;
                 if (nums[i] >= nums[i - 2]) {
                     nums[i - 1] = nums[i];
-                }
-                else {
+                } else {
                     nums[i] = nums[i - 1];
                 }
             }
@@ -33,12 +32,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> nums{5, 4, 3};
 
-    cout << S->checkPossibility(nums) << endl;
+    cout << S.checkPossibility(nums) << endl;
 
     return 0;
 }

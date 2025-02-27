@@ -5,13 +5,11 @@ using namespace std;
 
 class Solution {
 public:
-    int gcd(int a, int b) {
-        return (b == 0) ? a : gcd(b, a % b);
-    }
+    int gcd(int a, int b) { return (b == 0) ? a : gcd(b, a % b); }
 
     void rotate(vector<int>& nums, int k) {
         int nums_size = nums.size();
-        k = k % nums_size;
+        k             = k % nums_size;
 
         int numOfIter = gcd(nums_size, k);
         for (int i = 0; i < numOfIter; i++) {
@@ -27,13 +25,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int k = 3;
     vector<int> nums{-1, -100, 3, 99};
 
-    S->rotate(nums, k);
+    S.rotate(nums, k);
 
     for (auto i : nums) {
         cout << i << ' ';

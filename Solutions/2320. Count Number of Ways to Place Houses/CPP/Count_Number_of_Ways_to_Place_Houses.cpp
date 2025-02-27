@@ -18,12 +18,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     int n = 1000;
 
-    cout << S->countHousePlacements(n) << endl;
+    cout << S.countHousePlacements(n) << endl;
 
     return 0;
 }

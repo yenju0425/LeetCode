@@ -25,13 +25,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int n = 3;
     int k = 1;
 
-    cout << S->kInversePairs(n, k) << endl;
+    cout << S.kInversePairs(n, k) << endl;
 
     return 0;
 }

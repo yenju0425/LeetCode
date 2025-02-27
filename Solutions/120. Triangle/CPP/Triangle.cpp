@@ -27,17 +27,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
-    vector<vector<int>> triangle{
-        {2},
-        {3, 4},
-        {6, 5, 7},
-        {4, 1, 8, 3}
-    };
+    vector<vector<int>> triangle{{2}, {3, 4}, {6, 5, 7}, {4, 1, 8, 3}};
 
-    cout << S->minimumTotal(triangle) << endl;
+    cout << S.minimumTotal(triangle) << endl;
 
     return 0;
 }

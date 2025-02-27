@@ -25,12 +25,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     int numRows = 5;
 
-    vector<vector<int>> result = S->generate(numRows);
+    vector<vector<int>> result = S.generate(numRows);
 
     for (auto i : result) {
         for (auto j : i) {

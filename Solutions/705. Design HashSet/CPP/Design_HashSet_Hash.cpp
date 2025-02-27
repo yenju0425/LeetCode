@@ -7,9 +7,7 @@ class MyHashSet {
     vector<vector<int>> HS;
 
 public:
-    MyHashSet() {
-        HS = vector<vector<int>>(1024);
-    }
+    MyHashSet() { HS = vector<vector<int>>(1024); }
 
     void add(int key) {
         int index = key & 1023;

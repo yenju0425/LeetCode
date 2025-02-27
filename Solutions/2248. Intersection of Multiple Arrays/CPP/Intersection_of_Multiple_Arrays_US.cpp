@@ -21,8 +21,7 @@ public:
             for (vector<int>::iterator iter = result.begin(); iter != result.end();) {
                 if (US.count(*iter)) {
                     iter = iter + 1;
-                }
-                else {
+                } else {
                     result.erase(iter);
                 }
             }
@@ -34,15 +33,11 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    vector<vector<int>> sets{
-        {1, 2, 3},
-        {1, 3, 9},
-        {1, 2, 8, 3}
-    };
+    vector<vector<int>> sets{{1, 2, 3}, {1, 3, 9}, {1, 2, 8, 3}};
 
-    vector<int> result = S->intersection(sets);
+    vector<int> result = S.intersection(sets);
 
     for (auto i : result) {
         cout << i << ' ';

@@ -13,17 +13,16 @@ public:
         }
 
         int result = 1;
-        int pre = 0;
-        int cur = 0;
+        int pre    = 0;
+        int cur    = 0;
         for (int i = 1; i < nums_size; i++) {
             if (pre == 0) {
                 pre = nums[i];
-            }
-            else {
+            } else {
                 cur = nums[i];
                 if (cur != 0 and (pre ^ cur) < 0) {
                     result = result + 1;
-                    pre = cur;
+                    pre    = cur;
                 }
             }
         }
@@ -33,12 +32,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> nums{1, 2, 3};
 
-    cout << S->wiggleMaxLength(nums) << endl;
+    cout << S.wiggleMaxLength(nums) << endl;
 
     return 0;
 }

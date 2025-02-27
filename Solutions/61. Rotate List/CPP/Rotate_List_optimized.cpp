@@ -18,11 +18,11 @@ public:
             return head;
         }
 
-        int numOfNodes = 0;
+        int numOfNodes     = 0;
         ListNode* lastNode = nullptr;
         for (ListNode* ptr = head; ptr != nullptr; ptr = ptr->next) {
             numOfNodes = numOfNodes + 1;
-            lastNode = ptr;
+            lastNode   = ptr;
         }
 
         k = k % numOfNodes;
@@ -31,10 +31,10 @@ public:
         }
 
         lastNode->next = head;
-        k = numOfNodes - k;
+        k              = numOfNodes - k;
         for (int i = 0; i < k; ++i) {
             lastNode = head;
-            head = head->next;
+            head     = head->next;
         }
         lastNode->next = nullptr;
 
@@ -45,7 +45,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     int k = 3;
     ListNode n4(4);
     ListNode n3(3, &n4);

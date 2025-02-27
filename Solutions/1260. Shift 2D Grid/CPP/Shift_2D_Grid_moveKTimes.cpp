@@ -33,17 +33,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int k = 1;
-    vector<vector<int>> grid{
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    };
+    vector<vector<int>> grid{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
-    vector<vector<int>> result = S->shiftGrid(grid, k);
+    vector<vector<int>> result = S.shiftGrid(grid, k);
 
     for (auto i : grid) {
         for (auto j : i) {

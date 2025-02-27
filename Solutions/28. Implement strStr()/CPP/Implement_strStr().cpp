@@ -9,7 +9,7 @@ public:
             return 0;
         }
 
-        int index = -1;
+        int index  = -1;
         int h_size = haystack.size();
         int n_size = needle.size();
         for (int i = 0; i < h_size - n_size + 1; ++i) {
@@ -32,9 +32,8 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     string haystack = "hello";
-    string needle = "ell";
+    string needle   = "ell";
 
     cout << S.strStr(haystack, needle) << endl;
 

@@ -24,18 +24,16 @@ public:
                     continue;
                 }
 
-                int left = j + 1;
+                int left  = j + 1;
                 int right = nums_size - 1;
 
                 int offset = target - nums[i] - nums[j];
                 while (left < right) {
                     if (nums[left] + nums[right] > offset) {
                         right = right - 1;
-                    }
-                    else if (nums[left] + nums[right] < offset) {
+                    } else if (nums[left] + nums[right] < offset) {
                         left = left + 1;
-                    }
-                    else {  // solution found
+                    } else {  // solution found
                         four_Sum.push_back(vector<int>{nums[i], nums[j], nums[left], nums[right]});
 
                         // skipping same numbers
@@ -61,7 +59,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     vector<int> nums{1, 0, -1, 0, -2, 2};
     int target = 0;
 

@@ -10,7 +10,7 @@ private:
 public:
     int lengthOfLIS(vector<int>& nums) {
         int n = nums.size();
-        LISs = vector<vector<int>>(n, vector<int>());
+        LISs  = vector<vector<int>>(n, vector<int>());
 
         int LISLengthIndex = 0;
         for (int i = n - 1; i >= 0; --i) {

@@ -14,11 +14,10 @@ public:
         for (int i = 0; i < size; ++i) {
             if (i1 == m || (i2 != n && nums1[i1] > nums2[i2])) {
                 result[i] = nums2[i2];
-                i2 = i2 + 1;
-            }
-            else {
+                i2        = i2 + 1;
+            } else {
                 result[i] = nums1[i1];
-                i1 = i1 + 1;
+                i1        = i1 + 1;
             }
         }
 
@@ -29,7 +28,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     int m = 1;
     int n = 0;
     vector<int> nums1{1};

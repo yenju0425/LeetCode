@@ -39,8 +39,9 @@ public:
 
         dp[key] = false;
         for (int i = 1; i < size && !dp[key]; ++i) {
-            dp[key] = (isScramble(s1.substr(0, i), s2.substr(0, i)) && isScramble(s1.substr(i), s2.substr(i))) ||
-                      (isScramble(s1.substr(0, i), s2.substr(size - i)) && isScramble(s1.substr(i), s2.substr(0, size - i)));
+            dp[key] =
+                (isScramble(s1.substr(0, i), s2.substr(0, i)) && isScramble(s1.substr(i), s2.substr(i))) ||
+                (isScramble(s1.substr(0, i), s2.substr(size - i)) && isScramble(s1.substr(i), s2.substr(0, size - i)));
         }
 
         return dp[key];
@@ -50,7 +51,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     string s1 = "great";
     string s2 = "gtaer";
 

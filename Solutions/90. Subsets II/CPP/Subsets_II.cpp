@@ -34,7 +34,7 @@ public:
         sort(nums.begin(), nums.end());
 
         this->nums_size = nums.size();
-        this->nums = nums;
+        this->nums      = nums;
 
         subsetsGenerator(0);
 

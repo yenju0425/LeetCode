@@ -9,16 +9,16 @@ public:
 
         int s_size = s.size();
         for (int i = 0; i < s_size; i++) {
-            int index = s[i] - 'a';
+            int index        = s[i] - 'a';
             charCount[index] = charCount[index] + 1;
         }
 
-        int pair = 0;
+        int pair     = 0;
         int non_pair = 0;
         for (int i = 0; i < 26; i++) {
             int parity = charCount[i] % 2;
-            pair = pair + charCount[i] - parity;
-            non_pair = non_pair + parity;
+            pair       = pair + charCount[i] - parity;
+            non_pair   = non_pair + parity;
         }
 
         return (non_pair <= k && pair + non_pair >= k) ? true : false;
@@ -26,13 +26,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
-    int k = 15;
+    int k    = 15;
     string s = "qlkzenwmmnpkopu";
 
-    cout << S->canConstruct(s, k) << endl;
+    cout << S.canConstruct(s, k) << endl;
 
     return 0;
 }

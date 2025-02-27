@@ -11,9 +11,7 @@ private:
     vector<vector<int>> dir;
 
 public:
-    bool isValid(int m, int n) {
-        return m < M and m >= 0 and n < N and n >= 0;
-    }
+    bool isValid(int m, int n) { return m < M and m >= 0 and n < N and n >= 0; }
 
     int DFS(int m, int n) {
         int area = isValid(m, n) and grid[m][n];
@@ -28,15 +26,10 @@ public:
     }
 
     int maxAreaOfIsland(vector<vector<int>>& grid) {
-        this->M = grid.size();
-        this->N = grid[0].size();
+        this->M    = grid.size();
+        this->N    = grid[0].size();
         this->grid = grid;
-        this->dir = vector<vector<int>>{
-            { 1,  0},
-            { 0,  1},
-            {-1,  0},
-            { 0, -1}
-        };
+        this->dir  = vector<vector<int>>{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 
         int maxArea = 0;
         for (int i = 0; i < M; i++) {
@@ -50,21 +43,15 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
-    vector<vector<int>> grid{
-        {0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-        {0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
-        {0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0},
-        {0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
-        {0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0}
-    };
+    vector<vector<int>> grid{{0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0},
+                             {0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0},
+                             {0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+                             {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0}};
 
-    cout << S->maxAreaOfIsland(grid) << endl;
+    cout << S.maxAreaOfIsland(grid) << endl;
 
     return 0;
 }

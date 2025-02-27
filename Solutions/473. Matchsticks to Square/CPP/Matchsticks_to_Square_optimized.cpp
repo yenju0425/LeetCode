@@ -22,7 +22,7 @@ public:
             }
 
             int new_len = side_len + MSs[i];
-            MSs[i] = -MSs[i];
+            MSs[i]      = -MSs[i];
             if (new_len < target and squareGenarator(idx + 1, new_len, k)) {
                 return true;
             }
@@ -52,7 +52,7 @@ public:
 
         sort(matchsticks.begin(), matchsticks.end(), greater<int>());
 
-        this->MSs = matchsticks;
+        this->MSs    = matchsticks;
         this->target = sum >> 2;  // side_len = sum / 4
 
         return squareGenarator(0, 0, 0);
@@ -60,12 +60,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> matchsticks{13, 11, 1, 8, 6, 7, 8, 8, 6, 7, 8, 9, 8};
 
-    cout << S->makesquare(matchsticks) << endl;
+    cout << S.makesquare(matchsticks) << endl;
 
     return 0;
 }

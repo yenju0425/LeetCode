@@ -13,9 +13,7 @@ private:
     int border[4];
 
 public:
-    bool isValid(int r, int c) {
-        return (border[0] <= r && r < border[2] && border[3] <= c && c < border[1]);
-    }
+    bool isValid(int r, int c) { return (border[0] <= r && r < border[2] && border[3] <= c && c < border[1]); }
 
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
         border[0] = 0;
@@ -23,12 +21,7 @@ public:
         border[2] = matrix.size();
         border[3] = 0;
 
-        int direction[4][2] = {
-            { 0,  1},
-            { 1,  0},
-            { 0, -1},
-            {-1,  0}
-        };
+        int direction[4][2] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
         vector<int> result;
 
         int matrixSize = border[1] * border[2];
@@ -41,11 +34,10 @@ public:
             if (isValid(next_r, next_c)) {
                 r = next_r;
                 c = next_c;
-            }
-            else {
+            } else {
                 // update border, d
                 int next_d = (d + 1) % 4;
-                border[d] = border[d] + direction[next_d][0] + direction[next_d][1];  // magic
+                border[d]  = border[d] + direction[next_d][0] + direction[next_d][1];  // magic
 
                 d = next_d;  // rotate direction clockwise must be a valid move
                 r = r + direction[d][0];
@@ -61,12 +53,7 @@ int main() {
     Solution S;
 
     // input
-    vector<vector<int>> matrix{
-        {1, 2, 3, 4},
-        {5, 6, 7, 8},
-        {9, 0, 1, 2},
-        {9, 0, 1, 2}
-    };
+    vector<vector<int>> matrix{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 0, 1, 2}, {9, 0, 1, 2}};
 
     vector<int> result = S.spiralOrder(matrix);
 

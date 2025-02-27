@@ -4,7 +4,7 @@
 using namespace std;
 
 struct Data {
-    int val = 0;
+    int val        = 0;
     Data* nextData = nullptr;
 };
 
@@ -16,15 +16,16 @@ public:
     Iterator(const vector<int>& nums) {
         Data* preNode = nullptr;
         for (vector<int>::const_iterator i = nums.end() - 1; i - nums.begin() >= 0; i--) {
-            Data* node = new Data();
-            node->val = *i;
+            Data* node     = new Data();
+            node->val      = *i;
             node->nextData = preNode;
-            preNode = node;
+            preNode        = node;
         }
         data = preNode;
     }
 
-    Iterator(const Iterator& iter) {  // Think: why do we need to create an Iterator using another Iterator? => Cause we need to PEEK!
+    Iterator(const Iterator& iter) {  // Think: why do we need to create an Iterator using another Iterator? => Cause we
+                                      // need to PEEK!
         data = iter.data;
     }
 
@@ -33,16 +34,13 @@ public:
         if (data != nullptr) {
             data = data->nextData;
             return data->val;
-        }
-        else {
+        } else {
             return -1;
         }
     }
 
     // Returns true if the iteration has more elements.
-    bool hasNext() const {
-        return (data != nullptr and data->nextData != nullptr);
-    }
+    bool hasNext() const { return (data != nullptr and data->nextData != nullptr); }
 };
 
 class PeekingIterator : public Iterator {
@@ -56,13 +54,9 @@ public:
         return temp.next();
     }
 
-    int next() {
-        return Iterator::next();
-    }
+    int next() { return Iterator::next(); }
 
-    bool hasNext() const {
-        return Iterator::hasNext();
-    }
+    bool hasNext() const { return Iterator::hasNext(); }
 };
 
 int main() {

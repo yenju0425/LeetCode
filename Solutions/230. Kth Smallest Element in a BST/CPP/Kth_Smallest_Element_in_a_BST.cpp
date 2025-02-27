@@ -14,7 +14,7 @@ struct TreeNode {
 class Solution {
 private:
     int counter = 0;
-    int num = 0;
+    int num     = 0;
 
 public:
     int kthSmallest(TreeNode* root, int k) {
@@ -37,9 +37,8 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int k = 3;
 
     // input tree structure:
@@ -57,7 +56,7 @@ int main() {
     TreeNode* n1 = new TreeNode(1, n3, nullptr);
     TreeNode* rt = new TreeNode(2, n1, n2);
 
-    cout << S->kthSmallest(rt, k) << endl;
+    cout << S.kthSmallest(rt, k) << endl;
     ;
 
     return 0;

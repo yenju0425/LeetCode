@@ -19,7 +19,7 @@ public:
 
         if (!dp.count(range)) {
             // init dp[range]
-            dp[range] = (range[2] - range[0]) * (range[3] - range[1]);
+            dp[range]        = (range[2] - range[0]) * (range[3] - range[1]);
             bool isRectangle = true;
 
             // check every cell
@@ -29,11 +29,10 @@ public:
                         isRectangle = false;
 
                         // divide and conquer
-                        dp[range] = max(
-                            max(findMaxRectangle(vector<int>{range[0], range[1], range[2], j}),
-                                findMaxRectangle(vector<int>{range[0], range[1], i, range[3]})),
-                            max(findMaxRectangle(vector<int>{range[0], j + 1, range[2], range[3]}),
-                                findMaxRectangle(vector<int>{i + 1, range[1], range[2], range[3]})));
+                        dp[range] = max(max(findMaxRectangle(vector<int>{range[0], range[1], range[2], j}),
+                                            findMaxRectangle(vector<int>{range[0], range[1], i, range[3]})),
+                                        max(findMaxRectangle(vector<int>{range[0], j + 1, range[2], range[3]}),
+                                            findMaxRectangle(vector<int>{i + 1, range[1], range[2], range[3]})));
                     }
                 }
             }
@@ -43,8 +42,8 @@ public:
     }
 
     int maximalRectangle(vector<vector<char>>& matrix) {
-        this->M = matrix.size();
-        this->N = matrix[0].size();
+        this->M      = matrix.size();
+        this->N      = matrix[0].size();
         this->matrix = matrix;
 
         vector<int> range{0, 0, M, N};  // from (0, 0) to (M, N)
@@ -58,11 +57,7 @@ int main() {
 
     // input
     vector<vector<char>> matrix{
-        {'1', '0', '1', '0', '0'},
-        {'1', '0', '1', '1', '1'},
-        {'1', '1', '1', '1', '1'},
-        {'1', '0', '0', '1', '0'}
-    };
+        {'1', '0', '1', '0', '0'}, {'1', '0', '1', '1', '1'}, {'1', '1', '1', '1', '1'}, {'1', '0', '0', '1', '0'}};
 
     cout << S.maximalRectangle(matrix) << endl;
 

@@ -5,18 +5,16 @@ using namespace std;
 
 class Solution {
 public:
-    int minPartitions(string n) {
-        return *max_element(n.begin(), n.end()) - '0';
-    }
+    int minPartitions(string n) { return *max_element(n.begin(), n.end()) - '0'; }
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     string n = "1987";
 
-    cout << S->minPartitions(n) << endl;
+    cout << S.minPartitions(n) << endl;
 
     return 0;
 }

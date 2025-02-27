@@ -10,9 +10,7 @@ private:
     unordered_set<int> US;  // contains all the removed integers
 
 public:
-    SmallestInfiniteSet() {
-        front = 1;
-    }
+    SmallestInfiniteSet() { front = 1; }
 
     int popSmallest() {
         int smallest = front;
@@ -34,7 +32,6 @@ public:
 int main() {
     SmallestInfiniteSet* SIS = new SmallestInfiniteSet();
 
-    // inputs
     cout << SIS->popSmallest() << endl;
     cout << SIS->popSmallest() << endl;
     cout << SIS->popSmallest() << endl;

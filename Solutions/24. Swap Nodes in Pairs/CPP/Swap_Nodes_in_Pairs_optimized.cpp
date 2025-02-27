@@ -21,8 +21,8 @@ public:
         while (ptr->next != nullptr && ptr->next->next != nullptr) {
             ListNode* tmp = ptr->next;
 
-            ptr->next = tmp->next;
-            tmp->next = tmp->next->next;
+            ptr->next       = tmp->next;
+            tmp->next       = tmp->next->next;
             ptr->next->next = tmp;
 
             ptr = tmp;
@@ -38,7 +38,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     ListNode a4(4);
     ListNode a3(3, &a4);
     ListNode a2(2, &a3);

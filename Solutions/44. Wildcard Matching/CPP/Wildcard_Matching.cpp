@@ -45,7 +45,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     string s = "aa";
     string p = "****??";
 

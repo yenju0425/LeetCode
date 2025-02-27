@@ -24,13 +24,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     string s = "abcde";
     vector<string> words{"a", "bb", "acd", "ace", "ae", "bd"};
 
-    cout << S->numMatchingSubseq(s, words) << endl;
+    cout << S.numMatchingSubseq(s, words) << endl;
 
     return 0;
 }

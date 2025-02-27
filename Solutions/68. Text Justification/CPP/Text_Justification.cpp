@@ -20,14 +20,14 @@ public:
             // select words for next line
             vector<string> buffer;
             int wordsCounter = 0;
-            int width = 0;
-            int nextWidth = (idx < numOfWords) ? word_length[idx] : INT_MAX;
+            int width        = 0;
+            int nextWidth    = (idx < numOfWords) ? word_length[idx] : INT_MAX;
             while (nextWidth <= maxWidth) {
                 buffer.push_back(words[idx]);
-                idx = idx + 1;
+                idx          = idx + 1;
                 wordsCounter = wordsCounter + 1;
-                width = nextWidth;
-                nextWidth = (idx < numOfWords) ? nextWidth + word_length[idx] + 1 : INT_MAX;
+                width        = nextWidth;
+                nextWidth    = (idx < numOfWords) ? nextWidth + word_length[idx] + 1 : INT_MAX;
             }
 
             // write into nextLine
@@ -39,11 +39,9 @@ public:
                 int space;
                 if (i == wordsCounter - 1) {  // last word
                     space = totalSpace;
-                }
-                else if (nextWidth == INT_MAX) {  // last line, every space is 1
+                } else if (nextWidth == INT_MAX) {  // last line, every space is 1
                     space = 1;
-                }
-                else {
+                } else {
                     space = ceil(float(totalSpace) / (wordsCounter - 1 - i));
                 }
 
@@ -61,7 +59,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     int maxWidth = 16;
     vector<string> words{"What", "must", "be", "acknowledgment", "shall", "be"};
 

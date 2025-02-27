@@ -17,13 +17,13 @@ public:
         avg = sum / numsSize;
 
         // iterate through all nums
-        long left = sum;
+        long left  = sum;
         long right = 0;
         long minAD = avg;
 
         int minId = numsSize - 1;
         for (int i = numsSize - 1; i > 0; i--) {
-            left = left - nums[i];
+            left  = left - nums[i];
             right = right + nums[i];
 
             long AD = abs(left / i - right / (numsSize - i));
@@ -39,12 +39,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> nums{2, 5, 3, 9, 5, 3};
 
-    cout << S->minimumAverageDifference(nums) << endl;
+    cout << S.minimumAverageDifference(nums) << endl;
 
     return 0;
 }

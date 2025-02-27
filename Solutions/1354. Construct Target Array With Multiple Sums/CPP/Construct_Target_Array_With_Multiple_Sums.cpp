@@ -38,12 +38,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> target{8, 5};
 
-    cout << S->isPossible(target) << endl;
+    cout << S.isPossible(target) << endl;
 
     return 0;
 }

@@ -16,15 +16,12 @@ public:
     TreeNode* searchBST(TreeNode* root, int val) {
         if (root == nullptr) {
             return root;
-        }
-        else {
+        } else {
             if (val < root->val) {
                 return searchBST(root->left, val);
-            }
-            else if (val > root->val) {
+            } else if (val > root->val) {
                 return searchBST(root->right, val);
-            }
-            else {
+            } else {
                 return root;
             }
         }
@@ -41,9 +38,8 @@ void DFS_inorder(TreeNode* root) {
 }
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int val = 4;
 
     // input tree structure:
@@ -61,7 +57,7 @@ int main() {
     TreeNode* n1 = new TreeNode(1, n3, nullptr);
     TreeNode* rt = new TreeNode(2, n1, n2);
 
-    TreeNode* result = S->searchBST(rt, val);
+    TreeNode* result = S.searchBST(rt, val);
 
     DFS_inorder(result);
     cout << endl;

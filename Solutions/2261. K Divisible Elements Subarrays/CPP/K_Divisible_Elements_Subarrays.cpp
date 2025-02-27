@@ -23,8 +23,7 @@ public:
             int limit = -1;
             if (j + k >= numOfDivisible) {
                 limit = numOfnums;
-            }
-            else {
+            } else {
                 limit = divisible_i[j + k];
             }
 
@@ -45,14 +44,13 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int k = 7;
     int p = 1;
     vector<int> nums{5, 11, 17, 13, 16, 9, 4, 9, 20};
 
-    cout << S->countDistinct(nums, k, p) << endl;
+    cout << S.countDistinct(nums, k, p) << endl;
 
     return 0;
 }

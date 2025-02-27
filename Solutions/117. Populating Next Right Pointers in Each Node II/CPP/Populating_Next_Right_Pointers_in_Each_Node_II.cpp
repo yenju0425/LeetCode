@@ -34,7 +34,7 @@ public:
                 Q[idx].pop();
 
                 node->next = nextNode;
-                nextNode = node;
+                nextNode   = node;
 
                 if (node->right != nullptr) {
                     Q[!idx].push(node->right);
@@ -52,7 +52,7 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input tree structure:
     //
@@ -69,7 +69,7 @@ int main() {
     Node* n1 = new Node(1, n3, nullptr);
     Node* rt = new Node(0, n1, n2);
 
-    Node* result = S->connect(rt);
+    Node* result = S.connect(rt);
 
     while (result != nullptr) {
         Node* ptr = result;
@@ -81,8 +81,7 @@ int main() {
 
         if (result->left != nullptr) {
             result = result->left;
-        }
-        else {
+        } else {
             result = result->right;
         }
     }

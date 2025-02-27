@@ -13,7 +13,7 @@ public:
         int reverted_x = 0;
         while (x > reverted_x) {
             reverted_x = reverted_x * 10 + x % 10;
-            x = x / 10;
+            x          = x / 10;
         }
 
         return (x == reverted_x) || (x == reverted_x / 10);  // ex: "12321" will cause x = 12, reverted_x = 123

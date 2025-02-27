@@ -52,9 +52,8 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int targetSum = 7;
 
     // input tree structure:
@@ -72,7 +71,7 @@ int main() {
     TreeNode* n1 = new TreeNode(1, n3, nullptr);
     TreeNode* rt = new TreeNode(0, n1, n2);
 
-    vector<vector<int>> result = S->pathSum(rt, targetSum);
+    vector<vector<int>> result = S.pathSum(rt, targetSum);
 
     for (auto i : result) {
         for (auto j : i) {

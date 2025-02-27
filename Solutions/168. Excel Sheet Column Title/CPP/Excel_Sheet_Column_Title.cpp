@@ -17,12 +17,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     int columnNumber = 28;
 
-    cout << S->convertToTitle(columnNumber) << endl;
+    cout << S.convertToTitle(columnNumber) << endl;
 
     return 0;
 }

@@ -15,18 +15,17 @@ public:
                 n = n >> 1;
             }
             return temp;
-        }
-        else if (n < 0) {
+        } else if (n < 0) {
             if (x == 0) {
                 return 0;
             }
             double temp = 1;
-            long ln = -long(n);
+            long ln     = -long(n);
             while (ln) {
                 if (ln & 1 == 1) {
                     temp = temp * x;
                 }
-                x = x * x;
+                x  = x * x;
                 ln = ln >> 1;
             }
             return double(1 / temp);
@@ -41,9 +40,8 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     double x = 5;
-    int n = -2;
+    int n    = -2;
 
     cout << S.myPow(x, n) << endl;
 

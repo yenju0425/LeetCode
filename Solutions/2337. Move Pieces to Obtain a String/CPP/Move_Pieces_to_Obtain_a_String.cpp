@@ -13,15 +13,13 @@ public:
         for (int i = 0; i < n; i++) {
             if (start[i] == 'R') {
                 s_R_ids.push_back(i);
-            }
-            else if (start[i] == 'L') {
+            } else if (start[i] == 'L') {
                 s_L_ids.push_back(i);
             }
 
             if (target[i] == 'R') {
                 t_R_ids.push_back(i);
-            }
-            else if (target[i] == 'L') {
+            } else if (target[i] == 'L') {
                 t_L_ids.push_back(i);
             }
         }
@@ -60,13 +58,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
-    string start = "_R";
+    string start  = "_R";
     string target = "L_";
 
-    cout << S->canChange(start, target) << endl;
+    cout << S.canChange(start, target) << endl;
 
     return 0;
 }

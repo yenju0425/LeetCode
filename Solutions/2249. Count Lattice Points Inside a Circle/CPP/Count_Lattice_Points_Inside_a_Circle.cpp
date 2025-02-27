@@ -42,14 +42,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
-    vector<vector<int>> ciecles{
-        {2, 2, 2}
-    };
+    vector<vector<int>> ciecles{{2, 2, 2}};
 
-    cout << S->countLatticePoints(ciecles) << endl;
+    cout << S.countLatticePoints(ciecles) << endl;
 
     return 0;
 }

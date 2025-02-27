@@ -17,7 +17,8 @@ public:
         numOfWays[1] = numOfWays[0] * (s[1] != '0') + (s[0] != '0' && stoi(s.substr(0, 2)) <= 26);
 
         for (int i = 2; i < s_len; ++i) {
-            numOfWays[i] = numOfWays[i - 1] * (s[i] != '0') + numOfWays[i - 2] * (s[i - 1] != '0' && (stoi(s.substr(i - 1, 2)) <= 26));
+            numOfWays[i] = numOfWays[i - 1] * (s[i] != '0') +
+                           numOfWays[i - 2] * (s[i - 1] != '0' && (stoi(s.substr(i - 1, 2)) <= 26));
         }
 
         return numOfWays.back();

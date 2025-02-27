@@ -5,16 +5,8 @@ using namespace std;
 
 class Solution {
 private:
-    vector<vector<string>> charSet{
-        {"a", "b", "c"},
-        {"d", "e", "f"},
-        {"g", "h", "i"},
-        {"j", "k", "l"},
-        {"m", "n", "o"},
-        {"p", "q", "r", "s"},
-        {"t", "u", "v"},
-        {"w", "x", "y", "z"}
-    };
+    vector<vector<string>> charSet{{"a", "b", "c"}, {"d", "e", "f"},      {"g", "h", "i"}, {"j", "k", "l"},
+                                   {"m", "n", "o"}, {"p", "q", "r", "s"}, {"t", "u", "v"}, {"w", "x", "y", "z"}};
 
 public:
     vector<string> letterCombinations(string digits) {
@@ -31,7 +23,7 @@ public:
         digits.erase(digits.begin());
         vector<string> _combinations = letterCombinations(digits);
 
-        int charSet_size = charSet[c].size();
+        int charSet_size       = charSet[c].size();
         int _combinations_size = _combinations.size();
         for (int i = 0; i < charSet_size; ++i) {
             for (int j = 0; j < _combinations_size; ++j) {

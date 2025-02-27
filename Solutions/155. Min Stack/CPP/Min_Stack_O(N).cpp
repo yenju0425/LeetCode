@@ -20,13 +20,9 @@ public:
         S.pop_back();
     }
 
-    int top() {
-        return S.back();
-    }
+    int top() { return S.back(); }
 
-    int getMin() {
-        return ordered_S.front();
-    }
+    int getMin() { return ordered_S.front(); }
 };
 
 int main() {

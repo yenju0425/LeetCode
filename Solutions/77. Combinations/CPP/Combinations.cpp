@@ -31,7 +31,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     int n = 4;
     int k = 2;
 

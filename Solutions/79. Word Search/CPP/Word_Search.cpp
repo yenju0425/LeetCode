@@ -12,9 +12,7 @@ private:
     string word;
 
 public:
-    bool isValid(int m, int n) {
-        return m < M && m >= 0 && n < N && n >= 0;
-    }
+    bool isValid(int m, int n) { return m < M && m >= 0 && n < N && n >= 0; }
 
     bool DFS(int m, int n, int idx) {
         if (idx >= word.size()) {
@@ -27,7 +25,7 @@ public:
         bool result = false;
         for (int i = 0; i < 4 && !result; ++i) {
             board[m][n] = -board[m][n];
-            result = DFS(m + dir[i][0], n + dir[i][1], idx + 1);
+            result      = DFS(m + dir[i][0], n + dir[i][1], idx + 1);
             board[m][n] = -board[m][n];
         }
 
@@ -35,16 +33,11 @@ public:
     }
 
     bool exist(vector<vector<char>>& board, string word) {
-        this->dir = vector<vector<int>>{
-            { 1,  0},
-            { 0,  1},
-            {-1,  0},
-            { 0, -1}
-        };
+        this->dir   = vector<vector<int>>{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
         this->board = board;
-        this->word = word;
-        this->M = board.size();
-        this->N = board[0].size();
+        this->word  = word;
+        this->M     = board.size();
+        this->N     = board[0].size();
         for (int i = 0; i < M; ++i) {
             for (int j = 0; j < N; ++j) {
                 if (DFS(i, j, 0)) {
@@ -60,13 +53,8 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     string word = "ABCCED";
-    vector<vector<char>> board{
-        {'A', 'B', 'C', 'E'},
-        {'S', 'F', 'C', 'S'},
-        {'A', 'D', 'E', 'E'}
-    };
+    vector<vector<char>> board{{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}};
 
     cout << S.exist(board, word) << endl;
 

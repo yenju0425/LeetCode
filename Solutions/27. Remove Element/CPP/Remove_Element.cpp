@@ -12,7 +12,7 @@ public:
         for (int i = 0; i < nums_size; ++i) {
             if (nums[i] != val) {
                 nums[counter] = nums[i];
-                counter = counter + 1;
+                counter       = counter + 1;
             }
         }
 
@@ -23,7 +23,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     int val = 2;
     vector<int> nums{0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
 

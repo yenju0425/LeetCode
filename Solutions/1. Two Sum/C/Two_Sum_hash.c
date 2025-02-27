@@ -9,12 +9,12 @@ typedef struct HashNode {
 
 typedef struct HashMap {
     HashNode** buckets;
-    int size; // num of buckets
+    int size;  // num of buckets
 } HashMap;
 
 HashMap* createHashMap(int size) {
     HashMap* map = (HashMap*)malloc(sizeof(HashMap));
-    map->size = size;
+    map->size    = size;
     map->buckets = (HashNode**)malloc(size * sizeof(HashNode*));
     for (int i = 0; i < size; ++i) {
         map->buckets[i] = NULL;
@@ -27,7 +27,7 @@ void deleteHashMap(HashMap* map) {
         HashNode* currentNode = map->buckets[i];
         while (currentNode != NULL) {
             HashNode* temp = currentNode;
-            currentNode = currentNode->next;
+            currentNode    = currentNode->next;
             free(temp);
         }
     }
@@ -36,11 +36,11 @@ void deleteHashMap(HashMap* map) {
 }
 
 void insert(HashMap* map, int key, int value) {
-    int index = abs(key) % map->size;
-    HashNode* newNode = (HashNode*)malloc(sizeof(HashNode));
-    newNode->value = value;
-    newNode->index = key;
-    newNode->next = map->buckets[index];
+    int index           = abs(key) % map->size;
+    HashNode* newNode   = (HashNode*)malloc(sizeof(HashNode));
+    newNode->value      = value;
+    newNode->index      = key;
+    newNode->next       = map->buckets[index];
     map->buckets[index] = newNode;
     printf("new node (k, v) at buckets[%d]: (%d, %d)\n", index, key, value);
 }
@@ -53,7 +53,7 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
 
     for (int i = 0; i < numsSize; ++i) {
         int complement = target - nums[i];
-        int index = abs(complement) % numsSize;
+        int index      = abs(complement) % numsSize;
 
         printf("complement: %d, index: %d\n", complement, index);
 
@@ -84,13 +84,11 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
 }
 
 int main() {
-    // inputs
     int target = 9;
     int nums[] = {2, 7, 11, 15};
 
-    // outputs
     int returnSize = 0;
-    int* result = twoSum(nums, 4, target, &returnSize);
+    int* result    = twoSum(nums, 4, target, &returnSize);
 
     for (int i = 0; i < returnSize; ++i) {
         printf("%d ", result[i]);

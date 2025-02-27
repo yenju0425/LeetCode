@@ -8,7 +8,7 @@ struct Server {
     vector<int> neighbors;
 
     Server() {
-        time = -1;
+        time      = -1;
         neighbors = vector<int>{};
     }
 };
@@ -22,7 +22,7 @@ private:
 
 public:
     Servers(int n, vector<vector<int>> c) {
-        connections = c;
+        connections      = c;
         numOfconnections = c.size();
 
         for (int i = 0; i < n; i++) {
@@ -40,7 +40,7 @@ public:
     void setCGs(int id, int parent, int time) {
         servers[id]->time = time;
 
-        int minTime = time;
+        int minTime        = time;
         int numOfneighbors = servers[id]->neighbors.size();
         for (int i = 0; i < numOfneighbors; i++) {
             int neighbor = servers[id]->neighbors[i];
@@ -75,28 +75,19 @@ public:
         Servers* S = new Servers(n, connections);
 
         // find CCs
-        vector<vector<int>> CCs = S->findCriticalConnections();
+        vector<vector<int>> CCs = S.findCriticalConnections();
 
         return CCs;
     }
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int n = 7;
-    vector<vector<int>> connections{
-        {0, 1},
-        {0, 2},
-        {0, 3},
-        {2, 4},
-        {3, 5},
-        {5, 4},
-        {5, 6}
-    };
+    vector<vector<int>> connections{{0, 1}, {0, 2}, {0, 3}, {2, 4}, {3, 5}, {5, 4}, {5, 6}};
 
-    vector<vector<int>> result = S->criticalConnections(n, connections);
+    vector<vector<int>> result = S.criticalConnections(n, connections);
 
     for (auto i : result) {
         cout << '(' << i[0] << ", " << i[1] << ')' << endl;

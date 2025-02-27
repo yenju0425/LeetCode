@@ -12,14 +12,15 @@ public:
         for (int i = 0; i < m; i = i + 1) {
             for (int j = 0; j < n; j = j + 1) {
                 if (board[i][j] == 1) {
-                    temp[(i + m) % (m + 1)][(j + n) % (n + 1)] = temp[(i + m) % (m + 1)][(j + n) % (n + 1)] + 1;
-                    temp[(i + m) % (m + 1)][j] = temp[(i + m) % (m + 1)][j] + 1;
+                    temp[(i + m) % (m + 1)][(j + n) % (n + 1)]     = temp[(i + m) % (m + 1)][(j + n) % (n + 1)] + 1;
+                    temp[(i + m) % (m + 1)][j]                     = temp[(i + m) % (m + 1)][j] + 1;
                     temp[(i + m) % (m + 1)][(j + n + 2) % (n + 1)] = temp[(i + m) % (m + 1)][(j + n + 2) % (n + 1)] + 1;
-                    temp[i][(j + n) % (n + 1)] = temp[i][(j + n) % (n + 1)] + 1;
-                    temp[i][(j + n + 2) % (n + 1)] = temp[i][(j + n + 2) % (n + 1)] + 1;
+                    temp[i][(j + n) % (n + 1)]                     = temp[i][(j + n) % (n + 1)] + 1;
+                    temp[i][(j + n + 2) % (n + 1)]                 = temp[i][(j + n + 2) % (n + 1)] + 1;
                     temp[(i + m + 2) % (m + 1)][(j + n) % (n + 1)] = temp[(i + m + 2) % (m + 1)][(j + n) % (n + 1)] + 1;
-                    temp[(i + m + 2) % (m + 1)][j] = temp[(i + m + 2) % (m + 1)][j] + 1;
-                    temp[(i + m + 2) % (m + 1)][(j + n + 2) % (n + 1)] = temp[(i + m + 2) % (m + 1)][(j + n + 2) % (n + 1)] + 1;
+                    temp[(i + m + 2) % (m + 1)][j]                 = temp[(i + m + 2) % (m + 1)][j] + 1;
+                    temp[(i + m + 2) % (m + 1)][(j + n + 2) % (n + 1)] =
+                        temp[(i + m + 2) % (m + 1)][(j + n + 2) % (n + 1)] + 1;
                 }
             }
         }
@@ -27,8 +28,7 @@ public:
             for (int j = 0; j < n; j = j + 1) {
                 if (board[i][j] == 1 and (temp[i][j] < 2 or temp[i][j] > 3)) {
                     board[i][j] = 0;
-                }
-                else if (board[i][j] == 0 and temp[i][j] == 3) {
+                } else if (board[i][j] == 0 and temp[i][j] == 3) {
                     board[i][j] = 1;
                 }
             }
@@ -37,7 +37,7 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<vector<int>> board{
@@ -47,7 +47,7 @@ int main() {
         {0, 0, 0},
     };
 
-    S->gameOfLife(board);
+    S.gameOfLife(board);
 
     for (auto i : board) {
         for (auto j : i) {

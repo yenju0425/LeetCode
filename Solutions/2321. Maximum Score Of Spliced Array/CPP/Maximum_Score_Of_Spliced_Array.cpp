@@ -41,13 +41,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     vector<int> nums1{28, 34, 38, 14, 30, 31, 23, 7, 28, 3};
     vector<int> nums2{42, 35, 7, 6, 24, 30, 14, 21, 20, 34};
 
-    cout << S->maximumsSplicedArray(nums1, nums2) << endl;
+    cout << S.maximumsSplicedArray(nums1, nums2) << endl;
 
     return 0;
 }

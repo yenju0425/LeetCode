@@ -29,8 +29,8 @@ public:
     }
 
     int numDecodings(string s) {
-        this->s = s;
-        this->s_len = s.length();
+        this->s         = s;
+        this->s_len     = s.length();
         this->numOfWays = 0;
 
         countWays(0);

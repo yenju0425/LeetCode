@@ -11,13 +11,11 @@ private:
     map<tuple<string, string>, vector<int>> dataBase;
 
 public:
-    void checkIn(int id, string stationName, int t) {
-        passengers[id] = tuple<string, int>{stationName, t};
-    }
+    void checkIn(int id, string stationName, int t) { passengers[id] = tuple<string, int>{stationName, t}; }
 
     void checkOut(int id, string stationName, int t) {
         string startStation = get<0>(passengers[id]);
-        int duration = t - get<1>(passengers[id]);
+        int duration        = t - get<1>(passengers[id]);
 
         tuple<string, string> start_end{startStation, stationName};
 
@@ -25,8 +23,7 @@ public:
         if (iter != dataBase.end()) {
             (iter->second)[0] += duration;
             (iter->second)[1] += 1;
-        }
-        else {
+        } else {
             dataBase[start_end] = vector<int>{duration, 1};
         }
         passengers.erase(id);
@@ -34,7 +31,7 @@ public:
 
     double getAverageTime(string startStation, string endStation) {
         double duration = dataBase[tuple<string, string>{startStation, endStation}][0];
-        int passengers = dataBase[tuple<string, string>{startStation, endStation}][1];
+        int passengers  = dataBase[tuple<string, string>{startStation, endStation}][1];
         return duration / passengers;
     }
 };
@@ -42,7 +39,6 @@ public:
 int main() {
     UndergroundSystem* U = new UndergroundSystem();
 
-    // inputs
     U->checkIn(45, "Leyton", 3);
     U->checkIn(32, "Paradise", 8);
     U->checkIn(27, "Leyton", 10);

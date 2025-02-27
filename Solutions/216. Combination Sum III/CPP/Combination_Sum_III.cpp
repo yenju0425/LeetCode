@@ -5,9 +5,7 @@ using namespace std;
 
 class Solution {
 public:
-    vector<vector<int>> combinationSum3(int k, int n) {
-        return combinationSum3(k, n, 1);
-    }
+    vector<vector<int>> combinationSum3(int k, int n) { return combinationSum3(k, n, 1); }
 
     vector<vector<int>> combinationSum3(int k, int n, int lowerBound) {
         if (k == 0 and n == 0) {
@@ -33,13 +31,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int k = 3;
     int n = 9;
 
-    vector<vector<int>> comb = S->combinationSum3(k, n);
+    vector<vector<int>> comb = S.combinationSum3(k, n);
 
     for (auto i : comb) {
         for (auto j : i) {

@@ -9,7 +9,7 @@ public:
     int minDeletions(string s) {
         int charCounter[26] = {0};
         for (string::iterator iter = s.begin(); iter != s.end(); iter++) {
-            int idx = *iter - 'a';
+            int idx          = *iter - 'a';
             charCounter[idx] = charCounter[idx] + 1;
         }
 
@@ -18,8 +18,7 @@ public:
             if (charCounter[i]) {
                 if (!freqCounter.count(charCounter[i])) {
                     freqCounter[charCounter[i]] = 1;
-                }
-                else {
+                } else {
                     freqCounter[charCounter[i]] = freqCounter[charCounter[i]] + 1;
                 }
             }
@@ -43,12 +42,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     string s = "aapple";
 
-    cout << S->minDeletions(s) << endl;
+    cout << S.minDeletions(s) << endl;
 
     return 0;
 }

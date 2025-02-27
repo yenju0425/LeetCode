@@ -12,9 +12,7 @@ private:
     vector<vector<int>> dir;
 
 public:
-    bool isValid(int m, int n) {
-        return m < M and m >= 0 and n < N and n >= 0;
-    }
+    bool isValid(int m, int n) { return m < M and m >= 0 and n < N and n >= 0; }
 
     int LIP(int m, int n) {
         if (dp[m][n] == 0) {
@@ -34,16 +32,11 @@ public:
     }
 
     int longestIncreasingPath(vector<vector<int>>& matrix) {
-        this->M = matrix.size();
-        this->N = matrix[0].size();
+        this->M      = matrix.size();
+        this->N      = matrix[0].size();
         this->matrix = matrix;
-        this->dp = vector<vector<int>>(M, vector<int>(N, 0));
-        this->dir = vector<vector<int>>{
-            { 1,  0},
-            { 0,  1},
-            {-1,  0},
-            { 0, -1}
-        };
+        this->dp     = vector<vector<int>>(M, vector<int>(N, 0));
+        this->dir    = vector<vector<int>>{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 
         int maxLength = 0;
         for (int i = 0; i < M; i++) {
@@ -57,16 +50,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
-    vector<vector<int>> matrix{
-        {9, 9, 4},
-        {6, 6, 8},
-        {2, 1, 1}
-    };
+    vector<vector<int>> matrix{{9, 9, 4}, {6, 6, 8}, {2, 1, 1}};
 
-    cout << S->longestIncreasingPath(matrix) << endl;
+    cout << S.longestIncreasingPath(matrix) << endl;
 
     return 0;
 }

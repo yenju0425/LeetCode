@@ -14,8 +14,7 @@ public:
         for (int i = 0; i < nums_size; ++i) {
             if (nums_idx.find(target - nums[i]) != nums_idx.end()) {
                 return vector<int>{nums_idx[target - nums[i]], i};
-            }
-            else {
+            } else {
                 nums_idx[nums[i]] = i;
             }
         }
@@ -27,7 +26,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     int target = 9;
     vector<int> nums{15, 7, 11, 2};
 

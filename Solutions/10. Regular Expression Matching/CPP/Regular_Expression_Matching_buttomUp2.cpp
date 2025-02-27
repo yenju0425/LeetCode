@@ -5,8 +5,8 @@ using namespace std;
 
 class Solution {
 private:
-    string s = "";
-    string p = "";
+    string s   = "";
+    string p   = "";
     int s_size = 0;
     int p_size = 0;
     vector<vector<int>> DP;
@@ -34,7 +34,8 @@ public:
             for (int j = 1; j <= p_length; ++j) {
                 switch (p[j]) {
                     case '*':
-                        DP[i][j] = ((s[i] == p[j - 1] || p[j - 1] == '.') && DP[i - 1][j]) || DP[i][j - 1] || DP[i][j - 2];
+                        DP[i][j] =
+                            ((s[i] == p[j - 1] || p[j - 1] == '.') && DP[i - 1][j]) || DP[i][j - 1] || DP[i][j - 2];
                         break;
 
                     case '.':
@@ -54,7 +55,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     string s = "ab";
     string p = ".*";
 

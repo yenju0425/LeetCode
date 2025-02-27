@@ -19,12 +19,12 @@ public:
         ListNode* temp = head;
         while (temp != nullptr) {
             counter = counter + 1;
-            temp = temp->next;
+            temp    = temp->next;
         }
 
         // remove
         ListNode* dummyHead = new ListNode(0, head);
-        temp = dummyHead;
+        temp                = dummyHead;
         for (int i = 0; i < counter - n; ++i) {
             temp = temp->next;
         }
@@ -40,7 +40,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     int n = 2;
     ListNode a2(2);
     ListNode a1(7, &a2);

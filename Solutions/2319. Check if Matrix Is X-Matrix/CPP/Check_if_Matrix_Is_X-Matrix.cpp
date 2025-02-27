@@ -13,8 +13,7 @@ public:
                     if (grid[i][j] == 0) {
                         return false;
                     }
-                }
-                else {
+                } else {
                     if (grid[i][j] != 0) {
                         return false;
                     }
@@ -27,17 +26,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
-    vector<vector<int>> grid{
-        {2, 0, 0, 1},
-        {0, 1, 1, 0},
-        {0, 1, 1, 0},
-        {2, 0, 0, 1}
-    };
+    vector<vector<int>> grid{{2, 0, 0, 1}, {0, 1, 1, 0}, {0, 1, 1, 0}, {2, 0, 0, 1}};
 
-    cout << S->checkXMatrix(grid) << endl;
+    cout << S.checkXMatrix(grid) << endl;
 
     return 0;
 }

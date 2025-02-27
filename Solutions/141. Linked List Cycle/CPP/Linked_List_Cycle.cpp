@@ -19,7 +19,7 @@ public:
         ListNode* cur_ptr = head;
         while (cur_ptr != dummyHead and cur_ptr != nullptr) {
             ListNode* nxt_ptr = cur_ptr->next;
-            cur_ptr->next = pre_ptr;
+            cur_ptr->next     = pre_ptr;
 
             pre_ptr = cur_ptr;
             cur_ptr = nxt_ptr;
@@ -31,9 +31,8 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     ListNode* n2 = new ListNode(3);
     ListNode* n1 = new ListNode(9, n2);
     ListNode* hd = new ListNode(0, n1);
@@ -41,7 +40,7 @@ int main() {
     // create cycle
     n2->next = n1;
 
-    cout << S->hasCycle(nullptr) << endl;
+    cout << S.hasCycle(nullptr) << endl;
 
     return 0;
 }

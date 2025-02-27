@@ -23,7 +23,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     int target = 8;
     vector<int> nums{5, 7, 7, 8, 8, 10};
 

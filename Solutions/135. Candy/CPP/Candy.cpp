@@ -33,12 +33,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> ratings{1, 2, 2};
 
-    cout << S->candy(ratings) << endl;
+    cout << S.candy(ratings) << endl;
 
     return 0;
 }

@@ -15,21 +15,18 @@ public:
         // assign to groups
         int pairs_size = pairs.size();
         for (int i = 0; i < pairs_size; i++) {
-            int index_a = pairs[i][0];
-            int index_b = pairs[i][1];
+            int index_a  = pairs[i][0];
+            int index_b  = pairs[i][1];
             int& a_group = getGroupId[index_a];
             int& b_group = getGroupId[index_b];
             if (a_group == -1 && b_group == -1) {  // assign to new group i
                 a_group = i;
                 b_group = i;
-            }
-            else if (a_group != -1 && b_group == -1) {  // assign "index_b" to "a_group"
+            } else if (a_group != -1 && b_group == -1) {  // assign "index_b" to "a_group"
                 b_group = a_group;
-            }
-            else if (a_group == -1 && b_group != -1) {  // assign "index_a" to "b_group"
+            } else if (a_group == -1 && b_group != -1) {  // assign "index_a" to "b_group"
                 a_group = b_group;
-            }
-            else if (a_group != b_group) {
+            } else if (a_group != b_group) {
                 int groupId = a_group;
                 for (vector<int>::iterator iter = getGroupId.begin(); iter != getGroupId.end(); iter++) {
                     if (*iter == groupId) {
@@ -66,19 +63,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     string s = "gfedcbaaaa";
-    vector<vector<int>> pairs{
-        {0, 1},
-        {3, 1},
-        {0, 2},
-        {5, 3},
-        {4, 0}
-    };
+    vector<vector<int>> pairs{{0, 1}, {3, 1}, {0, 2}, {5, 3}, {4, 0}};
 
-    cout << S->smallestStringWithSwaps(s, pairs) << endl;
+    cout << S.smallestStringWithSwaps(s, pairs) << endl;
 
     return 0;
 }

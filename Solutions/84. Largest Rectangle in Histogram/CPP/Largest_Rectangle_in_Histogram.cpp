@@ -15,7 +15,7 @@ public:
             int temp = i;
 
             while (!S.empty() && S.back()[0] > heights[i]) {
-                temp = S.back()[1];
+                temp    = S.back()[1];
                 maxArea = max(maxArea, S.back()[0] * (i - S.back()[1]));
                 S.pop_back();
             }

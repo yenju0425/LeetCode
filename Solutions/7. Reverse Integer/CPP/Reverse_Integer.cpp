@@ -9,9 +9,9 @@ public:
             return true;
         }
 
-        int temp = reversed_n * 10;
+        int temp   = reversed_n * 10;
         reversed_n = temp + n % 10;
-        n = n / 10;
+        n          = n / 10;
 
         if ((reversed_n > 0 && temp < 0) || (reversed_n < 0 && temp > 0)) {
             return true;
@@ -22,7 +22,7 @@ public:
 
     int reverse(int x) {
         int reversed_x = x % 10;
-        x = x / 10;
+        x              = x / 10;
 
         while (x != 0) {
             if (addDigit(reversed_x, x)) {  //"true" if overflow detected

@@ -25,16 +25,16 @@ public:
             return result;
         }
 
-        int* left = DFS(root->left);
+        int* left  = DFS(root->left);
         int* right = DFS(root->right);
 
         // set result[0]
         result[0] = min(left[0], min(left[1], left[2])) + min(right[0], min(right[1], right[2])) + 1;
 
         // set result[1]
-        int leftChild = (left[0] == 0) ? INT_MAX : left[0] + min(right[0], right[1]);
+        int leftChild  = (left[0] == 0) ? INT_MAX : left[0] + min(right[0], right[1]);
         int rightChild = (right[0] == 0) ? INT_MAX : right[0] + min(left[0], left[1]);
-        result[1] = min(leftChild, rightChild);
+        result[1]      = min(leftChild, rightChild);
 
         // set result[2]
         result[2] = (left[1] == INT_MAX or right[1] == INT_MAX) ? INT_MAX : left[1] + right[1];
@@ -49,7 +49,7 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input tree structure:
     //
@@ -66,7 +66,7 @@ int main() {
     TreeNode* n1 = new TreeNode(0, n3, nullptr);
     TreeNode* rt = new TreeNode(0, n1, n2);
 
-    cout << S->minCameraCover(rt) << endl;
+    cout << S.minCameraCover(rt) << endl;
 
     return 0;
 }

@@ -13,8 +13,8 @@ private:
 public:
     void swap(int& a, int& b) {
         int temp = a;
-        a = b;
-        b = temp;
+        a        = b;
+        b        = temp;
     }
 
     void permGenerator(int currentIdx) {
@@ -31,7 +31,7 @@ public:
     }
 
     vector<vector<int>> permute(vector<int>& nums) {
-        this->nums = nums;
+        this->nums      = nums;
         this->nums_size = nums.size();
         permGenerator(0);
         return p;

@@ -17,8 +17,7 @@ public:
     void combGenerator(int currentNumIdx, int currentSum) {
         if (currentSum > target) {
             return;
-        }
-        else if (currentSum == target) {
+        } else if (currentSum == target) {
             result.push_back(currentComb);
             return;
         }
@@ -31,8 +30,8 @@ public:
     }
 
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
-        this->target = target;
-        this->candidates = candidates;
+        this->target          = target;
+        this->candidates      = candidates;
         this->numOfCandidates = candidates.size();
 
         combGenerator(0, 0);
@@ -44,7 +43,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     int target = 8;
     vector<int> candidates{2, 3, 5};
 

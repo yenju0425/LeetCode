@@ -20,9 +20,7 @@ public:
     }
 
     int longestStrChain(vector<string>& words) {
-        sort(words.begin(), words.end(), [](string& w1, string& w2) {
-            return w1.length() < w2.length();
-        });
+        sort(words.begin(), words.end(), [](string& w1, string& w2) { return w1.length() < w2.length(); });
 
         int numOfWords = words.size();
         vector<int> strChainLength(numOfWords, 1);
@@ -33,13 +31,11 @@ public:
                 int diff = words[i].length() - words[j].length();
                 if (diff == 0) {
                     continue;
-                }
-                else if (diff == 1) {
+                } else if (diff == 1) {
                     if (isPredecessor(words[j], words[i])) {
                         strChainLength[i] = max(strChainLength[i], strChainLength[j] + 1);
                     }
-                }
-                else {
+                } else {
                     break;
                 }
             }
@@ -52,12 +48,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution;
+    Solution S;
 
     // input
     vector<string> words{"a", "ab", "ac", "bd", "abc", "abd", "abdd"};
 
-    cout << S->longestStrChain(words) << endl;
+    cout << S.longestStrChain(words) << endl;
 
     return 0;
 }

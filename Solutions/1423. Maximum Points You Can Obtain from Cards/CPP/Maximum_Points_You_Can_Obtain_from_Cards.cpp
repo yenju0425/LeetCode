@@ -16,7 +16,7 @@ public:
 
         int maxSum = sum;
         for (int i = numOfCards - k, j = 0; i < numOfCards; i++, j++) {
-            sum = sum - cardPoints[i] + cardPoints[j];
+            sum    = sum - cardPoints[i] + cardPoints[j];
             maxSum = max(maxSum, sum);
         }
 
@@ -25,13 +25,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int k = 3;
     vector<int> cardPoints{1, 2, 3, 4, 5, 6, 1};
 
-    cout << S->maxScore(cardPoints, k) << endl;
+    cout << S.maxScore(cardPoints, k) << endl;
 
     return 0;
 }

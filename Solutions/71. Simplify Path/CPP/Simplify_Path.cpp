@@ -8,7 +8,7 @@ public:
     string simplifyPath(string path) {
         vector<string> directories;
 
-        int idx = 0;
+        int idx         = 0;
         int path_length = path.length();
         while (idx < path_length) {
             if (path[idx] == '/') {
@@ -27,11 +27,9 @@ public:
                 if (!directories.empty()) {
                     directories.pop_back();
                 }
-            }
-            else if (dir == ".") {
+            } else if (dir == ".") {
                 continue;
-            }
-            else {
+            } else {
                 directories.push_back(dir);
             }
         }

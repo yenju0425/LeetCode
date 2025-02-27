@@ -23,14 +23,13 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     string number = "81235038532348435348983";
-    char digit = '8';
+    char digit    = '8';
 
     cout << "Original number:" << number << endl;
-    cout << "Modified number:" << S->removeDigit(number, digit) << endl;
+    cout << "Modified number:" << S.removeDigit(number, digit) << endl;
 
     return 0;
 }

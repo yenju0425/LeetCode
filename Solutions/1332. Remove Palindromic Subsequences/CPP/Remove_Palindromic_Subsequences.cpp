@@ -16,17 +16,19 @@ public:
     }
 
     int removePalindromeSub(string s) {
-        return isPalindrome(s) ? 1 : 2;  // if s is not palindrome, remove all a's, and then remove all b's (at most 2 steps)
+        return isPalindrome(s)
+                   ? 1
+                   : 2;  // if s is not palindrome, remove all a's, and then remove all b's (at most 2 steps)
     }
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     string s = "aababbb";
 
-    cout << S->removePalindromeSub(s) << endl;
+    cout << S.removePalindromeSub(s) << endl;
 
     return 0;
 }

@@ -14,17 +14,15 @@ public:
 
         vector<int> result;
 
-        int low = 0;
+        int low  = 0;
         int high = nums_size - 1;
         while (low != high) {
             int sum = sortedNum[low] + sortedNum[high];
             if (sum > target) {
                 high = high - 1;
-            }
-            else if (sum < target) {
+            } else if (sum < target) {
                 low = low + 1;
-            }
-            else {  // solution found, get index
+            } else {  // solution found, get index
                 for (int i = 0; i < nums_size; ++i) {
                     if (nums[i] == sortedNum[low]) {
                         result.push_back(i);
@@ -47,7 +45,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     int target = 9;
     vector<int> nums{15, 7, 11, 2};
 

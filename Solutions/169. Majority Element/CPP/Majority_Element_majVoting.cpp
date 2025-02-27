@@ -6,7 +6,7 @@ using namespace std;
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-        int counter = 0;
+        int counter  = 0;
         int majority = 0;
 
         int nums_size = nums.size();
@@ -22,12 +22,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> nums{2, 2, 1, 1, 1, 2, 2};
 
-    cout << S->majorityElement(nums) << endl;
+    cout << S.majorityElement(nums) << endl;
 
     return 0;
 }

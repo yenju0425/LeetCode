@@ -5,15 +5,7 @@ using namespace std;
 
 class Solution {
 private:
-    map<char, int> romanNum{
-        {'M', 1000},
-        {'D',  500},
-        {'C',  100},
-        {'L',   50},
-        {'X',   10},
-        {'V',    5},
-        {'I',    1}
-    };
+    map<char, int> romanNum{{'M', 1000}, {'D', 500}, {'C', 100}, {'L', 50}, {'X', 10}, {'V', 5}, {'I', 1}};
 
 public:
     int romanToInt(string s) {
@@ -22,8 +14,7 @@ public:
         for (string::iterator iter = s.begin() + 1; iter != s.end(); ++iter) {
             if (romanNum[*(iter - 1)] < romanNum[*iter]) {
                 sum = sum - 2 * romanNum[*(iter - 1)] + romanNum[*iter];
-            }
-            else {
+            } else {
                 sum = sum + romanNum[*iter];
             }
         }

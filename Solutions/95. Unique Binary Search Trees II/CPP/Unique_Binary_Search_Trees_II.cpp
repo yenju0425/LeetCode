@@ -22,7 +22,7 @@ public:
 
         vector<TreeNode*> trees;
         for (int i = idx; i < idx + n; ++i) {
-            vector<TreeNode*> left = treesGenerator(idx, i - idx);
+            vector<TreeNode*> left  = treesGenerator(idx, i - idx);
             vector<TreeNode*> right = treesGenerator(i + 1, n + idx - i - 1);
 
             for (auto l : left) {
@@ -36,9 +36,7 @@ public:
         return trees;
     }
 
-    vector<TreeNode*> generateTrees(int n) {
-        return treesGenerator(1, n);
-    }
+    vector<TreeNode*> generateTrees(int n) { return treesGenerator(1, n); }
 
     void postorderClean(TreeNode* root) {
         if (root == nullptr) {

@@ -9,17 +9,15 @@ public:
     vector<int> twoSum(vector<int>& numbers, int target) {
         int numbers_size = numbers.size();
 
-        int left = 0;
+        int left  = 0;
         int right = numbers_size - 1;
 
         while (left < right) {
             if (numbers[left] + numbers[right] < target) {
                 left = left + 1;
-            }
-            else if (numbers[left] + numbers[right] > target) {
+            } else if (numbers[left] + numbers[right] > target) {
                 right = right - 1;
-            }
-            else {
+            } else {
                 break;
             }
         }
@@ -30,13 +28,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int target = 9;
     vector<int> numbers{2, 7, 11, 15};
 
-    vector<int> result = S->twoSum(numbers, target);
+    vector<int> result = S.twoSum(numbers, target);
 
     for (auto i : result) {
         cout << i << ' ';

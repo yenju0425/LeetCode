@@ -8,7 +8,7 @@ public:
     int maxProfit(vector<int>& prices) {
         int profit = 0;
 
-        int buyPrice = prices[0];
+        int buyPrice  = prices[0];
         int sellPrice = prices[0];
 
         int prices_size = prices.size();
@@ -20,10 +20,9 @@ public:
                 profit = profit + sellPrice - buyPrice;
 
                 // update buyPrice and sellPrice
-                buyPrice = price;
+                buyPrice  = price;
                 sellPrice = price;
-            }
-            else {
+            } else {
                 sellPrice = max(sellPrice, price);
             }
         }
@@ -35,12 +34,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> prices{7, 1, 5, 3, 6, 4};
 
-    cout << S->maxProfit(prices) << endl;
+    cout << S.maxProfit(prices) << endl;
 
     return 0;
 }

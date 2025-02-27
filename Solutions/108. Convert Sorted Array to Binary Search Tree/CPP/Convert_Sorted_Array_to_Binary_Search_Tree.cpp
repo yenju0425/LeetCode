@@ -24,15 +24,15 @@ public:
             return nullptr;
         }
 
-        int i = idx + n / 2;
-        TreeNode* left = treeBuilder(idx, i - idx);
+        int i           = idx + n / 2;
+        TreeNode* left  = treeBuilder(idx, i - idx);
         TreeNode* right = treeBuilder(i + 1, idx + n - i - 1);
 
         return new TreeNode(nums[i], left, right);
     }
 
     TreeNode* sortedArrayToBST(vector<int>& nums) {
-        this->nums = nums;
+        this->nums      = nums;
         this->nums_size = nums.size();
 
         return treeBuilder(0, nums_size);

@@ -5,17 +5,11 @@ using namespace std;
 
 class MountainArray {
 public:
-    MountainArray(vector<int>& vec) {
-        mountainArray = vec;
-    }
+    MountainArray(vector<int>& vec) { mountainArray = vec; }
 
-    int get(int index) {
-        return mountainArray[index];
-    }
+    int get(int index) { return mountainArray[index]; }
 
-    int length() {
-        return mountainArray.size();
-    }
+    int length() { return mountainArray.size(); }
 
 private:
     vector<int> mountainArray;
@@ -28,24 +22,21 @@ public:
             return -1;  // search failed
         }
 
-        int partition = (begin + end) / 2;
-        int height1 = mountainArr.get(partition);
-        int height2 = (partition + 1 >= mountainArr.length()) ? -1 : mountainArr.get(partition + 1);
+        int partition  = (begin + end) / 2;
+        int height1    = mountainArr.get(partition);
+        int height2    = (partition + 1 >= mountainArr.length()) ? -1 : mountainArr.get(partition + 1);
         bool accending = (height2 - height1) > 0;
 
         if (height1 < target) {
             if (accending) {
                 return binarySearch(target, mountainArr, partition + 1, end);
-            }
-            else {
+            } else {
                 return binarySearch(target, mountainArr, begin, partition);
             }
-        }
-        else if (height1 > target) {
+        } else if (height1 > target) {
             if (accending) {
                 return binarySearch(target, mountainArr, begin, partition);
-            }
-            else {
+            } else {
                 return binarySearch(target, mountainArr, partition + 1, end);
             }
         }
@@ -58,35 +49,30 @@ public:
             return -1;  // search failed
         }
 
-        int partition = (begin + end) / 2;
-        int height1 = mountainArr.get(partition);
-        int height2 = (partition + 1 >= mountainArr.length()) ? -1 : mountainArr.get(partition + 1);
+        int partition  = (begin + end) / 2;
+        int height1    = mountainArr.get(partition);
+        int height2    = (partition + 1 >= mountainArr.length()) ? -1 : mountainArr.get(partition + 1);
         bool accending = (height2 - height1) > 0;
 
         if (height1 < target) {
             if (accending) {
                 return mountainSearch(target, mountainArr, partition + 1, end);
-            }
-            else {
+            } else {
                 return mountainSearch(target, mountainArr, begin, partition);
             }
-        }
-        else if (height1 > target) {
+        } else if (height1 > target) {
             if (accending) {
                 int l = binarySearch(target, mountainArr, begin, partition);
                 return (l >= 0) ? l : mountainSearch(target, mountainArr, partition + 1, end);
-            }
-            else {
+            } else {
                 int l = mountainSearch(target, mountainArr, begin, partition);
                 return (l >= 0) ? l : binarySearch(target, mountainArr, partition + 1, end);
             }
-        }
-        else {
+        } else {
             if (accending) {
                 int l = binarySearch(target, mountainArr, begin, partition);
                 return (l >= 0) ? l : partition;
-            }
-            else {
+            } else {
                 int l = mountainSearch(target, mountainArr, begin, partition);
                 return (l >= 0) ? l : partition;
             }

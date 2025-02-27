@@ -38,7 +38,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     ListNode a4(4);
     ListNode a3(3, &a4);
     ListNode a2(2, &a3);

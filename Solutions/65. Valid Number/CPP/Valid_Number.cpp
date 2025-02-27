@@ -23,14 +23,11 @@ public:
                 case init:
                     if (*i == '+' || *i == '-') {
                         S = S_;
-                    }
-                    else if (*i >= '0' && *i <= '9') {
+                    } else if (*i >= '0' && *i <= '9') {
                         S = bD;
-                    }
-                    else if (*i == '.') {
+                    } else if (*i == '.') {
                         S = D_;
-                    }
-                    else {
+                    } else {
                         return false;
                     }
                     break;
@@ -38,11 +35,9 @@ public:
                 case S_:
                     if (*i >= '0' && *i <= '9') {
                         S = bD;
-                    }
-                    else if (*i == '.') {
+                    } else if (*i == '.') {
                         S = D_;
-                    }
-                    else {
+                    } else {
                         return false;
                     }
                     break;
@@ -50,14 +45,11 @@ public:
                 case bD:
                     if (*i >= '0' && *i <= '9') {
                         S = bD;
-                    }
-                    else if (*i == '.') {
+                    } else if (*i == '.') {
                         S = _D;
-                    }
-                    else if (*i == 'E' || *i == 'e') {
+                    } else if (*i == 'E' || *i == 'e') {
                         S = E;
-                    }
-                    else {
+                    } else {
                         return false;
                     }
                     break;
@@ -65,8 +57,7 @@ public:
                 case D_:
                     if (*i >= '0' && *i <= '9') {
                         S = aD;
-                    }
-                    else {
+                    } else {
                         return false;
                     }
                     break;
@@ -74,11 +65,9 @@ public:
                 case _D:
                     if (*i >= '0' && *i <= '9') {
                         S = aD;
-                    }
-                    else if (*i == 'E' || *i == 'e') {
+                    } else if (*i == 'E' || *i == 'e') {
                         S = E;
-                    }
-                    else {
+                    } else {
                         return false;
                     }
                     break;
@@ -86,11 +75,9 @@ public:
                 case aD:
                     if (*i >= '0' && *i <= '9') {
                         S = aD;
-                    }
-                    else if (*i == 'E' || *i == 'e') {
+                    } else if (*i == 'E' || *i == 'e') {
                         S = E;
-                    }
-                    else {
+                    } else {
                         return false;
                     }
                     break;
@@ -98,11 +85,9 @@ public:
                 case E:
                     if (*i == '+' || *i == '-') {
                         S = eS;
-                    }
-                    else if (*i >= '0' && *i <= '9') {
+                    } else if (*i >= '0' && *i <= '9') {
                         S = N;
-                    }
-                    else {
+                    } else {
                         return false;
                     }
                     break;
@@ -110,8 +95,7 @@ public:
                 case eS:
                     if (*i >= '0' && *i <= '9') {
                         S = N;
-                    }
-                    else {
+                    } else {
                         return false;
                     }
                     break;
@@ -119,8 +103,7 @@ public:
                 case N:
                     if (*i >= '0' && *i <= '9') {
                         S = N;
-                    }
-                    else {
+                    } else {
                         return false;
                     }
                     break;

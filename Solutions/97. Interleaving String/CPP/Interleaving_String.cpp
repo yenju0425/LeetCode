@@ -24,14 +24,15 @@ public:
             return DP[i1][i2];
         }
 
-        DP[i1][i2] = (i1 < s1_length && s1[i1] == s3[i3] && IL(i1 + 1, i2, i3 + 1)) || (i2 < s2_length && s2[i2] == s3[i3] && IL(i1, i2 + 1, i3 + 1));
+        DP[i1][i2] = (i1 < s1_length && s1[i1] == s3[i3] && IL(i1 + 1, i2, i3 + 1)) ||
+                     (i2 < s2_length && s2[i2] == s3[i3] && IL(i1, i2 + 1, i3 + 1));
         return DP[i1][i2];
     }
 
     bool isInterleave(string s1, string s2, string s3) {
-        this->s1 = s1;
-        this->s2 = s2;
-        this->s3 = s3;
+        this->s1        = s1;
+        this->s2        = s2;
+        this->s3        = s3;
         this->s1_length = s1.length();
         this->s2_length = s2.length();
         this->s3_length = s3.length();
@@ -49,7 +50,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     string s1 = "aabcc";
     string s2 = "dbbca";
     string s3 = "aadbbcbcac";

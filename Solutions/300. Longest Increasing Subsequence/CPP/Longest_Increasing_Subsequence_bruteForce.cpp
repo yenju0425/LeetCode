@@ -5,9 +5,7 @@ using namespace std;
 
 class Solution {
 public:
-    int lengthOfLIS(vector<int>& nums) {
-        return findLIS(nums, -1, 0);
-    }
+    int lengthOfLIS(vector<int>& nums) { return findLIS(nums, -1, 0); }
 
     int findLIS(vector<int>& nums, int previousIndex, int currentIndex) {
         if (currentIndex >= nums.size()) {

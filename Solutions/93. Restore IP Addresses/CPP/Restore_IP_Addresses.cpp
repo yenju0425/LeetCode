@@ -24,7 +24,7 @@ public:
         for (int i = 1; i <= 3 && i <= s.size(); ++i) {
             // check if the number is valid
             string num_str = s.substr(0, i);
-            int num_int = stoi(num_str);
+            int num_int    = stoi(num_str);
             if ((i > 1 && num_str[0] == '0') || num_int > 255) {
                 continue;
             }

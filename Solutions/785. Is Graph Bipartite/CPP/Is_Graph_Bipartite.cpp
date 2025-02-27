@@ -37,8 +37,7 @@ public:
                 if (visited[*i] == 0) {
                     visited[*i] = group;
                     Q.push(*i);
-                }
-                else if (visited[*i] != group) {  // group collision -> <-
+                } else if (visited[*i] != group) {  // group collision -> <-
                     return false;
                 }
             }
@@ -49,17 +48,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
-    vector<vector<int>> graph{
-        {1, 3},
-        {0, 2},
-        {1, 3},
-        {0, 2}
-    };
+    vector<vector<int>> graph{{1, 3}, {0, 2}, {1, 3}, {0, 2}};
 
-    cout << S->isBipartite(graph) << endl;
+    cout << S.isBipartite(graph) << endl;
 
     return 0;
 }

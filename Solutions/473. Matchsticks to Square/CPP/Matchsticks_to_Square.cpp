@@ -21,7 +21,7 @@ public:
         for (int i = 0; i < 4 and !findSquare; i++) {
             if (side_len[i] + MSs[idx] <= target) {
                 side_len[i] = side_len[i] + MSs[idx];
-                findSquare = squareGenarator(idx + 1);
+                findSquare  = squareGenarator(idx + 1);
                 side_len[i] = side_len[i] - MSs[idx];
 
                 if (side_len[i] == 0) {  // speed up
@@ -46,8 +46,8 @@ public:
 
         sort(matchsticks.begin(), matchsticks.end(), greater<int>());
 
-        this->MSs = matchsticks;
-        this->target = sum >> 2;  // side_len = sum / 4
+        this->MSs      = matchsticks;
+        this->target   = sum >> 2;  // side_len = sum / 4
         this->side_len = vector<int>(4, 0);
 
         return squareGenarator(0);
@@ -55,12 +55,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> matchsticks{13, 11, 1, 8, 6, 7, 8, 8, 6, 7, 8, 9, 8};
 
-    cout << S->makesquare(matchsticks) << endl;
+    cout << S.makesquare(matchsticks) << endl;
 
     return 0;
 }

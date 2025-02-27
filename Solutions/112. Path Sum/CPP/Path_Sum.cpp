@@ -24,7 +24,7 @@ public:
         }
 
         int newTargetSum = targetSum - root->val;
-        bool result = false;
+        bool result      = false;
         if (root->left != nullptr) {
             result = result or hasPathSum(root->left, newTargetSum);
         }
@@ -37,9 +37,8 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int targetSum = 7;
 
     // input tree structure:
@@ -57,7 +56,7 @@ int main() {
     TreeNode* n1 = new TreeNode(1, n3, nullptr);
     TreeNode* rt = new TreeNode(0, n1, n2);
 
-    cout << S->hasPathSum(rt, targetSum) << endl;
+    cout << S.hasPathSum(rt, targetSum) << endl;
 
     return 0;
 }

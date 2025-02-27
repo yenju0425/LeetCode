@@ -37,15 +37,11 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    vector<vector<int>> sets{
-        {1, 2, 3},
-        {1, 3, 9},
-        {1, 2, 8, 3}
-    };
+    vector<vector<int>> sets{{1, 2, 3}, {1, 3, 9}, {1, 2, 8, 3}};
 
-    vector<int> result = S->intersection(sets);
+    vector<int> result = S.intersection(sets);
 
     for (auto i : result) {
         cout << i << ' ';

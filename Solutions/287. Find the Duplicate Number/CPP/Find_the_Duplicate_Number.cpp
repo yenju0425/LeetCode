@@ -29,12 +29,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> nums{3, 1, 3, 2, 4};
 
-    cout << S->findDuplicate(nums) << endl;
+    cout << S.findDuplicate(nums) << endl;
 
     return 0;
 }

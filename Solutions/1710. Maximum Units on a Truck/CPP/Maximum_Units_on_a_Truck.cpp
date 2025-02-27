@@ -4,9 +4,7 @@
 
 using namespace std;
 
-bool cmp(vector<int>& a, vector<int>& b) {
-    return a[1] > b[1];
-}
+bool cmp(vector<int>& a, vector<int>& b) { return a[1] > b[1]; }
 
 class Solution {
 public:
@@ -16,8 +14,8 @@ public:
         int units = 0;
         for (int i = 0; i < boxTypes.size() and truckSize > 0; i++) {
             int numOfBoxes = min(truckSize, boxTypes[i][0]);
-            units = units + boxTypes[i][1] * numOfBoxes;
-            truckSize = truckSize - numOfBoxes;
+            units          = units + boxTypes[i][1] * numOfBoxes;
+            truckSize      = truckSize - numOfBoxes;
         }
 
         return units;
@@ -25,18 +23,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int truckSize = 10;
-    vector<vector<int>> boxTypes{
-        {5, 10},
-        {2,  5},
-        {4,  7},
-        {3,  9}
-    };
+    vector<vector<int>> boxTypes{{5, 10}, {2, 5}, {4, 7}, {3, 9}};
 
-    cout << S->maximumUnits(boxTypes, truckSize) << endl;
+    cout << S.maximumUnits(boxTypes, truckSize) << endl;
 
     return 0;
 }

@@ -9,8 +9,7 @@ public:
         for (string::iterator i = s.begin(); i != s.end(); i++) {
             if (*i != '#') {
                 new_s.push_back(*i);
-            }
-            else if (!new_s.empty()) {
+            } else if (!new_s.empty()) {
                 new_s.pop_back();
             }
         }
@@ -19,8 +18,7 @@ public:
         for (string::iterator i = t.begin(); i != t.end(); i++) {
             if (*i != '#') {
                 new_t.push_back(*i);
-            }
-            else if (!new_t.empty()) {
+            } else if (!new_t.empty()) {
                 new_t.pop_back();
             }
         }
@@ -30,13 +28,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     string s = "a##bc#d";
     string t = "dd##bx#d";
 
-    cout << S->backspaceCompare(s, t) << endl;
+    cout << S.backspaceCompare(s, t) << endl;
 
     return 0;
 }

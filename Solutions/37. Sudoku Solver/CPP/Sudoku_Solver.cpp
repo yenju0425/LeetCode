@@ -7,22 +7,19 @@ class Solution {
 private:
     int counter;
     bool stuck;
-    vector<vector<vector<bool>>> availableNum_r;  // availableNum_r[i][j] stores all the available numbers that can be filled in "i-th" row's "j-th" position
-    vector<vector<vector<bool>>> availableNum_c;  // availableNum_c[i][j] stores all the available numbers that can be filled in "i-th" col's "j-th" position
-    vector<vector<vector<bool>>> availableNum_b;  // availableNum_b[i][j] stores all the available numbers that can be filled in "i-th" blk's "j-th" position
+    vector<vector<vector<bool>>> availableNum_r;  // availableNum_r[i][j] stores all the available numbers that can be
+                                                  // filled in "i-th" row's "j-th" position
+    vector<vector<vector<bool>>> availableNum_c;  // availableNum_c[i][j] stores all the available numbers that can be
+                                                  // filled in "i-th" col's "j-th" position
+    vector<vector<vector<bool>>> availableNum_b;  // availableNum_b[i][j] stores all the available numbers that can be
+                                                  // filled in "i-th" blk's "j-th" position
 
 public:
-    int blockId(int& i, int& j) {
-        return (i / 3) * 3 + (j / 3);
-    }
+    int blockId(int& i, int& j) { return (i / 3) * 3 + (j / 3); }
 
-    int indexInBlock(int& i, int& j) {
-        return (i % 3) * 3 + (j % 3);
-    }
+    int indexInBlock(int& i, int& j) { return (i % 3) * 3 + (j % 3); }
 
-    bool isEnd() {
-        return (counter == 81) ? true : false;
-    }
+    bool isEnd() { return (counter == 81) ? true : false; }
 
     bool canFill(int row, int col, int num) {
         int blk = blockId(row, col);
@@ -34,12 +31,15 @@ public:
         int blk = blockId(row, col);
         int idx = indexInBlock(row, col);
 
-        fill(availableNum_r[row][col].begin(), availableNum_r[row][col].end(), false);  // the "col-th" position for other numbers in the "row-th" row is unavailable (each position can only be filled with one number)
+        fill(availableNum_r[row][col].begin(), availableNum_r[row][col].end(),
+             false);  // the "col-th" position for other numbers in the "row-th" row is unavailable (each position can
+                      // only be filled with one number)
         fill(availableNum_c[col][row].begin(), availableNum_c[col][row].end(), false);
         fill(availableNum_b[blk][idx].begin(), availableNum_b[blk][idx].end(), false);
 
         for (int k = 0; k < 9; ++k) {
-            availableNum_r[row][k][num] = false;  // every position in the "row-th" row cannot be filled with "num" (each number can only be used once)
+            availableNum_r[row][k][num] = false;  // every position in the "row-th" row cannot be filled with "num"
+                                                  // (each number can only be used once)
             availableNum_c[col][k][num] = false;
             availableNum_b[blk][k][num] = false;
         }
@@ -49,7 +49,7 @@ public:
         stuck = false;
         if (board[row][col] == '.') {
             board[row][col] = num + '1';
-            counter = counter + 1;
+            counter         = counter + 1;
             updateAvailableNum(row, col, num);
         }
     }
@@ -78,13 +78,13 @@ public:
                 for (int j = 0; j < 9; ++j) {
                     // check by position:
                     if (board[i][j] == '.') {
-                        int num = -1;                  //-1: null or collision
-                        for (int k = 0; k < 9; ++k) {  // check whether k is the only number that can be filled in board[i][j]
+                        int num = -1;  //-1: null or collision
+                        for (int k = 0; k < 9;
+                             ++k) {  // check whether k is the only number that can be filled in board[i][j]
                             if (canFill(i, j, k)) {
                                 if (num == -1) {
                                     num = k;
-                                }
-                                else {  // collision
+                                } else {  // collision
                                     num = -1;
                                     break;
                                 }
@@ -96,8 +96,8 @@ public:
                         }
                     }
 
-                    // note: In order to speed up, I combine "check by position" and "check by number" in the same loop. 'i', 'j', and 'k' have different meanings between these two parts
-                    // check by number:
+                    // note: In order to speed up, I combine "check by position" and "check by number" in the same loop.
+                    // 'i', 'j', and 'k' have different meanings between these two parts check by number:
                     int pos_row = -1;  //-1: null; -2: collision
                     int pos_col = -1;
                     int pos_blk = -1;
@@ -106,8 +106,7 @@ public:
                         if (canFill(i, k, j)) {
                             if (pos_row == -1) {
                                 pos_row = k;
-                            }
-                            else if (pos_row >= 0) {
+                            } else if (pos_row >= 0) {
                                 pos_row = -2;
                             }
                         }
@@ -116,8 +115,7 @@ public:
                         if (canFill(k, i, j)) {
                             if (pos_col == -1) {
                                 pos_col = k;
-                            }
-                            else if (pos_col >= 0) {
+                            } else if (pos_col >= 0) {
                                 pos_col = -2;
                             }
                         }
@@ -126,8 +124,7 @@ public:
                         if (canFill((i / 3) * 3 + k / 3, (i % 3) * 3 + k % 3, j)) {
                             if (pos_blk == -1) {
                                 pos_blk = k;
-                            }
-                            else if (pos_blk >= 0) {
+                            } else if (pos_blk >= 0) {
                                 pos_blk = -2;
                             }
                         }
@@ -183,16 +180,11 @@ int main() {
 
     // input
     vector<vector<char>> board{
-        {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
-        {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
-        {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
-        {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
-        {'4', '.', '.', '8', '.', '3', '.', '.', '1'},
-        {'7', '.', '.', '.', '2', '.', '.', '.', '6'},
-        {'.', '6', '.', '.', '.', '.', '2', '8', '.'},
-        {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
-        {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
-    };
+        {'5', '3', '.', '.', '7', '.', '.', '.', '.'}, {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+        {'.', '9', '8', '.', '.', '.', '.', '6', '.'}, {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
+        {'4', '.', '.', '8', '.', '3', '.', '.', '1'}, {'7', '.', '.', '.', '2', '.', '.', '.', '6'},
+        {'.', '6', '.', '.', '.', '.', '2', '8', '.'}, {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
+        {'.', '.', '.', '.', '8', '.', '.', '7', '9'}};
 
     S.solveSudoku(board);
 

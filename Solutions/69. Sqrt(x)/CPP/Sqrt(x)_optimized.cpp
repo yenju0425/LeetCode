@@ -13,13 +13,11 @@ public:
             i = i + step;
             if (i * i <= x) {
                 step = max(step + 1, 16);
-            }
-            else {
+            } else {
                 if (step != 1) {
-                    i = i - step;
+                    i    = i - step;
                     step = 1;
-                }
-                else {
+                } else {
                     return i - 1;
                 }
             }

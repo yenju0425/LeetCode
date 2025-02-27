@@ -13,11 +13,11 @@ private:
 
 public:
     Finder(vector<int> nums, int target) {
-        this->nums = nums;
+        this->nums      = nums;
         this->nums_size = nums.size();
-        this->cur_ptr = 0;
-        this->target = target;
-        this->fuel = nums_size;  // fill the finder with "nums_size" unit of fuel
+        this->cur_ptr   = 0;
+        this->target    = target;
+        this->fuel      = nums_size;  // fill the finder with "nums_size" unit of fuel
     }
 
     int find() {
@@ -31,15 +31,18 @@ public:
         }
 
         // find next position, and it will cost you half of the current fuel
-        int nxt_ptr = 0;
+        int nxt_ptr   = 0;
         int fuel_used = fuel - fuel / 2;
         if (nums[cur_ptr] < target) {
             nxt_ptr = (cur_ptr + fuel_used) % nums_size;
-            cur_ptr = (nums[nxt_ptr] < nums[cur_ptr]) ? cur_ptr : nxt_ptr;  // if it will go too far, then stay at the current position
-        }
-        else {
+            cur_ptr = (nums[nxt_ptr] < nums[cur_ptr])
+                          ? cur_ptr
+                          : nxt_ptr;  // if it will go too far, then stay at the current position
+        } else {
             nxt_ptr = (cur_ptr + nums_size - fuel_used) % nums_size;
-            cur_ptr = (nums[nxt_ptr] > nums[cur_ptr]) ? cur_ptr : nxt_ptr;  // if it will go too far, then stay at the current position
+            cur_ptr = (nums[nxt_ptr] > nums[cur_ptr])
+                          ? cur_ptr
+                          : nxt_ptr;  // if it will go too far, then stay at the current position
         }
         fuel = fuel / 2;
         return find();
@@ -57,7 +60,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     int target = 2;
     vector<int> nums{3, 4, 5, 6, 1, 2};
 

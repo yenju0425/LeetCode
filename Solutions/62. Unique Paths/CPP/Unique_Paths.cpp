@@ -6,8 +6,8 @@ using namespace std;
 class Solution {
 public:
     int uniquePaths(int m, int n) {
-        m = m - 1;
-        n = n - 1;
+        m         = m - 1;
+        n         = n - 1;
         int steps = m + n;
         vector<unsigned long long> fact(steps + 1, 1);  // still overflow
         for (int i = 1; i <= steps; ++i) {
@@ -21,7 +21,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     int m = 23;
     int n = 12;
 

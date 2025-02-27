@@ -16,8 +16,7 @@ public:
     TreeNode* getTargetCopy(TreeNode* original, TreeNode* cloned, TreeNode* target) {
         if (original == nullptr) {
             return nullptr;
-        }
-        else if (original == target) {
+        } else if (original == target) {
             return cloned;
         }
 
@@ -35,7 +34,7 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // original tree structure:
     //
@@ -60,7 +59,7 @@ int main() {
     TreeNode* _n1 = new TreeNode(1, _n3, nullptr);
     TreeNode* _rt = new TreeNode(2, _n1, _n2);
 
-    cout << S->getTargetCopy(rt, _rt, n4) << endl;
+    cout << S.getTargetCopy(rt, _rt, n4) << endl;
     cout << "Real Target: " << _n4 << endl;
 
     return 0;

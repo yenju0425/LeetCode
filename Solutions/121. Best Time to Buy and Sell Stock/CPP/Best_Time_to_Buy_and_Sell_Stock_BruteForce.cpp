@@ -17,8 +17,7 @@ public:
             // buy at a lower price
             if (price < buyPrice) {
                 buyPrice = price;
-            }
-            else {
+            } else {
                 profit = max(profit, price - buyPrice);
             }
         }
@@ -28,12 +27,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> prices{7, 1, 5, 3, 6, 4};
 
-    cout << S->maxProfit(prices) << endl;
+    cout << S.maxProfit(prices) << endl;
 
     return 0;
 }

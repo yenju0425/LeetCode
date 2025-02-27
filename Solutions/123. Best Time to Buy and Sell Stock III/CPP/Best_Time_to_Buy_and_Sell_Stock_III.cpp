@@ -18,7 +18,8 @@ public:
             profitAfter_b1 = max(profitAfter_b1, -prices[i]);
             profitAfter_s1 = max(profitAfter_s1, profitAfter_b1 + prices[i]);
 
-            // look for another buyTime and sellTime, after finalize the first transaction (from prices[k] ~ prices[i], suppose the first sellTime is at k)
+            // look for another buyTime and sellTime, after finalize the first transaction (from prices[k] ~ prices[i],
+            // suppose the first sellTime is at k)
             profitAfter_b2 = max(profitAfter_b2, profitAfter_s1 - prices[i]);
             profitAfter_s2 = max(profitAfter_s2, profitAfter_b2 + prices[i]);
         }
@@ -28,12 +29,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> prices{3, 3, 5, 0, 0, 3, 1, 4};
 
-    cout << S->maxProfit(prices) << endl;
+    cout << S.maxProfit(prices) << endl;
 
     return 0;
 }

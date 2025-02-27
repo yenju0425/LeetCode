@@ -40,8 +40,7 @@ public:
 
         if (takeCurrentIndex.size() > skipCurrentIndex.size()) {
             LISs[previousIndex][currentIndex] = takeCurrentIndex;
-        }
-        else {
+        } else {
             LISs[previousIndex][currentIndex] = skipCurrentIndex;
         }
 

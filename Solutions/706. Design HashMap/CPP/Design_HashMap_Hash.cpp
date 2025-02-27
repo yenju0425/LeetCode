@@ -9,12 +9,10 @@ private:
     vector<map<int, int>> HM;
 
 public:
-    MyHashMap() {
-        HM = vector<map<int, int>>(1024);
-    }
+    MyHashMap() { HM = vector<map<int, int>>(1024); }
 
     void put(int key, int value) {
-        int index = key & 1023;
+        int index      = key & 1023;
         HM[index][key] = value;
     }
 

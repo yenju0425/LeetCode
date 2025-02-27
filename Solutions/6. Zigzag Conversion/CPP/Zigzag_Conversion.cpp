@@ -32,8 +32,7 @@ public:
 int main() {
     Solution S;
 
-    // inputs
-    string s = "PAYPALISHIRING";
+    string s    = "PAYPALISHIRING";
     int numRows = 3;
 
     cout << S.convert(s, numRows);

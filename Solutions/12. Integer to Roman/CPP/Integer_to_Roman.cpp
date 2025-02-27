@@ -5,25 +5,9 @@ using namespace std;
 
 class Solution {
 private:
-    vector<vector<int>> RomanNum{
-        {'I', 'V', 'X'},
-        {'X', 'L', 'C'},
-        {'C', 'D', 'M'},
-        {'M', '?', '?'}
-    };
+    vector<vector<int>> RomanNum{{'I', 'V', 'X'}, {'X', 'L', 'C'}, {'C', 'D', 'M'}, {'M', '?', '?'}};
 
-    vector<vector<int>> numRef{
-        {},
-        {0},
-        {0, 0},
-        {0, 0, 0},
-        {0, 1},
-        {1},
-        {1, 0},
-        {1, 0, 0},
-        {1, 0, 0, 0},
-        {0, 2}
-    };
+    vector<vector<int>> numRef{{}, {0}, {0, 0}, {0, 0, 0}, {0, 1}, {1}, {1, 0}, {1, 0, 0}, {1, 0, 0, 0}, {0, 2}};
 
 public:
     string digitToString(int d, int n) {
@@ -38,8 +22,8 @@ public:
         string s = "";
         for (int i = 0; num != 0; ++i) {
             int digit = num % 10;
-            num = num / 10;
-            s = digitToString(digit, i) + s;
+            num       = num / 10;
+            s         = digitToString(digit, i) + s;
         }
         return s;
     }

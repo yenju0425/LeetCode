@@ -18,12 +18,13 @@ public:
         // lengthCounter
         for (int i = 1; i < s_length; ++i) {
             int intervalWidth = i;
-            bool isDone = true;
+            bool isDone       = true;
             for (int j = 0; j < s_length - intervalWidth; ++j) {
-                if ((lengthCounter[j] == intervalWidth) && (lengthCounter[j + 1] == intervalWidth) && (s[j] != s[j + intervalWidth])) {
+                if ((lengthCounter[j] == intervalWidth) && (lengthCounter[j + 1] == intervalWidth) &&
+                    (s[j] != s[j + intervalWidth])) {
                     lengthCounter[j] = lengthCounter[j] + 1;
-                    result = lengthCounter[j];
-                    isDone = false;
+                    result           = lengthCounter[j];
+                    isDone           = false;
                 }
             }
             if (isDone) {  // no merge happened

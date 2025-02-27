@@ -15,7 +15,8 @@ struct TreeNode {
 
 class Solution {
 public:
-    TreeNode* treeBuilder(const vector<int>& inorder, const vector<int>& postorder, int inorder_begin, int inorder_end, int& postorder_index) {
+    TreeNode* treeBuilder(const vector<int>& inorder, const vector<int>& postorder, int inorder_begin, int inorder_end,
+                          int& postorder_index) {
         if (inorder_begin == inorder_end) {
             return nullptr;
         }
@@ -28,7 +29,7 @@ public:
         int inorder_index = distance(inorder.begin(), find(inorder.begin(), inorder.end(), val));
 
         node->right = treeBuilder(inorder, postorder, inorder_index + 1, inorder_end, postorder_index);
-        node->left = treeBuilder(inorder, postorder, inorder_begin, inorder_index, postorder_index);
+        node->left  = treeBuilder(inorder, postorder, inorder_begin, inorder_index, postorder_index);
 
         return node;
     }

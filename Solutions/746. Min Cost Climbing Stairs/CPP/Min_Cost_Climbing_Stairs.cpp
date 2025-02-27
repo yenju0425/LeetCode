@@ -16,12 +16,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> cost{10, 15, 20};
 
-    cout << S->minCostClimbingStairs(cost) << endl;
+    cout << S.minCostClimbingStairs(cost) << endl;
 
     return 0;
 }

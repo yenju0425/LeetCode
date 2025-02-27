@@ -11,20 +11,17 @@ private:
     map<string, int> rank;
 
 public:
-    bool isValid(string x) {
-        return root.find(x) != root.end() ? true : false;
-    }
+    bool isValid(string x) { return root.find(x) != root.end() ? true : false; }
 
     // get the root of a vertex (the root of the root must be itself)
     tuple<string, double> find(string x) {
         if (!isValid(x)) {
             root[x] = tuple<string, double>(x, 1);
             rank[x] = 1;
-        }
-        else if (get<0>(root[x]) != x) {
+        } else if (get<0>(root[x]) != x) {
             tuple<string, double> newPath = find(get<0>(root[x]));
-            get<0>(root[x]) = get<0>(newPath);
-            get<1>(root[x]) = get<1>(newPath) * get<1>(root[x]);
+            get<0>(root[x])               = get<0>(newPath);
+            get<1>(root[x])               = get<1>(newPath) * get<1>(root[x]);
         }
         return root[x];
     }
@@ -38,8 +35,7 @@ public:
                 get<0>(root[get<0>(rootY)]) = get<0>(rootX);  // y's new root is x's root
                 get<1>(root[get<0>(rootY)]) = get<1>(rootX) / get<1>(rootY) * r;
                 rank[get<0>(rootX)] += rank[get<0>(rootY)];
-            }
-            else {
+            } else {
                 get<0>(root[get<0>(rootX)]) = get<0>(rootY);  // x's new root is y's root
                 get<1>(root[get<0>(rootX)]) = get<1>(rootY) / get<1>(rootX) / r;
                 rank[get<0>(rootY)] += rank[get<0>(rootX)];
@@ -50,7 +46,8 @@ public:
 
 class Solution {
 public:
-    vector<double> calcEquation(vector<vector<string>>& equations, vector<double>& values, vector<vector<string>>& queries) {
+    vector<double> calcEquation(vector<vector<string>>& equations, vector<double>& values,
+                                vector<vector<string>>& queries) {
         vector<double> results;
         UnionFind* UF = new UnionFind();
 
@@ -80,22 +77,13 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
-    vector<vector<string>> equations{
-        {"a", "b"},
-        {"d", "b"},
-        {"w", "x"},
-        {"z", "x"},
-        {"w", "d"}
-    };
+    vector<vector<string>> equations{{"a", "b"}, {"d", "b"}, {"w", "x"}, {"z", "x"}, {"w", "d"}};
     vector<double> values{2, 4, 5, 7, 8};
-    vector<vector<string>> queries{
-        {"a", "z"}
-    };
+    vector<vector<string>> queries{{"a", "z"}};
 
-    vector<double> ans = S->calcEquation(equations, values, queries);
+    vector<double> ans = S.calcEquation(equations, values, queries);
 
     for (auto i : ans) {
         cout << i << ' ';

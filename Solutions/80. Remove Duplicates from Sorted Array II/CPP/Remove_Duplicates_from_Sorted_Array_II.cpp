@@ -13,15 +13,13 @@ public:
             if (*iter == *(iter - 1)) {
                 if (counter >= 2) {
                     nums.erase(iter);
-                }
-                else {
+                } else {
                     counter = counter + 1;
-                    iter = iter + 1;
+                    iter    = iter + 1;
                 }
-            }
-            else {
+            } else {
                 counter = 1;
-                iter = iter + 1;
+                iter    = iter + 1;
             }
         }
 

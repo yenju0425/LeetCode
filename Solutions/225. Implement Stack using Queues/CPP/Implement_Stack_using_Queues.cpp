@@ -9,8 +9,7 @@ private:
     queue<int> Q;
 
 public:
-    MyStack() {
-    }
+    MyStack() {}
 
     void push(int x) {
         int Q_Size = Q.size();
@@ -27,24 +26,20 @@ public:
         return S_top;
     }
 
-    int top() {
-        return Q.front();
-    }
+    int top() { return Q.front(); }
 
-    bool empty() {
-        return Q.empty();
-    }
+    bool empty() { return Q.empty(); }
 };
 
 int main() {
     MyStack* S = new MyStack();
 
-    S->push(1);
-    S->push(2);
+    S.push(1);
+    S.push(2);
 
-    cout << S->top() << endl;
-    cout << S->pop() << endl;
-    cout << S->top() << endl;
+    cout << S.top() << endl;
+    cout << S.pop() << endl;
+    cout << S.top() << endl;
 
     return 0;
 }

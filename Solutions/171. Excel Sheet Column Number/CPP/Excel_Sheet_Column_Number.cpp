@@ -15,12 +15,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     string columnTitle = "AAA";
 
-    cout << S->titleToNumber(columnTitle) << endl;
+    cout << S.titleToNumber(columnTitle) << endl;
 
     return 0;
 }

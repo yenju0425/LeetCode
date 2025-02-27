@@ -13,12 +13,12 @@ public:
         // init wordsCount
         int numOfWords = words.size();
         for (int i = 0; i < numOfWords; ++i) {
-            string word = words[i];
+            string word      = words[i];
             wordsCount[word] = (wordsCount.find(word) == wordsCount.end()) ? 1 : wordsCount[word] + 1;
         }
 
-        int word_len = words[0].size();
-        int last_char = s.size() - numOfWords * word_len;
+        int word_len                               = words[0].size();
+        int last_char                              = s.size() - numOfWords * word_len;
         unordered_map<string, int> wordsCount_copy = wordsCount;
         for (int i = 0; i <= last_char; ++i) {
             for (int j = 0; j < numOfWords; ++j) {  // check one word at a time
@@ -26,8 +26,7 @@ public:
 
                 if (wordsCount_copy.find(word) == wordsCount_copy.end() || wordsCount_copy[word] == 0) {
                     break;
-                }
-                else {
+                } else {
                     wordsCount_copy[word] = wordsCount_copy[word] - 1;
                 }
 
@@ -47,7 +46,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     string s = "barfoothefoobarman";
     vector<string> words{"foo", "bar"};
 

@@ -21,7 +21,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     int m = 23;
     int n = 12;
 

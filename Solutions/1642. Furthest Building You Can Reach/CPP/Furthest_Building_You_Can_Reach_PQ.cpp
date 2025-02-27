@@ -32,14 +32,13 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
-    int bricks = 10;
+    int bricks  = 10;
     int ladders = 2;
     vector<int> heights{4, 12, 2, 7, 3, 18, 20, 3, 19};
 
-    cout << S->furthestBuilding(heights, bricks, ladders) << endl;
+    cout << S.furthestBuilding(heights, bricks, ladders) << endl;
 
     return 0;
 }

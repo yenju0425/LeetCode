@@ -4,9 +4,7 @@
 
 using namespace std;
 
-bool cmp(string& lhs, string& rhs) {
-    return lhs.length() > rhs.length();
-}
+bool cmp(string& lhs, string& rhs) { return lhs.length() > rhs.length(); }
 
 class Solution {
 public:
@@ -27,7 +25,7 @@ public:
             int wordLen = word.length();
             wordsLen[i] = wordLen;
             for (int j = 0; j < wordLen; j++) {
-                char c = word[j];
+                char c                = word[j];
                 existChar[i][c - 'a'] = true;
             }
         }
@@ -55,12 +53,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<string> coins{"abcw", "baz", "foo", "bar", "xtfn", "abcdef"};
 
-    cout << S->maxProduct(coins) << endl;
+    cout << S.maxProduct(coins) << endl;
 
     return 0;
 }

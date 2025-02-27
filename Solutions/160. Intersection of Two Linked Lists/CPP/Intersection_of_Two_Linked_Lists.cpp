@@ -37,9 +37,8 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     ListNode* c2 = new ListNode(5);
     ListNode* c1 = new ListNode(4, c2);
     ListNode* c0 = new ListNode(8, c1);
@@ -51,7 +50,7 @@ int main() {
     ListNode* b1 = new ListNode(6, b2);
     ListNode* b0 = new ListNode(5, b1);
 
-    cout << S->getIntersectionNode(a0, b0)->val << endl;
+    cout << S.getIntersectionNode(a0, b0)->val << endl;
 
     return 0;
 }

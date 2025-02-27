@@ -22,13 +22,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int k = 2;
     vector<int> nums{3, 2, 1, 5, 6, 4};
 
-    cout << S->findKthLargest(nums, k) << endl;
+    cout << S.findKthLargest(nums, k) << endl;
 
     return 0;
 }

@@ -6,7 +6,7 @@ class Solution {
 public:
     int hammingDistance(int x, int y) {
         int distance = 0;
-        x = x ^ y;
+        x            = x ^ y;
         while (x) {
             distance += x & 1;
             x >>= 1;
@@ -16,13 +16,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int x = 1;
     int y = 4;
 
-    cout << S->hammingDistance(x, y) << endl;
+    cout << S.hammingDistance(x, y) << endl;
 
     return 0;
 }

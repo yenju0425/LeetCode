@@ -33,7 +33,7 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input tree structure:
     //
@@ -50,7 +50,7 @@ int main() {
     TreeNode* n1 = new TreeNode(1, n3, nullptr);
     TreeNode* rt = new TreeNode(0, n1, n2);
 
-    vector<int> result = S->preorderTraversal(rt);
+    vector<int> result = S.preorderTraversal(rt);
 
     for (auto i : result) {
         cout << i << ' ';

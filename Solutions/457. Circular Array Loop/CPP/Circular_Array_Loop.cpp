@@ -40,12 +40,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> nums{-2, 1, -1, -2, -2};
 
-    cout << S->circularArrayLoop(nums) << endl;
+    cout << S.circularArrayLoop(nums) << endl;
 
     return 0;
 }

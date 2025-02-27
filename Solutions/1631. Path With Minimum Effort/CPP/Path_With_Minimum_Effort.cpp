@@ -12,19 +12,12 @@ private:
     vector<vector<int>> dir;
 
 public:
-    bool isValid(int m, int n) {
-        return m < M && m >= 0 && n < N && n >= 0;
-    }
+    bool isValid(int m, int n) { return m < M && m >= 0 && n < N && n >= 0; }
 
     int minimumEffortPath(vector<vector<int>>& heights) {  // Dijkstra's Algorithm
-        this->M = heights.size();
-        this->N = heights[0].size();
-        this->dir = vector<vector<int>>{
-            { 1,  0},
-            { 0,  1},
-            {-1,  0},
-            { 0, -1}
-        };
+        this->M   = heights.size();
+        this->N   = heights[0].size();
+        this->dir = vector<vector<int>>{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 
         vector<vector<int>> effort(M, vector<int>(N, INT_MAX));
         priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, greater<tuple<int, int, int>>> pq;
@@ -34,9 +27,9 @@ public:
 
         while (!pq.empty()) {
             tuple<int, int, int> minimum = pq.top();
-            int e = get<0>(minimum);
-            int m = get<1>(minimum);
-            int n = get<2>(minimum);
+            int e                        = get<0>(minimum);
+            int m                        = get<1>(minimum);
+            int n                        = get<2>(minimum);
             pq.pop();
 
             if (m == M - 1 && n == N - 1) {
@@ -62,16 +55,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
-    vector<vector<int>> heights{
-        {1, 2, 2},
-        {3, 8, 2},
-        {5, 3, 5}
-    };
+    vector<vector<int>> heights{{1, 2, 2}, {3, 8, 2}, {5, 3, 5}};
 
-    cout << S->minimumEffortPath(heights) << endl;
+    cout << S.minimumEffortPath(heights) << endl;
 
     return 0;
 }

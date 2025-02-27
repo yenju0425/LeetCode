@@ -12,7 +12,7 @@ public:
     WordFilter(vector<string>& words) {
         int words_size = words.size();
         for (int i = 0; i < words_size; i++) {
-            string word = words[i];
+            string word     = words[i];
             int wordsLength = word.length();
 
             string prefix;
@@ -20,7 +20,7 @@ public:
                 prefix = prefix + word[j];
                 string suffix;
                 for (int k = wordsLength - 1; k >= 0; k--) {
-                    suffix = word[k] + suffix;
+                    suffix                    = word[k] + suffix;
                     UM[prefix + "|" + suffix] = i;
                 }
             }
@@ -34,10 +34,10 @@ public:
 };
 
 int main() {
-    // inputs
     string prefix = "a";
-    string suffx = "e";
-    vector<string> words{"cabaabaaaa", "ccbcababac", "bacaabccba", "bcbbcbacaa", "abcaccbcaa", "accabaccaa", "cabcbbbcca", "ababccabcb", "caccbbcbab", "bccbacbcba"};
+    string suffx  = "e";
+    vector<string> words{"cabaabaaaa", "ccbcababac", "bacaabccba", "bcbbcbacaa", "abcaccbcaa",
+                         "accabaccaa", "cabcbbbcca", "ababccabcb", "caccbbcbab", "bccbacbcba"};
 
     WordFilter* W = new WordFilter(words);
 

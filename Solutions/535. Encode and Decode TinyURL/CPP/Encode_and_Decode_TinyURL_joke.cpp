@@ -4,22 +4,18 @@ using namespace std;
 
 class Solution {
 public:
-    string encode(string longUrl) {
-        return longUrl;
-    }
+    string encode(string longUrl) { return longUrl; }
 
-    string decode(string shortUrl) {
-        return shortUrl;
-    }
+    string decode(string shortUrl) { return shortUrl; }
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     string url = "https://www.apple.com/tw/";
 
-    string encode = S->encode(url);
-    string decode = S->decode(encode);
+    string encode = S.encode(url);
+    string decode = S.decode(encode);
 
     cout << encode << endl;
     cout << decode << endl;

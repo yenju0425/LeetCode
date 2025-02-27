@@ -36,8 +36,7 @@ public:
             if (rank[rootX] >= rank[rootY]) {
                 root[rootY] = rootX;
                 rank[rootX] = rank[rootX] + rank[rootY];
-            }
-            else {
+            } else {
                 root[rootX] = rootY;
                 rank[rootY] = rank[rootY] + rank[rootX];
             }
@@ -48,7 +47,7 @@ public:
 class Solution {
 public:
     string smallestStringWithSwaps(string s, vector<vector<int>>& pairs) {
-        int s_size = s.size();
+        int s_size     = s.size();
         int pairs_size = pairs.size();
 
         UnionFind* UF = new UnionFind(s_size);
@@ -90,19 +89,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     string s = "gfedcbaaaa";
-    vector<vector<int>> pairs{
-        {0, 1},
-        {3, 1},
-        {0, 2},
-        {5, 3},
-        {4, 0}
-    };
+    vector<vector<int>> pairs{{0, 1}, {3, 1}, {0, 2}, {5, 3}, {4, 0}};
 
-    cout << S->smallestStringWithSwaps(s, pairs) << endl;
+    cout << S.smallestStringWithSwaps(s, pairs) << endl;
 
     return 0;
 }

@@ -15,13 +15,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int k = 3;
     vector<int> nums{-1, -100, 3, 99};
 
-    S->rotate(nums, k);
+    S.rotate(nums, k);
 
     for (auto i : nums) {
         cout << i << ' ';

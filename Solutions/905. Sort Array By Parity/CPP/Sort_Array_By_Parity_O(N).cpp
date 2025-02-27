@@ -25,12 +25,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> nums{3, 1, 2, 4};
 
-    vector<int> result = S->sortArrayByParity(nums);
+    vector<int> result = S.sortArrayByParity(nums);
 
     for (auto i : result) {
         cout << i << ' ';

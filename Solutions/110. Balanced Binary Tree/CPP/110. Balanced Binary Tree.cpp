@@ -25,7 +25,8 @@ public:
             return true;
         }
 
-        return isBalanced(root->left) && isBalanced(root->right) && (abs(treeHeight(root->left) - treeHeight(root->right)) <= 1);
+        return isBalanced(root->left) && isBalanced(root->right) &&
+               (abs(treeHeight(root->left) - treeHeight(root->right)) <= 1);
     }
 };
 

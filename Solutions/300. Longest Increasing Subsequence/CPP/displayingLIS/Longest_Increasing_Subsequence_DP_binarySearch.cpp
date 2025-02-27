@@ -15,8 +15,7 @@ public:
 
             if (insertionIndex >= partialLIS.size()) {
                 partialLIS.push_back(num);
-            }
-            else {
+            } else {
                 partialLIS[insertionIndex] = num;
             }
 
@@ -25,8 +24,7 @@ public:
 
             if (insertionIndex >= LTSs.size()) {
                 LTSs.push_back(LTS);
-            }
-            else {
+            } else {
                 LTSs[insertionIndex] = LTS;
             }
         }

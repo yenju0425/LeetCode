@@ -10,26 +10,22 @@ public:
         for (const char& c : s) {
             if (c == '(' || c == '[' || c == '{') {
                 S.push(c);
-            }
-            else if (c == ')') {
+            } else if (c == ')') {
                 if (S.empty() || S.top() != '(') {
                     return false;
                 }
                 S.pop();
-            }
-            else if (c == ']') {
+            } else if (c == ']') {
                 if (S.empty() || S.top() != '[') {
                     return false;
                 }
                 S.pop();
-            }
-            else if (c == '}') {
+            } else if (c == '}') {
                 if (S.empty() || S.top() != '{') {
                     return false;
                 }
                 S.pop();
-            }
-            else {
+            } else {
                 return false;
             }
         }

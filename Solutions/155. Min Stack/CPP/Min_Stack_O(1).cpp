@@ -12,8 +12,7 @@ public:
     void push(int val) {
         if (minVal.empty() or val < minVal.back()) {
             minVal.push_back(val);
-        }
-        else {
+        } else {
             minVal.push_back(minVal.back());
         }
         S.push_back(val);
@@ -24,13 +23,9 @@ public:
         S.pop_back();
     }
 
-    int top() {
-        return S.back();
-    }
+    int top() { return S.back(); }
 
-    int getMin() {
-        return minVal.back();
-    }
+    int getMin() { return minVal.back(); }
 };
 
 int main() {

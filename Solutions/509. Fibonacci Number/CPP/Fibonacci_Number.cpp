@@ -21,12 +21,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     int n = 5;
 
-    cout << S->fib(n) << endl;
+    cout << S.fib(n) << endl;
 
     return 0;
 }

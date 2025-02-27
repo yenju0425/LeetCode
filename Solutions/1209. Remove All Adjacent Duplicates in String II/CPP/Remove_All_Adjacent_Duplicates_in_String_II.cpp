@@ -14,8 +14,7 @@ public:
             if (S.empty() || S.back()[0] != c) {
                 string newChar(1, c);
                 S.push_back(newChar);
-            }
-            else {
+            } else {
                 S.back().push_back(c);
                 if (S.back().length() == k) {
                     S.pop_back();
@@ -33,13 +32,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
-    int k = 3;
+    int k    = 3;
     string s = "deeedbbcccbda";
 
-    cout << S->removeDuplicates(s, k) << endl;
+    cout << S.removeDuplicates(s, k) << endl;
 
     return 0;
 }

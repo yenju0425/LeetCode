@@ -14,13 +14,10 @@ public:
         int col = (c_begin + c_end) >> 1;
 
         if (M[row][col] < T) {
-            return BS(row + 1, r_end, col + 1, c_end, M, T) ||
-                   BS(row + 1, r_end, c_begin, col + 1, M, T) ||
+            return BS(row + 1, r_end, col + 1, c_end, M, T) || BS(row + 1, r_end, c_begin, col + 1, M, T) ||
                    BS(r_begin, row + 1, col + 1, c_end, M, T);
-        }
-        else if (M[row][col] > T) {
-            return BS(r_begin, row, c_begin, col, M, T) ||
-                   BS(r_begin, row, col, c_end, M, T) ||
+        } else if (M[row][col] > T) {
+            return BS(r_begin, row, c_begin, col, M, T) || BS(r_begin, row, col, c_end, M, T) ||
                    BS(row, r_end, c_begin, col, M, T);
         }
 
@@ -33,15 +30,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int target = 7;
-    vector<vector<int>> matrix{
-        {1, 4, 7}
-    };
+    vector<vector<int>> matrix{{1, 4, 7}};
 
-    cout << S->searchMatrix(matrix, target) << endl;
+    cout << S.searchMatrix(matrix, target) << endl;
 
     return 0;
 }

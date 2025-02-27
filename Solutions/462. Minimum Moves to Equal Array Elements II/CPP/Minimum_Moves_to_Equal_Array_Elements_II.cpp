@@ -23,12 +23,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> nums{1, 10, 2, 9};
 
-    cout << S->minMoves2(nums) << endl;
+    cout << S.minMoves2(nums) << endl;
 
     return 0;
 }

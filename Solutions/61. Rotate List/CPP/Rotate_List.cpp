@@ -33,7 +33,7 @@ public:
         }
 
         // make a circular linked-list, return the new head (nodeList[head - 1]->next should be nullptr)
-        nodeList.back()->next = nodeList.front();
+        nodeList.back()->next                 = nodeList.front();
         nodeList[nodeList_size - k - 1]->next = nullptr;
         return nodeList[nodeList_size - k];
     }
@@ -42,7 +42,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     int k = 3;
     ListNode n4(4);
     ListNode n3(3, &n4);

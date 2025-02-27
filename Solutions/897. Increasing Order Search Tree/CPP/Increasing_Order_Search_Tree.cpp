@@ -13,7 +13,7 @@ struct TreeNode {
 
 class Solution {
 private:
-    TreeNode* newRoot = new TreeNode();
+    TreeNode* newRoot     = new TreeNode();
     TreeNode* currentNode = newRoot;
 
 public:
@@ -28,14 +28,14 @@ public:
         }
         DFS_inorder(root->left);
         currentNode->right = new TreeNode(root->val);  // create a new node and appent it to the end
-        currentNode = currentNode->right;              // update the end node
+        currentNode        = currentNode->right;       // update the end node
 
         DFS_inorder(root->right);
     }
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input tree structure:
     //
@@ -52,7 +52,7 @@ int main() {
     TreeNode* n1 = new TreeNode(1, n3, nullptr);
     TreeNode* rt = new TreeNode(2, n1, n2);
 
-    TreeNode* result = S->increasingBST(rt);
+    TreeNode* result = S.increasingBST(rt);
 
     while (result != nullptr) {
         cout << result->val << ' ';

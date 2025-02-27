@@ -18,15 +18,14 @@ public:
         bool fistMatch = (si != s_size && (s[si] == p[pi] || p[pi] == '.'));
         if (pi + 1 != p_size && p[pi + 1] == '*') {  // next pi is '*'
             return isMatch(si, pi + 2) || (fistMatch && isMatch(si + 1, pi));
-        }
-        else {
+        } else {
             return (fistMatch && isMatch(si + 1, pi + 1));
         }
     }
 
     bool isMatch(string s, string p) {
-        this->s = s;
-        this->p = p;
+        this->s      = s;
+        this->p      = p;
         this->s_size = s.size();
         this->p_size = p.size();
 
@@ -37,7 +36,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     string s = "ab";
     string p = ".*";
 

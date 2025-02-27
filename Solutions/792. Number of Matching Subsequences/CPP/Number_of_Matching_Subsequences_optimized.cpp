@@ -24,7 +24,8 @@ public:
 
             int w_len = words[i].length();
             for (int w_idx = 0; w_idx < w_len; w_idx++) {
-                vector<int>::iterator iter = upper_bound(charIdx[words[i][w_idx] - 'a'].begin(), charIdx[words[i][w_idx] - 'a'].end(), s_idx);
+                vector<int>::iterator iter =
+                    upper_bound(charIdx[words[i][w_idx] - 'a'].begin(), charIdx[words[i][w_idx] - 'a'].end(), s_idx);
                 if (iter == charIdx[words[i][w_idx] - 'a'].end()) {
                     isSQ = false;
                     break;
@@ -41,13 +42,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     string s = "abcde";
     vector<string> words{"a", "bb", "acd", "ace", "ae", "bd"};
 
-    cout << S->numMatchingSubseq(s, words) << endl;
+    cout << S.numMatchingSubseq(s, words) << endl;
 
     return 0;
 }

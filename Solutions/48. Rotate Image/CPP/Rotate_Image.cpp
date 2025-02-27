@@ -7,10 +7,10 @@ class Solution {
 public:
     void swap(int& a, int& b, int& c, int& d) {
         int temp = a;
-        a = d;
-        d = c;
-        c = b;
-        b = temp;
+        a        = d;
+        d        = c;
+        c        = b;
+        b        = temp;
     }
 
     void rotate(vector<vector<int>>& matrix) {
@@ -32,11 +32,7 @@ int main() {
     Solution S;
 
     // input
-    vector<vector<int>> matrix{
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}
-    };
+    vector<vector<int>> matrix{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
     S.rotate(matrix);
 

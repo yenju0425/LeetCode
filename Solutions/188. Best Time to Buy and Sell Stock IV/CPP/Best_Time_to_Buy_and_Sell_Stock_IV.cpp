@@ -24,13 +24,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int k = 2;
     vector<int> prices{3, 2, 6, 5, 0, 3};
 
-    cout << S->maxProfit(k, prices) << endl;
+    cout << S.maxProfit(k, prices) << endl;
 
     return 0;
 }

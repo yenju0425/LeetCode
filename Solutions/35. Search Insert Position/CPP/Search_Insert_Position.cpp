@@ -14,24 +14,19 @@ public:
         vector<int>::iterator half = left + (right - left) / 2;
         if (target > *half) {
             return LB(half + 1, right, target);
-        }
-        else if (target < *half) {
+        } else if (target < *half) {
             return LB(left, half, target);
-        }
-        else {
+        } else {
             return half;
         }
     }
 
-    int searchInsert(vector<int>& nums, int target) {
-        return LB(nums.begin(), nums.end(), target) - nums.begin();
-    }
+    int searchInsert(vector<int>& nums, int target) { return LB(nums.begin(), nums.end(), target) - nums.begin(); }
 };
 
 int main() {
     Solution S;
 
-    // inputs
     int target = 5;
     vector<int> nums{1, 3, 5, 6};
 

@@ -18,7 +18,7 @@ public:
             return 0;
         }
 
-        int left = minDepth(root->left);
+        int left  = minDepth(root->left);
         int right = minDepth(root->right);
         if (left == 0 xor right == 0) {
             return left + right + 1;
@@ -28,7 +28,7 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input tree structure:
     //
@@ -45,7 +45,7 @@ int main() {
     TreeNode* n1 = new TreeNode(0, n3, nullptr);
     TreeNode* rt = new TreeNode(0, n1, n2);
 
-    cout << S->minDepth(rt) << endl;
+    cout << S.minDepth(rt) << endl;
 
     return 0;
 }

@@ -9,8 +9,8 @@ public:
 
         // initialize
         int maxLength = 1;
-        int left = 0;
-        int right = 0;
+        int left      = 0;
+        int right     = 0;
         for (float i = 1.0; i < strigSize; i = i + 0.5) {
             int l = i - 0.5;
             int r = i;
@@ -22,8 +22,8 @@ public:
             int length = r - l - 1;
             if (length > maxLength) {
                 maxLength = length;
-                left = l + 1;
-                right = r - 1;
+                left      = l + 1;
+                right     = r - 1;
             }
         }
 

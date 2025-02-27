@@ -18,7 +18,7 @@ public:
                 continue;
             }
 
-            int left = i + 1;
+            int left  = i + 1;
             int right = nums_size - 1;
             while (left < right) {
                 int sum = nums[i] + nums[left] + nums[right];
@@ -28,14 +28,12 @@ public:
                         best_Solution = sum;
                     }
                     right = right - 1;
-                }
-                else if (sum < target) {
+                } else if (sum < target) {
                     if (target - sum < abs(best_Solution - target)) {
                         best_Solution = sum;
                     }
                     left = left + 1;
-                }
-                else {  // solution found
+                } else {  // solution found
                     return target;
                 }
             }
@@ -48,7 +46,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     vector<int> nums{1, 1, 1, 1};
     int target = -100;
 

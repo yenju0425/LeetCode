@@ -18,8 +18,7 @@ public:
             for (int j = 1; j <= word2_length; j++) {
                 if (word1[i] == word2[j]) {
                     DP[i][j] = DP[i - 1][j - 1] + 1;
-                }
-                else {
+                } else {
                     DP[i][j] = max(DP[i - 1][j], DP[i][j - 1]);
                 }
             }
@@ -30,13 +29,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     string word1 = "Richard";
     string word2 = "Lillard";
 
-    cout << S->minDistance(word1, word2) << endl;
+    cout << S.minDistance(word1, word2) << endl;
 
     return 0;
 }

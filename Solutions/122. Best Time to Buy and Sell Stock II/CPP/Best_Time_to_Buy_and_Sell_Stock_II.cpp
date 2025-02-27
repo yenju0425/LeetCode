@@ -8,7 +8,7 @@ using namespace std;
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
-        int profit = 0;
+        int profit      = 0;
         int current_buy = numeric_limits<int>::max();
         for (const auto& p : prices) {
             profit += max(0, p - current_buy);
@@ -20,12 +20,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     vector<int> prices{7, 1, 5, 3, 6, 4};
 
-    cout << S->maxProfit(prices) << endl;
+    cout << S.maxProfit(prices) << endl;
 
     return 0;
 }

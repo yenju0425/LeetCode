@@ -25,12 +25,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
     // input
     int rowIndex = 3;
 
-    vector<int> result = S->getRow(rowIndex);
+    vector<int> result = S.getRow(rowIndex);
 
     for (auto i : result) {
         cout << i << ' ';

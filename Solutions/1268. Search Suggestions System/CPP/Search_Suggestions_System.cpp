@@ -22,8 +22,8 @@ public:
             vector<string>::iterator LB = lower_bound(products.begin(), products.end(), word);
 
             // get upper bound
-            string nextWord = word;
-            nextWord.back() = nextWord.back() + 1;
+            string nextWord             = word;
+            nextWord.back()             = nextWord.back() + 1;
             vector<string>::iterator UB = lower_bound(products.begin(), products.end(), nextWord);
 
             int numOfItem = min(int(UB - LB), 3);
@@ -39,13 +39,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     string searchWord = "mouse";
     vector<string> products{"mobile", "mouse", "moneypot", "monitor", "mousepad"};
 
-    vector<vector<string>> result = S->suggestedProducts(products, searchWord);
+    vector<vector<string>> result = S.suggestedProducts(products, searchWord);
 
     for (auto i : result) {
         for (auto j : i) {

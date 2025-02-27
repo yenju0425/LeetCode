@@ -36,7 +36,6 @@ public:
 int main() {
     Solution S;
 
-    // inputs
     string a = "010";
     string b = "1011";
 

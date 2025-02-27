@@ -17,14 +17,12 @@ public:
             int sum = nums[i] + nums[j];
             if (sum > k) {
                 j = j - 1;
-            }
-            else if (sum < k) {
+            } else if (sum < k) {
                 i = i + 1;
-            }
-            else {
+            } else {
                 counter = counter + 1;
-                j = j - 1;
-                i = i + 1;
+                j       = j - 1;
+                i       = i + 1;
             }
         }
 
@@ -33,13 +31,12 @@ public:
 };
 
 int main() {
-    Solution* S = new Solution();
+    Solution S;
 
-    // inputs
     int k = 5;
     vector<int> nums{1, 2, 3, 4};
 
-    cout << S->maxOperations(nums, k) << endl;
+    cout << S.maxOperations(nums, k) << endl;
 
     return 0;
 }
